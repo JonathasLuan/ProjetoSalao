@@ -10,10 +10,10 @@
     #main {
       background-color: #1e90ff;
       color: #fff;
-      padding: 20px;
+      padding: 14px;
       border-radius: 10px;
       margin: 0 auto;
-      width: 80%;
+      width: 40%;
     }
     form {
       background-color: #1e90ff;
@@ -26,8 +26,13 @@
     h1, label {
       font-weight: bold;
     }
-    h1, h2 {
+    h1 {
       text-align: center;
+      font-size: 40px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
     }
     label {
       display: block;
@@ -43,7 +48,7 @@
       font-size: 16px;
     }
     input [type="select"], select {
-      width: 15%;
+      width: 30%;
     }
     input[type="submit"] {
       background-color: #003399;
@@ -68,7 +73,7 @@
 <body>
 
   <div id="main">
-    <h1>Serviços de Beleza</h1>
+    <h1>Serviços de Beleza</h1><br>
     <h2>Cadastre-se</h2><br>
 
     <form>
@@ -106,8 +111,10 @@
             <option value="" selected disabled>Selecione</option>
             <option value="corte">Corte</option>
             <option value="coloracao">Coloração</option>
+            <option value="barba">Barba</option>
             <option value="escova">Escova</option>
             <option value="hidratacao">Hidratação</option>
+            <option value="unhas">Unhas</option>
           </select><br>
         </div>
 
@@ -115,7 +122,7 @@
           <label for="data">Data:</label>
           <input type="date" id="data" name="data"><br>
         </div>
-
+        <br>
         <div>
           <label for="hora">Hora:</label>
           <input type="time" id="hora" name="hora"><br>
