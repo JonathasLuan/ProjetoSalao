@@ -1,4 +1,18 @@
-<script>
+  const botaoFormulario1 = document.getElementById("botao-formulario-1");
+  const botaoFormulario2 = document.getElementById("botao-formulario-2");
+  const formulario1 = document.getElementById("formulario-1");
+  const formulario2 = document.getElementById("formulario-2");
+
+  botaoFormulario1.addEventListener("click", () => {
+    formulario1.style.display = "block";
+    formulario2.style.display = "none";
+  });
+
+  botaoFormulario2.addEventListener("click", () => {
+    formulario1.style.display = "none";
+    formulario2.style.display = "block";
+  });
+
   const form = document.querySelector('form');
 
   form.addEventListener('submit', (event) => {
@@ -15,4 +29,3 @@
 
     alert(mensagem);
   });
-</script>

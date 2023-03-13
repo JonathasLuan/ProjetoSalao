@@ -21,8 +21,11 @@ Pedido de serviço -
 Número_Pedido
 Número_Cliente
 Nome_Cliente
-Data_Seriviço
+Data_Serviço
 Valor
+MétodoPagamento
+LocalAtendimento
+Status
 
 Serviço -
 Cabelo
