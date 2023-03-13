@@ -65,16 +65,16 @@
   <dia:layer name="Segundo Plano" visible="true" active="true">
     <dia:object type="Database - Table" version="0" id="O0">
       <dia:attribute name="obj_pos">
-        <dia:point val="9.48912,12.3406"/>
+        <dia:point val="9.54858,12.3406"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="9.48912,12.3406;15.0241,17.4406"/>
+        <dia:rectangle val="9.54858,12.3406;15.0836,17.4406"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="9.48912,12.3406"/>
+        <dia:point val="9.54858,12.3406"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="5.5350000000000001"/>
@@ -235,16 +235,16 @@
     </dia:object>
     <dia:object type="Database - Table" version="0" id="O1">
       <dia:attribute name="obj_pos">
-        <dia:point val="16.5944,12.3954"/>
+        <dia:point val="16.6538,12.3954"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="16.5944,12.3954;23.2844,19.0954"/>
+        <dia:rectangle val="16.6538,12.3954;23.3438,19.0954"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="16.5944,12.3954"/>
+        <dia:point val="16.6538,12.3954"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="6.6899999999999995"/>
@@ -445,16 +445,16 @@
     </dia:object>
     <dia:object type="Database - Table" version="0" id="O2">
       <dia:attribute name="obj_pos">
-        <dia:point val="25.0675,12.4252"/>
+        <dia:point val="25.0972,12.4252"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="25.0675,12.4252;32.1425,19.9252"/>
+        <dia:rectangle val="25.0972,12.4252;32.1722,19.9252"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="25.0675,12.4252"/>
+        <dia:point val="25.0972,12.4252"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="7.0750000000000002"/>
@@ -675,16 +675,16 @@
     </dia:object>
     <dia:object type="Database - Table" version="0" id="O3">
       <dia:attribute name="obj_pos">
-        <dia:point val="43.292,12.3954"/>
+        <dia:point val="43.2326,12.3954"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="43.292,12.3954;48.827,17.4954"/>
+        <dia:rectangle val="43.2326,12.3954;48.7676,17.4954"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="43.292,12.3954"/>
+        <dia:point val="43.2326,12.3954"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="5.5350000000000001"/>
@@ -845,16 +845,16 @@
     </dia:object>
     <dia:object type="Database - Table" version="0" id="O4">
       <dia:attribute name="obj_pos">
-        <dia:point val="50.9624,12.4252"/>
+        <dia:point val="50.6949,12.4252"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="50.9624,12.4252;59.5774,21.5252"/>
+        <dia:rectangle val="50.6949,12.4252;59.3099,21.5252"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="50.9624,12.4252"/>
+        <dia:point val="50.6949,12.4252"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="8.6150000000000002"/>
