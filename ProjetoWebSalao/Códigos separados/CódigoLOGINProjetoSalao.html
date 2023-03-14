@@ -5,25 +5,26 @@
   <title>Login</title>
   <style>
     body {
-      background-color: #FFFFFF;
+      background-color: #e1e2e1;
     }
     #main {
       background-color: #484848;
       color: #fff;
       padding: 14px;
-      border-radius: 10px;
+      border-radius: 7px;
       margin: 0 auto;
       width: 40%;
       margin-top: 200px;
     }
     form {
-      background-color: #e1e2e1;
+      background-color: #FFFFFF;
       color: #000000;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 40px;
+      border-radius: 7px;
       margin: 0 auto;
       width: 80%;
       justify-content: flex-center;
+      margin-bottom: 20px;
     }
     h1, label {
       font-weight: bold;
@@ -48,7 +49,7 @@
       margin-bottom: 10px;
     }
     input[type="password"] {
-      width: 50%;
+      width: 55%;
       padding: 10px;
       border: 1px solid black;
       border-radius: 4px;
@@ -57,7 +58,7 @@
       font-size: 16px;
     }
     input[type="email"], select {
-      width: 50%;
+      width: 55%;
       padding: 10px;
       border: 1px solid black;
       border-radius: 4px;
@@ -88,22 +89,20 @@
     <h1>LOGIN</h1>
     <h2>Entre com sua conta!</h2>
     <form>
-      <fieldset>
-        <div>
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" placeholder="@" required><br>
-        </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="@" required><br>
+      </div>
 
-        <div>
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
-          <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
-        </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+        <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+      </div>
 
-        <div>
-          <button type="submit">Concluir</button>
-        </div>
-      </fieldset>
+      <div>
+        <button type="submit">Concluir</button>
+      </div>
     </form>
   </div>
 <script>
