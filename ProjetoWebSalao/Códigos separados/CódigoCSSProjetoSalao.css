@@ -1,4 +1,4 @@
-<style>
+  }
   body {
     background-color: #e1e2e1;
     width: 100%;
@@ -6,11 +6,12 @@
   }
   .menu-principal {
     background-color: #484848;
-    hight: 60 px;
-    color: #fff;
-    padding: 1px;
-    margin: 0 auto;
     width: 100%;
+    margin: 0 auto;
+  }
+  #cabecalho {
+    color: #FFFFFF;
+    padding: 1px;
   }
   .main {
     background-color: #484848;
@@ -19,7 +20,8 @@
     border-radius: 7px;
     margin: 0 auto;
     width: 40%;
-    margin-top: 20px;
+    margin-top: 40px;
+    font-family: Arial, Helvetca, sans-serif;
   }
   #login {
     padding: 14px;
@@ -128,4 +130,3 @@
   input[type="select"]:focus, select:focus {
     background-color: #e6e6e6;
   }
-</style>
