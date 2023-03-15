@@ -1,52 +1,79 @@
 Entidades:
 
-Cliente
-Pedido de serviço
-Serviço
-Profissional
-Especialidade
+  Usuários
+  Cliente
+  Profissional
+  Agendamento
+  Serviço
+  Especialidade
 
 
 Descrição de atributos:
 
-Cliente -
-Número_Cliente
-Nome
-E-mail
-Idade
-Endereço
-Telefone
+  Usuários -
+    Id_Usuários
+    Nome
+    E-mail
+    Senha
+    Tipo
 
-Pedido de serviço -
-Número_Pedido
-Número_Cliente
-Nome_Cliente
-Data_Seriviço
-Valor
+  Cliente -
+    Id_Cliente
+    Id-Usuário
+    Nome
+    Gênero
+    dataNasci
+    Telefone
+    Cidade
+    Bairro
+    Rua
+    Número
 
-Serviço -
-Cabelo
-Unhas
-Barba
-Maquiagem
+  Profissional -
+    Id_Prof
+    Id_Usuário
+    Nome
+    Gênero
+    Especialidade
+    dataNasci
+    Telefone
+    Cidade
+    Bairro
+    Rua
+    Número
 
-Profissional -
-Nome
-E-mail
-Idade
-Endereço
-Telefone
-Especialidade
+  Agendamento -
+    Id_Agend
+    Id-Cliente
+    Id_Prof
+    Id_Serviço
+    nomeCliente
+    nomeProfissional
+    dataAtendimento
+    dataAgend
+    Hora
+    Valor
+    métodoPagamento
+    localAtendimento
+    Status
 
-Especialidade -
-Corte
-Coloração
-Manicure e pedicure
-Barba
-Maquiagem
-Hidratação
-Reconstrução
-Consultoria
+  Serviços -
+    Id_Serviços
+    Cabelo
+    Unhas
+    Barba
+    Maquiagem
+
+  Especialidade -
+    Id_Espec
+    Corte
+    Coloração
+    Manicure e pedicure
+    Barba
+    Maquiagem
+    Hidratação
+    Reconstrução
+    Consultoria
 
 
 Cardinalidade:
