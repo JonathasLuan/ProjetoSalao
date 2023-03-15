@@ -4,6 +4,6 @@ Validação de formulários: JavaScript pode ser usado para validar dados de ent
 
 Efeitos visuais e animações: JavaScript pode ser usado para criar animações e efeitos visuais impressionantes em uma página web, como carrosséis de imagens, menus drop-down e transições de página.
 
-Interação com APIs: JavaScript pode ser usado para interagir com APIs de terceiros, permitindo que você integre recursos externos em seu site, como um mapa do Google ou uma lista de tweets.
+Interação com APIs: JavaScript pode ser usado para interagir com APIs de terceiros, permitindo integrar recursos externos em seu site, como um mapa do Google ou uma lista de tweets.
 
-Manipulação de DOM: JavaScript pode ser usado para modificar o conteúdo da página web após o carregamento inicial, permitindo que você crie páginas web dinâmicas que respondem às ações do usuário.
+Manipulação de DOM: JavaScript pode ser usado para modificar o conteúdo da página web após o carregamento inicial, permitindo que você criar páginas web dinâmicas que respondem às ações do usuário.
