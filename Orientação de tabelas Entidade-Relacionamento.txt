@@ -19,7 +19,7 @@ descrição de atributos:
 
   cliente -
     id_Cliente
-    id-Usuário
+    id_Usuário
     nome
     genero
     dataNasci
@@ -30,7 +30,7 @@ descrição de atributos:
     numero
 
   profissional -
-   id_Prof
+    id_Prof
     id_Usuário
     nome
     genero
@@ -44,7 +44,7 @@ descrição de atributos:
 
   agendamento -
     id_Agend
-    id-Cliente
+    id_Cliente
     Id_Prof
     Id_Serviço
     nomeCliente
