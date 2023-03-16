@@ -1,4 +1,4 @@
-Entidades:
+entidades:
 
   usuarios
   cliente
@@ -8,83 +8,83 @@ Entidades:
   especialidade
 
 
-Descrição de atributos:
+descrição de atributos:
 
-  Usuários -
-    Id_Usuários
-    Nome
-    E-mail
-    Senha
-    Tipo
+  usuarios -
+    id_Usuarios
+    nome
+    e-mail
+    senha
+    tipo
 
-  Cliente -
-    Id_Cliente
-    Id-Usuário
-    Nome
-    Gênero
+  cliente -
+    id_Cliente
+    id-Usuário
+    nome
+    genero
     dataNasci
-    Telefone
-    Cidade
-    Bairro
-    Rua
-    Número
+    telefone
+    cidade
+    bairro
+    rua
+    numero
 
-  Profissional -
-    Id_Prof
-    Id_Usuário
-    Nome
-    Gênero
-    Especialidade
+  profissional -
+   id_Prof
+    id_Usuário
+    nome
+    genero
+    especialidade
     dataNasci
-    Telefone
-    Cidade
-    Bairro
-    Rua
-    Número
+    telefone
+    cidade
+    bairro
+    rua
+    numero
 
-  Agendamento -
-    Id_Agend
-    Id-Cliente
+  agendamento -
+    id_Agend
+    id-Cliente
     Id_Prof
     Id_Serviço
     nomeCliente
     nomeProfissional
     dataAtendimento
     dataAgend
-    Hora
-    Valor
-    métodoPagamento
+    hora
+    valor
+    metodoPagamento
     localAtendimento
-    Status
+    status
 
-  Serviços -
-    Id_Serviços
-    Cabelo
-    Unhas
-    Barba
-    Maquiagem
+  serviços -
+    id_Serviços
+    cabelo
+    unhas
+    barba
+    maquiagem
 
-  Especialidade -
-    Id_Espec
-    Corte
-    Coloração
-    Manicure e pedicure
-    Barba
-    Maquiagem
-    Hidratação
-    Reconstrução
-    Consultoria
+  especialidade -
+    id_Espec
+    corte
+    coloraçao
+    manicure e pedicure
+    barba
+    maquiagem
+    hidrataçao
+    reconstruçao
+    consultoria
 
 
-Cardinalidade:
+cardinalidade:
 
-Um cliente faz zero ou muitos pedidos
-Um pedido pertence a apenas um cliente
+um cliente faz zero ou muitos pedidos
+um pedido pertence a apenas um cliente
 
-Um pedido pode ter um ou muitos serviços
-Um serviço pertence a zero ou muitos
+um pedido pode ter um ou muitos serviços
+um serviço pertence a zero ou muitos
 
-Um profissional pode ter uma ou muitas especialidades
-Uma especialidade pode ser de zero ou muitos profissionais
+um profissional pode ter uma ou muitas especialidades
+uma especialidade pode ser de zero ou muitos profissionais
 
-Um profissional tem uma ou muitas especialidades, uma especialidade tem um ou muitos profissionais, um serviço tem uma ou mais especialidades, uma especialidade tem um serviço, um cliente contrata um ou muitos profissionais, um profissional atende um ou muitos clientes.
+um profissional tem uma ou muitas especialidades, uma especialidade tem um ou muitos profissionais, um serviço tem uma ou mais especialidades, uma especialidade tem um serviço, um cliente contrata um ou muitos profissionais, um profissional atende um ou muitos clientes.
