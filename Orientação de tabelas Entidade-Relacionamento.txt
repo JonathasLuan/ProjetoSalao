@@ -1,11 +1,11 @@
 Entidades:
 
-  Usuários
-  Cliente
-  Profissional
-  Agendamento
-  Serviço
-  Especialidade
+  usuarios
+  cliente
+  profissional
+  agendamento
+  serviço
+  especialidade
 
 
 Descrição de atributos:
