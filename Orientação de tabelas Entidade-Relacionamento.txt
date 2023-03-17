@@ -82,10 +82,14 @@ descrição de atributos:
     id_servico_fk
     valores
 
-  especialidade_profissionais:
+  especialidades_profissionais:
     id_especialidade_profissional
     id_especialidades
     id_profissional
+    
+  especialidade:
+    id_especialidade
+    nome
     descricao
     preco
     categoria
