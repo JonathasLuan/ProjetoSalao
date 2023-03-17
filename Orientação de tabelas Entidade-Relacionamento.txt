@@ -6,7 +6,8 @@ entidades:
   agendamento
   serviço
   especialidade
-
+  servicos_prifissionais
+  especialidades_profissionais
 
 descrição de atributos:
 
@@ -43,37 +44,55 @@ descrição de atributos:
     numero
 
   agendamento -
-    id_Agend
-    id_Cliente
-    Id_Prof
-    Id_Serviço
-    nomeCliente
-    nomeProfissional
-    dataAtendimento
-    dataAgend
+    id_agendamento
+    id_cliente
+    Id_profissional
+    Id_servico
+    nomecliente
+    nomeprofissional
+    dataatendimento
+    dataagendamento
     hora
     valor
-    metodoPagamento
-    localAtendimento
+    metodopagamento
+    localatendimento
     status
 
-  serviços -
-    id_Serviços
+  serviços:
+    id_servicos
     cabelo
     unhas
     barba
     maquiagem
 
-  especialidade -
-    id_Espec
+  especialidade:
+    id_especialidade
     corte
-    coloraçao
-    manicure e pedicure
+    coloracao
+    manicure_e_pedicure
     barba
     maquiagem
-    hidrataçao
-    reconstruçao
+    hidratacao
+    reconstrucao
     consultoria
+
+  servicos_profissionais:
+    id_servico_profissional
+    id_profissional_fk
+    id_servico_fk
+    valores
+
+  especialidade_profissionais:
+    id_especialidade_profissional
+    id_especialidades
+    id_profissional
+    descricao
+    preco
+    categoria
+    subcategoria
+    tempo
+    experiencianecessaria
+    imagemilustrativa
 
 
 cardinalidade:
