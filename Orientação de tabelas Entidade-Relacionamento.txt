@@ -12,18 +12,18 @@ entidades:
 descrição de atributos:
 
   usuarios -
-    id_Usuarios
+    id_usuarios
     nome
-    e-mail
+    email
     senha
     tipo
 
   cliente -
-    id_Cliente
-    id_Usuário
+    id_cliente
+    id_usuario
     nome
     genero
-    dataNasci
+    datanascimento
     telefone
     cidade
     bairro
@@ -31,12 +31,12 @@ descrição de atributos:
     numero
 
   profissional -
-    id_Prof
-    id_Usuário
+    id_profissional
+    id_usuario
     nome
     genero
     especialidade
-    dataNasci
+    datanascimento
     telefone
     cidade
     bairro
@@ -84,8 +84,8 @@ descrição de atributos:
 
   especialidades_profissionais:
     id_especialidade_profissional
-    id_especialidades
-    id_profissional
+    id_especialidades_fk
+    id_profissional_fk
     
   especialidade:
     id_especialidade
