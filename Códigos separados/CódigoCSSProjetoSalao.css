@@ -3,15 +3,23 @@
     background-color: #e1e2e1;
     width: 100%;
     height: 100%;
+    fit-content
   }
   .menu-principal {
     background-color: #484848;
-    width: 100%;
+    hight: 60 px;
+    color: #fff;
+    padding: 1px;
     margin: 0 auto;
+    margin-left: -10px;
+    margin-right: auto;
+    margin-top: -10px;
+    width: 1920px;
   }
   #cabecalho {
     color: #FFFFFF;
-    padding: 1px;
+    display: inline-block;
+    margin-left: 30px;
   }
   .main {
     background-color: #484848;
