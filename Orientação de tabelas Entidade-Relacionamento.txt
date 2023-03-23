@@ -23,7 +23,7 @@ descrição de atributos:
     id_usuario
     nome
     genero
-    datanascimento
+    data_nascimento
     telefone
     cidade
     bairro
@@ -36,7 +36,7 @@ descrição de atributos:
     nome
     genero
     especialidade
-    datanascimento
+    data_nascimento
     telefone
     cidade
     bairro
@@ -48,14 +48,14 @@ descrição de atributos:
     id_cliente
     Id_profissional
     Id_servico
-    nomecliente
-    nomeprofissional
-    dataatendimento
-    dataagendamento
+    nome_cliente
+    nome_profissional
+    data_atendimento
+    data_agendamento
     hora
     valor
-    metodopagamento
-    localatendimento
+    metodo_pagamento
+    local_atendimento
     status
 
   serviços:
@@ -93,10 +93,37 @@ descrição de atributos:
     descricao
     preco
     categoria
-    subcategoria
+    sub_categoria
     tempo
-    experiencianecessaria
-    imagemilustrativa
+    experiencia_necessaria
+    imagem_ilustrativa
+    
+  comentario:
+   id_comentario
+   id_usuario
+   data
+   comentario
+   
+  avaliacao:
+   id_avaliacao
+   id_usuario
+   data
+   avaliacao
+   
+  local:
+   tipo
+   estado
+   cidade
+   bairro
+   rua
+   numero
+   cep
+   complemento
+   
+  perfil:
+   id_usuario
+   tipo
+   data_criacao
 
 
 cardinalidade:
