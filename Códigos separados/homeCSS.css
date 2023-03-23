@@ -12,7 +12,8 @@
     border-radius: 5px;
     margin: 0 auto;
     width: 40%;
-    margin-top: 200px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     font-family: Arial, Helvetca, sans-serif;
   }
   #login {
@@ -32,14 +33,14 @@
     width: 80%;
     margin-bottom: 20px;
   }
-  h1, label {
+  .main h1, label {
     font-weight: bold;
   }
-  h1 {
+  .main h1 {
     text-align: center;
     font-size: 40px;
   }
-  h2 {
+  .main h2 {
     text-align: center;
     font-size: 30px;
   }
@@ -91,7 +92,7 @@
     font-size: 25px;
     width: 20%;
   }
-  input[type="text"], input[type="email"], select {
+  #nome, input[type="email"], select {
     width: 50%;
     padding: 10px;
     border: 1px solid black;
@@ -116,7 +117,7 @@
   button[type="submit"]:hover {
     background-color: #a9a9a9;
   }
-  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
+  #nome:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
     background-color: #e6e6e6;
   }
   input[type="select"]:focus, select:focus {
