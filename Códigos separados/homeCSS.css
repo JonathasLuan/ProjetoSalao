@@ -5,12 +5,15 @@
     height: 100%;
     margin: 0px 0px;
   }
-  .main {
+  .conteudo {
+    margin: 0px 40px;
+  }
+  .cadastrologin {
     background-color: #484848;
     color: #fff;
     padding: 14px;
     border-radius: 5px;
-    margin: 0 auto;
+    float: right;
     width: 40%;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -33,14 +36,14 @@
     width: 80%;
     margin-bottom: 20px;
   }
-  .main h1, label {
+  .cadastrologin h1, label {
     font-weight: bold;
   }
-  .main h1 {
+  .cadastrologin h1 {
     text-align: center;
     font-size: 40px;
   }
-  .main h2 {
+  .cadastrologin h2 {
     text-align: center;
     font-size: 30px;
   }
