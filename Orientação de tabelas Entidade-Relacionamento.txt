@@ -1,18 +1,21 @@
-entidades:
+Entidades:
 
-  usuarios
+  usuário
   cliente
   profissional
   agendamento
   serviço
   especialidade
-  servicos_prifissionais
-  especialidades_profissionais
+  servico_prifissional
+  especialidade_profissional
+  comentário
+  avaliação
+  local
 
-descrição de atributos:
+Descrição de atributos:
 
-  usuarios -
-    id_usuarios
+  usuario -
+    id_usuario
     nome
     email
     senha
@@ -20,61 +23,57 @@ descrição de atributos:
 
   cliente -
     id_cliente
-    id_usuario
-    nome
+    id_usuario_fk
+    id_local_fk
+    nomecompleto
     genero
     data_nascimento
     telefone
-    cidade
-    bairro
-    rua
-    numero
 
   profissional -
     id_profissional
     id_usuario
-    nome
+    id_local
+    nomecompleto
     genero
     especialidade
     data_nascimento
-    telefone
-    cidade
-    bairro
-    rua
-    numero
 
   agendamento -
     id_agendamento
-    id_cliente
-    Id_profissional
-    Id_servico
+    id_cliente_fk
+    id_profissional_fk
+    id_servico_fk
     nome_cliente
     nome_profissional
     data_atendimento
     data_agendamento
-    hora
+    horario
     valor
     metodo_pagamento
     local_atendimento
     status
 
-  serviços:
-    id_servicos
-    cabelo
-    unhas
-    barba
-    maquiagem
+  serviço:
+    id_servico
+    id_especialidade_fk
+    nome
+    descricao
+    preco
+    categoria
+    subcategoria
+    tempo
+    imagem_ilustrativa
+    experiencia_necessaria
 
   especialidade:
     id_especialidade
-    corte
-    coloracao
-    manicure_e_pedicure
-    barba
-    maquiagem
-    hidratacao
-    reconstrucao
-    consultoria
+    nome
+    descricao
+    preco
+    categoria
+    subcategoria
+    imagem_ilustrativa
 
   servicos_profissionais:
     id_servico_profissional
@@ -82,35 +81,25 @@ descrição de atributos:
     id_servico_fk
     valores
 
-  especialidades_profissionais:
+  especialidade_profissional:
     id_especialidade_profissional
-    id_especialidades_fk
+    id_especialidade_fk
     id_profissional_fk
-    
-  especialidade:
-    id_especialidade
-    nome
-    descricao
-    preco
-    categoria
-    sub_categoria
-    tempo
-    experiencia_necessaria
-    imagem_ilustrativa
     
   comentario:
    id_comentario
-   id_usuario
+   id_usuario_fk
    data
    comentario
    
   avaliacao:
    id_avaliacao
-   id_usuario
+   id_usuario_fk
    data
    avaliacao
    
   local:
+   id_local
    tipo
    estado
    cidade
@@ -121,20 +110,48 @@ descrição de atributos:
    complemento
    
   perfil:
-   id_usuario
+   id_perfil
+   id_usuario_fk
    tipo
    data_criacao
 
+  transacao:
+    id_transacao
+    tipo
+    data
+    valor
+    status
 
-cardinalidade:
+  fatura:
+    id_fatura
+    id_transacao_fk
+    id_cliente_fk
+    id_profissional
+    valor
+    data_criacao
 
-um cliente faz zero ou muitos pedidos
-um pedido pertence a apenas um cliente
+Cardinalidade:
 
-um pedido pode ter um ou muitos serviços
-um serviço pertence a zero ou muitos
+1. Cliente e Agendamento: relação de 1:N (um cliente pode ter vários agendamentos, mas um agendamento pertence a apenas um cliente).
 
-um profissional pode ter uma ou muitas especialidades
-uma especialidade pode ser de zero ou muitos profissionais
+2. Profissional e Agendamento: relação de 1:N (um profissional pode ter vários agendamentos, mas um agendamento pertence a apenas um profissional).
 
-um profissional tem uma ou muitas especialidades, uma especialidade tem um ou muitos profissionais, um serviço tem uma ou mais especialidades, uma especialidade tem um serviço, um cliente contrata um ou muitos profissionais, um profissional atende um ou muitos clientes.
+3. Usuário e Cliente: relação de 1:1 (um usuário pode ser associado a apenas um cliente, e um cliente está associado a apenas um usuário).
+
+4. Usuário e Profissional: relação de 1:1 (um usuário pode ser associado a apenas um profissional, e um profissional está associado a apenas um usuário).
+
+5. Serviço e Agendamento: relação de N:M (um agendamento pode estar associado a vários serviços, e um serviço pode estar associado a vários agendamentos).
+
+6. Especialidade e Profissional: relação de N:M (um profissional pode ter várias especialidades, e uma especialidade pode estar associada a vários profissionais).
+
+7. Comentário e Avaliação: relação de 1:N (um comentário pode ter várias avaliações, mas uma avaliação pertence a apenas um comentário).
+
+8. Local e Profissional: relação de 1:N (um local pode ter vários profissionais, mas um profissional está associado a apenas um local).
+
+9. Perfil e Usuário: relação de 1:1 (um perfil pode estar associado a apenas um usuário, e um usuário está associado a apenas um perfil).
+
+10. Especialidade x Profissional: essa tabela é usada para representar a relação de N:M entre especialidade e profissional, e portanto, não precisa de cardinalidades específicas.
+
+11. Serviço x Profissional: essa tabela é usada para representar a relação de N:M entre serviço e profissional, e portanto, não precisa de cardinalidades específicas.
+
+Com essas definições de relacionamento e cardinalidade, você pode criar as chaves estrangeiras nas tabelas correspondentes para estabelecer as relações entre as tabelas. Certifique-se de definir as chaves estrangeiras e índices para garantir a integridade referencial e o desempenho adequado do banco de dados.
