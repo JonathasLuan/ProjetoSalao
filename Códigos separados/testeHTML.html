@@ -38,11 +38,26 @@ header {
     margin-right: 50px;
 }
 .pesquisa input {
+    display: flex;
+    justify-content: center;
     width: 300px;
-    height: 30px;
+    height: 20px;
     border-radius: 25px;
-    background-color: rgb(70, 69, 69);
-    color: white;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 7px 40px 7px 30px;
+}    
+.btn-buscar {
+    width: 20px!important;
+    height: 22px;
+    background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
+    cursor: pointer!important;
+    border: none;
+    transform: translateY(-50%);
+    padding: 0;
+    position: relative;
+    top: -18px;
+    left: 325px;
 }
 .menu {
     margin-left: 100px;
@@ -123,6 +138,7 @@ header {
         </div>
         <div class="pesquisa">
             <input type="text" placeholder="buscar...">
+          <div><button class="btn-buscar" type="submit"></button></div>
         </div>
         <div class="menu">
             <ul>
