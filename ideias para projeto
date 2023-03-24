@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviços</title>
+    <style>
+      body {
+        background-color: black;
+            width: 100%;
+            height: 100%;
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+}
+header {
+   width: 100%;
+   background-color: black;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.logo h1 {
+    margin-left: 20px;
+    color: white;
+}
+.pesquisa {
+    width: 90px;
+    margin-right: 50px;
+}
+.pesquisa input {
+    width: 300px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: gray;
+    color: white;
+}
+.menu {
+    margin-left: 100px;
+}
+.menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.menu li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.menu li a:hover {
+    background-color: rgb(70, 69, 69);
+}
 
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #ddd;
+        padding: 10px;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+      }
+
+      article {
+        width: 30%;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #ccc;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      article img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      article h2 {
+        margin: 10px;
+      }
+
+      article p {
+        margin: 5px;
+      }
+
+      footer {
+        background-color: white;
+        color: black;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="header1">
+            <div class="logo">
+                <div><img src="./logoideia.png"></div>
+                <div><h1>NaRégua</h1></div>
+            </div>
+        </div>
+        <div class="pesquisa">
+            <input type="text" placeholder="buscar...">
+        </div>
+        <div class="menu">
+            <ul>
+              <li>
+                <a href="home.html">home</a>
+              </li>
+              <li>
+                <a href="serviços.html">serviços</a>
+              </li>
+              <li>
+                <a href="sobre.html">sobre</a>
+              </li>
+              <li>
+                <a href="perfil.html">perfil</a>
+              </li>
+              <li>
+                <a href="contact.html">contato</a>
+              </li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+      <a href="#">Destaques</a>
+      <a href="#">Favoritos</a>
+      <a href="#">Agendados</a>
+    </nav>
+    <main>
+      <article>
+        <img src="https://via.placeholder.com/500x200.png?text=Imagem+1" alt="Imagem 1" />
+        <h2>Cabelo</h2>
+        <p>teste cabelo</p>
+      </article>
+      <article>
+        <img src="https://via.placeholder.com/500x200.png?text=Imagem+2" alt="Imagem 2" />
+        <h2>Barba</h2>
+        <p>teste barba</p>
+      </article>
+      <article>
+        <img src="https://via.placeholder.com/500x200.png?text=Imagem+3" alt="Imagem 3" />
+        <h2></h2>
+        <p>teste sombrancelha</p>
+      </article>
+	<article>
+	<img src="https://via.placeholder.com/500x200.png?text=Imagem+4" alt="Imagem 4" />
+        <h2>imagem 4</h2>
+        <p>rua fulano de tal n°4 tell 9999-9999</p>
+	</article>
+	<article>
+	<img src="https://via.placeholder.com/500x200.png?text=Imagem+5" alt="Imagem 5" />
+        <h2>imagem 5</h2>
+        <p>rua fulano de tal n°5 tell 9999-9999</p>
+	</article>
+	<article>
+	<img src="https://via.placeholder.com/500x200.png?text=Imagem+6" alt="Imagem 6" />
+        <h2>imagem 6</h2>
+        <p>rua fulano de tal n°56 tell 9999-9999</p>
+	</article>
+    </main>
+    <footer>
+      <p>&copy; 2023 Na Régua</p>
+    </footer>
+  </body>
+</html>
