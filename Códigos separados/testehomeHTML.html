@@ -41,19 +41,16 @@
     </header>
   <div class="conteudo">
   <div id="banner">
-  <div>
-    <h1>Serviços de Beleza</h1>
-  </div>
   <div class="slider">
     <div class="slider-wrapper">
       <div class="slider-item">
-        <img src="cabelo.jpg" alt="Imagem 1">
+        <img src="cabelobarba.jpg" alt="Imagem 1">
       </div>
       <div class="slider-item">
-        <img src="barbearia.png" alt="Imagem 2">
+        <img src="maquiagem.jpg" alt="Imagem 2">
       </div>
       <div class="slider-item">
-        <img src="maquiagem.jpg" alt="Imagem 3">
+        <img src="perfil.png" alt="Imagem 3">
       </div>
     </div>
     <div class="slider-controls">
@@ -63,7 +60,8 @@
   </div>
   </div>
   <div class="cadastrologin">
-    <h1>Cadastre-se</h1>
+    <h1>Serviços de Beleza</h1>
+    <h2>Cadastre-se</h2>
 
     <div class="button-container" style="text-align: center; justify-content: center;">
       <button id="botao-formulario-1">Cliente</button>
@@ -96,6 +94,44 @@
           </div>
           <br>
           <div>
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero">
+              <option value="" selected disabled>Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}" required><br>
+            <small>Digite somente números (10 ou 11 dígitos).</small>
+          </div>
+          <br>
+          <div>
+            <label for="serviço">Serviço:</label>
+            <select id="serviço" name="serviço">
+              <option value="" selected disabled>Selecione</option>
+              <option value="corte">Corte</option>
+              <option value="coloração">Coloração</option>
+              <option value="barba">Barba</option>
+              <option value="escova">Escova</option>
+              <option value="hidratacao">Hidratação</option>
+              <option value="unhas">Unhas</option>
+            </select><br>
+          </div>
+
+          <div>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data"><br>
+          </div>
+          <br>
+          <div>
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora"><br>
+          </div>
+
+          <div>
             <button type="submit">Continuar</button>
           </div>
       </form>
@@ -117,6 +153,32 @@
             <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
           </div>
           <br>
+          <div>
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero">
+              <option value="" selected disabled>Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}" required><br>
+            <small>Digite somente números (10 ou 11 dígitos).</small>
+          </div>
+          <br>
+          <div>
+            <label for="especialidade">Especialidade:</label>
+            <select id="especialidade" name="especialidade">
+              <option value="" selected disabled>Selecione</option>
+              <option value="cabelo">Cabelo</option>
+              <option value="maquiagem">Maquiagem</option>
+              <option value="barba">Barba</option>
+              <option value="unhas">Unhas</option>
+            </select><br>
+          </div>
+
           <div>
             <button type="submit">Continuar</button>
           </div>

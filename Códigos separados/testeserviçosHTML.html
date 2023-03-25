@@ -7,11 +7,11 @@
     <style>
       body {
         background-color: #f2f2f2;
-            width: 100%;
-            height: 100%;
-            padding: 0%;
-            margin: 0%;
-            box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
 }
 header {
    width: 100%;
@@ -46,17 +46,18 @@ header {
     background-color: #f2f2f2;
     color: black;
     padding: 7px 40px 7px 30px;
+    margin-bottom: -23px;
 }    
 .btn-buscar {
+    display: block;
     width: 20px!important;
     height: 22px;
-    background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
+    background: none;
     cursor: pointer!important;
     border: none;
-    transform: translateY(-50%);
+    transform: translateY(-28%);
     padding: 0;
     position: relative;
-    top: -18px;
     left: 325px;
 }
 .menu {
@@ -119,7 +120,46 @@ header {
       article p {
         margin: 5px;
       }
-
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+.slider-item {
+  flex-basis: 33.333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.prev-slide, .next-slide {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
       footer {
         background-color: #333;
         color: #fff;
@@ -137,8 +177,10 @@ header {
             </div>
         </div>
         <div class="pesquisa">
-            <input type="text" placeholder="buscar...">
-          <div><button class="btn-buscar" type="submit"></button></div>
+            <input type="text" placeholder="Buscar...">
+          <div>
+            <button class="btn-buscar" type="submit"><img src="./lupa.png"></button>
+          </div>
         </div>
         <div class="menu">
             <ul>
@@ -182,6 +224,23 @@ header {
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </article>
     </main>
+<div class="slider">
+  <div class="slider-wrapper">
+    <div class="slider-item">
+      <img src="logoideia.png" alt="Imagem 1">
+    </div>
+    <div class="slider-item">
+      <img src="Cabelereiro-e-Barbearia.png" alt="Imagem 2">
+    </div>
+    <div class="slider-item">
+      <img src="lupa.png" alt="Imagem 3">
+    </div>
+  </div>
+  <div class="slider-controls">
+    <button class="prev-slide">Anterior</button>
+    <button class="next-slide">Próximo</button>
+  </div>
+</div>
     <footer>
       <p>&copy; 2023 Na Régua</p>
     </footer>

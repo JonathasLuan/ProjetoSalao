@@ -1,3 +1,36 @@
+
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const prevSlide = document.querySelector('.prev-slide');
+    const nextSlide = document.querySelector('.next-slide');
+
+    let currentSlide = 0;
+
+    function goToSlide(n) {
+      sliderWrapper.style.transform = `translateX(-${n * 33.333}%`;
+      currentSlide = n;
+    }
+
+    function prev() {
+      if (currentSlide === 0) {
+        goToSlide(sliderItems.length - 1);
+      } else {
+        goToSlide(currentSlide - 1);
+      }
+    }
+
+    function next() {
+      if (currentSlide === sliderItems.length - 1) {
+        goToSlide(0);
+      } else {
+        goToSlide(currentSlide + 1);
+      }
+    }
+
+    prevSlide.addEventListener('click', prev);
+    nextSlide.addEventListener('click', next);
+
+
   const botaoFormulario1 = document.getElementById("botao-formulario-1");
   const botaoFormulario2 = document.getElementById("botao-formulario-2");
   const formulario1 = document.getElementById("formulario-1");

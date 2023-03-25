@@ -15,6 +15,54 @@
     display: inline-block;
     justify-content: center;
   }
+  #banner h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+    .slider-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 100%;
+      display: flex;
+    }
+    .slider-item {
+      flex-basis: 33.333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slider-item img {
+      width: 800px;
+      height: 500px;
+      object-fit: cover;
+    }
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+    .prev-slide, .next-slide {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 13px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .prev-slide:hover, .next-slide:hover {
+      background-color: #a9a9a9;
+  }
   .cadastrologin {
     background-color: black;
     color: #fff;
@@ -85,26 +133,8 @@
     background-color: #f2f2f2;
     font-size: 16px;
   }
-  input[type="tel"] {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
-    font-size: 16px;
-  }
   #nome, input[type="email"] {
     width: 95%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    background-color: #f2f2f2;
-    font-size: 16px;
-  }
-  select {
-    width: 30%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
@@ -132,9 +162,8 @@
   button[type="submit"]:hover {
     background-color: #a9a9a9;
   }
-  #nome:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
+  #nome:focus, input[type="email"]:focus {
     background-color: #e6e6e6;
   }
-  input[type="select"]:focus, select:focus {
-    background-color: #e6e6e6;
-  }
+  #botao-formulario-1:focus, #botao-formulario-2:focus {
+    background-color: #b3ffd4;
