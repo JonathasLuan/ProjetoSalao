@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-55wVpxWzFkZBl+dTlqw3WLsYG9Yihpuk6UHLc6Ux4F4fV8iMkQcaZV7+ZB6UvY7WbQ2oByjKx5nrJH+FVzWcZg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
       body {
         background-color: #f2f2f2;
@@ -91,6 +92,30 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+#foto {
+  position: relative;
+}
+
+.editar-foto {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.editar-foto i {
+  font-size: 20px;
+  color: #333;
+}
     </style>
 </head>
 <body>      
@@ -135,7 +160,9 @@
       <div id="info">
         <div id="foto">
           <img src="img/profile.webp" alt="profile">
-          <button id="editar-foto">Editar</button>
+          <div class="editar-foto">
+            <i class="fas fa-pen"></i>
+          </div>
         </div>
         <div id="modal-foto" class="modal">
           <div class="modal-content">
