@@ -46,93 +46,118 @@
     </div>
   </header>
   <div class="conteudo">
-    <div id="banner">
-      <div>
-        <h1>Serviços de Beleza</h1>
-      </div>
-      <div class="slider">
-        <div class="slider-wrapper">
-          <div class="slider-item">
-            <img src="img/cabelo.jpg" alt="Imagem 1">
+    <section id="section-one">
+      <div id="banner">
+        <div>
+          <h1>Serviços de Beleza</h1>
+        </div>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <div class="slider-item">
+              <img src="img/cabelo.jpg" alt="Imagem 1">
+            </div>
+            <div class="slider-item">
+              <img src="img/barbearia.png" alt="Imagem 2">
+            </div>
+            <div class="slider-item">
+              <img src="img/maquiagem.jpg" alt="Imagem 3">
+            </div>
           </div>
-          <div class="slider-item">
-            <img src="img/barbearia.png" alt="Imagem 2">
-          </div>
-          <div class="slider-item">
-            <img src="img/maquiagem.jpg" alt="Imagem 3">
+          <div class="slider-controls">
+            <button class="prev-slide"><</button>
+            <button class="next-slide">></button>
           </div>
         </div>
-        <div class="slider-controls">
-          <button class="prev-slide"><</button>
-          <button class="next-slide">></button>
+      </div>
+      <div class="cadastrologin">
+        <h2>Cadastre-se</h2>
+
+        <div class="button-container" style="text-align: center; justify-content: center;">
+          <button id="botao-formulario-1">Cliente</button>
+          <button id="botao-formulario-2">Profissional</button>
+        </div>
+
+        <div id="login">
+          <h3>Ou entre se já tiver uma conta:</h3>
+          <div class="botao-login">
+            <a href='login.html'><button>LOGIN</button></a>
+          </div>
+        </div>
+
+        <div class="formulario-container">
+          <form id="formulario-1" style="display: none;">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required><br>
+            </div>
+
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" placeholder="@" required><br>
+            </div>
+
+            <div>
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+                title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+              <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+            </div>
+            <br>
+            <div>
+              <button type="submit">Continuar</button>
+            </div>
+          </form>
+
+          <form id="formulario-2" style="display: none;">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required><br>
+            </div>
+
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" placeholder="@" required><br>
+            </div>
+
+            <div>
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+                title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+              <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+            </div>
+            <br>
+            <div>
+              <button type="submit">Continuar</button>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-    <div class="cadastrologin">
-      <h1>Cadastre-se</h1>
-
-      <div class="button-container" style="text-align: center; justify-content: center;">
-        <button id="botao-formulario-1">Cliente</button>
-        <button id="botao-formulario-2">Profissional</button>
-      </div>
-
-      <div id="login">
-        <h2>Ou entre se já tiver uma conta:</h2>
-        <div class="botao-login">
-          <a href='login.html'><button>LOGIN</button></a>
+    </section>
+    <section id="section-two">
+      <div id="apresentacao">
+        <div>
+          <h2>Explore</h2>
+          <p>Veja tudo o que pode fazer em sua página de serviços de beleza.</p>
+        </div>
+        <br>
+        <div>
+          <h3>Busque o que precisa</h3>
+          <p>Aqui você buscar e encontrar os mais variados serviços para atender às suas necessidades estéticas, com
+            profissionais qualificados de especialidades variadas, a qualquer momento e por um preço negociável.</p>
+        </div>
+        <br>
+        <div>
+          <h3>Ofereça seus serviços</h3>
+          <p>Use suas habilidades e conhecimentos para prestar serviços dos mais variados tipos para o publico, crie seu portifólio e deixe que seus clientes possam ver seu potencial. Você pode conseguir cada vez mais clientes gerar renda online com seu salão.</p>
         </div>
       </div>
 
-      <div class="formulario-container">
-        <form id="formulario-1" style="display: none;">
-          <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
-          </div>
-
-          <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
-          </div>
-
-          <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
-              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
-            <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
-          </div>
-          <br>
-          <div>
-            <button type="submit">Continuar</button>
-          </div>
-        </form>
-
-        <form id="formulario-2" style="display: none;">
-          <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
-          </div>
-
-          <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
-          </div>
-
-          <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
-              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
-            <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
-          </div>
-          <br>
-          <div>
-            <button type="submit">Continuar</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    </section>
   </div>
   <script src="homeJS.js"></script>
+  <footer>
+    <p>&copy; 2023 Na Régua</p>
+  </footer>
 </body>
 
 </html>
