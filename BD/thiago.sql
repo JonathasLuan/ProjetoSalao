@@ -31,7 +31,7 @@ create table "cliente"(
     telefone varchar (200)
     primary key (id_cliente));
 
-create table ""
+
     
     
 
