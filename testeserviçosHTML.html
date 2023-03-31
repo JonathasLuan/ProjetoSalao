@@ -1,248 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serviços</title>
-    <style>
-      body {
-        background-color: #f2f2f2;
-        width: 100%;
-        height: 100%;
-        padding: 0%;
-        margin: 0%;
-        box-sizing: border-box;
-}
-header {
-   width: 100%;
-   background-color: black;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-}
-.logo {
-    display: flex;
-    align-items: center;
-}
-.logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-.logo h1 {
-    margin-left: 20px;
-    color: white;
-}
-.pesquisa {
-    width: 90px;
-    margin-right: 50px;
-}
-.pesquisa input {
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    height: 20px;
-    border-radius: 25px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 7px 40px 7px 30px;
-    margin-bottom: -23px;
-}    
-.btn-buscar {
-    display: block;
-    width: 20px!important;
-    height: 22px;
-    background: none;
-    cursor: pointer!important;
-    border: none;
-    transform: translateY(-28%);
-    padding: 0;
-    position: relative;
-    left: 325px;
-}
-.menu {
-    margin-left: 100px;
-}
-.menu li {
-    display: inline-block;
-    margin: 0 10px;
-}
-.menu li a {
-    font-size: 24px;
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-.menu li a:hover {
-    background-color: rgb(70, 69, 69);
-}
 
-      nav {
-        display: flex;
-        justify-content: space-around;
-        background-color: #ddd;
-        padding: 10px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      width: 100%;
+      height: 100%;
+      padding: 0%;
+      margin: 0%;
+      box-sizing: border-box;
+    }
 
-      nav a {
-        color: #333;
-        text-decoration: none;
-        font-weight: bold;
-      }
+    header {
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
 
-      main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 10px;
-      }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-      article {
-        width: 30%;
-        margin-bottom: 20px;
-        background-color: #fff;
-        box-shadow: 0px 0px 5px #ccc;
-        text-align: center;
-        overflow: hidden;
-      }
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
 
-      article img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+    .logo h1 {
+      margin-left: 20px;
+      color: white;
+    }
 
-      article h2 {
-        margin: 10px;
-      }
+    .pesquisa {
+      width: 90px;
+      margin-right: 50px;
+    }
 
-      article p {
-        margin: 5px;
-      }
-.slider {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-.slider-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 100%;
-  display: flex;
-}
-.slider-item {
-  flex-basis: 33.333%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slider-item img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-.slider-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-.prev-slide, .next-slide {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-        <div class="header1">
-            <div class="logo">
-                <div><img src="./logoideia.png"></div>
-                <div><h1>NaRégua</h1></div>
-            </div>
+    .pesquisa input {
+      display: flex;
+      justify-content: center;
+      width: 300px;
+      height: 20px;
+      border-radius: 25px;
+      background-color: #f2f2f2;
+      color: black;
+      padding: 7px 40px 7px 30px;
+      margin-bottom: -23px;
+    }
+
+    .btn-buscar {
+      display: block;
+      width: 20px !important;
+      height: 22px;
+      background: none;
+      cursor: pointer !important;
+      border: none;
+      transform: translateY(-28%);
+      padding: 0;
+      position: relative;
+      left: 325px;
+    }
+
+    .menu {
+      margin-left: 100px;
+    }
+
+    .menu li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .menu li a {
+      font-size: 24px;
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .menu li a:hover {
+      background-color: rgb(70, 69, 69);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #ddd;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    article {
+      width: 30%;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 5px #ccc;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    article img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    article h2 {
+      margin: 10px;
+    }
+
+    article p {
+      margin: 5px;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 100%;
+      display: flex;
+    }
+
+    .slider-item {
+      flex-basis: 33.333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slider-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .prev-slide,
+    .next-slide {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header1">
+      <div class="logo">
+        <div><img src="./logoideia.png"></div>
+        <div>
+          <h1>NaRégua</h1>
         </div>
-        <div class="pesquisa">
-            <input type="text" placeholder="Buscar...">
-          <div>
-            <button class="btn-buscar" type="submit"><img src="./lupa.png"></button>
-          </div>
-        </div>
-        <div class="menu">
-            <ul>
-              <li>
-                <a href="home.html">home</a>
-              </li>
-              <li>
-                <a href="serviços.html">serviços</a>
-              </li>
-              <li>
-                <a href="sobre.html">sobre</a>
-              </li>
-              <li>
-                <a href="perfil.html">perfil</a>
-              </li>
-              <li>
-                <a href="contact.html">contato</a>
-              </li>
-            </ul>
-        </div>
-    </header>
-    <nav>
-      <a href="#">Destaques</a>
-      <a href="#">Favoritos</a>
-      <a href="#">Agendados</a>
-    </nav>
-    <main>
-      <article>
-        <img src="https://via.placeholder.com/500x200.png?text=Image+1" alt="Image 1" />
-        <h2>Article 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/500x200.png?text=Image+2" alt="Image 2" />
-        <h2>Article 2</h2>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/500x200.png?text=Image+3" alt="Image 3" />
-        <h2>Article 3</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </article>
-    </main>
-<div class="slider">
-  <div class="slider-wrapper">
-    <div class="slider-item">
-      <img src="logoideia.png" alt="Imagem 1">
+      </div>
     </div>
-    <div class="slider-item">
-      <img src="Cabelereiro-e-Barbearia.png" alt="Imagem 2">
+    <div class="pesquisa">
+      <input type="text" placeholder="Buscar...">
+      <div>
+        <button class="btn-buscar" type="submit"><img src="./lupa.png"></button>
+      </div>
     </div>
-    <div class="slider-item">
-      <img src="lupa.png" alt="Imagem 3">
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="home.html">home</a>
+        </li>
+        <li>
+          <a href="serviços.html">serviços</a>
+        </li>
+        <li>
+          <a href="sobre.html">sobre</a>
+        </li>
+        <li>
+          <a href="perfil.html">perfil</a>
+        </li>
+        <li>
+          <a href="contact.html">contato</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <nav>
+    <a href="#">Destaques</a>
+    <a href="#">Favoritos</a>
+    <a href="#">Agendados</a>
+  </nav>
+  <main>
+    <article>
+      <img src="https://via.placeholder.com/500x200.png?text=Image+1" alt="Image 1" />
+      <h2>Article 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+    <article>
+      <img src="https://via.placeholder.com/500x200.png?text=Image+2" alt="Image 2" />
+      <h2>Article 2</h2>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </article>
+    <article>
+      <img src="https://via.placeholder.com/500x200.png?text=Image+3" alt="Image 3" />
+      <h2>Article 3</h2>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </article>
+  </main>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <div class="slider-item">
+        <img src="logoideia.png" alt="Imagem 1">
+      </div>
+      <div class="slider-item">
+        <img src="Cabelereiro-e-Barbearia.png" alt="Imagem 2">
+      </div>
+      <div class="slider-item">
+        <img src="lupa.png" alt="Imagem 3">
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="prev-slide">Anterior</button>
+      <button class="next-slide">Próximo</button>
     </div>
   </div>
-  <div class="slider-controls">
-    <button class="prev-slide">Anterior</button>
-    <button class="next-slide">Próximo</button>
-  </div>
-</div>
-    <footer>
-      <p>&copy; 2023 Na Régua</p>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; 2023 Na Régua</p>
+  </footer>
+</body>
+
 </html>

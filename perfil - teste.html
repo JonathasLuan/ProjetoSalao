@@ -13,9 +13,20 @@
       background-color: #f2f2f2;
     }
 
+    header {
+      height: 70px;
+    }
+
     img {
       width: 150px;
       height: 150px;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     main {
@@ -47,11 +58,6 @@
       margin-top: 50px;
       font-family: Arial, Helvetca, sans serif;
       line-height: 30px;
-    }
-
-    img {
-      width: 150px;
-      height: 150px;
     }
 
     button {
@@ -116,13 +122,12 @@
       position: relative;
     }
 
-    #editar-foto {
+    .editar-foto {
       position: absolute;
       bottom: 15px;
       right: 7px;
       background-color: #fff;
       border-radius: 50%;
-      border: 0;
       width: 40px;
       height: 40px;
       display: flex;
@@ -132,7 +137,7 @@
       cursor: pointer;
     }
 
-    #editar-foto i {
+    .editar-foto i {
       font-size: 20px;
       position: relative;
       color: #333;
@@ -187,19 +192,24 @@
         <div id="info">
           <div id="foto">
             <img src="img/profile.webp" alt="profile">
-            <button id="editar-foto"><i class="fa fa-pencil"></i></button>
+            <div class="editar-foto">
+              <i class="fa fa-pencil"></i>
+            </div>
           </div>
           <div id="modal-foto" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
               <!-- aqui vai o conteúdo da janela modal -->
-              <p>Nesta janela modal o usuário poderá editar sua foto de perfil, fazendo upload e redimencionando-a como
-                quiser.</p>
             </div>
           </div>
           <div id="botoes">
             <button>seguir</button>
             <button>mensagem</button>
+
+            <div><i class="fa fa-user">User</i></div>
+            <div><i class="fa fa-search">Busca</i></div>
+            <div><i class="fa fa-cloud">Nuvem</i></div>
+            <div><i class="fa fa-trash">Lixo</i></div>
           </div>
           <div id="tipo-user">
             <h3>cliente</h3>
@@ -224,6 +234,7 @@
     <section>
     </section>
     </div>
+
     <script>
       // Obtém a janela modal e o botão "Editar"
       var modal = document.getElementById("modal-foto");

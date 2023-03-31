@@ -1,13 +1,14 @@
-  }
   body {
     background-color: #e1e2e1;
     width: 100%;
     height: 100%;
     margin: 0px 0px;
   }
+
   .conteudo {
     margin: 0px 40px;
   }
+
   #banner {
     width: 50%;
     height: 100%;
@@ -15,54 +16,65 @@
     display: inline-block;
     justify-content: center;
   }
+
   #banner h1 {
     text-align: center;
     font-size: 40px;
   }
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-    }
-    .slider-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 300%;
-      height: 100%;
-      display: flex;
-    }
-    .slider-item {
-      flex-basis: 33.333%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .slider-item img {
-      width: 800px;
-      height: 500px;
-      object-fit: cover;
-    }
-    .slider-controls {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-    }
-    .prev-slide, .next-slide {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px 13px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-    .prev-slide:hover, .next-slide:hover {
-      background-color: #a9a9a9;
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
   }
+
+  .slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    display: flex;
+  }
+
+  .slider-item {
+    flex-basis: 33.333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider-item img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .prev-slide,
+  .next-slide {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 13px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .prev-slide:hover,
+  .next-slide:hover {
+    background-color: #a9a9a9;
+  }
+
   .cadastrologin {
     background-color: black;
     color: #fff;
@@ -73,17 +85,22 @@
     margin: 50px;
     font-family: Arial, Helvetca, sans-serif;
   }
-  .cadastrologin h1, label {
+
+  .cadastrologin h1,
+  label {
     font-weight: bold;
   }
+
   .cadastrologin h1 {
     text-align: center;
     font-size: 40px;
   }
+
   .cadastrologin h2 {
     text-align: center;
     font-size: 30px;
   }
+
   #login {
     padding: 14px;
     margin: 0 auto;
@@ -92,12 +109,14 @@
     justify-content: center;
     font-size: 40px;
   }
+
   .formulario-container {
     text-align: left;
     justify-content: center;
     display: flex;
     flex-direction: column;
   }
+
   form {
     background-color: #FFFFFF;
     color: #000000;
@@ -107,12 +126,15 @@
     width: 80%;
     margin-bottom: 20px;
   }
+
   .button-container button {
     display: inline-block;
     padding: 5px;
     margin: 0 5px;
   }
-  #botao-formulario-1, #botao-formulario-2 {
+
+  #botao-formulario-1,
+  #botao-formulario-2 {
     display: inline-block;
     margin: 0 auto;
     font-size: 25px;
@@ -120,10 +142,12 @@
     width: 200px;
     vertical-align: middle;
   }
+
   label {
     display: block;
     margin-bottom: 10px;
   }
+
   input[type="password"] {
     width: 95%;
     padding: 10px;
@@ -133,7 +157,9 @@
     background-color: #f2f2f2;
     font-size: 16px;
   }
-  #nome, input[type="email"] {
+
+  #nome,
+  input[type="email"] {
     width: 95%;
     padding: 10px;
     border: 1px solid black;
@@ -142,6 +168,7 @@
     background-color: #f2f2f2;
     font-size: 16px;
   }
+
   .botao-login button {
     display: inline-block;
     padding: 5px;
@@ -149,6 +176,7 @@
     font-size: 25px;
     width: 25%;
   }
+
   button[type="submit"] {
     background-color: #484848;
     color: #fff;
@@ -159,11 +187,17 @@
     cursor: pointer;
     margin-top: 30px;
   }
+
   button[type="submit"]:hover {
     background-color: #a9a9a9;
   }
-  #nome:focus, input[type="email"]:focus {
+
+  #nome:focus,
+  input[type="email"]:focus {
     background-color: #e6e6e6;
   }
-  #botao-formulario-1:focus, #botao-formulario-2:focus {
+
+  #botao-formulario-1:focus,
+  #botao-formulario-2:focus {
     background-color: #b3ffd4;
+  }

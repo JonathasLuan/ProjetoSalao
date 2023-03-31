@@ -1,82 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Na Rágua</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./homeCSS.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Na Rágua</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./homeCSS.css">
 </head>
-<body>      
-    <header>
-        <div class="header1">
-            <div class="logo">
-                <div><img src="./logoideia.png"></div>
-                <div><h1>NaRégua</h1></div>
-            </div>
+
+<body>
+  <header>
+    <div class="header1">
+      <div class="logo">
+        <div><img src="./logoideia.png"></div>
+        <div>
+          <h1>NaRégua</h1>
         </div>
-        <div class="pesquisa">
-            <input type="text" placeholder="buscar...">
-        </div>
-        <div class="menu">
-            <ul>
-              <li>
-                <a href="home.html">home</a>
-              </li>
-              <li>
-                <a href="serviços.html">serviços</a>
-              </li>
-              <li>
-                <a href="sobre.html">sobre</a>
-              </li>
-              <li>
-                <a href="perfil.html">perfil</a>
-              </li>
-              <li>
-                <a href="contato.html">contato</a>
-              </li>
-            </ul>
-        </div>
-    </header>
+      </div>
+    </div>
+    <div class="pesquisa">
+      <input type="text" placeholder="buscar...">
+    </div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="home.html">home</a>
+        </li>
+        <li>
+          <a href="serviços.html">serviços</a>
+        </li>
+        <li>
+          <a href="sobre.html">sobre</a>
+        </li>
+        <li>
+          <a href="perfil.html">perfil</a>
+        </li>
+        <li>
+          <a href="contato.html">contato</a>
+        </li>
+      </ul>
+    </div>
+  </header>
   <div class="conteudo">
-  <div id="banner">
-  <div class="slider">
-    <div class="slider-wrapper">
-      <div class="slider-item">
-        <img src="cabelobarba.jpg" alt="Imagem 1">
-      </div>
-      <div class="slider-item">
-        <img src="maquiagem.jpg" alt="Imagem 2">
-      </div>
-      <div class="slider-item">
-        <img src="perfil.png" alt="Imagem 3">
+    <div id="banner">
+      <div class="slider">
+        <div class="slider-wrapper">
+          <div class="slider-item">
+            <img src="cabelobarba.jpg" alt="Imagem 1">
+          </div>
+          <div class="slider-item">
+            <img src="maquiagem.jpg" alt="Imagem 2">
+          </div>
+          <div class="slider-item">
+            <img src="perfil.png" alt="Imagem 3">
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="prev-slide">
+            << /button>
+              <button class="next-slide">></button>
+        </div>
       </div>
     </div>
-    <div class="slider-controls">
-      <button class="prev-slide"><</button>
-      <button class="next-slide">></button>
-    </div>
-  </div>
-  </div>
-  <div class="cadastrologin">
-    <h1>Serviços de Beleza</h1>
-    <h2>Cadastre-se</h2>
+    <div class="cadastrologin">
+      <h1>Serviços de Beleza</h1>
+      <h2>Cadastre-se</h2>
 
-    <div class="button-container" style="text-align: center; justify-content: center;">
-      <button id="botao-formulario-1">Cliente</button>
-      <button id="botao-formulario-2">Profissional</button>
-    </div>
-
-    <div id="login">
-      <h2>Ou entre se já tiver uma conta:</h2>
-      <div class="botao-login">
-        <a href='login.html'><button>LOGIN</button></a>
+      <div class="button-container" style="text-align: center; justify-content: center;">
+        <button id="botao-formulario-1">Cliente</button>
+        <button id="botao-formulario-2">Profissional</button>
       </div>
-    </div>
 
-    <div class="formulario-container">
-      <form id="formulario-1" style="display: none;">
+      <div id="login">
+        <h2>Ou entre se já tiver uma conta:</h2>
+        <div class="botao-login">
+          <a href='login.html'><button>LOGIN</button></a>
+        </div>
+      </div>
+
+      <div class="formulario-container">
+        <form id="formulario-1" style="display: none;">
           <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br>
@@ -89,7 +94,8 @@
 
           <div>
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
             <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
           </div>
           <br>
@@ -134,9 +140,9 @@
           <div>
             <button type="submit">Continuar</button>
           </div>
-      </form>
+        </form>
 
-      <form id="formulario-2" style="display: none;">
+        <form id="formulario-2" style="display: none;">
           <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br>
@@ -149,7 +155,8 @@
 
           <div>
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
             <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
           </div>
           <br>
@@ -182,10 +189,11 @@
           <div>
             <button type="submit">Continuar</button>
           </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
   </div>
   <script src="homeJS.js"></script>
 </body>
+
 </html>
