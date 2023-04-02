@@ -70,13 +70,18 @@
         display: flex;
         justify-content: space-around;
         background-color: #ddd;
-        padding: 10px;
       }
 
       nav a {
         color: #333;
         text-decoration: none;
         font-weight: bold;
+        padding: 10px 80px;
+      }
+
+      nav a:hover {
+        background-color: rgb(153, 150, 150);
+        color: #fafafa;
       }
 
       main {
