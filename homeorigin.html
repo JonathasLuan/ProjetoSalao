@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Na Rágua</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="./homeCSS.css">
+  <link rel="stylesheet" href="./homeoriginCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -69,26 +69,67 @@
           </div>
         </div>
       </div>
-      <div class="campologin">
-        <h2>LOGIN</h2>
+      <div class="cadastrologin">
+        <h2>Cadastre-se</h2>
+
+        <div class="button-container" style="text-align: center; justify-content: center;">
+          <button id="botao-formulario-1">Cliente</button>
+          <button id="botao-formulario-2">Profissional</button>
+        </div>
+
+        <div id="login">
+          <h3>Ou entre se já tiver uma conta:</h3>
+          <div class="botao-login">
+            <a href='login.html'><button>LOGIN</button></a>
+          </div>
+        </div>
+
         <div class="formulario-container">
-          <h3>Entre com sua conta!</h3>
-          <form>
+          <form id="formulario-1" style="display: none;">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required><br>
+            </div>
+
             <div>
               <label for="email">E-mail:</label>
               <input type="email" id="email" name="email" placeholder="@" required><br>
             </div>
-      
+
             <div>
               <label for="senha">Senha:</label>
-              <input type="password" id="senha" name="senha" required>
-              <div>
-                <button type="submit">Entrar</button>
-              </div>
+              <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+                title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+              <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+            </div>
+            <br>
+            <div>
+              <button type="submit">Continuar</button>
+            </div>
           </form>
-        </div>
-        <div id="cadastro">
-          <h3>Ainda não tem uma conta? <a href='cadastro.html'>Cadastre-se</a></h3>
+
+          <form id="formulario-2" style="display: none;">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required><br>
+            </div>
+
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" placeholder="@" required><br>
+            </div>
+
+            <div>
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+                title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+              <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+            </div>
+            <br>
+            <div>
+              <button type="submit">Continuar</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

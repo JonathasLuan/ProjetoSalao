@@ -93,40 +93,41 @@
     background-color: #a9a9a9;
   }
 
-  .campologin {
+  .cadastrologin {
     background-color: #536a79;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px #000;
     float: right;
-    width: 25%;
+    width: 30%;
+    height: 150%;
     margin: 40px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-right: 60px;
     font-family: Arial, Helvetca, sans-serif;
   }
 
-  .campologin h2,
+  .cadastrologin h2,
   label {
     font-weight: bold;
   }
 
-  .campologin h2 {
+  .cadastrologin h2 {
     text-align: center;
     font-size: 24px;
-    margin: 35px;
+    margin: 40px;
   }
 
-  .campologin h3 {
+  .cadastrologin h3 {
     text-align: center;
     font-size: 20px;
   }
 
-  #cadastro {
+  #login {
     padding: 14px;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
     justify-content: center;
     font-size: 40px;
@@ -142,18 +143,27 @@
   form {
     background-color: #FFFFFF;
     color: #000000;
-    padding: 40px;
+    padding: 60px;
     border-radius: 5px;
     margin: 0 auto;
-    width: 75%;
-    justify-content: flex-center;
-    margin-bottom: 15px;
+    width: 70%;
+    margin-bottom: 20px;
   }
 
   .button-container button {
     display: inline-block;
     padding: 5px;
     margin: 0 5px;
+  }
+
+  #botao-formulario-1,
+  #botao-formulario-2 {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    vertical-align: middle;
   }
 
   label {
@@ -183,16 +193,15 @@
     font-size: 16px;
   }
 
-  a {
-    color: #FFFFFF;
-  }
-
-  a:hover {
-    color: aqua;
+  .botao-login button {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 20px;
+    width: 25%;
   }
 
   button[type="submit"] {
-    width: 100%;
     background-color: #484848;
     color: #fff;
     border: none;
@@ -200,7 +209,7 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 35px;
+    margin-top: 30px;
   }
 
   button[type="submit"]:hover {
@@ -210,6 +219,11 @@
   #nome:focus,
   input[type="email"]:focus {
     background-color: #e6e6e6;
+  }
+
+  #botao-formulario-1:focus,
+  #botao-formulario-2:focus {
+    background-color: #a9a9a9;
   }
 
   #apresentacao {

@@ -1,0 +1,158 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.conteudo {
+    margin: 0px 0px;
+
+}
+
+.btn-container {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    margin: 70px;
+}
+
+#botao-formulario-1,
+#botao-formulario-2 {
+    background-color: #E4E4E4;
+    background-image: url('img/profile.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #484848;
+    border: none;
+    border-radius: 10%;
+    width: 150px;
+    height: 160px;
+    padding: 20px 10px;
+    padding-bottom: 150px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    font-weight: 700;
+}
+
+img:hover {
+    background-color: #a9a9a9;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.container-central {
+    background-color: #ffffff;
+    color: #000000;
+    padding-top: 14px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 50px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: 4px #000000;
+    border-radius: 10%;
+}
+
+#formulario-1,
+#formulario-2 {
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    width: 80%;
+    font-size: 20px;
+    margin: 60px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#nome, #sobrenome {
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+#mensagem,
+input[type="email"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+input[type="password"] {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 1px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+input[type="tel"] {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 1px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+select {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #484848;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button[type="submit"]:hover {
+    background-color: #a9a9a9;
+}
+
+#nome:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    background-color: #e6e6e6;
+}

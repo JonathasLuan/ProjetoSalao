@@ -7,99 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="cadastroCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      background-color: #f2f2f2;
-    }
-
-    .conteudo {
-      margin: 0px 0px;
-      
-    }
-
-    #registerform {
-      background-color: #FFFFFF;
-      border: 2px;
-      box-shadow: 0px 0px 5px #ccc;
-      padding: 40px;
-      width: 70%;
-      font-size: 20px;
-      margin: 70px;
-      font-family: Arial, Helvetca, sans serif;
-      line-height: 30px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-      margin-top: 10px;
-    }
-
-    #nome,
-    #mensagem,
-    input[type="email"], input[type="password"] {
-      width: 50%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      background-color: #f2f2f2;
-      font-size: 16px;
-    }
-
-    input[type="password"] {
-      width: 30%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 1px;
-      background-color: #f2f2f2;
-      font-size: 16px;
-    }
-
-    input[type="tel"] {
-      width: 20%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 1px;
-      background-color: #f2f2f2;
-      font-size: 16px;
-    }
-
-    select {
-      width: 20%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      background-color: #f2f2f2;
-      font-size: 16px;
-    }
-
-    button[type="submit"] {
-      background-color: #484848;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 30px;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #a9a9a9;
-    }
-
-    #nome:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    select:focus {
-      background-color: #e6e6e6;
-    }
-  </style>
 </head>
 
 <body>
@@ -137,12 +46,27 @@
     </div>
   </header>
   <div class="conteudo">
-    <div id="registerform">
+    <div class="container-central">
+      <h1>Como gostaria de se cadastrar?</h1>
+      <div class="btn-container">
+        <div id="cliente-btn">
+          <button id="botao-formulario-1">CLIENTE</button>
+        </div>
+        <div id="prof-btn">
+          <button id="botao-formulario-2">PROFISSIONAL</button>
+          <img src="img/profile.webp">
+        </div>
+      </div>
       <div class="formulario-container">
-        <form>
+        <form id="formulario-1" style="display: none;">
           <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br>
+          </div>
+
+          <div>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" required><br>
           </div>
 
           <div>
@@ -171,19 +95,75 @@
               <option value="feminino">Feminino</option>
             </select>
           </div>
+          <div>
+            <button type="submit">Continuar</button>
+          </div>
+        </form>
 
+        <form id="formulario-2" style="display: none;">
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
           </div>
 
+          <div>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" required><br>
+          </div>
+
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="@" required><br>
+          </div>
+
+          <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
+              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
+            <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+          </div>
+
+          <div>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"><br>
+            <small>Digite somente números (10 ou 11 dígitos).</small>
+          </div>
+
+          <div>
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero">
+              <option value="" selected disabled>Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
           <div>
             <button type="submit">Continuar</button>
           </div>
         </form>
       </div>
     </div>
+  </div>
+  <footer>
+    <p>&copy; 2023 Na Régua</p>
+  </footer>
 
-    <footer>
-      <p>&copy; 2023 Na Régua</p>
-    </footer>
+  <script>
+    const botaoFormulario1 = document.getElementById("botao-formulario-1");
+    const botaoFormulario2 = document.getElementById("botao-formulario-2");
+    const formulario1 = document.getElementById("formulario-1");
+    const formulario2 = document.getElementById("formulario-2");
+
+    botaoFormulario1.addEventListener("click", () => {
+      formulario1.style.display = "block";
+      formulario2.style.display = "none";
+    });
+
+    botaoFormulario2.addEventListener("click", () => {
+      formulario1.style.display = "none";
+      formulario2.style.display = "block";
+    });
+  </script>
 </body>
 
 </html>
