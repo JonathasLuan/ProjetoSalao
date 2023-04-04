@@ -1,0 +1,112 @@
+CRIAR TABELAS PARA INFORMAÇOES DA CONTA E DO PERFIL, ONDE AS PREFERÊNCIAS ADICIONADAS E EDITADAS SERÃO SALVAS.
+
+TABELAS:
+
+página
+  id_pagina
+  url
+  titulo
+  visitas
+
+mídia
+  id_midia
+  id_pagina_fk
+  tipoarquivo
+  src
+  tamanho
+  datamodificacao
+  dataupload
+
+networking
+  id-networking
+  facebook
+  linkedin
+  twiter
+  instagram
+  tiktok
+
+característica:
+  id-caract.
+  tipo
+  categoria
+  subcategoria
+
+cabelo:
+  id_cabelo
+  cor
+  tipo
+  textura
+  tamanho
+  tratamento
+  condicao
+
+barba:
+  id_barba
+  cor
+  tipo
+  textura
+  tamanho
+  tratamento
+  condicao
+
+pele:
+  id_pele
+  cor
+  etnia
+  textura
+  tratamento
+  condicao
+
+unhas:
+  id_unhas
+  cor
+  tipo
+  tamanho
+  tratamento
+  condicao
+
+rosto:
+  id_rosto
+  formato
+  textura
+  tamanho
+  patologia
+
+info:
+  id_info
+  id_networking_fk
+  id_caract.
+  nomeperfil
+  foto-perfil
+  tipo-user
+  bio
+
+preferencia
+  id_preferencia
+  notificacao
+  visibilidade
+  
+configurações:
+  id_config
+  id_perfil_fk
+  id_conta_fk
+  id_usuario_fk
+  id_preferencia_fk
+  
+geral:
+  id_geral
+  corpagina
+  idioma
+  
+conta:
+  id_conta
+  id_usuario_fk
+  email
+  emailreserva
+  senha
+  
+perfil:
+  id_perfil
+  id_config_fk
+  id_usuario_fk
+  id_info_fk

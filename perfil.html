@@ -7,160 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="perfilCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      background-color: #f2f2f2;
-    }
 
-    img {
-      width: 150px;
-      height: 150px;
-    }
-
-    main {
-      margin: 0px 40px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-around;
-      background-color: #ddd;
-      padding: 10px;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container-perfil {
-      background-color: #FFFFFF;
-      border: 2px;
-      box-shadow: 0px 0px 5px #ccc;
-      padding: 40px;
-      width: 20%;
-      font-size: 20px;
-      margin-top: 50px;
-      font-family: Arial, Helvetca, sans serif;
-      line-height: 30px;
-    }
-
-    img {
-      width: 150px;
-      height: 150px;
-    }
-
-    button {
-      display: inline;
-      align-content: center;
-      margin: 2px;
-      padding: 7px;
-    }
-
-    #info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #bio {
-      text-align: left;
-      width: 90%;
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    /* Estilos para a janela modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-    }
-    #arquivo {
-      border: 1px solid;
-      padding: 20px;
-      width: 400px;
-      margin: 50px;
-      background-color: antiquewhite;
-    }
-
-    /* Estilos para o botão "Fechar" */
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    #foto {
-      position: relative;
-    }
-
-    #editar-foto {
-      position: absolute;
-      bottom: 15px;
-      right: 7px;
-      background-color: #fff;
-      border-radius: 50%;
-      border: 0;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
-
-    #editar-foto i {
-      font-size: 20px;
-      position: relative;
-      color: #333;
-      bottom: 1px;
-      right: -25px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/logoideia.png"></div>
+        <div><img src="./img/tesoura.png"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -200,18 +56,24 @@
       <div class="container-perfil">
         <div id="info">
           <div id="foto">
-            <img src="img/profile.webp" alt="profile">
+            <img id="foto-perfil" src="img/profile.webp" alt="profile">
             <button id="editar-foto"><i class="fa fa-pencil"></i></button>
           </div>
           <div id="modal-foto" class="modal">
-            <div class="modal-content">
+            <div class="modal-inner">
               <span class="close">&times;</span>
               <!-- aqui vai o conteúdo da janela modal -->
-              <p>Nesta janela modal o usuário poderá editar sua foto de perfil, fazendo upload e redimencionando-a como
-                quiser.</p>
-              <div id="arquivo">
-                <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                <input type="file" id="foto" name="foto">
+              <div id="modal-content">
+                <h2>Editar Foto</h2>
+                <div class="arquivo">
+                  <label for="profile-image">Escolha uma Imagem</label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+                  <input type="file" id="profile-image" name="profile-image">
+                  <form>
+                  </form>
+                </div>
+                <img id="profile-preview" src="img/profile.webp" alt="profile">
+                <button id="salvar-foto" type="submit">Salvar</button>
               </div>
             </div>
           </div>
@@ -223,7 +85,7 @@
             <h3>cliente</h3>
           </div>
           <div id="nome">
-            <h2>Fulano da Silva</h2>
+            <h2 id="nomeperfil">Fulano da Silva</h2>
           </div>
           <div id="links">
             <a href="https://www.facebook.com/">facebook</a>
@@ -240,28 +102,18 @@
     </section>
 
     <section>
+      <div class="container-content">
+        <div>
+          <h2>Seus serviços:</h2>
+        </div>
+      </div>
     </section>
     </div>
-    <script>
-      // Obtém a janela modal e o botão "Editar"
-      var modal = document.getElementById("modal-foto");
-      var btn = document.getElementById("editar-foto");
-
-      // Obtém o botão "Fechar" e adiciona um evento de clique
-      var span = document.getElementsByClassName("close")[0];
-      span.onclick = function () {
-        modal.style.display = "none";
-      }
-
-      // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "Editar"
-      btn.onclick = function () {
-        modal.style.display = "block";
-      }
-    </script>
   </main>
   <footer>
     <p>&copy; 2023 Na Régua</p>
   </footer>
+  <script src="perfilJS.js"></script>
 </body>
 
 </html>

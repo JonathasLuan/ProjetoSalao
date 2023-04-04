@@ -1,0 +1,233 @@
+body {
+    background-color: #f2f2f2;
+}
+
+main {
+    margin: 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ddd;
+    padding: 0px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 80px;
+}
+
+nav a:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+.container-perfil {
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    width: 45%;
+    font-size: 20px;
+    margin-top: 50px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#foto {
+    position: relative;
+
+}
+
+#foto img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+}
+
+#editar-foto {
+    position: absolute;
+    bottom: 15px;
+    right: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#editar-foto i {
+    font-size: 20px;
+    position: relative;
+    color: #333;
+    bottom: 1px;
+    right: -25px;
+}
+
+button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 7px;
+}
+
+#bio {
+    text-align: left;
+    width: 90%;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inner {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 213px;
+    height: 213px;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+/* Estilos para input file */
+
+.arquivo {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #24a0ed;
+}
+
+.arquivo input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.arquivo label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.arquivo:hover {
+    background-color: #51b4f1;
+}
+
+/* Botão para salvar a foto escolhida */
+#salvar-foto {
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #24a0ed;
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#salvar-foto:hover {
+    background-color: #51b4f1;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+/* Estilos para o botão "Fechar" */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-content {
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-right: 20px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+    display: flex;
+    width: 90%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+section:nth-child(1) {
+    float: left;
+    width: 40%;
+}
+
+section:nth-child(2) {
+    float: left;
+    width: 60%;
+    height: 100%;
+}
