@@ -96,6 +96,13 @@
       width: 80%;
       max-width: 600px;
     }
+    #arquivo {
+      border: 1px solid;
+      padding: 20px;
+      width: 400px;
+      margin: 50px;
+      background-color: antiquewhite;
+    }
 
     /* Estilos para o botão "Fechar" */
     .close {
@@ -202,6 +209,10 @@
               <!-- aqui vai o conteúdo da janela modal -->
               <p>Nesta janela modal o usuário poderá editar sua foto de perfil, fazendo upload e redimencionando-a como
                 quiser.</p>
+              <div id="arquivo">
+                <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+                <input type="file" id="foto" name="foto">
+              </div>
             </div>
           </div>
           <div id="botoes">
