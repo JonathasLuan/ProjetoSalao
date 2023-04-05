@@ -19,12 +19,27 @@ nav a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 80px;
+    padding: 10px 20px;
 }
 
 nav a:hover {
     background-color: rgb(153, 150, 150);
     color: #fafafa;
+}
+
+.sidebar {
+    top: 0;
+    padding: 20px;
+}
+
+.sidebar-left {
+    left: 0;
+    background-color: #f2f2f2;
+}
+
+.sidebar-right {
+    right: 0;
+    background-color: #f2f2f2;
 }
 
 .container-perfil {
@@ -129,8 +144,8 @@ button {
 }
 
 .modal img {
-    width: 213px;
-    height: 213px;
+    width: 40%;
+    height: 40%;
     border: 1px solid;
     margin-bottom: 50px;
 }
@@ -142,7 +157,7 @@ button {
     display: inline-block;
     border: 1px solid #000000;
     border-radius: 0px;
-    padding: 6px 12px;
+    padding: 6px 37px;
     cursor: pointer;
     color: #fff;
     background-color: #24a0ed;
@@ -179,14 +194,12 @@ button {
     width: 90px;
     height: 40px;
     font-size: 16px;
-    font-weight: 700;
 }
 
 #salvar-foto:hover {
     background-color: #51b4f1;
     font-size: 16px;
     font-weight: 700;
-
 }
 
 /* Estilos para o botão "Fechar" */
@@ -210,15 +223,15 @@ button {
 
 .container-content {
     background-color: #FFFFFF;
-    border: 2px;
     box-shadow: 0px 0px 5px #ccc;
     padding: 40px;
     font-size: 16px;
-    margin-top: 5px;
+    margin: 0;
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
     display: flex;
-    width: 90%;
+    width: 92,1%;
+    float: left;
 }
 
 #menu-content {
@@ -236,10 +249,12 @@ footer {
 section:nth-child(1) {
     float: left;
     width: 40%;
+    box-sizing: border-box;
 }
 
 section:nth-child(2) {
     float: left;
     width: 60%;
     height: 100%;
+    box-sizing: border-box;
 }

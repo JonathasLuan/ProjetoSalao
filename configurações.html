@@ -1,47 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+
+    #conteudo {
+      margin: 50px 50px;
+    }
+
+    .accordion {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .accordion li {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      background-color: white;
+    }
+
+    .accordion h3 {
+      margin: 0;
+      padding: 10px;
+    }
+
+    .accordion button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      text-align: left;
+    }
+
+    .accordion .content {
+      display: none;
+      padding: 10px;
+    }
+
+    .accordion li.active button {
+      background-color: #ccc;
+    }
+
+    .accordion li.active .content {
+      display: block;
+    }
+
+    #content1 {
+      padding: 20px;
+    }
+
+    #btn-salvar {
+      background-color: #f2f2f2;
+      color: black;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px
+    }
+    #btn-salvar:hover {
+      background-color: #ccc;
+    }
+
+    #salvar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  </style>
 </head>
-<body>      
-    <header>
-        <div class="header1">
-            <div class="logo">
-                <div><img src="./img/tesoura.png"></div>
-                <div>
-                  <span>NaRégua</span>
-                </div>
-            </div>
+
+<body>
+  <header>
+    <div class="header1">
+      <div class="logo">
+        <div><img src="./img/tesoura.png"></div>
+        <div>
+          <span>NaRégua</span>
         </div>
-        <div class="pesquisa">
-            <input type="text" placeholder="buscar...">
+      </div>
+    </div>
+    <div class="pesquisa">
+      <input type="text" placeholder="buscar...">
+    </div>
+    <i class="fa fa-search"></i>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="home.html">home</a>
+        </li>
+        <li>
+          <a href="serviços.html">serviços</a>
+        </li>
+        <li>
+          <a href="sobre.html">sobre</a>
+        </li>
+        <li>
+          <a href="perfil.html">perfil</a>
+        </li>
+        <li>
+          <a href="contato.html">contato</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div id="conteudo">
+    <h1>Configurações</h1>
+    <ul class="accordion">
+      <li>
+        <h3>
+          <button aria-expanded="false" aria-controls="content1">
+            <span class="menu-label">Gerais</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-chevron-down">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </h3>
+        <div id="content1" class="content">
+          <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores da página
+            (modo dark ou light) e outras preferências a mais que surgirem.</p>
         </div>
-        <i class="fa fa-search"></i>
-        <div class="menu">
-            <ul>
-              <li>
-                <a href="home.html">home</a>
-              </li>
-              <li>
-                <a href="serviços.html">serviços</a>
-              </li>
-              <li>
-                <a href="sobre.html">sobre</a>
-              </li>
-              <li>
-                <a href="perfil.html">perfil</a>
-              </li>
-              <li>
-                <a href="contato.html">contato</a>
-              </li>
-            </ul>
+      </li>
+      <li>
+        <h3>
+          <button aria-expanded="false" aria-controls="content2">
+            <span class="menu-label">Preferências</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-chevron-down">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </h3>
+        <div id="content2" class="content">
+          <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações, visualização e edição
+            do histórico de conversas e agendamentos feitos.</p>
         </div>
-    </header>
-    <h1>Aqui ficarão as configurações</h1>
+      </li>
+      <li>
+        <h3>
+          <button aria-expanded="false" aria-controls="content3">
+            <span class="menu-label">Conta</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-chevron-down">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </h3>
+        <div id="content3" class="content">
+          <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de recuperação,
+            etc.</p>
+        </div>
+      </li>
+      <li>
+        <h3>
+          <button aria-expanded="false" aria-controls="content4">
+            <span class="menu-label">Informações Pessoais</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-chevron-down">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </h3>
+        <div id="content4" class="content">
+          <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua página de
+            perfil, como: nickname, foto, bio e características físicas (?).</p>
+        </div>
+      </li>
+      <li>
+        <h3>
+          <button aria-expanded="false" aria-controls="content5">
+            <span class="menu-label">Perfil</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-chevron-down">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </h3>
+        <div id="content5" class="content">
+          <p>Aqui ficarão configurações e ajustes do perfil.</p>
+        </div>
+      </li>
+    </ul>
+    <div id="salvar">
+      <button type="submit" id="btn-salvar">Salvar alterações</button>
+    </div>
+
+  </div>
+  <script>
+    const accordion = document.querySelectorAll('.accordion li');
+
+    accordion.forEach(item => {
+      const button = item.querySelector('button');
+      const content = item.querySelector('.content');
+
+      button.addEventListener('click', () => {
+        // Fecha todos os itens abertos
+        accordion.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('button').setAttribute('aria-expanded', 'false');
+            otherItem.querySelector('.content').style.display = 'none';
+          }
+        });
+
+        // Abre ou fecha o item atual
+        item.classList.toggle('active');
+        const isOpen = item.classList.contains('active');
+        button.setAttribute('aria-expanded', isOpen);
+        content.style.display = isOpen ? 'block' : 'none';
+      });
+    });
+
+  </script>
 </body>
+
 </html>
