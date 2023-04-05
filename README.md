@@ -1,3 +1,8 @@
+NOME: THIAGO CAVALCANTI ALVES (github_devthiaguinho)
+NOME: JONATHAS LUAN (github_JonathasLuan)
+NOME: HAROLD (github_deeljusti)
+NOME: GABRIELLA (github_gabi8086)
+
 O NaRégua é uma plataforma online que conecta profissionais da área de estética e clientes que buscam serviços dos mais gerais aos especializados. Nela é possível criar um perfil de cliente ou profissional, cada um com funcionalidades diferentes e próprias. As especialidades poodem ser: cabeleireiro, manicure e pedicure, barbeiro, maquiador, esteticista, dermatologista e até profissionais da plástica.
 No perfil de profissional, é possível exibir sua experiência, criar um portifolio, fazer networking, descrever seu salão ou negócio, especificar sua especialidade e o que sabe fazer, além de mostrar tabelas de valores, produtos e uma agênda com suas disponibilidades de dia e horário para agendamentos.
 Um cliente pode criar um serviço a partir de página principal, onde descreve o que procura com todas as informações possíveis de: localidade atual (seu endereço ou localização), raio de acesso para escolhar o que fica mais perto, faixa de orçamento e mais. O pedido é gerado e é disponibilizado para visualização do lado dos p´rofissionais, que podem buscar serviços para fazer. Ele pode ler o que o cliente escreveu e enviar uma solicitação.
