@@ -31,10 +31,10 @@ nav a:hover {
     background-color: #FFFFFF;
     border: 2px;
     box-shadow: 0px 0px 5px #ccc;
-    padding: 40px;
-    width: 45%;
-    font-size: 20px;
-    margin-top: 50px;
+    padding: 35px;
+    width: 60%;
+    font-size: 16px;
+    margin-top: 20px;
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
 }
@@ -93,6 +93,10 @@ button {
     width: 90%;
     text-align: justify;
     hyphens: auto;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: #ddd;
+    padding: 5%;
 }
 
 /* Estilos para a janela modal */
@@ -191,6 +195,10 @@ button {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 17px;
 }
 
 .close:hover,
@@ -206,12 +214,16 @@ button {
     box-shadow: 0px 0px 5px #ccc;
     padding: 40px;
     font-size: 16px;
-    margin-top: 50px;
-    margin-right: 20px;
+    margin-top: 5px;
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
     display: flex;
     width: 90%;
+}
+
+#menu-content {
+    margin-top: 20px;
+    border: 1px solid;
 }
 
 footer {
