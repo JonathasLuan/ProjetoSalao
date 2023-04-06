@@ -2,13 +2,13 @@ CRIAR TABELAS PARA INFORMAÇOES DA CONTA E DO PERFIL, ONDE AS PREFERÊNCIAS ADIC
 
 TABELAS:
 
-página
+X página
   id_pagina
   url
   titulo
   visitas
 
-mídia
+X mídia
   id_midia
   id_pagina_fk
   tipoarquivo
@@ -17,15 +17,12 @@ mídia
   datamodificacao
   dataupload
 
-networking
-  id-networking
-  facebook
-  linkedin
-  twiter
-  instagram
-  tiktok
+X links
+  id-link
+  pagina
+  url
 
-característica:
+X característica:
   id-caract.
   tipo
   categoria
@@ -72,41 +69,35 @@ rosto:
   tamanho
   patologia
 
-info:
+Xinfo:
   id_info
-  id_networking_fk
-  id_caract.
+  id_link_fk
+  id_caract_fk
   nomeperfil
-  foto-perfil
+  fotoperfil
   tipo-user
-  bio
+  sobre
 
-preferencia
+Xpreferencia
   id_preferencia
   notificacao
   visibilidade
   
-configurações:
+Xconfigurações:
   id_config
   id_perfil_fk
   id_conta_fk
   id_usuario_fk
   id_preferencia_fk
   
-geral:
+Xgeral:
   id_geral
   corpagina
   idioma
   
-conta:
+Xconta:
   id_conta
   id_usuario_fk
   email
   emailreserva
   senha
-  
-perfil:
-  id_perfil
-  id_config_fk
-  id_usuario_fk
-  id_info_fk

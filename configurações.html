@@ -69,6 +69,7 @@
       cursor: pointer;
       padding: 10px
     }
+
     #btn-salvar:hover {
       background-color: #ccc;
     }
@@ -78,6 +79,12 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+
+    #sobre {
+      border: #ccc solid;
+      width: 50%;
+      padding: 20px;
     }
   </style>
 </head>
@@ -118,87 +125,103 @@
   </header>
   <div id="conteudo">
     <h1>Configurações</h1>
-    <ul class="accordion">
-      <li>
-        <h3>
-          <button aria-expanded="false" aria-controls="content1">
-            <span class="menu-label">Gerais</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </h3>
-        <div id="content1" class="content">
-          <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores da página
-            (modo dark ou light) e outras preferências a mais que surgirem.</p>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <button aria-expanded="false" aria-controls="content2">
-            <span class="menu-label">Preferências</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </h3>
-        <div id="content2" class="content">
-          <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações, visualização e edição
-            do histórico de conversas e agendamentos feitos.</p>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <button aria-expanded="false" aria-controls="content3">
-            <span class="menu-label">Conta</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </h3>
-        <div id="content3" class="content">
-          <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de recuperação,
-            etc.</p>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <button aria-expanded="false" aria-controls="content4">
-            <span class="menu-label">Informações Pessoais</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </h3>
-        <div id="content4" class="content">
-          <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua página de
-            perfil, como: nickname, foto, bio e características físicas (?).</p>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <button aria-expanded="false" aria-controls="content5">
-            <span class="menu-label">Perfil</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </h3>
-        <div id="content5" class="content">
-          <p>Aqui ficarão configurações e ajustes do perfil.</p>
-        </div>
-      </li>
-    </ul>
+    <div id="options">
+      <ul class="accordion">
+        <li>
+          <h3>
+            <button aria-expanded="false" aria-controls="content1">
+              <span class="menu-label">Gerais</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </h3>
+          <div id="content1" class="content">
+            <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores da página
+              (modo dark ou light) e outras preferências a mais que surgirem.</p>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <button aria-expanded="false" aria-controls="content2">
+              <span class="menu-label">Preferências</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </h3>
+          <div id="content2" class="content">
+            <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações, visualização e edição
+              do histórico de conversas e agendamentos feitos.</p>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <button aria-expanded="false" aria-controls="content3">
+              <span class="menu-label">Conta</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </h3>
+          <div id="content3" class="content">
+            <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de recuperação,
+              etc.</p>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <button aria-expanded="false" aria-controls="content4">
+              <span class="menu-label">Informações Pessoais</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </h3>
+          <div id="content4" class="content">
+            <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua página de
+              perfil, como: nickname, foto, bio e características físicas (?).</p>
+            <div id="nome">
+              <h3>Nome</h3>
+              <p id="nomeperfil">Fulano da Silva.</p>
+              <button>Editar</button>
+            </div>
+            <br>
+            <div id="bio">
+              <h3>Sobre</h3>
+              <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
+                informações
+                adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
+                seu trabalho.</p>
+              <button>Editar</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <button aria-expanded="false" aria-controls="content5">
+              <span class="menu-label">Perfil</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </h3>
+          <div id="content5" class="content">
+            <p>Aqui ficarão configurações e ajustes do perfil.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div id="salvar">
       <button type="submit" id="btn-salvar">Salvar alterações</button>
     </div>

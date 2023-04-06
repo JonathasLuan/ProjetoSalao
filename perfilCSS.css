@@ -47,7 +47,7 @@ nav a:hover {
     border: 2px;
     box-shadow: 0px 0px 5px #ccc;
     padding: 35px;
-    width: 60%;
+    width: 85%;
     font-size: 16px;
     margin-top: 20px;
     font-family: Arial, Helvetca, sans serif;
@@ -230,7 +230,7 @@ button {
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
     display: flex;
-    width: 92,1%;
+    width: 100%;
     float: left;
 }
 
@@ -248,13 +248,13 @@ footer {
 
 section:nth-child(1) {
     float: left;
-    width: 40%;
+    width: 25%;
     box-sizing: border-box;
 }
 
 section:nth-child(2) {
     float: left;
-    width: 60%;
+    width: 70%;
     height: 100%;
     box-sizing: border-box;
 }
