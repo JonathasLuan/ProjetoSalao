@@ -13,33 +13,39 @@ nav {
     justify-content: space-around;
     background-color: #ddd;
     padding: 0px;
+    width: 100%;
 }
 
-nav a {
+nav button {
     color: #333;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
+    background: none;
+    border: none;
 }
 
-nav a:hover {
+nav button:hover {
     background-color: rgb(153, 150, 150);
     color: #fafafa;
 }
 
 .sidebar {
     top: 0;
-    padding: 20px;
+    padding: 0px;
 }
 
 .sidebar-left {
     left: 0;
     background-color: #f2f2f2;
+    margin-right: 10px;
+    height: 100%;
 }
 
 .sidebar-right {
     right: 0;
     background-color: #f2f2f2;
+    margin-left: 10px;
 }
 
 .container-perfil {
@@ -48,6 +54,7 @@ nav a:hover {
     box-shadow: 0px 0px 5px #ccc;
     padding: 35px;
     width: 85%;
+    height: 100%;
     font-size: 16px;
     margin-top: 20px;
     font-family: Arial, Helvetca, sans serif;
@@ -257,4 +264,74 @@ section:nth-child(2) {
     width: 70%;
     height: 100%;
     box-sizing: border-box;
+}
+
+.accordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion li {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.accordion h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+.accordion button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .content {
+    display: none;
+    padding: 10px;
+}
+
+.accordion li.active button {
+    background-color: #ccc;
+}
+
+.accordion li.active .content {
+    display: block;
+}
+
+#content1 {
+    padding: 20px;
+}
+
+#btn-salvar {
+    background-color: #f2f2f2;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px
+}
+
+#btn-salvar:hover {
+    background-color: #ccc;
+}
+
+#salvar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#editsobre {
+    border: #ccc solid;
+    width: 50%;
+    padding: 20px;
 }

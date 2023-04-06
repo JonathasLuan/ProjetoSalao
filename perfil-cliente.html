@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil</title>
+  <title>Perfil Cliente</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="perfilCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -89,7 +89,8 @@
               <a href="https://www.linkedin.com/">linkedin</a>
             </div>
             <div id="bio">
-              <p>Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer informações
+              <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
+                informações
                 adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
                 seu trabalho.</p>
             </div>
@@ -101,21 +102,143 @@
     <section>
       <div class="sidebar sidebar-right">
         <nav id="menu-content">
-          <a href="agendamentos.html">agendamentos</a>
-          <a href="mensagens.html">mensagens</a>
-          <a href="#.html">contatos</a>
-          <a href="configurações.html">configurações</a>
+          <button id="botao1" class="menu-button active" data-target="content1">Agendamentos</button>
+          <button id="botao2" class="menu-button" data-target="content2">Conversas</button>
+          <button id="botao3" class="menu-button" data-target="content3">Botão 3</button>
+          <button id="botao4" class="menu-button" data-target="content4">Configurações</button>
         </nav>
         <div class="container-content">
-          <div>
-            <h2>Seus serviços:</h2>
-            <p>Aqui ficará a exibição dos agendametos ou outros contrúdos que estão em andamento. A nav superior
-              controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+          <div id="conteudo">
+            <div class="content active" id="conteudo1">
+              <div>
+                <h2>Seus agendamentos:</h2>
+                <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
+                  controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+              </div>
+            </div>
+            <div class="content" id="conteudo2">
+              <h2>Conversas:</h2>
+              <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
+                selecionar cada uma e responder às mensagens.</p>
+            </div>
+            <div class="content" id="conteudo3">
+              <h2>Conteúdo 3:</h2>
+              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+                mas sim botões que abrem conteúdo no espaço abaixo</p>
+            </div>
+            <div class="content" id="conteudo4">
+              <h2>Configurações:</h2>
+              <div id="options">
+                <ul class="accordion">
+                  <li>
+                    <h3>
+                      <button aria-expanded="false" aria-controls="content1">
+                        <span class="menu-label">Gerais</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-chevron-down">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div id="content1" class="content">
+                      <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores
+                        da página
+                        (modo dark ou light) e outras preferências a mais que surgirem.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <h3>
+                      <button aria-expanded="false" aria-controls="content2">
+                        <span class="menu-label">Preferências</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-chevron-down">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div id="content2" class="content">
+                      <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações,
+                        visualização e edição
+                        do histórico de conversas e agendamentos feitos.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <h3>
+                      <button aria-expanded="false" aria-controls="content3">
+                        <span class="menu-label">Conta</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-chevron-down">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div id="content3" class="content">
+                      <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de
+                        recuperação,
+                        etc.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <h3>
+                      <button aria-expanded="false" aria-controls="content4">
+                        <span class="menu-label">Informações Pessoais</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-chevron-down">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div id="content4" class="content">
+                      <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua
+                        página de
+                        perfil, como: nickname, foto, bio e características físicas (?).</p>
+                      <div id="nome">
+                        <h3>Nome</h3>
+                        <p id="nomeperfil">Fulano da Silva.</p>
+                        <button>Editar</button>
+                      </div>
+                      <br>
+                      <div id="editbio">
+                        <h3>Sobre</h3>
+                        <p id="editsobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá
+                          fornecer
+                          informações
+                          adicionais além das especificadas abaixo, como sua vida profissional e características mais
+                          pessoais de
+                          seu trabalho.</p>
+                        <button>Editar</button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <h3>
+                      <button aria-expanded="false" aria-controls="content5">
+                        <span class="menu-label">Perfil</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-chevron-down">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    </h3>
+                    <div id="content5" class="content">
+                      <p>Aqui ficarão configurações e ajustes do perfil.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div id="salvar">
+                <button type="submit" id="btn-salvar">Salvar alterações</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    </div>
   </main>
 
   <script src="perfilJS.js"></script>
