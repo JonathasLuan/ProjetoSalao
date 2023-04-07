@@ -36,8 +36,14 @@ body {
     font-weight: 700;
 }
 
-img:hover {
-    background-color: #a9a9a9;
+#botao-formulario-1:hover,
+#botao-formulario-2:hover {
+    border-color:chartreuse;
+}
+
+#botao-formulario-1:focus,
+#botao-formulario-2:focus {
+    border-color: #00ff73;
 }
 
 h1 {

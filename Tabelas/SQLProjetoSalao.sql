@@ -22,7 +22,9 @@ create table profissional (
     foreign key (id_usuario_fk) references usuario (id_usuario),
     foreign key (id_local_fk) references local (id_local),
     foreign key (id_especialidade_fk) references especialidade (id_especialidade),
-) create table perfil (
+);
+
+create table perfil (
     id_perfil int not null auto_increment primary key,
     id_usuario_fk int not null,
     tipo enum('cliente', 'profissional') not null,
@@ -160,7 +162,7 @@ create table midia (
 create table links (
     id - link int not null auto_increment primary key,
     pagina varchar(100),
-    endereco,
+    endereco varchar(500),
 );
 
 create table caracteristica (
@@ -170,4 +172,102 @@ create table caracteristica (
     subcategoria varchar(100) null,
 );
 
-cabelo: id_cabelo cor tipo textura tamanho tratamento condicao barba: id_barba cor tipo textura tamanho tratamento condicao pele: id_pele cor etnia textura tratamento condicao unhas: id_unhas cor tipo tamanho tratamento condicao rosto: id_rosto formato textura tamanho patologia info: id_info id_link_fk id_caract_fk nomeperfil fotoperfil tipo - user sobre preferencia id_preferencia notificacao visibilidade configurações: id_config id_perfil_fk id_conta_fk id_usuario_fk id_preferencia_fk geral: id_geral corpagina idioma conta: id_conta id_usuario_fk email emailreserva senha
+create table conversa (
+    id_conversa int not null auto_increment primary key,
+    id_cliente_fk int not null,
+    id_profissional_fk int not null,
+    foreign key (id_cliente_fk) references cliente (id_cliente),
+    foreign key (id_profissional_fk) references profissional (id_profissional),
+);
+
+create table mensagem (
+    id_mensagem int not null auto_increment primary key,
+    id_conversa int not null,
+    id_usuario_fk int not null,
+    remetente varchar(100) not null,
+    destinatario varchar(100) not null,
+    mensagem text not null,
+    tipo_mens varchar(100) not null,
+    status_mens varchar(100) not null,
+    envio datetime not null,
+    foreign key (id_usuario_fk) references cliente (id_usuario),
+    foreign key (id_conversa_fk) references cliente (id_conversa),
+);
+
+create table cabelo (
+    id_cabelo int not null auto_increment primary key,
+    cor char(100) null,
+    tipo char(100) null,
+    textura char(100) null,
+    tamanho varchar(100) null,
+    tratamento varchar(200) null,
+    condicao varchar(200) null,
+);
+
+create table barba (
+    id_barba int not null auto_increment primary key,
+    cor char(100) null,
+    tipo char(100) null,
+    textura char(100) null,
+    tamanho varchar(100) null,
+    tratamento varchar(200) null,
+    condicao varchar(200) null,
+);
+
+create table pele (
+    id_pele int not null auto_increment primary key,
+    cor char(100) null,
+    etnia textura char(100) null,
+    tratamento varchar(200) null,
+    condicao varchar(200) null,
+);
+
+create table unhas (
+    id_unhas int not null auto_increment primary key,
+    cor char(100) null,
+    tipo char(100) null,
+    tamanho varchar(100) null,
+    tratamento varchar(200) null,
+    condicao varchar(200) null,
+);
+
+create table rosto (
+    id_rosto int not null auto_increment primary key,
+    formato varchar(100) null,
+    textura char(100) null,
+    tamanho varchar(100) null,
+    patologia varchar(200) null,
+);
+
+create table info (
+    id_info int not null auto_increment primary key,
+    id_link_fk int not null,
+    id_caract_fk int not null,
+    nomeperfil varchar(200) not null,
+    fotoperfil tipo - user varchar(100) not null,
+    sobre text null,
+    id_preferencia_fk int not null,
+    notificacao visibilidade
+);
+
+create table configurações (
+    id_config int not null auto_increment primary key,
+    id_perfil_fk int not null,
+    id_conta_fk int not null,
+    id_usuario_fk int not null,
+    id_preferencia_fk int not null,
+);
+
+create table geral (
+    id_geral int not null auto_increment primary key,
+    corpagina char(50),
+    idioma char(100),
+);
+
+create table conta (
+    id_conta int not null auto_increment primary key,
+    id_usuario_fk int not null,
+    email varchar(200) not null unique,
+    emailreserva varchar(200) not null unique,
+    senha varchar(200) not null,
+);

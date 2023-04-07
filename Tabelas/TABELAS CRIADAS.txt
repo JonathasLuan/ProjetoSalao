@@ -1,6 +1,20 @@
-CRIAR TABELAS PARA INFORMAÇOES DA CONTA E DO PERFIL, ONDE AS PREFERÊNCIAS ADICIONADAS E EDITADAS SERÃO SALVAS.
-
 TABELAS:
+
+X conversa:
+  id_conversa
+  id_profissional_fk
+  id_cliente_fk
+
+X mensagem:
+  id_mensagem
+  id_conversa_fk
+  id_usuario_fk
+  remetente
+  destinatario
+  mensagem (text)
+  tipo_mens (varchar(100))
+  status_mens (varchar(100))
+  envio (datetime)
 
 X página
   id_pagina
@@ -28,7 +42,7 @@ X característica:
   categoria
   subcategoria
 
-cabelo:
+X cabelo:
   id_cabelo
   cor
   tipo
@@ -37,7 +51,7 @@ cabelo:
   tratamento
   condicao
 
-barba:
+X barba:
   id_barba
   cor
   tipo
@@ -46,7 +60,7 @@ barba:
   tratamento
   condicao
 
-pele:
+X pele:
   id_pele
   cor
   etnia
@@ -54,7 +68,7 @@ pele:
   tratamento
   condicao
 
-unhas:
+X unhas:
   id_unhas
   cor
   tipo
@@ -62,14 +76,14 @@ unhas:
   tratamento
   condicao
 
-rosto:
+X rosto:
   id_rosto
   formato
   textura
   tamanho
   patologia
 
-Xinfo:
+X info:
   id_info
   id_link_fk
   id_caract_fk
@@ -78,24 +92,24 @@ Xinfo:
   tipo-user
   sobre
 
-Xpreferencia
+X preferencia
   id_preferencia
   notificacao
   visibilidade
   
-Xconfigurações:
+X configurações:
   id_config
   id_perfil_fk
   id_conta_fk
   id_usuario_fk
   id_preferencia_fk
   
-Xgeral:
+X geral:
   id_geral
   corpagina
   idioma
   
-Xconta:
+X conta:
   id_conta
   id_usuario_fk
   email

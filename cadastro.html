@@ -23,8 +23,8 @@
     </div>
     <div class="pesquisa">
       <input type="text" placeholder="buscar...">
+      <i class="fa fa-search"></i>
     </div>
-    <i class="fa fa-search"></i>
     <div class="menu">
       <ul>
         <li>
@@ -76,9 +76,7 @@
 
           <div>
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
-              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
-            <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
+            <input type="password" id="senha" name="senha" required>
           </div>
 
           <div>
@@ -136,7 +134,7 @@
             </select>
           </div>
           <div>
-            <a href="continuarcadastro.html"><button type="submit">Continuar</button></a>
+            <button type="submit">Continuar</button>
           </div>
         </form>
       </div>

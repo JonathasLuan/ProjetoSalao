@@ -144,3 +144,9 @@ accordion.forEach(item => {
         content.style.display = isOpen ? 'block' : 'none';
     });
 });
+
+// Código do botão switch de cor de fundo
+const switchBtn = document.querySelector('#dark-mode-switch');
+switchBtn.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+});
