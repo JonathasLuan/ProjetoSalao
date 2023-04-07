@@ -34,7 +34,7 @@ create table usuario (
     id_usuario int not null auto_increment primary key,
     nome varchar(200) not null,
     email varchar(200) not null unique,
-    senha varchar(200) not null unique,
+    senha varchar(200) not null,
     tipo varchar(100) not null,
 );
 
@@ -149,7 +149,7 @@ create table pagina (
 
 create table midia (
     id_midia int not null auto_increment primary key,
-    id_pagina_fk int,
+    id_pagina_fk int not null,
     tipo varchar(100) not null,
     src varchar(500),
     tamanho decimal not null,

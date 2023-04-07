@@ -1,0 +1,52 @@
+				Fomulário de Cadastro
+Cliente:
+	Nome
+	Sobrenome
+	E-mail
+	Senha
+	Gênero
+	Telefônes
+			[continuar]
+
+	Endereço -
+		Estado
+		Cidade
+		Bairro
+		Rua
+		Número
+			[continuar]
+
+	Escolha uma foto
+	Fale sobre você
+	Já sabe o que procura? (especificar)
+	Características -
+		Tipo de cabelo
+		Formato de rosto
+		Unhas
+		Pele
+			[continuar]
+
+Profissional:
+	Nome
+	Sobrenome
+	E-mail
+	Senha
+	Gênero
+	Telefônes
+			[continuar]
+
+	Endereço -
+		Estado
+		Cidade
+		Bairro
+		Rua
+		Número
+			[continuar]
+
+	Escolha uma foto
+	Fale sobre você
+	Com o que trabalha (especialidades)
+	Experiência
+	Links externos
+	Produtos
+			[continuar]

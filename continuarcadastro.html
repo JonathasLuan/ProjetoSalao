@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Continuar Cadastro</title>
+  <title>Seu endereço</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
@@ -15,17 +15,21 @@
 
     .conteudo {
       margin: 0px 0px;
-
     }
 
-    #registerform {
+    h2 {
+      text-align: center;
+    }
+
+    #cadastroform {
+      margin: 0 auto;
       background-color: #FFFFFF;
       border: 2px;
       box-shadow: 0px 0px 5px #ccc;
       padding: 40px;
-      width: 70%;
+      width: 60%;
+      margin-top: 20px;
       font-size: 20px;
-      margin: 70px;
       font-family: Arial, Helvetca, sans serif;
       line-height: 30px;
     }
@@ -33,30 +37,8 @@
     label {
       display: block;
       margin-bottom: 10px;
-      margin-top: 10px;
-    }
-
-    #nome,
-    #mensagem,
-    input[type="email"],
-    input[type="password"] {
-      width: 50%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      background-color: #f2f2f2;
       font-size: 16px;
-    }
-
-    input[type="password"] {
-      width: 30%;
-      padding: 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      margin-bottom: 1px;
-      background-color: #f2f2f2;
-      font-size: 16px;
+      font-weight: bold;
     }
 
     input[type="tel"] {
@@ -64,13 +46,14 @@
       padding: 10px;
       border: 1px solid black;
       border-radius: 4px;
-      margin-bottom: 1px;
+      margin-bottom: 10px;
       background-color: #f2f2f2;
       font-size: 16px;
     }
 
-    select {
-      width: 20%;
+    input[type="email"],
+    input[type="text"] {
+      width: 50%;
       padding: 10px;
       border: 1px solid black;
       border-radius: 4px;
@@ -94,11 +77,33 @@
       background-color: #a9a9a9;
     }
 
-    #nome:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
+    input[type="text"]:focus,
     select:focus {
       background-color: #e6e6e6;
+    }
+
+    select {
+      width: 20%;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background-color: #f2f2f2;
+      font-size: 16px;
+    }
+
+    select:focus {
+      background-color: #e6e6e6;
+    }
+
+    #numero {
+      width: 20%;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background-color: #f2f2f2;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -138,51 +143,76 @@
     </div>
   </header>
   <div class="conteudo">
-    <div id="registerform">
+    <div id="cadastroform">
       <div class="formulario-container">
-        <form>
+        <h2>Endereço</h2>
+        <form action="" method="post">
           <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
-          </div>
-
-          <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
-          </div>
-
-          <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" pattern="(?=.*/d)(?=.*[A-Z])(?=.*/W).{8,}" required
-              title="A senha deve conter pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial">
-            <small><br>Pelo menos 8 caracteres, um número, uma letra maiúscula e um caractere especial.</small>
-          </div>
-
-          <div>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"><br>
-            <small>Digite somente números (10 ou 11 dígitos).</small>
-          </div>
-
-          <div>
-            <label for="genero">Gênero:</label>
-            <select id="genero" name="genero">
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
               <option value="" selected disabled>Selecione</option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
+              <option value="">Acre (AC)</option>
+              <option value="">Alagoas (AL)</option>
+              <option value="">Amapá (AP)</option>
+              <option value="">Amazonas (AM)</option>
+              <option value="">Bahia (BA)</option>
+              <option value="">Ceará (CE)</option>
+              <option value="">Distrito Federal (DF)</option>
+              <option value="">Espírito Santo (ES)</option>
+              <option value="">Goiás (GO)</option>
+              <option value="">Maranhão (MA)</option>
+              <option value="">Mato Grosso (MT)</option>
+              <option value="">Mato Grosso do Sul (MS)</option>
+              <option value="">Minas Gerais (MG)</option>
+              <option value="">Pará (PA)</option>
+              <option value="">Paraíba (PB)</option>
+              <option value="">Paraná (PR)</option>
+              <option value="">Pernambuco (PE)</option>
+              <option value="">Piauí (PI)</option>
+              <option value="">Rio de Janeiro (RJ)</option>
+              <option value="">Rio Grande do Norte (RN)</option>
+              <option value="">Rio Grande do Sul (RS)</option>
+              <option value="">Rondônia (RO)</option>
+              <option value="">Roraima (RR)</option>
+              <option value="">Santa Catarina (SC)</option>
+              <option value="">São Paulo (SP)</option>
+              <option value="">Sergipe (SE)</option>
+              <option value="">Tocantins (TO)</option>
             </select>
           </div>
+
+          <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br>
+          </div>
+
+          <div>
+            <label for="cidade">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" required><br>
+          </div>
+
+          <div>
+            <label for="cidade">Rua:</label>
+            <input type="text" id="rua" name="rua" required><br>
+          </div>
+
+          <div>
+            <label for="cidade">Número:</label>
+            <input type="text" id="numero" name="numero" required><br>
+          </div>
+
+          <div>
+            <button type="submit">Continuar</button>
+          </div>
+        </form>
       </div>
-      <div>
-        <button type="submit">Continuar</button>
-      </div>
-      </form>
     </div>
   </div>
+
   <footer>
     <p>&copy; 2023 Na Régua</p>
   </footer>
-
+  </div>
 </body>
 
 </html>
