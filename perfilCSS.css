@@ -295,7 +295,7 @@ section:nth-child(2) {
     padding: 10px;
 }
 
-.accordion button {
+#accordion-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -311,24 +311,35 @@ section:nth-child(2) {
     padding: 10px;
 }
 
-.accordion li.active button {
-    background-color: #ccc;
-}
-
 .accordion li.active .content {
     display: block;
+}
+
+svg {
+    float: right;
 }
 
 #content4 {
     padding: 20px;
 }
 
+.btn-salvar-edit {
+    display: flex;
+    align-content: center;
+    margin: 2px;
+    padding: 7px 7px;
+    cursor: pointer;
+    width: 53px;
+    display: none;
+}
+
 #btn-salvar {
     background-color: #f2f2f2;
+    margin-top: 40px;
     color: black;
     font-size: 20px;
     cursor: pointer;
-    padding: 10px
+    padding: 10px;
 }
 
 #btn-salvar:hover {
@@ -340,12 +351,6 @@ section:nth-child(2) {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-#editsobre {
-    border: #ccc solid;
-    width: 50%;
-    padding: 20px;
 }
 
 body {
@@ -426,4 +431,42 @@ body {
 .dark-mode {
     background-color: #333333;
     color: rgb(0, 0, 0);
+}
+
+#sobreperfil,
+#editsobre {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+.edit-btn {
+    display: flex;
+    align-content: center;
+    margin: 2px;
+    padding: 7px;
+    cursor: pointer;
+    width: 52px;
+}
+
+#editsobre {
+    display: none;
+}
+
+#editnome {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+#editnome {
+    display: none;
 }
