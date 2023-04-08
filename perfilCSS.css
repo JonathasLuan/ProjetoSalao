@@ -3,9 +3,12 @@ body {
 }
 
 main {
-    margin: 0px 40px;
+    padding: 0px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }
 
 nav {
@@ -45,7 +48,7 @@ nav button:hover {
 .sidebar-right {
     right: 0;
     background-color: #f2f2f2;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .container-perfil {
@@ -66,6 +69,7 @@ nav button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #FFFFFF;
 }
 
 #foto {
@@ -208,6 +212,11 @@ nav button:hover {
     align-content: center;
     margin: 2px;
     padding: 7px;
+    cursor: pointer;
+}
+
+#links {
+    margin-bottom: 20px;
 }
 
 /* Estilos para o botão "Fechar" */
@@ -261,14 +270,14 @@ footer {
 }
 
 section:nth-child(1) {
-    float: left;
-    width: 25%;
+    float: right;
+    width: 20%;
     box-sizing: border-box;
 }
 
 section:nth-child(2) {
     float: left;
-    width: 70%;
+    width: 50%;
     height: 100%;
     box-sizing: border-box;
 }
@@ -334,16 +343,16 @@ svg {
 }
 
 #btn-salvar {
-    background-color: #f2f2f2;
+    background-color: #24a0ed;
     margin-top: 40px;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     cursor: pointer;
     padding: 10px;
 }
 
 #btn-salvar:hover {
-    background-color: #ccc;
+    background-color: #51b4f1;
 }
 
 #salvar {
@@ -356,11 +365,6 @@ svg {
 body {
     background-color: white;
     color: black;
-}
-
-.dark-mode {
-    background-color: black;
-    color: white;
 }
 
 .switch {
@@ -429,8 +433,67 @@ body {
 }
 
 .dark-mode {
-    background-color: #333333;
-    color: rgb(0, 0, 0);
+    background-color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+}
+
+body.dark-mode .container-perfil {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode #info {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .container-content {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode h3 {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .content {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode button {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode nav {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode a {
+    background-color: #000;
+    color: #51b4f1;
+}
+
+body.dark-mode input {
+    background-color: #000;
+    color: #ffffff;
+}
+
+body.dark-mode .modal-inner {
+    background-color: #000;
+    color: #ffffff;
+}
+
+body.dark-mode .btn {
+    background-color: rgb(53, 53, 53);
+    color: #ffffff;
+    border-color: #888;
+    margin: 2px;
+    padding: 7px;
+    border: 1px solid;
 }
 
 #sobreperfil,

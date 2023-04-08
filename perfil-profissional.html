@@ -74,8 +74,8 @@
               </div>
             </div>
             <div id="botoes">
-              <button>seguir</button>
-              <button>mensagem</button>
+              <button class="btn">seguir</button>
+              <button class="btn">mensagem</button>
             </div>
             <div id="tipo-user">
               <h3>profissional</h3>
@@ -158,6 +158,12 @@
                       <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores
                         da página
                         (modo dark ou light) e outras preferências a mais que surgirem.</p>
+                      <span>light</span>
+                      <label class="switch">
+                        <input type="checkbox" id="dark-mode-switch">
+                        <span class="slider round"></span>
+                      </label>
+                      <span>dark</span>
                     </div>
                   </li>
                   <li>
@@ -209,21 +215,33 @@
                       <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua
                         página de
                         perfil, como: nickname, foto, bio e características físicas (?).</p>
-                      <div id="nome">
-                        <h3>Nome</h3>
-                        <p id="nomeperfil">Fulano da Silva.</p>
-                        <button>Editar</button>
+                      <div id="nome-sobrenome">
+                        <div id="nome">
+                          <h3>Nome</h3>
+                          <p id="nomeperfil">Fulano.</p>
+                          <button class="edit-btn btn">Editar</button>
+                        </div>
+                        <br>
+                        <div>
+                          <input type="text" id="editnome">
+                          <button class="btn-salvar-edit btn">Salvar</button>
+                        </div>
+                        <div id="sobrenome">
+                          <h3>Sobrenome</h3>
+                          <p id="nomeperfil">da Silva.</p>
+                          <button class="edit-btn btn">Editar</button>
+                        </div>
+                        <br>
+                        <div>
+                          <input type="text" id="editnome">
+                          <button class="btn-salvar-edit btn">Salvar</button>
+                        </div>
                       </div>
                       <br>
-                      <div id="editbio">
-                        <h3>Sobre</h3>
-                        <p id="editsobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá
-                          fornecer
-                          informações
-                          adicionais além das especificadas abaixo, como sua vida profissional e características mais
-                          pessoais de
-                          seu trabalho.</p>
-                        <button>Editar</button>
+                      <div id="endereco">
+                        <h3>Endereço</h3>
+                        <div id="info-endereco">
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -240,6 +258,35 @@
                     </h3>
                     <div id="content5" class="content">
                       <p>Aqui ficarão configurações e ajustes do perfil.</p>
+                      <div id="nome">
+                        <h3>Nome</h3>
+                        <p id="nomeperfil">Fulano da Silva.</p>
+                        <button class="edit-btn">Editar</button>
+                      </div>
+                      <br>
+                      <div>
+                        <input type="text" id="editnome">
+                        <button class="btn-salvar-edit btn">Salvar</button>
+                      </div>
+                      <br>
+                      <div id="editbio">
+                        <h3>Sobre</h3>
+                        <div>
+                          <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).
+                            Poderá
+                            fornecer
+                            informações
+                            adicionais além das especificadas abaixo, como sua vida profissional e características mais
+                            pessoais de
+                            seu trabalho.</p>
+                          <button class="edit-btn">Editar</button>
+                        </div>
+                        <br>
+                        <div>
+                          <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
+                          <button class="btn-salvar-edit btn">Salvar</button>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 </ul>
