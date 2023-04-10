@@ -9,6 +9,21 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="contcadCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: 0.4rem;
+}
+
+#check {
+    display: flex;
+    justify-content: space-around;
+}
+</style>
 </head>
 
 <body>
@@ -68,6 +83,37 @@
           <div class="divs">
             <h3>Fale sobre você:</h3>
             <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
+          </div>
+
+          <div class="divs">
+            <h3>Sua experiência:</h3>
+            <textarea id="editexper" name="editexper" rows="10" cols="50"></textarea>
+          </div>
+
+          <div class="divs">
+            <h3>Com o que trabalha?</h3>
+            <div id="check">
+              <div>
+                <input type="checkbox" class="entrada" id="cabeleireiro" name="cabeleireiro">
+                <label for="cabeleireiro">Cabeleireiro</label>
+              </div>
+              <div>
+                <input type="checkbox" class="entrada" id="barbeiro" name="barbeiro">
+                <label for="barbeiro">Barbeiro</label>
+              </div>
+              <div>
+                <input type="checkbox" class="entrada" id="maquiador" name="maquiador">
+                <label for="maquiador">Maquiador</label>
+              </div>
+              <div>
+                <input type="checkbox" class="entrada" id="manicure" name="manicure">
+                <label for="manicure">Manicure</label>
+              </div>
+              <div>
+                <label for="outro">Outro:</label>
+                <input type="tecxt" class="entrada" id="outro" name="outro">
+              </div>
+            </div>
           </div>
 
           <div style="text-align: center"><button type="submit">Continuar</button></div>
