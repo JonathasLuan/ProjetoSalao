@@ -56,10 +56,14 @@ const botao1 = document.getElementById("botao1");
 const botao2 = document.getElementById("botao2");
 const botao3 = document.getElementById("botao3");
 const botao4 = document.getElementById("botao4");
+const botao5 = document.getElementById("botao5");
+const botao6 = document.getElementById("botao6");
 const conteudo1 = document.getElementById("conteudo1");
 const conteudo2 = document.getElementById("conteudo2");
 const conteudo3 = document.getElementById("conteudo3");
 const conteudo4 = document.getElementById("conteudo4");
+const conteudo5 = document.getElementById("conteudo5");
+const conteudo6 = document.getElementById("conteudo6");
 
 // Adiciona a classe "active" ao primeiro botão do menu e ao primeiro conteúdo
 botao1.classList.add("active");
@@ -72,6 +76,8 @@ botao1.addEventListener("click", function () {
     conteudo2.style.display = "none";
     conteudo3.style.display = "none";
     conteudo4.style.display = "none";
+    conteudo5.style.display = "none";
+    conteudo6.style.display = "none";
 });
 
 botao2.addEventListener("click", function () {
@@ -80,6 +86,8 @@ botao2.addEventListener("click", function () {
     conteudo2.style.display = "block";
     conteudo3.style.display = "none";
     conteudo4.style.display = "none";
+    conteudo5.style.display = "none";
+    conteudo6.style.display = "none";
 });
 
 botao3.addEventListener("click", function () {
@@ -88,6 +96,8 @@ botao3.addEventListener("click", function () {
     conteudo2.style.display = "none";
     conteudo3.style.display = "block";
     conteudo4.style.display = "none";
+    conteudo5.style.display = "none";
+    conteudo6.style.display = "none";
 });
 
 botao4.addEventListener("click", function () {
@@ -96,6 +106,28 @@ botao4.addEventListener("click", function () {
     conteudo2.style.display = "none";
     conteudo3.style.display = "none";
     conteudo4.style.display = "block";
+    conteudo5.style.display = "none";
+    conteudo6.style.display = "none";
+});
+
+botao5.addEventListener("click", function () {
+    // Altera a exibição do conteúdo correspondente
+    conteudo1.style.display = "none";
+    conteudo2.style.display = "none";
+    conteudo3.style.display = "none";
+    conteudo4.style.display = "none";
+    conteudo5.style.display = "block";
+    conteudo6.style.display = "none";
+});
+
+botao6.addEventListener("click", function () {
+    // Altera a exibição do conteúdo correspondente
+    conteudo1.style.display = "none";
+    conteudo2.style.display = "none";
+    conteudo3.style.display = "none";
+    conteudo4.style.display = "none";
+    conteudo5.style.display = "none";
+    conteudo6.style.display = "block";
 });
 
 // Obtém todos os botões do menu
@@ -120,7 +152,7 @@ for (var i = 0; i < buttons.length; i++) {
 document.querySelector('.content.active').style.display = "block";
 document.querySelector('.menu-button.active').classList.add("active");
 
-
+// Ações do arccordion
 const accordion = document.querySelectorAll('.accordion li');
 
 accordion.forEach(item => {

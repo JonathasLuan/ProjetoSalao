@@ -108,7 +108,7 @@
           <button id="botao4" class="menu-button" data-target="content4">Configurações</button>
         </nav>
         <div class="container-content">
-          <div id="conteudo">
+          <div id="conteudos">
             <div class="content active" id="conteudo1">
               <div>
                 <h2>Seus agendamentos:</h2>
@@ -133,7 +133,10 @@
             </div>
             <div class="content hidden" id="conteudo3">
               <h2>Transações:</h2>
-              <p>Aqui ficará a exibição de todas as transações financeiras feitas entre o cliente e outras pessoas, como pagamentos, tranferências, reembolsos, bônus e descontos; onde ele poderá relacionar seus gastos e saber informações detalhadas doq eu aconteceu com seu dinheiro ao usar a plataforma, bem como editar preferências de métodos de pagamento e e recebimento (dependendo do tipo de usuário).</p>
+              <p>Aqui ficará a exibição de todas as transações financeiras feitas entre o cliente e outras pessoas, como
+                pagamentos, tranferências, reembolsos, bônus e descontos; onde ele poderá relacionar seus gastos e saber
+                informações detalhadas doq eu aconteceu com seu dinheiro ao usar a plataforma, bem como editar
+                preferências de métodos de pagamento e e recebimento (dependendo do tipo de usuário).</p>
             </div>
             <div class="content hidden" id="conteudo4">
               <h2>Configurações:</h2>
@@ -151,9 +154,7 @@
                       </button>
                     </h3>
                     <div id="content1" class="content">
-                      <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores
-                        da página
-                        (modo dark ou light) e outras preferências a mais que surgirem.</p>
+                      <h4>Modo de tela:</h4>
                       <span>light</span>
                       <label class="switch">
                         <input type="checkbox" id="dark-mode-switch">
@@ -208,35 +209,116 @@
                       </button>
                     </h3>
                     <div id="content4" class="content">
-                      <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua
-                        página de
-                        perfil, como: nickname, foto, bio e características físicas (?).</p>
-                      <div id="nome-sobrenome">
-                        <div id="nome">
-                          <h3>Nome</h3>
-                          <p id="nomeperfil">Fulano.</p>
-                          <button class="edit-btn btn">Editar</button>
-                        </div>
-                        <br>
+                      <div id="nome-sobrenome" class="divs">
                         <div>
-                          <input type="text" id="editnome">
-                          <button class="btn-salvar-edit btn">Salvar</button>
-                        </div>
-                        <div id="sobrenome">
-                          <h3>Sobrenome</h3>
-                          <p id="nomeperfil">da Silva.</p>
-                          <button class="edit-btn btn">Editar</button>
-                        </div>
-                        <br>
-                        <div>
-                          <input type="text" id="editnome">
-                          <button class="btn-salvar-edit btn">Salvar</button>
+                          <h3>Nome completo</h3>
+                          <div>
+                            <span>Nome:</span>
+                            <span id="nome">João da Silva</span>
+                            <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
+                            <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Email:</span>
+                            <span id="email">joao.silva@gmail.com</span>
+                            <button id="edit-email" onclick="editarCampo('email')">Editar</button>
+                            <button id="salvar-email" style="display:none"
+                              onclick="salvarCampo('email')">Salvar</button>
+                          </div>
                         </div>
                       </div>
                       <br>
-                      <div id="endereco">
-                        <h3>Endereço</h3>
+                      <div id="endereco" class="divs">
                         <div id="info-endereco">
+                          <h3 style="text-align: center;">Endereço</h3>
+                          <div class="data">
+                            <span>Estado:</span>
+                            <span id="estado">São Paulo</span>
+                            <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
+                            <button id="salvar-estado" style="display:none"
+                              onclick="salvarCampo('estado')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Cidade:</span>
+                            <span id="cidade">São Pailo</span>
+                            <button id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
+                            <button id="salvar-cidade" style="display:none"
+                              onclick="salvarCampo('cidade')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Bairro:</span>
+                            <span id="bairro">Centro</span>
+                            <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
+                            <button id="salvar-beirro" style="display:none"
+                              onclick="salvarCampo('bairro')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Rua:</span>
+                            <span id="rua">Av. Paulista</span>
+                            <button id="edit-rua" onclick="editarCampo('rua')">Editar</button>
+                            <button id="salvar-rua" style="display:none" onclick="salvarCampo('rua')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Complemento:</span>
+                            <span id="complemento">''</span>
+                            <button id="edit-complemento" onclick="editarCampo('complemento')">Editar</button>
+                            <button id="salvar-complemento" style="display:none"
+                              onclick="salvarCampo('complemento')">Salvar</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="caract-list" class="divs" style="border-bottom: 0;">
+                        <h3 style="text-align: center;">Características</h3>
+                        <div class="caract">
+                          <h4>Cabelo</h4>
+                          <label for="tipo">Tipo:</label>
+                          <select id="tipo" name="tipo">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Liso</option>
+                            <option value="">Ondulado</option>
+                            <option value="">Cacheado</option>
+                            <option value="">Crespo</option>
+                          </select>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Careca</option>
+                            <option value="">Calvo</option>
+                            <option value="">Curto</option>
+                            <option value="">Médio</option>
+                            <option value="">Longo</option>
+                          </select>
+                        </div>
+                        <div class="caract">
+                          <h4>Rosto</h4>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Curto</option>
+                            <option value="">Médio</option>
+                            <option value="">Longo</option>
+                          </select>
+                          <label for="formato">Formato:</label>
+                          <select id="formato" name="formato">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Fino</option>
+                            <option value="">Redondo</option>
+                            <option value="">Quadrado</option>
+                            <option value="">Triangular</option>
+                          </select>
+                        </div>
+                        <div class="caract">
+                          <h4>Pele</h4>
+                        </div>
+                        <div class="caract" style="border-bottom: 0;">
+                          <h4>Unhas</h4>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Curtas</option>
+                            <option value="">Médias</option>
+                            <option value="">Longas</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -254,7 +336,7 @@
                     </h3>
                     <div id="content5" class="content">
                       <p>Aqui ficarão configurações e ajustes do perfil.</p>
-                      <div id="nome">
+                      <div id="nome" class="divs">
                         <h3>Nome</h3>
                         <p id="nomeperfil">Fulano da Silva.</p>
                         <button class="edit-btn">Editar</button>
@@ -265,7 +347,7 @@
                         <button class="btn-salvar-edit btn">Salvar</button>
                       </div>
                       <br>
-                      <div id="editbio">
+                      <div id="editbio" class="divs" style="border-bottom: 0;">
                         <h3>Sobre</h3>
                         <div>
                           <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).

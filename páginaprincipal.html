@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil</title>
+  <title>Página Principal</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="perfilCSS.css">
+  <link rel="stylesheet" href="páginaprincipalCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -69,6 +69,8 @@
                     <label for="profile-image">Escolha uma Imagem</label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
                     <input type="file" id="profile-image" name="profile-image">
+                    <form>
+                    </form>
                   </div>
                   <img id="profile-preview" src="img/profile.webp" alt="profile">
                   <button id="salvar-foto" type="submit">Salvar</button>
@@ -82,7 +84,7 @@
             <div id="tipo-user">
               <h3>tipo-user</h3>
             </div>
-            <div id="name">
+            <div id="nome">
               <h2 id="nomeperfil">Fulano da Silva</h2>
             </div>
             <div id="links">
@@ -102,9 +104,20 @@
     </section>
 
     <section>
-      <div class="sidebar sidebar-right">
+      <div class="sidebar sidebar-center">
         <nav id="menu-content">
           <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
+          <button id="botao2" class="menu-button" data-target="content2">Botão 2</button>
+          <button id="botao3" class="menu-button" data-target="content3">Botão 3</button>
+          <button id="botao4" class="menu-button" data-target="content4">Botão 4</button>
+        </nav>
+
+        <nav id="menu-content">
+          <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
+          <div class="pesquisa2">
+            <input type="text" placeholder="buscar...">
+            <i class="fa fa-search"></i>
+          </div>
           <button id="botao2" class="menu-button" data-target="content2">Botão 2</button>
           <button id="botao3" class="menu-button" data-target="content3">Botão 3</button>
           <button id="botao4" class="menu-button" data-target="content4">Botão 4</button>
@@ -130,94 +143,50 @@
               <h2>Conteúdo 4:</h2>
               <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
                 mas sim botões que abrem conteúdo no espaço abaixo</p>
-              <div>
-                <h2>Informações Pessoais</h2>
-                <div>
-                  <span>Nome:</span>
-                  <span id="nome">João da Silva</span>
-                  <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
-                  <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
-                </div>
-                <div>
-                  <span>Email:</span>
-                  <span id="email">joao.silva@gmail.com</span>
-                  <button id="edit-email" onclick="editarCampo('email')">Editar</button>
-                  <button id="salvar-email" style="display:none" onclick="salvarCampo('email')">Salvar</button>
-                </div>
-              </div>
-              <div>
-                <h2>Endereço</h2>
-                <div class="data">
-                  <span>Estado:</span>
-                  <span id="estado">São Paulo</span>
-                  <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
-                  <button id="salvar-estado" style="display:none" onclick="salvarCampo('estado')">Salvar</button>
-                </div>
-                <div>
-                  <span>Cidade:</span>
-                  <span id="cidade">São Pailo</span>
-                  <button id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
-                  <button id="salvar-cidade" style="display:none" onclick="salvarCampo('cidade')">Salvar</button>
-                </div>
-                <div>
-                  <span>Bairro:</span>
-                  <span id="bairro">Centro</span>
-                  <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
-                  <button id="salvar-beirro" style="display:none" onclick="salvarCampo('bairro')">Salvar</button>
-                </div>
-                <div>
-                  <span>Rua:</span>
-                  <span id="rua">Av. Paulista</span>
-                  <button id="edit-rua" onclick="editarCampo('rua')">Editar</button>
-                  <button id="salvar-rua" style="display:none" onclick="salvarCampo('rua')">Salvar</button>
-                </div>
-                <div>
-                  <span>Complemento:</span>
-                  <span id="complemento">''</span>
-                  <button id="edit-complemento" onclick="editarCampo('complemento')">Editar</button>
-                  <button id="salvar-complemento" style="display:none"
-                    onclick="salvarCampo('complemento')">Salvar</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section>
+      <div class="sidebar sidebar-right">
+        <div class="container-acess">
+          <nav class="sidebar-acess">
+            <ul>
+              <li>
+                <a href="home.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-home"></i> | Página
+                  Inícial</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-bell"></i> | Notificações</a>
+              </li>
+              <li>
+                <a href="mensagens.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-comments"></i> |
+                  Conversas</a>
+              </li>
+              <li>
+                <a href="agendamentos.html"><i class="icon icon-arrow-small-right"><i class="fa fa-calendar"></i> |
+                    Agendamentos</a>
+              </li>
+              <li>
+                <a href="configurações.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-gear"></i> |
+                  Configurações</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-question"></i> | FAQ - dúvidas
+                  frequentes</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-plus"></i> | Criar serviço</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
   </main>
-  <script>
-    function editarCampo(campo) {
-      var elemento = document.getElementById(campo);
-      var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
-      document.getElementById('edit-' + campo).style.display = 'none';
-      document.getElementById('salvar-' + campo).style.display = 'inline';
-    }
 
-    function salvarCampo(campo) {
-      var valorNovo = document.getElementById('campo-editar').value;
-      document.getElementById(campo).innerHTML = valorNovo;
-      document.getElementById('edit-' + campo).style.display = 'inline';
-      document.getElementById('salvar-' + campo).style.display = 'none';
-    }
-  </script>
-  
-  <script>
-    function editarCampo(campo) {
-      var elemento = document.getElementById(campo);
-      var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
-      document.getElementById('edit-' + campo).style.display = 'none';
-      document.getElementById('salvar-' + campo).style.display = 'inline';
-    }
-
-    function salvarCampo(campo) {
-      var valorNovo = document.getElementById('campo-editar').value;
-      document.getElementById(campo).innerHTML = valorNovo;
-      document.getElementById('edit-' + campo).style.display = 'inline';
-      document.getElementById('salvar-' + campo).style.display = 'none';
-    }
-  </script>
   <script src="perfilJS.js"></script>
 </body>
 

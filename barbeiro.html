@@ -50,7 +50,56 @@
       </ul>
     </div>
   </header>
-  <p>Nesta página serão exibidos os serviços de barbeiro</p>
+  <main>
+    <div id="conteudo">
+      <p>Nesta página serão exibidos os serviços de barbeiro</p>
+    </div>
+    <h2>Endereço</h2>
+    <div class="data">
+      <span>Estado:</span>
+      <span id="estado">
+        <select id="select-estado">
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="BA">Bahia</option>
+        </select>
+      </span>
+      <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
+      <button id="salvar-estado" style="display:none" onclick="salvarCampo('estado')">Salvar</button>
+    </div>
+  </main>
+  <script>
+    function editCampo(campo) {
+      var elemento = document.getElementById(campo);
+      var valorAntigo = elemento.innerText;
+      var opcoes = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]; // exemplo de opções para o select
+      var selectHTML = '<select id="campo-editar">';
+      for (var i = 0; i < opcoes.length; i++) {
+        selectHTML += '<option value="' + opcoes[i] + '">' + opcoes[i] + '</option>';
+      }
+      selectHTML += '</select>';
+      elemento.innerHTML = selectHTML;
+      document.getElementById('edit-' + campo).style.display = 'none';
+      document.getElementById('salvar-' + campo).style.display = 'inline';
+    }
+
+    function salvarCampo(campo) {
+      var novoValor = document.getElementById('campo-editar').value;
+      var elemento = document.getElementById(campo);
+      var select = elemento.querySelector('select');
+
+      if (select) {
+        var opcoes = select.options;
+        var indiceSelecionado = select.selectedIndex;
+        novoValor = opcoes[indiceSelecionado].text;
+      }
+
+      elemento.innerHTML = novoValor;
+      document.getElementById('edit-' + campo).style.display = 'inline';
+      document.getElementById('salvar-' + campo).style.display = 'none';
+    }
+  </script>
 </body>
 
 </html>

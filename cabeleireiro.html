@@ -50,7 +50,78 @@
       </ul>
     </div>
   </header>
-  <p>Nesta página serão exibidos os serviços de cabeleireiro.</p>
+  <main>
+    <div id="conteudo">
+      <p>Nesta página serão exibidos os serviços de cabeleireiro.</p>
+    </div>
+    <div>
+      <h2>Informações Pessoais</h2>
+      <div>
+        <span>Nome:</span>
+        <span id="nome">João da Silva</span>
+        <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
+        <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
+      </div>
+      <div>
+        <span>Email:</span>
+        <span id="email">joao.silva@gmail.com</span>
+        <button id="edit-email" onclick="editarCampo('email')">Editar</button>
+        <button id="salvar-email" style="display:none" onclick="salvarCampo('email')">Salvar</button>
+      </div>
+    </div>
+
+    <div>
+      <h2>Endereço</h2>
+      <div class="data">
+        <span>Estado:</span>
+        <span id="estado">São Paulo</span>
+        <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
+        <button id="salvar-estado" style="display:none" onclick="salvarCampo('estado')">Salvar</button>
+      </div>
+      <div>
+        <span>Cidade:</span>
+        <span id="cidade">São Pailo</span>
+        <button id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
+        <button id="salvar-cidade" style="display:none" onclick="salvarCampo('cidade')">Salvar</button>
+      </div>
+      <div>
+        <span>Bairro:</span>
+        <span id="bairro">Centro</span>
+        <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
+        <button id="salvar-beirro" style="display:none" onclick="salvarCampo('bairro')">Salvar</button>
+      </div>
+      <div>
+        <span>Rua:</span>
+        <span id="rua">Av. Paulista</span>
+        <button id="edit-rua" onclick="editarCampo('rua')">Editar</button>
+        <button id="salvar-rua" style="display:none" onclick="salvarCampo('rua')">Salvar</button>
+      </div>
+      <div>
+        <span>Complemento:</span>
+        <span id="complemento">''</span>
+        <button id="edit-complemento" onclick="editarCampo('complemento')">Editar</button>
+        <button id="salvar-complemento" style="display:none" onclick="salvarCampo('complemento')">Salvar</button>
+      </div>
+    </div>
+    <br> <br> <br> <br>
+
+    <script>
+      function editarCampo(campo) {
+        var elemento = document.getElementById(campo);
+        var valorAntigo = elemento.innerText;
+        elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
+        document.getElementById('edit-' + campo).style.display = 'none';
+        document.getElementById('salvar-' + campo).style.display = 'inline';
+      }
+
+      function salvarCampo(campo) {
+        var valorNovo = document.getElementById('campo-editar').value;
+        document.getElementById(campo).innerHTML = valorNovo;
+        document.getElementById('edit-' + campo).style.display = 'inline';
+        document.getElementById('salvar-' + campo).style.display = 'none';
+      }
+    </script>
+  </main>
 </body>
 
 </html>

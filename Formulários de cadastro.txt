@@ -35,7 +35,13 @@ Profissional:
 	Telefônes
 			[continuar]
 
-	Endereço -
+	Endereço pessoal -
+		Estado
+		Cidade
+		Bairro
+		Rua
+		Número
+	Endereço profissional -
 		Estado
 		Cidade
 		Bairro

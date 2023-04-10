@@ -80,7 +80,7 @@
             <div id="tipo-user">
               <h3>profissional</h3>
             </div>
-            <div id="nome">
+            <div id="name">
               <h2 id="nomeperfil">Fulano da Silva</h2>
             </div>
             <div id="links">
@@ -105,12 +105,12 @@
           <button id="botao1" class="menu-button active" data-target="content1">Principal</button>
           <button id="botao2" class="menu-button" data-target="content2">Conversas</button>
           <button id="botao3" class="menu-button" data-target="content3">Agendamentos</button>
-          <button id="botao4" class="menu-button" data-target="content4">Configurações</button>
-          <button id="botao5" class="menu-button" data-target="content5">Networking</button>
-          <button id="botao6" class="menu-button" data-target="content6">Mídias</button>
+          <button id="botao4" class="menu-button" data-target="content4">Networking</button>
+          <button id="botao5" class="menu-button" data-target="content5">Mídias</button>
+          <button id="botao6" class="menu-button" data-target="content6">Configurações</button>
         </nav>
         <div class="container-content">
-          <div id="conteudo">
+          <div id="conteudos">
             <div class="content active" id="conteudo1">
               <div>
                 <h2>Portifolio:</h2>
@@ -140,6 +140,26 @@
               </div>
             </div>
             <div class="content hidden" id="conteudo4">
+              <h2>Networking:</h2>
+              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
+                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+              <div id="agend-list">
+                <div id="agend">
+
+                </div>
+              </div>
+            </div>
+            <div class="content hidden" id="conteudo5">
+              <h2>Mídias:</h2>
+              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
+                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+              <div id="agend-list">
+                <div id="agend">
+
+                </div>
+              </div>
+            </div>
+            <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
               <div id="options">
                 <ul class="accordion">
@@ -155,9 +175,7 @@
                       </button>
                     </h3>
                     <div id="content1" class="content">
-                      <p>Aqui ficarão configurações e ajustes mais Gerais do perfil, como: idioma/país, layout e cores
-                        da página
-                        (modo dark ou light) e outras preferências a mais que surgirem.</p>
+                      <h4>Modo de tela:</h4>
                       <span>light</span>
                       <label class="switch">
                         <input type="checkbox" id="dark-mode-switch">
@@ -212,35 +230,62 @@
                       </button>
                     </h3>
                     <div id="content4" class="content">
-                      <p>Aqui o usuário poderá editar informações sobre si que serão exibidas ou não publicamente em sua
-                        página de
-                        perfil, como: nickname, foto, bio e características físicas (?).</p>
-                      <div id="nome-sobrenome">
-                        <div id="nome">
-                          <h3>Nome</h3>
-                          <p id="nomeperfil">Fulano.</p>
-                          <button class="edit-btn btn">Editar</button>
-                        </div>
-                        <br>
+                      <div id="nome-sobrenome" class="divs">
                         <div>
-                          <input type="text" id="editnome">
-                          <button class="btn-salvar-edit btn">Salvar</button>
-                        </div>
-                        <div id="sobrenome">
-                          <h3>Sobrenome</h3>
-                          <p id="nomeperfil">da Silva.</p>
-                          <button class="edit-btn btn">Editar</button>
-                        </div>
-                        <br>
-                        <div>
-                          <input type="text" id="editnome">
-                          <button class="btn-salvar-edit btn">Salvar</button>
+                          <h3>Nome completo</h3>
+                          <div>
+                            <span>Nome:</span>
+                            <span id="nome">João da Silva</span>
+                            <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
+                            <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Email:</span>
+                            <span id="email">joao.silva@gmail.com</span>
+                            <button id="edit-email" onclick="editarCampo('email')">Editar</button>
+                            <button id="salvar-email" style="display:none"
+                              onclick="salvarCampo('email')">Salvar</button>
+                          </div>
                         </div>
                       </div>
                       <br>
-                      <div id="endereco">
-                        <h3>Endereço</h3>
+                      <div id="endereco" class="divs">
                         <div id="info-endereco">
+                          <h3 style="text-align: center;">Endereço</h3>
+                          <div class="data">
+                            <span>Estado:</span>
+                            <span id="estado">São Paulo</span>
+                            <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
+                            <button id="salvar-estado" style="display:none"
+                              onclick="salvarCampo('estado')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Cidade:</span>
+                            <span id="cidade">São Pailo</span>
+                            <button id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
+                            <button id="salvar-cidade" style="display:none"
+                              onclick="salvarCampo('cidade')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Bairro:</span>
+                            <span id="bairro">Centro</span>
+                            <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
+                            <button id="salvar-beirro" style="display:none"
+                              onclick="salvarCampo('bairro')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Rua:</span>
+                            <span id="rua">Av. Paulista</span>
+                            <button id="edit-rua" onclick="editarCampo('rua')">Editar</button>
+                            <button id="salvar-rua" style="display:none" onclick="salvarCampo('rua')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Complemento:</span>
+                            <span id="complemento">''</span>
+                            <button id="edit-complemento" onclick="editarCampo('complemento')">Editar</button>
+                            <button id="salvar-complemento" style="display:none"
+                              onclick="salvarCampo('complemento')">Salvar</button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -257,19 +302,26 @@
                       </button>
                     </h3>
                     <div id="content5" class="content">
-                      <p>Aqui ficarão configurações e ajustes do perfil.</p>
-                      <div id="nome">
-                        <h3>Nome</h3>
-                        <p id="nomeperfil">Fulano da Silva.</p>
-                        <button class="edit-btn">Editar</button>
+                      <div id="editnome" class="divs">
+                        <div>
+                          <h4>Informações Pessoais</h4>
+                          <div>
+                            <span>Nome:</span>
+                            <span id="nome">João da Silva</span>
+                            <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
+                            <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
+                          </div>
+                          <div>
+                            <span>Email:</span>
+                            <span id="email">joao.silva@gmail.com</span>
+                            <button id="edit-email" onclick="editarCampo('email')">Editar</button>
+                            <button id="salvar-email" style="display:none"
+                              onclick="salvarCampo('email')">Salvar</button>
+                          </div>
+                        </div>
                       </div>
                       <br>
-                      <div>
-                        <input type="text" id="editnome">
-                        <button class="btn-salvar-edit btn">Salvar</button>
-                      </div>
-                      <br>
-                      <div id="editbio">
+                      <div id="editbio" class="divs" style="border-bottom: 0;">
                         <h3>Sobre</h3>
                         <div>
                           <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).
@@ -299,9 +351,23 @@
         </div>
       </div>
     </section>
-    </div>
   </main>
+  <script>
+    function editarCampo(campo) {
+      var elemento = document.getElementById(campo);
+      var valorAntigo = elemento.innerText;
+      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
+      document.getElementById('edit-' + campo).style.display = 'none';
+      document.getElementById('salvar-' + campo).style.display = 'inline';
+    }
 
+    function salvarCampo(campo) {
+      var valorNovo = document.getElementById('campo-editar').value;
+      document.getElementById(campo).innerHTML = valorNovo;
+      document.getElementById('edit-' + campo).style.display = 'inline';
+      document.getElementById('salvar-' + campo).style.display = 'none';
+    }
+  </script>
   <script src="perfilJS.js"></script>
 </body>
 

@@ -1,0 +1,186 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.conteudo {
+    margin: 0px 0px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#cadastroform {
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    width: 55%;
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+}
+
+/* Estilos para input file */
+.arquivo {
+    width: 26%;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 6px 34px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #24a0ed;
+}
+
+.arquivo input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.arquivo label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.arquivo:hover {
+    background-color: #51b4f1;
+}
+
+.modal-inner {
+    background-color: #fefefe;
+    position: relative;
+    margin: 10px;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-inner img {
+    width: 37%;
+    height: 37%;
+    border: 1px solid;
+}
+
+textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+select {
+    display: inline;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+select:focus {
+    background-color: #e6e6e6;
+}
+
+#numero {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+.divs,
+.caract {
+    border: #a9a9a9 1px solid;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 30px;
+}
+
+button[type="submit"] {
+    background-color: #484848;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button[type="submit"]:hover {
+    background-color: #a9a9a9;
+}
+
+.formulario-container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="tel"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+.entrada {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+.entrada:focus,
+select:focus {
+    background-color: #e6e6e6;
+}

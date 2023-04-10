@@ -14,48 +14,57 @@ body {
     padding: 40px;
     width: 55%;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
+}
+
+#formulario-container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+form {
+    width: 100%;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 input[type="tel"] {
-    width: 20%;
+    width: 50%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #f2f2f2;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #nome,
 #mensagem,
 input[type="email"] {
-    width: 50%;
+    width: 90%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
     background-color: #f2f2f2;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #assunto {
-    width: 20%;
+    width: 50%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #f2f2f2;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 button[type="submit"] {
@@ -64,7 +73,7 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     margin-top: 30px;
 }
