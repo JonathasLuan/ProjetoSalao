@@ -1,4 +1,5 @@
 body {
+    background-color: #f2f2f2;
     width: 100%;
     height: 100%;
     padding: 0%;
@@ -11,14 +12,15 @@ body {
 header {
     width: 100%;
     height: 70px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0px 0px 5px #ccc;
 }
 
 .logo {
-    color: #fff;
+    color: #000000;
     font-size: 30px;
     font-weight: 700;
     font-family: 'Times New Roman', Times, serif;
@@ -32,6 +34,8 @@ header {
 .logo img {
     width: 40px;
     height: 40px;
+    border: 1px solid;
+    border-color: #000000;
     border-radius: 50%;
     margin-right: 20px;
     margin-top: 9.4px;
@@ -73,13 +77,14 @@ header {
 .menu li a {
     font-size: 20px;
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
 }
 
 .menu li a:hover {
     background-color: rgb(70, 69, 69);
+    color: white;
 }
 
 footer {
