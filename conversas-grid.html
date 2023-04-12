@@ -7,75 +7,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversas</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="conversasCSS.css">
+  <link rel="stylesheet" href="conversas-grid.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    main {
+      background-color: #f2f2f2;
+      display: grid;
+      gap: 15px;
+      grid-template-areas:
+        'header header header header'
+        'sidebar1 content content sidebar2'
+        'footer footer footer footer';
+      grid-template-columns: 20% 40% 20%;
+    }
 
+    header {
+      grid-area: header;
+      background-color: white;
+    }
+
+    #sidebar1 {
+      grid-area: sidebar1;
+      height: 50vh;
+      background-color: white;
+    }
+
+    #sidebar2 {
+      grid-area: sidebar2;
+      height: 50vh;
+      background-color: white;
+    }
+
+    #content {
+      grid-area: content;
+      height: 100%;
+      background-color: white;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    header {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+
+    #sidebar2 {
+      grid-row-start: 2;
+      grid-row-end: 4;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
-        <div>
-          <span>NaRégua</span>
+  <main>
+    <header>
+      <div id="header1">
+        <div class="logo">
+          <div><img src="./img/tesourapentepretos.jpg"></div>
+          <div>
+            <span>NaRégua</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="home.html">home</a>
-        </li>
-        <li>
-          <a href="serviços.html">serviços</a>
-        </li>
-        <li>
-          <a href="sobre.html">sobre</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a href="entrar.html" class="mainmenua">perfil</a>
-            <div class="dropdown-child">
-              <a href="#">sub menu 1</a>
-              <a href="#">sub menu 2</a>
-              <a href="#">sub menu 3</a>
-              <a href="#">sub menu 4</a>
-              <a href="#">sub menu 5</a>
+      <div class="pesquisa">
+        <input type="text" placeholder="buscar...">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="home.html">home</a>
+          </li>
+          <li>
+            <a href="serviços.html">serviços</a>
+          </li>
+          <li>
+            <a href="sobre.html">sobre</a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a href="entrar.html" class="mainmenua">perfil</a>
+              <div class="dropdown-child">
+                <a href="#">sub menu 1</a>
+                <a href="#">sub menu 2</a>
+                <a href="#">sub menu 3</a>
+                <a href="#">sub menu 4</a>
+                <a href="#">sub menu 5</a>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <a href="contato.html">contato</a>
-        </li>
-      </ul>
-    </div>
-    <label class="switch">
-      <input type="checkbox" id="dark-mode-switch">
-      <span class="slider round"></span>
-    </label>
-  </header>
-  <main>
-    <section>
+          </li>
+          <li>
+            <a href="contato.html">contato</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="sidebar1">
+      <p>Sidebar 1</p>
       <div class="sidebar sidebar-left">
         <div class="container-conversas">
-        <nav id="menu-conversas">
-          <button id="btn5" class="menu-button active" data-target="content1">Btn5</button>
-          <div class="pesquisa3">
-            <input type="text" placeholder="buscar...">
-            <i class="fa fa-search"></i>
-          </div>
-          <button id="btn8" class="menu-button" data-target="content4">...</button>
-        </nav>
+          <nav id="menu-conversas">
+            <button id="btn5" class="menu-button active" data-target="content1">Btn5</button>
+            <div class="pesquisa3">
+              <input type="text" placeholder="buscar...">
+              <i class="fa fa-search"></i>
+            </div>
+            <button id="btn8" class="menu-button" data-target="content4">...</button>
+          </nav>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
+    <div id="content">
+      <p>Conteúdo</p>
       <div class="sidebar sidebar-center">
         <nav id="menu-content">
           <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
@@ -98,7 +149,8 @@
           <div id="conteudo">
             <div class="content active" id="conteudo1">
               <h2>Mensagens:</h2>
-              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as mensagens respectivas de cada bate-papo.</p>
+              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as
+                mensagens respectivas de cada bate-papo.</p>
             </div>
             <div class="content hidden" id="conteudo2">
               <h2>Conteúdo 2:</h2>
@@ -139,14 +191,15 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
+    <div id="sidebar2">
+      <p>Sidebar 2</p>
       <div class="sidebar sidebar-right">
         <div class="container-contato">
           <div id="info">
             <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
+              <img id="foto-perfil" src="img/.webp" alt="profile">
             </div>
             <div id="botoes">
               <button>btn 1</button>
@@ -163,7 +216,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <footer id="footer">
+      <p>&copy; 2023 Na Régua</p>
+    </footer>
   </main>
 
   <script>
