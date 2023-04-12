@@ -8,6 +8,46 @@
   <title>Destaques</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .mainmenua {
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .mainmenua:hover {
+      background-color: gray;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-child {
+      display: none;
+      background-color: #f2f2f2;
+      min-width: 200px;
+    }
+
+    .dropdown-child a {
+      color: blue;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-child {
+      display: block;
+    }
+
+    .dropdown-child a:hover {
+      background-color: darkgray;
+    }
+  </style>
 </head>
 
 <body>
@@ -38,8 +78,20 @@
         <li>
           <a href="entrar.html">perfil</a>
         </li>
-        <li>
+        <li class="dropdown">
           <a href="contato.html">contato</a>
+        </li>
+        <li>
+          <div class="dropdown">
+            <a class="mainmenua">Main Menu</a>
+            <div class="dropdown-child">
+              <a href="http://wwww.yourdomain.com/page1.html">Sub Menu 1</a>
+              <a href="http://wwww.yourdomain.com/page2.html">Sub Menu 2</a>
+              <a href="http://wwww.yourdomain.com/page3.html">Sub Menu 3</a>
+              <a href="http://wwww.yourdomain.com/page4.html">Sub Menu 4</a>
+              <a href="http://wwww.yourdomain.com/page5.html">Sub Menu 5</a>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -47,6 +99,16 @@
   <main>
     <div id="conteudo">
       <p></p>
+      <div class="dropdown">
+        <button class="mainmenua" style="border: 1px solid;">Main Menu</button>
+        <div class="dropdown-child">
+          <a href="http://wwww.yourdomain.com/page1.html" style="border: 1px solid; border-color: black;">Sub Menu 1</a>
+          <a href="http://wwww.yourdomain.com/page2.html" style="border: 1px solid; border-color: black;">Sub Menu 2</a>
+          <a href="http://wwww.yourdomain.com/page3.html" style="border: 1px solid; border-color: black;">Sub Menu 3</a>
+          <a href="http://wwww.yourdomain.com/page4.html" style="border: 1px solid; border-color: black;">Sub Menu 4</a>
+          <a href="http://wwww.yourdomain.com/page5.html" style="border: 1px solid; border-color: black;">Sub Menu 5</a>
+        </div>
+      </div>
     </div>
   </main>
 </body>
