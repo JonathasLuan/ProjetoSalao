@@ -8,46 +8,6 @@
   <title>Destaques</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    .mainmenua {
-      background-color: white;
-      color: black;
-      border: none;
-      cursor: pointer;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .mainmenua:hover {
-      background-color: gray;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-child {
-      display: none;
-      background-color: #f2f2f2;
-      min-width: 200px;
-    }
-
-    .dropdown-child a {
-      color: blue;
-      padding: 20px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown:hover .dropdown-child {
-      display: block;
-    }
-
-    .dropdown-child a:hover {
-      background-color: darkgray;
-    }
-  </style>
 </head>
 
 <body>
@@ -76,14 +36,23 @@
           <a href="sobre.html">sobre</a>
         </li>
         <li>
-          <a href="entrar.html">perfil</a>
+          <div class="dropdown">
+            <a href="entrar.html" class="mainmenua">perfil</a>
+            <div class="dropdown-child">
+              <a href="#">sub menu 1</a>
+              <a href="#">sub menu 2</a>
+              <a href="#">sub menu 3</a>
+              <a href="#">sub menu 4</a>
+              <a href="#">sub menu 5</a>
+            </div>
+          </div>
         </li>
-        <li class="dropdown">
+        <li>
           <a href="contato.html">contato</a>
         </li>
         <li>
           <div class="dropdown">
-            <a class="mainmenua">Main Menu</a>
+            <a class="mainmenua"><i class="fa fa-ellipsis-v"></i></a>
             <div class="dropdown-child">
               <a href="http://wwww.yourdomain.com/page1.html">Sub Menu 1</a>
               <a href="http://wwww.yourdomain.com/page2.html">Sub Menu 2</a>
@@ -99,16 +68,93 @@
   <main>
     <div id="conteudo">
       <p></p>
-      <div class="dropdown">
-        <button class="mainmenua" style="border: 1px solid;">Main Menu</button>
-        <div class="dropdown-child">
-          <a href="http://wwww.yourdomain.com/page1.html" style="border: 1px solid; border-color: black;">Sub Menu 1</a>
-          <a href="http://wwww.yourdomain.com/page2.html" style="border: 1px solid; border-color: black;">Sub Menu 2</a>
-          <a href="http://wwww.yourdomain.com/page3.html" style="border: 1px solid; border-color: black;">Sub Menu 3</a>
-          <a href="http://wwww.yourdomain.com/page4.html" style="border: 1px solid; border-color: black;">Sub Menu 4</a>
-          <a href="http://wwww.yourdomain.com/page5.html" style="border: 1px solid; border-color: black;">Sub Menu 5</a>
-        </div>
-      </div>
+<button onclick="goBack()">Voltar</button>
+
+<button id="btn-prev">Anterior</button>
+<button id="btn-next">Próximo</button>
+
+<div id="conteudo">
+  <div class="secao" id="secao-1">
+    <h2>Seção 1</h2>
+    <p>Conteúdo da seção 1.</p>
+  </div>
+  <div class="secao" id="secao-2">
+    <h2>Seção 2</h2>
+    <p>Conteúdo da seção 2.</p>
+  </div>
+  <div class="secao" id="secao-3">
+    <h2>Seção 3</h2>
+    <p>Conteúdo da seção 3.</p>
+  </div>
+</div>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<script>
+// Seleciona os botões de voltar e avançar
+var btnPrev = document.getElementById("btn-prev");
+var btnNext = document.getElementById("btn-next");
+
+// Seleciona as seções de conteúdo
+var secoes = document.getElementsByClassName("secao");
+
+// Inicializa o estado atual da navegação
+var estadoAtual = 0;
+
+// Função para atualizar o estado da navegação
+function atualizarNavegacao(estado) {
+  // Oculta todas as seções de conteúdo
+  for (var i = 0; i < secoes.length; i++) {
+    secoes[i].style.display = "none";
+  }
+  
+  // Exibe a seção correspondente ao estado atual
+  secoes[estado].style.display = "block";
+}
+
+// Função para avançar na navegação
+function avancar() {
+  // Verifica se há um próximo estado na navegação
+  if (estadoAtual < secoes.length - 1) {
+    // Incrementa o estado atual
+    estadoAtual++;
+    
+    // Adiciona uma nova entrada no histórico de navegação
+    history.pushState({estado: estadoAtual}, null, null);
+    
+    // Atualiza a navegação
+    atualizarNavegacao(estadoAtual);
+  }
+}
+
+// Função para voltar na navegação
+function voltar() {
+  // Verifica se há um estado anterior na navegação
+  if (estadoAtual > 0) {
+    // Decrementa o estado atual
+    estadoAtual--;
+    
+    // Remove a última entrada do histórico de navegação
+    history.go(-1);
+    
+    // Atualiza a navegação
+    atualizarNavegacao(estadoAtual);
+  }
+}
+
+// Adiciona os eventos de clique nos
+const backButton = document.getElementById('backButton');
+
+backButton.addEventListener('click', function() {
+  window.history.back();
+});
+
+</script>
+
     </div>
   </main>
 </body>

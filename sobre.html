@@ -36,7 +36,7 @@
       line-height: 30px;
     }
 
-    p {
+    #sobreprojeto p {
       text-align: justify;
       line-height: 2em;
       hyphens: auto;
@@ -54,7 +54,6 @@
 
     .sidebar ul {
       list-style-type: none;
-
     }
 
     .sidebar ul li {
@@ -96,7 +95,6 @@
     .sidebar ul li a:hover::after {
       transform: scaleX(1);
       transform-origin: left;
-
     }
 
     #sidebar {
@@ -109,7 +107,7 @@
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
+        <div><img src="./img/tesourapentepretos.jpg"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -131,7 +129,16 @@
           <a href="sobre.html">sobre</a>
         </li>
         <li>
-          <a href="entrar.html">perfil</a>
+          <div class="dropdown">
+            <a href="entrar.html" class="mainmenua">perfil</a>
+            <div class="dropdown-child">
+              <a href="#">sub menu 1</a>
+              <a href="#">sub menu 2</a>
+              <a href="#">sub menu 3</a>
+              <a href="#">sub menu 4</a>
+              <a href="#">sub menu 5</a>
+            </div>
+          </div>
         </li>
         <li>
           <a href="contato.html">contato</a>

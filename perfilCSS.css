@@ -81,6 +81,7 @@ nav button:hover {
     width: 150px;
     height: 150px;
     border: 1px solid;
+    border-radius: 50%;
 }
 
 #editar-foto {
@@ -437,9 +438,20 @@ body {
     color: rgb(255, 255, 255);
 }
 
+body.dark-mode header {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .logo {
+    background-color: #000;
+    color: white;
+}
+
 body.dark-mode .container-perfil {
     background-color: #000;
     color: white;
+    box-shadow: none;
 }
 
 body.dark-mode #info {
@@ -450,6 +462,7 @@ body.dark-mode #info {
 body.dark-mode .container-content {
     background-color: #000;
     color: white;
+    box-shadow: none;
 }
 
 body.dark-mode h3 {
@@ -467,6 +480,16 @@ body.dark-mode button {
     color: white;
 }
 
+body.dark-mode nav button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+body.dark-mode #botoes button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
 body.dark-mode nav {
     background-color: #000;
     color: white;
@@ -475,6 +498,11 @@ body.dark-mode nav {
 body.dark-mode a {
     background-color: #000;
     color: #51b4f1;
+}
+
+body.dark-mode #foto img {
+    border: 3px solid;
+    border-color: #51b4f1;
 }
 
 body.dark-mode input {
@@ -494,6 +522,10 @@ body.dark-mode .btn {
     margin: 2px;
     padding: 7px;
     border: 1px solid;
+}
+
+body.dark-mode .logo img {
+    content: url('./img/tesoura.png');
 }
 
 #sobreperfil,

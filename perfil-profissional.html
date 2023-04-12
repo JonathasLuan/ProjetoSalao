@@ -16,7 +16,7 @@
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
+        <div><img src="./img/tesourapentepretos.jpg"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -38,7 +38,16 @@
           <a href="sobre.html">sobre</a>
         </li>
         <li>
-          <a href="perfil.html">perfil</a>
+          <div class="dropdown">
+            <a href="perfil.html" class="mainmenua">perfil</a>
+            <div class="dropdown-child">
+              <a href="#">sub menu 1</a>
+              <a href="#">sub menu 2</a>
+              <a href="#">sub menu 3</a>
+              <a href="#">sub menu 4</a>
+              <a href="#">sub menu 5</a>
+            </div>
+          </div>
         </li>
         <li>
           <a href="contato.html">contato</a>
@@ -250,8 +259,8 @@
                       </div>
                       <br>
                       <div id="endereco" class="divs">
+                        <h3 style="text-align: center;">Endereço</h3>
                         <div id="info-endereco">
-                          <h3 style="text-align: center;">Endereço</h3>
                           <div class="data">
                             <span>Estado:</span>
                             <span id="estado">São Paulo</span>
@@ -270,7 +279,7 @@
                             <span>Bairro:</span>
                             <span id="bairro">Centro</span>
                             <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
-                            <button id="salvar-beirro" style="display:none"
+                            <button id="salvar-bairro" style="display:none"
                               onclick="salvarCampo('bairro')">Salvar</button>
                           </div>
                           <div>

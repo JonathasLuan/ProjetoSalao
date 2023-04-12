@@ -13,9 +13,8 @@
       padding: 0px 40px;
     }
 
-    p {
+    p, h1 {
       margin: 50px;
-      font-size: 20px;
     }
 
     #servico-btn {
@@ -61,6 +60,10 @@
       max-width: 50%;
     }
 
+    .modal-content .main h2 {
+      text-align: center;
+    }
+
     /* Estilos para o botão "Fechar" */
     .close {
       color: #aaaaaa;
@@ -82,7 +85,7 @@
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
+        <div><img src="./img/tesourapentepretos.jpg"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -104,7 +107,16 @@
           <a href="sobre.html">sobre</a>
         </li>
         <li>
-          <a href="entrar.html">perfil</a>
+          <div class="dropdown">
+            <a href="entrar.html" class="mainmenua">perfil</a>
+            <div class="dropdown-child">
+              <a href="#">sub menu 1</a>
+              <a href="#">sub menu 2</a>
+              <a href="#">sub menu 3</a>
+              <a href="#">sub menu 4</a>
+              <a href="#">sub menu 5</a>
+            </div>
+          </div>
         </li>
         <li>
           <a href="contato.html">contato</a>
@@ -113,12 +125,12 @@
     </div>
   </header>
   <main>
+    <h1>Aqui ficarão os agendamentos</h1>
     <p>Nesta página serão exibidos os serviços agendados pelo cliente e seu status, com todas as informações referentes
       a
       ele e o profissional envolvido, bem como as formas de pagamento escolhidas e termos de direitos de ambas as
       partes,
       com opções de contato com a equipe para resolver problemas.</p>
-    <h1>aqui ficarão agendamentos</h1>
     <button id="servico-btn">+</button>
     </div>
     <div id="modal-servico" class="modal">
@@ -127,6 +139,15 @@
         <!-- aqui vai o conteúdo da janela modal -->
         <div class="main">
           <h2>Criar pedido de serviço</h2>
+          <form>
+            <select>
+            <option>Cabeleireiro</opition>
+            <option></opition>
+            <option></opition>
+            <option></opition>
+            </select>
+            <input type:text id="">
+          </form>
         </div>
       </div>
     </div>

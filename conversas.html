@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal</title>
+  <title>Conversas</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="páginaprincipalCSS.css">
+  <link rel="stylesheet" href="conversasCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -16,7 +16,7 @@
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
+        <div><img src="./img/tesoura.png"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -62,33 +62,15 @@
   <main>
     <section>
       <div class="sidebar sidebar-left">
-        <div class="container-perfil">
-          <div id="info">
-            <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
-            </div>
-            <div id="botoes">
-              <button>seguir</button>
-              <button>mensagem</button>
-            </div>
-            <div id="tipo-user">
-              <h3>tipo-user</h3>
-            </div>
-            <div id="nome">
-              <h2 id="nomeperfil">Fulano da Silva</h2>
-            </div>
-            <div id="links">
-              <a href="https://www.facebook.com/">facebook</a>
-              <a href="https://www.instagram.com/">intagram</a>
-              <a href="https://www.linkedin.com/">linkedin</a>
-            </div>
-            <div id="bio">
-              <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
-                informações
-                adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
-                seu trabalho.</p>
-            </div>
+        <div class="container-conversas">
+        <nav id="menu-conversas">
+          <button id="btn5" class="menu-button active" data-target="content1">Btn5</button>
+          <div class="pesquisa3">
+            <input type="text" placeholder="buscar...">
+            <i class="fa fa-search"></i>
           </div>
+          <button id="btn8" class="menu-button" data-target="content4">...</button>
+        </nav>
         </div>
       </div>
     </section>
@@ -115,9 +97,8 @@
         <div class="container-content">
           <div id="conteudo">
             <div class="content active" id="conteudo1">
-              <h2>Mapa:</h2>
-              <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
-                proximidade delimitado.</p>
+              <h2>Mensagens:</h2>
+              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as mensagens respectivas de cada bate-papo.</p>
             </div>
             <div class="content hidden" id="conteudo2">
               <h2>Conteúdo 2:</h2>
@@ -162,37 +143,24 @@
 
     <section>
       <div class="sidebar sidebar-right">
-        <div class="container-acess">
-          <nav class="sidebar-acess">
-            <ul>
-              <li>
-                <a href="home.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-home"></i> | Página
-                  Inícial</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-bell"></i> | Notificações</a>
-              </li>
-              <li>
-                <a href="mensagens.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-comments"></i> |
-                  Conversas</a>
-              </li>
-              <li>
-                <a href="agendamentos.html"><i class="icon icon-arrow-small-right"><i class="fa fa-calendar"></i> |
-                    Agendamentos</a>
-              </li>
-              <li>
-                <a href="configurações.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-gear"></i> |
-                  Configurações</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-question"></i> | FAQ - dúvidas
-                  frequentes</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-plus"></i> | Criar serviço</a>
-              </li>
-            </ul>
-          </nav>
+        <div class="container-perfil">
+          <div id="info">
+            <div id="foto">
+              <img id="foto-perfil" src="img/profile.webp" alt="profile">
+            </div>
+            <div id="botoes">
+              <button>btn 1</button>
+              <button>btn 2</button>
+            </div>
+            <div id="tipo-user">
+              <h3>tipo-user</h3>
+            </div>
+            <div id="nome">
+              <h2 id="nomeperfil">Fulano da Silva</h2>
+            </div>
+            <div id="">
+            </div>
+          </div>
         </div>
       </div>
     </section>

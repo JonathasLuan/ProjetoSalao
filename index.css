@@ -86,6 +86,55 @@ header {
     background-color: rgb(70, 69, 69);
     color: white;
 }
+    .mainmenua {
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    .mainmenua:hover {
+      background-color: gray;
+      padding-bottom: 24px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-child {
+      display: none;
+      background-color: #f2f2f2;
+      min-width: 150px;
+      position: absolute;
+      top: 100%;
+      margin-top: 23px;
+      box-shadow: 0px 0px 5px #ccc;
+    }
+
+    .dropdown-child a {
+      color: blue;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-child {
+      display: block;
+    }
+
+    .dropdown:hover .mainmenua {
+      background-color: rgb(70, 69, 69);
+      color: white;
+      padding-bottom: 27px;
+    }
+
+    .dropdown-child a:hover {
+      background-color: rgb(70, 69, 69);
+      color: white;
+    }
 
 footer {
     background-color: #333;
