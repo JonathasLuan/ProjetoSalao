@@ -1,0 +1,263 @@
+main {
+    background-color: #f2f2f2;
+    display: grid;
+    gap: 15px;
+    grid-template-areas:
+        'header header header header'
+        'sidebar1 content content sidebar2'
+        'footer footer footer footer';
+    grid-template-columns: 20% 40% 20%;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+}
+
+#sidebar1 {
+    grid-area: sidebar1;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#sidebar2 {
+    grid-area: sidebar2;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#content {
+    grid-area: content;
+    height: 85vh;
+    background-color: #f2f2f2;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#sidebar2 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.hidden {
+    display: none;
+}
+
+#menu-chat {
+    display: grid;
+    border: 1px solid;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 0px 0px;
+    grid-template-areas:
+        '#btn5 .pesquisa3 #btn8';
+    grid-template-columns: 20% 50% 20%;
+}
+
+#menu-content {
+    display: flex;
+    border: 1px solid;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 0px 39px;
+}
+
+#menu-content button,
+#menu-chat button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 30px;
+    background: none;
+    border: none;
+}
+
+#menu-content button:hover,
+#menu-chat button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+.main-btn-a {
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.main-btn-a:hover {
+    background-color: gray;
+}
+
+.btn-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-dropdown-child {
+    display: none;
+    background-color: #f2f2f2;
+    min-width: 80px;
+    position: absolute;
+    top: 100%;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+.btn-dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-dropdown:hover .btn-dropdown-child {
+    display: block;
+}
+
+.btn-dropdown:hover .main-btn-a {
+    background-color: rgb(70, 69, 69);
+    color: white;
+}
+
+.btn-dropdown-child a:hover {
+    background-color: rgb(70, 69, 69);
+    color: white;
+}
+
+#chatconteudo {
+    background-color: #FFFFFF;
+    padding: 20px;
+    font-size: 15px;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetca, sans serif;
+}
+
+.container-content {
+    background-color: #FFFFFF;
+    padding: 20px;
+    font-size: 15px;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetca, sans serif;
+}
+
+#content-box {
+    box-shadow: 0px 0px 5px #ccc;
+    height: 76vh;
+}
+
+#botoes button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.pesquisa2 {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-right: 30px;
+    margin-top: 3px;
+}
+
+.pesquisa2 input {
+    width: 100%;
+    height: 16px;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 7px 40px 7px 30px;
+    text-indent: 10px;
+}
+
+.pesquisa2 i {
+    position: absolute;
+    top: 49%;
+    left: 20px;
+    transform: translateY(-49%);
+}
+
+.pesquisa3 {
+    display: flex;
+    position: relative;
+    width: 80%;
+    max-width: 250px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 3px;
+}
+
+.pesquisa3 input {
+    width: 100%;
+    height: 16px;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 7px 40px 7px 30px;
+    text-indent: 10px;
+}
+
+.pesquisa3 i {
+    position: absolute;
+    top: 49%;
+    left: 20px;
+    transform: translateY(-49%);
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#foto img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-item {
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.chat-item:hover {
+    background-color: #f2f2f2;
+}

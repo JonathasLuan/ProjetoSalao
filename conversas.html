@@ -7,98 +7,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversas</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="conversasCSS.css">
+  <link rel="stylesheet" href="conversas.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-  <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
-        <div>
-          <span>NaRégua</span>
+  <main>
+    <header>
+      <div id="header1">
+        <div class="logo">
+          <div><img src="./img/tesourapentepretos.jpg"></div>
+          <div>
+            <span>NaRégua</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="home.html">home</a>
-        </li>
-        <li>
-          <a href="serviços.html">serviços</a>
-        </li>
-        <li>
-          <a href="sobre.html">sobre</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a href="entrar.html" class="mainmenua">perfil</a>
-            <div class="dropdown-child">
-              <a href="#">sub menu 1</a>
-              <a href="#">sub menu 2</a>
-              <a href="#">sub menu 3</a>
-              <a href="#">sub menu 4</a>
-              <a href="#">sub menu 5</a>
+      <div class="pesquisa">
+        <input type="text" placeholder="buscar...">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="home.html">home</a>
+          </li>
+          <li>
+            <a href="serviços.html">serviços</a>
+          </li>
+          <li>
+            <a href="sobre.html">sobre</a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <a href="entrar.html" class="mainmenua">perfil</a>
+              <div class="dropdown-child">
+                <a href="#">sub menu 1</a>
+                <a href="#">sub menu 2</a>
+                <a href="#">sub menu 3</a>
+                <a href="#">sub menu 4</a>
+                <a href="#">sub menu 5</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="contato.html">contato</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="sidebar1">
+      <div class="sidebar" id="left">
+        <div class="chat-list">
+          <nav id="menu-chat">
+            <button id="chatbotao1" class="chat-menu-button active" data-target="chatcontent1"><i class="fa fa-comments"
+                style="font-size: 20px;"></i></button>
+            <div class="pesquisa3">
+              <input type="text" placeholder="buscar...">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="btn-dropdown">
+              <button class="main-btn-a"><i class="fa fa-ellipsis-v" style="font-size: 20px;"></i></button>
+              <div class="btn-dropdown-child">
+                <nav id="">
+                  <button id="chatbotao2" class="chat-menu-button active" data-target="chatcontent2">Botão 2</button>
+                  <button id="chatbotao3" class="chat-menu-button" data-target="chatcontent3">Botão 3</button>
+                  <button id="chatbotao4" class="chat-menu-button" data-target="chatcontent4">Botão 4</button>
+                  <button id="chatbotao5" class="chat-menu-button" data-target="chatcontent5">Botão 5</button>
+                  <button id="chatbotao6" class="chat-menu-button" data-target="chatcontent2">Botão 6</button>
+                  <button id="chatbotao7" class="chat-menu-button" data-target="chatcontent3">Botão 7</button>
+                  <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4"><i class="fa fa-gear"
+                      aria-hidden="true" style="font-size: 20px;"></i></button>
+                </nav>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div id="chatconteudo">
+          <div class="chatcontent active" id="chatconteudo1">
+            <h2>Conversas:</h2>
+            <p>Aqui serão mostradas as conversas em forma de lista, para que o usuário role a barra de rolagem e tenha
+              acesso de clique a uma de cada vez, sendo esta exibida na área à direita.</p>
+            <div id="chat-box">
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-1">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name" style="margin-left: 20px;">Fulano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-2">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name" style="margin-left: 20px;">Ciclano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-3">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name" style="margin-left: 20px;">Beltrano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </li>
-        <li>
-          <a href="contato.html">contato</a>
-        </li>
-      </ul>
-    </div>
-    <label class="switch">
-      <input type="checkbox" id="dark-mode-switch">
-      <span class="slider round"></span>
-    </label>
-  </header>
-  <main>
-    <section>
-      <div class="sidebar sidebar-left">
-        <div class="container-conversas">
-        <nav id="menu-conversas">
-          <button id="btn5" class="menu-button active" data-target="content1">Btn5</button>
-          <div class="pesquisa3">
-            <input type="text" placeholder="buscar...">
-            <i class="fa fa-search"></i>
+          <div class="chatcontent hidden" id="chatconteudo2">
+            <h2>Conteúdo 2:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
-          <button id="btn8" class="menu-button" data-target="content4">...</button>
-        </nav>
+          <div class="chatcontent hidden" id="chatconteudo3">
+            <h2>Conteúdo 3:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
+          </div>
+          <div class="chatcontent hidden" id="chatconteudo4">
+            <h2>Conteúdo 4:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
+          </div>
+
+          <div class="chatcontent hidden" id="chatconteudo5">
+            <h2>Conteúdo 5:</h2>
+            <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
+              proximidade delimitado.</p>
+          </div>
+          <div class="chatcontent hidden" id="chatconteudo6">
+            <h2>Conteúdo 6:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
+          </div>
+          <div class="chatcontent hidden" id="chatconteudo7">
+            <h2>Conteúdo 7:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
+          </div>
+          <div class="chatcontent hidden" id="chatconteudo8">
+            <h2>Conteúdo 8:</h2>
+            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
+              mas sim botões que abrem conteúdo no espaço abaixo</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="sidebar sidebar-center">
+    <div id="content">
+      <div class="sidebar" id="center">
         <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
-          <button id="botao2" class="menu-button" data-target="content2">Botão 2</button>
-          <button id="botao3" class="menu-button" data-target="content3">Botão 3</button>
-          <button id="botao4" class="menu-button" data-target="content4">Botão 4</button>
-        </nav>
-
-        <nav id="menu-content">
-          <button id="botao5" class="menu-button active" data-target="content1">Botão 5</button>
+          <button id="botao1" class="menu-button active" data-target="content1"><i class="fa fa-comment"
+              style="font-size: 20px;"></i></button>
           <div class="pesquisa2">
             <input type="text" placeholder="buscar...">
             <i class="fa fa-search"></i>
           </div>
-          <button id="botao6" class="menu-button" data-target="content2">Botão 6</button>
-          <button id="botao7" class="menu-button" data-target="content3">Botão 7</button>
-          <button id="botao8" class="menu-button" data-target="content4">Botão 8</button>
+          <div class="btn-dropdown">
+            <button class="main-btn-a"><i class="fa fa-ellipsis-v" style="font-size: 20px;"></i></button>
+            <div class="btn-dropdown-child">
+              <nav id="">
+                <button id="botao2" class="menu-button active" data-target="content2">Marcar</button>
+                <button id="botao3" class="menu-button" data-target="content3">Arquivar</button>
+                <button id="botao4" class="menu-button" data-target="content4">Mídias</button>
+                <button id="botao5" class="menu-button" data-target="content5">Silenciar</button>
+                <button id="botao6" class="menu-button" data-target="content2">Limpar</button>
+                <button id="botao7" class="menu-button" data-target="content3"><i class="fa fa-gear" aria-hidden="true"
+                    style="font-size: 20px;"></i></button>
+                <button id="botao8" class="menu-button" data-target="content4"><i class="fa fa-trash" aria-hidden="true"
+                    style="font-size: 20px;"></i></button>
+              </nav>
+            </div>
+          </div>
         </nav>
-        <div class="container-content">
+        <div class="container-content" id="content-box">
           <div id="conteudo">
             <div class="content active" id="conteudo1">
               <h2>Mensagens:</h2>
-              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as mensagens respectivas de cada bate-papo.</p>
+              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as
+                mensagens respectivas de cada bate-papo.</p>
             </div>
             <div class="content hidden" id="conteudo2">
               <h2>Conteúdo 2:</h2>
@@ -139,11 +239,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="sidebar sidebar-right">
-        <div class="container-contato">
+    <div id="sidebar2">
+      <div class="sidebar" id="right">
+        <div class="container-content" id="contato">
           <div id="info">
             <div id="foto">
               <img id="foto-perfil" src="img/profile.webp" alt="profile">
@@ -163,7 +263,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <footer id="footer">
+      <p>&copy; 2023 Na Régua</p>
+    </footer>
   </main>
 
   <script>
@@ -174,60 +278,6 @@
       document.body.classList.toggle('dark-mode');
     });
 
-  </script>
-  <script>
-    // Obtém a janela modal e o botão "Editar"
-    var modal = document.getElementById("modal-foto");
-    var btn = document.getElementById("editar-foto");
-
-    // Obtém o botão "Fechar" e adiciona um evento de clique
-    var span = document.getElementsByClassName("close")[0];
-    span.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "Editar"
-    btn.onclick = function () {
-      modal.style.display = "block";
-    }
-
-
-    const fileInput = document.getElementById('profile-image');
-
-    fileInput.addEventListener('change', function () {
-      const file = fileInput.files[0];
-      const reader = new FileReader();
-
-      reader.addEventListener('load', function () {
-        const image = new Image();
-        image.src = reader.result;
-
-        const preview = document.getElementById('profile-preview');
-        preview.src = reader.result;
-        preview.appendChild(image);
-      });
-
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    });
-
-
-    const salvarBtn = document.getElementById('salvar-foto');
-
-    salvarBtn.addEventListener('click', function () {
-      const preview = document.getElementById('profile-preview');
-      const imageSrc = preview.src;
-
-      // aqui você pode enviar o conteúdo da imagem por AJAX para o servidor
-      // ou salvá-lo em uma variável para exibi-lo em outra tag img
-      // por exemplo:
-      const outraImagem = document.getElementById('foto-perfil');
-      outraImagem.src = imageSrc;
-
-      // fecha a janela modal
-      modal.style.display = 'none';
-    });
   </script>
   <script>
     // Obtém os botões do menu e o conteúdo correspondente
@@ -372,6 +422,155 @@
 
     // Exibe o primeiro conteúdo por padrão
     document.querySelector('.content.active').style.display = "block";
+
+  </script>
+
+
+  <!-- JavaScript para Menu de Conversas -->
+
+  <script>
+    // Obtém os botões do menu e o conteúdo correspondente
+    const chatbotao1 = document.getElementById("chatbotao1");
+    const chatbotao2 = document.getElementById("chatbotao2");
+    const chatbotao3 = document.getElementById("chatbotao3");
+    const chatbotao4 = document.getElementById("chatbotao4");
+    const chatbotao5 = document.getElementById("chatbotao5");
+    const chatbotao6 = document.getElementById("chatbotao6");
+    const chatbotao7 = document.getElementById("chatbotao7");
+    const chatbotao8 = document.getElementById("chatbotao8");
+    const chatconteudo1 = document.getElementById("chatconteudo1");
+    const chatconteudo2 = document.getElementById("chatconteudo2");
+    const chatconteudo3 = document.getElementById("chatconteudo3");
+    const chatconteudo4 = document.getElementById("chatconteudo4");
+    const chatconteudo5 = document.getElementById("chatconteudo5");
+    const chatconteudo6 = document.getElementById("chatconteudo6");
+    const chatconteudo7 = document.getElementById("chatconteudo7");
+    const chatconteudo8 = document.getElementById("chatconteudo8");
+
+    // Adiciona a classe "active" ao primeiro botão do menu e ao primeiro conteúdo
+    chatbotao1.classList.add("active");
+    chatconteudo1.classList.add("active");
+
+    // Adiciona um ouvinte de evento de clique em cada botão
+    chatbotao1.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "block";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao2.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "block";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao3.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "block";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao4.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "block";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao5.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "block";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao6.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "block";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "none";
+    });
+
+    chatbotao7.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "block";
+      chatconteudo8.style.display = "none";
+
+
+    });
+
+    chatbotao8.addEventListener("click", function () {
+      // Altera a exibição do conteúdo correspondente
+      chatconteudo1.style.display = "none";
+      chatconteudo2.style.display = "none";
+      chatconteudo3.style.display = "none";
+      chatconteudo4.style.display = "none";
+      chatconteudo5.style.display = "none";
+      chatconteudo6.style.display = "none";
+      chatconteudo7.style.display = "none";
+      chatconteudo8.style.display = "block";
+
+
+    });
+    // Obtém todos os botões do menu
+    var buttons = document.querySelectorAll('.chat-menu-button');
+
+    // Adiciona um evento de clique para cada botão
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        // Remove a classe "active" de todos os botões e conteúdos
+        for (var j = 0; j < buttons.length; j++) {
+          buttons[j].classList.remove('active');
+          document.getElementById(buttons[j].getAttribute('data-target')).classList.remove('active');
+        }
+
+        // Adiciona a classe "active" no botão clicado e no conteúdo correspondente
+        this.classList.add('active');
+        document.getElementById(this.getAttribute('data-target')).classList.add('active');
+      });
+    }
+
+    // Exibe o primeiro conteúdo por padrão
+    document.querySelector('.chat-content.active').style.display = "block";
 
   </script>
 </body>

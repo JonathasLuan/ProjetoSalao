@@ -1,145 +1,146 @@
 body {
-    background-color: #f2f2f2;
-    width: 100%;
-    height: 100%;
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    font-family: Arial, sans serif;
-    font-size: 15px;
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: Arial, sans serif;
+  font-size: 15px;
 }
 
 header {
-    width: 100%;
-    height: 70px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0px 0px 5px #ccc;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 5px #ccc;
 }
 
 .logo {
-    color: #000000;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: 'Times New Roman', Times, serif;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
-    border: 1px solid;
-    border-color: #000000;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-top: 9.4px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 9.4px;
 }
 
 .pesquisa {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin-right: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-right: 20px;
 }
 
 .pesquisa input {
-    width: 100%;
-    height: 20px;
-    border-radius: 25px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 7px 40px 7px 30px;
-    text-indent: 10px;
+  width: 100%;
+  height: 20px;
+  border-radius: 25px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 7px 40px 7px 30px;
+  text-indent: 10px;
 }
 
 .pesquisa i {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
 }
 
 .menu {
-    margin-left: 100px;
+  margin-left: 100px;
 }
 
 .menu li {
-    display: inline-block;
-    margin: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .menu li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    border-radius: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .menu li a:hover {
-    background-color: rgb(70, 69, 69);
-    color: white;
+  background-color: rgb(70, 69, 69);
+  color: white;
 }
-    .mainmenua {
-      background-color: white;
-      color: black;
-      border: none;
-      cursor: pointer;
-      padding: 20px;
-    }
 
-    .mainmenua:hover {
-      background-color: gray;
-      padding-bottom: 24px;
-    }
+.mainmenua {
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+}
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+.mainmenua:hover {
+  background-color: gray;
+  padding-bottom: 24px;
+}
 
-    .dropdown-child {
-      display: none;
-      background-color: #f2f2f2;
-      min-width: 150px;
-      position: absolute;
-      top: 100%;
-      margin-top: 23px;
-      box-shadow: 0px 0px 5px #ccc;
-    }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-    .dropdown-child a {
-      color: blue;
-      padding: 20px;
-      text-decoration: none;
-      display: block;
-    }
+.dropdown-child {
+  display: none;
+  background-color: #f2f2f2;
+  min-width: 150px;
+  position: absolute;
+  top: 100%;
+  margin-top: 23px;
+  box-shadow: 0px 0px 5px #ccc;
+}
 
-    .dropdown:hover .dropdown-child {
-      display: block;
-    }
+.dropdown-child a {
+  color: blue;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
 
-    .dropdown:hover .mainmenua {
-      background-color: rgb(70, 69, 69);
-      color: white;
-      padding-bottom: 27px;
-    }
+.dropdown:hover .dropdown-child {
+  display: block;
+}
 
-    .dropdown-child a:hover {
-      background-color: rgb(70, 69, 69);
-      color: white;
-    }
+.dropdown:hover .mainmenua {
+  background-color: rgb(70, 69, 69);
+  color: white;
+  padding-bottom: 27px;
+}
+
+.dropdown-child a:hover {
+  background-color: rgb(70, 69, 69);
+  color: white;
+}
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin-top: 70px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 70px;
 }
