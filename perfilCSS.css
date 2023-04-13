@@ -216,8 +216,15 @@ nav button:hover {
     cursor: pointer;
 }
 
-#links {
+#info #links {
     margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#info #links a {
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin: 5px;
 }
 
 /* Estilos para o botão "Fechar" */
@@ -556,6 +563,7 @@ body.dark-mode .logo img {
     display: flex;
     justify-content: space-around;
 }
+
 #endereco {
     border-bottom: 0;
 }
