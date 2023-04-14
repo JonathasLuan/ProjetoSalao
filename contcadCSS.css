@@ -170,6 +170,11 @@ input[type="email"] {
     font-size: 15px;
 }
 
+#endereco-div {
+    display: flex;
+    justify-content: space-around;
+}
+
 .entrada {
     width: 100%;
     padding: 10px;
@@ -193,4 +198,8 @@ input[type="email"] {
 .entrada:focus,
 select:focus {
     background-color: #e6e6e6;
+}
+
+.divs textarea {
+    display: flex;
 }

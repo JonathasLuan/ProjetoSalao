@@ -388,19 +388,6 @@ body.dark-mode .container-acess ul li a {
     font-size: 16px;
 }
 
-.edit-btn {
-    display: flex;
-    align-content: center;
-    margin: 2px;
-    padding: 7px;
-    cursor: pointer;
-    width: 52px;
-}
-
-#editsobre {
-    display: none;
-}
-
 #editnome {
     width: 45%;
     padding: 10px;

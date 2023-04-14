@@ -74,7 +74,7 @@ create table agendamento (
     foreign key (id_servico_fk) references servico (id_servico),
 );
 
-create table servicos_profissionais (
+create table servicos_profissional (
     id_servico_profissional int not null auto_increment primary key,
     id_profissional_fk int not null,
     id_servico_fk int not null,
@@ -96,6 +96,7 @@ create table comentario (
     id_usuario_fk int not null,
     data_coment date not null,
     comentario text not null,
+    foreign key (id_usuario_fk) references usuario (id_usuario),
 );
 
 create table avaliacao (
@@ -110,7 +111,7 @@ create table midia (
     id_midia int not null auto_increment primary key,
     id_pagina_fk int not null,
     tipo varchar(100) not null,
-    src varchar(500),
+    src varchar(500) not null,
     tamanho decimal not null,
     modificacao datetime not null,
     upload datetime not null,
@@ -127,7 +128,7 @@ create table conversa (
 
 create table mensagem (
     id_mensagem int not null auto_increment primary key,
-    id_conversa int not null,
+    id_conversa_fk int not null,
     id_usuario_fk int not null,
     remetente varchar(100) not null,
     destinatario varchar(100) not null,
@@ -136,18 +137,21 @@ create table mensagem (
     status_mens varchar(100) not null,
     envio datetime not null,
     foreign key (id_usuario_fk) references cliente (id_usuario),
-    foreign key (id_conversa_fk) references cliente (id_conversa),
+    foreign key (id_conversa_fk) references conversa (id_conversa),
 );
 
 create table info (
     id_info int not null auto_increment primary key,
-    id_link_fk int not null,
-    id_caract_fk int not null,
+    id_link_fk int null,
+    id_caract_fk int null,
     nomeperfil varchar(200) not null,
     fotoperfil tipo - user varchar(100) not null,
     sobre text null,
     id_preferencia_fk int not null,
     notificacao visibilidade
+    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_caract_fk) references caract (id_caract),
+
 );
 
 create table configurações (
