@@ -6,7 +6,7 @@ body {
 }
 
 #section-one {
-  background-color: #035266;
+  background-color: #ccc;
   background-image: url(img/fundo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -235,8 +235,6 @@ input[type="email"]:focus {
 #apresentacao article img {
   width: 150px;
   height: 150px;
-  border: 2px solid;
-  border-radius: 10%;
 }
 
 #catalogo {
@@ -274,7 +272,7 @@ article {
   width: 100%;
 }
 
-#consulta-article img{
+#consulta-article img {
   width: 150px;
   height: 150px;
 }
@@ -285,8 +283,16 @@ article {
   justify-content: center;
 }
 
+#cabeca p {
+  margin-top: 50px;
+}
+
 #bemvindo {
   width: 50%;
   font-size: 16px;
-  margin-top: 50px;
+}
+
+#section-three img {
+  width: 150px;
+  height: 150px;
 }

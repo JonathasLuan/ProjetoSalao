@@ -57,14 +57,18 @@ header {
 }
 
 #menu-chat {
-    display: grid;
     border: 1px solid;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #ddd;
     padding: 0px 0px;
-    grid-template-areas:
-        '#btn5 .pesquisa3 #btn8';
-    grid-template-columns: 20% 50% 20%;
+}
+
+#menu-chat i {
+    font-size: 20px;
+}
+
+#menu-content nav button i {
+    font-size: 20px;
 }
 
 #menu-content {
@@ -80,7 +84,7 @@ header {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 30px;
+    padding: 10px 10px;
     background: none;
     border: none;
 }
@@ -106,12 +110,14 @@ header {
 .btn-dropdown {
     position: relative;
     display: inline-block;
+    text-align: center;
 }
 
 .btn-dropdown-child {
     display: none;
     background-color: #f2f2f2;
-    min-width: 80px;
+    min-width: 60px;
+    max-width: 100px;
     position: absolute;
     top: 100%;
     box-shadow: 0px 0px 5px #ccc;
@@ -139,6 +145,10 @@ header {
 }
 
 .btn-dropdown-child i {
+    font-size: 20px;
+}
+
+#nav button i {
     font-size: 20px;
 }
 
@@ -193,7 +203,7 @@ header {
 
 .pesquisa2 i {
     position: absolute;
-    top: 49%;
+    top: 45%;
     left: 20px;
     transform: translateY(-49%);
 }
@@ -220,7 +230,7 @@ header {
 
 .pesquisa3 i {
     position: absolute;
-    top: 49%;
+    top: 45%;
     left: 20px;
     transform: translateY(-49%);
 }
@@ -245,6 +255,12 @@ footer {
     color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+#criar-btn {
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 #servico-btn {

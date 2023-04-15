@@ -9,13 +9,34 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./homeCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    #scrollBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    #scrollBtn:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
+        <div><img src="./img/scissors-badge-svgrepo-com.png"></div>
         <div>
           <span>NaRégua</span>
         </div>
@@ -43,8 +64,8 @@
               <a href="#">sub menu 1</a>
               <a href="#">sub menu 2</a>
               <a href="#">Favoritos</a>
-              <a href="#">LogIn</a>
-              <a href="#">LogOut</a>
+              <a href="login.html">Log-in</a>
+              <a href="cadastro.html">Cadastro</a>
             </div>
           </div>
         </li>
@@ -104,6 +125,12 @@
     <section id="section-two">
       <div id="cabeca">
         <article id="bemvindo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <br><br>
           <div>
             <p> Bem-vindo à nossa plataforma de serviços de beleza! Aqui você pode encontrar profissionais de várias
               áreas para
@@ -149,14 +176,14 @@
         <div id="div-article">
           <article>
             <div>
-              <img src="img/profile.webp" alt="">
+              <img src="img/svg/client-svgrepo-com.svg" alt="">
               <h3>Cadastre-se como CLIENTE</h3>
               <p>.</p>
             </div>
           </article>
           <article>
             <div>
-              <img src="img/profile.webp" alt="">
+              <img src="img/svg/hairdresser-svgrepo-com.svg" alt="">
               <h3>Cadastre-se como PROFISSIONAL</h3>
               <p>.</p>
             </div>
@@ -168,6 +195,7 @@
       <div class="article-list" id="catalogo">
         <article>
           <div>
+            <img src="img/svg/hairdresser-washing-the-hair-of-a-client-with-bubbles-shampoo-svgrepo-com.svg" alt="">
             <h2>Serviços de Cabeleireiro</h2>
             <p>
               Oferecemos cortes de cabelo para homens e mulheres, coloração, tratamentos capilares, penteados e muito
@@ -178,6 +206,7 @@
         </article>
         <article>
           <div>
+            <img src="img/svg/makeup-woman-svgrepo-com.svg" alt="">
             <h2>Serviços de Maquiagem</h2>
             <p>
               Nossa equipe de maquiadores profissionais irá te ajudar a obter a aparência perfeita para qualquer
@@ -189,6 +218,7 @@
         </article>
         <article>
           <div>
+            <img src="img/svg/razors-svgrepo-com.svg" alt="">
             <h2>Serviços de Barbeiro</h2>
             <p>
               Nossos barbeiros são especialistas em cortes de cabelo masculinos e barba. Oferecemos cortes de cabelo
@@ -198,6 +228,7 @@
         </article>
         <article>
           <div>
+            <img src="img/svg/nail-polish-svgrepo-com.svg" alt="">
             <h2>Serviços de Manicure e Pedicure</h2>
             <p>
               Nossos profissionais de manicure e pedicure são especialistas em fazer suas mãos e pés ficarem lindos.
@@ -220,13 +251,34 @@
           </div>
         </article>
       </div>
-      <br><br><br><br>
+      <br><br><button id="scrollBtn" onclick="topFunction()" title="Voltar ao topo"><i class="fa fa-arrow-up"></i></button>
+      <br><br>
     </section>
   </div>
   <script src="homeJS.js"></script>
+  <script>
+    // Mostra o botão de rolagem quando o usuário rola a página em 20px
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollBtn").style.display = "none";
+      }
+    }
+
+    // Quando o usuário clica no botão, volta para o topo da página
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+  </script>
   <footer>
     <p>&copy; 2023 Na Régua</p>
-    <a target="_blank" href="https://icons8.com/icon/12776/calendar">Calendar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <a target="_blank" href="https://icons8.com/icon/12776/calendar">Calendar</a> icon by <a target="_blank"
+      href="https://icons8.com">Icons8</a>
   </footer>
 </body>
 

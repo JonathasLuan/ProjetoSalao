@@ -43,8 +43,7 @@
               <div class="dropdown-child">
                 <a href="#">sub menu 1</a>
                 <a href="#">sub menu 2</a>
-                <a href="#">sub menu 3</a>
-                <a href="#">Login</a>
+                <a href="#">Favoritos</a>
                 <a href="#">Logout</a>
               </div>
             </div>
@@ -83,7 +82,7 @@
     <div id="content">
       <div class="sidebar" id="center">
         <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Btn1</i></button>
+          <button id="botao1" class="menu-button active" data-target="content1">Btn1</button>
           <button id="botao2" class="menu-button active" data-target="content2">Btn2</button>
           <button id="botao3" class="menu-button" data-target="content3">Btn3</button>
           <button id="botao4" class="menu-button" data-target="content4">Btn4</button>
@@ -92,8 +91,8 @@
         <br>
         <nav id="menu-content">
           <button id="botao6" class="menu-button" data-target="content6">Btn6</button>
-          <button id="botao7" class="menu-button" data-target="content7">Btn7</i></button>
-          <button id="botao8" class="menu-button" data-target="content8">Btn8</i></button>
+          <button id="botao7" class="menu-button" data-target="content7">Btn7</button>
+          <button id="botao8" class="menu-button" data-target="content8">Btn8</button>
           <div class="pesquisa2">
             <input type="text" placeholder="buscar...">
             <i class="fa fa-search"></i>
@@ -101,12 +100,12 @@
           <button id="botao9" class="menu-button" data-target="content9">Btn9</button>
           <button id="botao10" class="menu-button" data-target="content10">Btn10</button>
           <div class="btn-dropdown">
-            <button class="main-btn-a"><i class="fa fa-ellipsis-v" style="font-size: 20px;"></i></button>
+            <button class="main-btn-a"><i class="fa fa-ellipsis-v"></i></button>
             <div class="btn-dropdown-child">
-              <nav id="">
+              <nav>
                 <button id="botao11" class="menu-button" data-target="content11">Btn11</button>
-                <button id="botao12" class="menu-button" data-target="content12">Btn12</i></button>
-                <button id="botao13" class="menu-button" data-target="content13">Btn13</i></button>
+                <button id="botao12" class="menu-button" data-target="content12">Btn12</button>
+                <button id="botao13" class="menu-button" data-target="content13">Btn13</button>
               </nav>
             </div>
           </div>
@@ -167,31 +166,32 @@
               <button class="main-btn-a"><i class="fa fa-ellipsis-v" style="font-size: 20px;"></i></button>
               <div class="btn-dropdown-child">
                 <nav id="">
-                  <button id="chatbotao2" class="chat-menu-button active" data-target="chatcontent2"><i
-                      class="fa fa-bell"></i>Notificações</button>
-                  <button id="chatbotao3" class="chat-menu-button" data-target="chatcontent3"><i
-                      class="fa fa-comments"></i> Conversas</button>
-                  <button id="chatbotao4" class="chat-menu-button" data-target="chatcontent4"><i
-                      class="fa fa-calendar"></i>Agendamentos</button>
-                  <button id="chatbotao5" class="chat-menu-button" data-target="chatcontent5"><i
-                      class="fa fa-question"></i> FAQ</button>
-                  <button id="chatbotao6" class="chat-menu-button" data-target="chatcontent2">Botão 6</button>
-                  <button id="chatbotao7" class="chat-menu-button" data-target="chatcontent3">Botão 7</button>
-                  <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4"><i class="fa fa-gear"
-                      aria-hidden="true" style="font-size: 20px;"></i>Configurações</button>
+                  <button id="chatbotao6" class="chat-menu-button" data-target="chatcontent2">Btn 6</button>
+                  <button id="chatbotao7" class="chat-menu-button" data-target="chatcontent3">Btn 7</button>
                 </nav>
               </div>
             </div>
             <button id="chatbotao1" class="chat-menu-button active" data-target="chatcontent1"><i
                 class="fa fa-home"></i></button>
+            <button id="chatbotao2" class="chat-menu-button active" data-target="chatcontent2"><i
+                class="fa fa-bell"></i></button>
+            <button id="chatbotao3" class="chat-menu-button" data-target="chatcontent3"><i
+                class="fa fa-comments"></i></button>
+            <button id="chatbotao4" class="chat-menu-button" data-target="chatcontent4"><i
+                class="fa fa-calendar"></i></button>
+            <button id="chatbotao5" class="chat-menu-button" data-target="chatcontent5"><i
+                class="fa fa-question"></i></button>
+            <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4"><i class="fa fa-gear"
+                aria-hidden="true"></i></button>
           </nav>
         </div>
         <div id="chatconteudo">
           <div class="chatcontent active" id="chatconteudo1">
             <h2>Criar pedido:</h2>
-            <p>Nesta área você pode criar um pedido de serviço, especificando as informações relevantes para encontrar profissionais adequados às suas necessidades.</p>
+            <p>Nesta área você pode criar um pedido de serviço, especificando as informações relevantes para encontrar
+              profissionais adequados às suas necessidades.</p>
             <div id="chat-box">
-              <button id="servico-btn">+</button>
+              <div id="criar-btn"><button id="servico-btn">+</button></div>
               <div id="modal-servico" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
@@ -365,23 +365,23 @@
             </div>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
-            <h2>Conteúdo 2:</h2>
+            <h2>Notificações:</h2>
             <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo3">
-            <h2>Conteúdo 3:</h2>
+            <h2>Comentários:</h2>
             <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo4">
-            <h2>Conteúdo 4:</h2>
+            <h2>Agendamentos:</h2>
             <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
 
           <div class="chatcontent hidden" id="chatconteudo5">
-            <h2>Conteúdo 5:</h2>
+            <h2>FAQ - Perguntas Frequentes:</h2>
             <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
               proximidade delimitado.</p>
           </div>
@@ -396,7 +396,7 @@
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo8">
-            <h2>Conteúdo 8:</h2>
+            <h2>Configurações:</h2>
             <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
