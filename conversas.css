@@ -176,15 +176,6 @@ header {
 
 #content-box {
     box-shadow: 0px 0px 5px #ccc;
-    height: 76vh;
-}
-
-#botoes button {
-    display: inline;
-    align-content: center;
-    margin: 2px;
-    padding: 7px;
-    cursor: pointer;
 }
 
 .pesquisa2 {
@@ -249,10 +240,61 @@ header {
 }
 
 #foto img {
+    display: flex;
     width: 150px;
     height: 150px;
     border: 1px solid;
     border-radius: 50%;
+}
+
+#botoes button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.picture-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.picture-btn i {
+    font-size: 20px;
+    position: relative;
+    color: #333;
+    bottom: 1px;
+    right: -0px;
+}
+
+#botoes button {
+    background-color: #484848;
+    color: #FFFFFF;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    cursor: pointer;
+    border: none;
+}
+
+#botoes button:hover {
+    background-color: #a9a9a9;
 }
 
 footer {

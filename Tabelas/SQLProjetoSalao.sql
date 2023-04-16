@@ -7,7 +7,7 @@ create table cliente (
     data_nascimento date null,
     telefone varchar(11) unique,
     foreign key (id_usuario_fk) references usuario (id_usuario),
-    foreign key (id_local_fk) references local (id_local),
+    foreign key (id_local_fk) references local (id_local)
 );
 
 create table profissional (
@@ -29,7 +29,7 @@ create table perfil (
     id_usuario_fk int not null,
     tipo enum('cliente', 'profissional') not null,
     data_criacao date,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
+    foreign key (id_usuario_fk) references usuario (id_usuario)
 );
 
 create table usuario (
@@ -37,7 +37,7 @@ create table usuario (
     nome varchar(200) not null,
     email varchar(200) not null unique,
     senha varchar(200) not null,
-    tipo varchar(100) not null,
+    tipo varchar(100) not null
 );
 
 create table local (
@@ -49,7 +49,7 @@ create table local (
     numero int not null,
     cep int not null,
     complemento varchar(100) null,
-    tipo_local varchar(100) not null,
+    tipo_local varchar(100) not null
 );
 
 create table servico (
@@ -69,7 +69,7 @@ create table especialidade (
     nome varchar(200) not null,
     descricao varchar(200) not null,
     categoria varchar(100) not null,
-    subcategoria varchar(100) not null,
+    subcategoria varchar(100) not null
 );
 
 create table transacao (
@@ -77,7 +77,7 @@ create table transacao (
     tipo varchar(100) not null,
     data_criacao date not null,
     valor decimal not null,
-    status varchar(100) not null,
+    status varchar(100) not null
 );
 
 create table fatura (
@@ -107,7 +107,7 @@ create table agendamento (
     local_atendimento status varchar(50) not null,
     foreign key (id_cliente_fk) references cliente (id_cliente),
     foreign key (id_profissional_fk) references profissional (id_profissional),
-    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_servico_fk) references servico (id_servico)
 );
 
 create table servicos_profissionais (
@@ -116,7 +116,7 @@ create table servicos_profissionais (
     id_servico_fk int not null,
     valores decimal not null,
     foreign key (id_profissional_fk) references profissional (id_profissional),
-    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_servico_fk) references servico (id_servico)
 );
 
 create table especialidade_profissional (
@@ -131,7 +131,7 @@ create table comentario (
     id_comentario int not null auto_increment primary key,
     id_usuario_fk int not null,
     data_coment date not null,
-    comentario text not null,
+    comentario text not null
 );
 
 create table avaliacao (
@@ -139,14 +139,14 @@ create table avaliacao (
     id_usuario_fk int not null,
     data_aval date null,
     avaliacao text not null,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
+    foreign key (id_usuario_fk) references usuario (id_usuario)
 );
 
 create table pagina (
     id_pagina int not null auto_increment primary key,
     endereco string not null,
     titulo varchar(200) not null,
-    visitas int not null,
+    visitas int not null
 );
 
 create table midia (
@@ -156,20 +156,20 @@ create table midia (
     src varchar(500),
     tamanho decimal not null,
     modificacao datetime not null,
-    upload datetime not null,
+    upload datetime not null
 );
 
 create table links (
     id - link int not null auto_increment primary key,
     pagina varchar(100),
-    endereco varchar(500),
+    endereco varchar(500)
 );
 
 create table caracteristica (
     id_caract int not null auto_increment primary key,
     tipo varchar(100) not null,
     categoria varchar(100) not null,
-    subcategoria varchar(100) null,
+    subcategoria varchar(100) null
 );
 
 create table conversa (
@@ -201,7 +201,7 @@ create table cabelo (
     textura char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null,
+    condicao varchar(200) null
 );
 
 create table barba (
@@ -211,7 +211,7 @@ create table barba (
     textura char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null,
+    condicao varchar(200) null
 );
 
 create table pele (
@@ -219,7 +219,7 @@ create table pele (
     cor char(100) null,
     etnia textura char(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null,
+    condicao varchar(200) null
 );
 
 create table unhas (
@@ -228,7 +228,7 @@ create table unhas (
     tipo char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null,
+    condicao varchar(200) null
 );
 
 create table rosto (
@@ -236,7 +236,7 @@ create table rosto (
     formato varchar(100) null,
     textura char(100) null,
     tamanho varchar(100) null,
-    patologia varchar(200) null,
+    patologia varchar(200) null
 );
 
 create table info (
@@ -255,13 +255,13 @@ create table configurações (
     id_perfil_fk int not null,
     id_conta_fk int not null,
     id_usuario_fk int not null,
-    id_preferencia_fk int not null,
+    id_preferencia_fk int not null
 );
 
 create table geral (
     id_geral int not null auto_increment primary key,
     corpagina char(50),
-    idioma char(100),
+    idioma char(100)
 );
 
 create table conta (
@@ -269,5 +269,5 @@ create table conta (
     id_usuario_fk int not null,
     email varchar(200) not null unique,
     emailreserva varchar(200) not null unique,
-    senha varchar(200) not null,
+    senha varchar(200) not null
 );

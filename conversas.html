@@ -9,6 +9,227 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="conversas.css">
   <script src="https://kit.fontawesome.com/233e5ce955.js" crossorigin="anonymous"></script>
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #000000;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #000000;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      transition: background-color 0.5s ease;
+    }
+
+    .dark-mode {
+      background-color: rgb(53, 53, 53);
+      color: rgb(255, 255, 255);
+    }
+
+    body.dark-mode header {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode main {
+      background-color: rgb(53, 53, 53);
+      color: white;
+    }
+
+    body.dark-mode #content {
+      background-color: rgb(53, 53, 53);
+      color: white;
+    }
+
+    body.dark-mode .logo {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode .container-perfil {
+      background-color: #000;
+      color: white;
+      box-shadow: none;
+    }
+
+    body.dark-mode #info {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode .container-content {
+      background-color: #000;
+      color: white;
+      box-shadow: none;
+    }
+
+    body.dark-mode h3 {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #sidebar1 {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #sidebar2 {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #chatconteudo {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode .content {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode button {
+      background-color: #51b4f1;
+      color: white;
+    }
+
+    body.dark-mode nav button:hover {
+      background-color: rgb(153, 150, 150);
+      color: #fafafa;
+    }
+
+    body.dark-mode #botoes button {
+      background-color: #51b4f1;
+      color: #fafafa;
+    }
+
+    body.dark-mode .chat-item {
+      background-color: #373b3d;
+      color: #fafafa;
+    }
+
+    body.dark-mode .chat-item:hover {
+      background-color: #4e5052;
+      color: #fafafa;
+    }
+
+    body.dark-mode #botoes button:hover {
+      background-color: #6cbcee;
+      color: #fafafa;
+    }
+
+    body.dark-mode #menu-chat {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #menu-chat button {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #menu-content button {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode .btn-dropdown-child {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode #menu-content {
+      background-color: #000;
+      color: white;
+    }
+
+    body.dark-mode a {
+      background-color: #000;
+      color: #51b4f1;
+    }
+
+    body.dark-mode #foto img {
+      border: 3px solid;
+      border-color: #51b4f1;
+    }
+
+    body.dark-mode input {
+      background-color: #000;
+      color: #ffffff;
+    }
+
+    body.dark-mode .modal-inner {
+      background-color: #000;
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn {
+      background-color: rgb(53, 53, 53);
+      color: #ffffff;
+      border-color: #888;
+      margin: 2px;
+      padding: 7px;
+      border: 1px solid;
+    }
+
+    body.dark-mode .logo img {
+      content: url('./img/tesoura.png');
+    }
+  </style>
 </head>
 
 <body>
@@ -70,17 +291,17 @@
               <button class="main-btn-a"><i class="fa fa-ellipsis-v"></i></button>
               <div class="btn-dropdown-child">
                 <nav>
-                  <button id="chatbotao2" class="chat-menu-button active" data-target="chatcontent2"><span
-                      style="font-family: 'Font Awesome 5 Free';">&#xf08d;</span></button>
-                  <button id="chatbotao3" class="chat-menu-button" data-target="chatcontent3"><i
+                  <button id="chatbotao2" class="chat-menu-button active" data-target="chatcontent2"
+                    title="marcadas"><span style="font-family: 'Font Awesome 5 Free';">&#xf08d;</span></button>
+                  <button id="chatbotao3" class="chat-menu-button" data-target="chatcontent3" title="arquivadas"><i
                       class="fa fa-folder"></i></button>
-                  <button id="chatbotao4" class="chat-menu-button" data-target="chatcontent4"><i
+                  <button id="chatbotao4" class="chat-menu-button" data-target="chatcontent4" title="bloqueados"><i
                       class="fa fa-lock"></i></button>
                   <button id="chatbotao5" class="chat-menu-button" data-target="chatcontent5">Btn 5</button>
                   <button id="chatbotao6" class="chat-menu-button" data-target="chatcontent2">Btn 6</button>
                   <button id="chatbotao7" class="chat-menu-button" data-target="chatcontent3">Btn 7</button>
-                  <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4"><i class="fa fa-gear"
-                      aria-hidden="true"></i></button>
+                  <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4" title="configurações"><i
+                      class="fa fa-gear" aria-hidden="true"></i></button>
                 </nav>
               </div>
             </div>
@@ -131,19 +352,130 @@
             </div>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
-            <h2>Conteúdo 2:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
+            <h2>Conversas Marcadas</h2>
+            <p>Nesta área serão exibidas as conversas marcadas com o alfinete.</p>
+            <div id="chat-box">
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-1">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Fulano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-2">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Ciclano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-3">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Beltrano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="chatcontent hidden" id="chatconteudo3">
-            <h2>Conteúdo 3:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
+            <h2>Conversas Arquivadas</h2>
+            <p>Nesta área serão exibidas as conversas arquivadas.</p>
+            <div id="chat-box">
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-1">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Fulano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-2">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Ciclano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-3">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Beltrano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="chatcontent hidden" id="chatconteudo4">
-            <h2>Conteúdo 4:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
+            <h2>Contatos Bloqueados</h2>
+            <p>Nesta área serão exibidos os contatos bloqueados.</p>
+            <div id="chat-box">
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-1">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Fulano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-2">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Ciclano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-element">
+                <div class="chat-item" id="chat-item-3">
+                  <div class="user-avatar">
+                    <img src="img/profile.webp" alt="user-avatar">
+                  </div>
+                  <div class="chat-info">
+                    <div class="user-name">
+                      <h5 class="name">Beltrano</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="chatcontent hidden" id="chatconteudo5">
@@ -162,9 +494,15 @@
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo8">
-            <h2>Conteúdo 8:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
+            <h2>Configurações de conversas:</h2>
+            <p>Aqui o usuáriopoderá configuras as conversas e definir preferências.</p>
+            <h4>Modo de tela:</h4>
+            <span>light</span>
+            <label class="switch">
+              <input type="checkbox" id="dark-mode-switch">
+              <span class="slider round"></span>
+            </label>
+            <span>dark</span>
           </div>
         </div>
       </div>
@@ -220,9 +558,9 @@
                 mas sim botões que abrem conteúdo no espaço abaixo</p>
             </div>
             <div class="content hidden" id="conteudo4">
-              <h2>Conteúdo 4:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
+              <h2>Documentos compartilhados:</h2>
+              <p>Nesta área serão exibidos todos os arquivos de mídia enviados pelos usuários no bate-papo. Eles poderão
+                ser visualisados, compartilhados para outros lugares, baixados ou apagados.</p>
             </div>
 
             <div class="content hidden" id="conteudo5">
@@ -257,9 +595,8 @@
             <div id="foto">
               <img id="foto-perfil" src="img/profile.webp" alt="profile">
             </div>
-            <div id="botoes">
-              <button>btn 1</button>
-              <button>btn 2</button>
+            <div class="botoes">
+              <button id="picture-btn" title="ver foto"><i class="fa fa-eye"></i></button>
             </div>
             <div id="tipo-user">
               <h3>tipo-user</h3>
@@ -267,11 +604,9 @@
             <div id="nome">
               <h2 id="nomeperfil">Fulano da Silva</h2>
             </div>
-            <div id="">
-            </div>
-            <div>
-              <button>Bloquear</button>
-              <button>Ver Perfil</button>
+            <div id="botoes">
+              <button><i class="fa fa-lock"></i> Bloquear</button>
+              <button><i class="fa fa-user"></i> Ver Perfil</button>
             </div>
           </div>
         </div>

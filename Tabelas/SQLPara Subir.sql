@@ -7,7 +7,7 @@ create table cliente (
     data_nascimento date null,
     telefone varchar(11) unique,
     foreign key (id_usuario_fk) references usuario (id_usuario),
-    foreign key (id_local_fk) references local (id_local),
+    foreign key (id_local_fk) references local (id_local)
 );
 
 create table profissional (
@@ -21,7 +21,7 @@ create table profissional (
     telefone varchar(11) unique,
     foreign key (id_usuario_fk) references usuario (id_usuario),
     foreign key (id_local_fk) references local (id_local),
-    foreign key (id_especialidade_fk) references especialidade (id_especialidade),
+    foreign key (id_especialidade_fk) references especialidade (id_especialidade)
 );
 
 create table perfil (
@@ -29,7 +29,7 @@ create table perfil (
     id_usuario_fk int not null,
     tipo enum('cliente', 'profissional') not null,
     data_criacao date,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
+    foreign key (id_usuario_fk) references usuario (id_usuario)
 );
 
 create table servico (
@@ -41,7 +41,7 @@ create table servico (
     categoria varchar(100) not null,
     subcategoria varchar(100) not null,
     tempo time null,
-    foreign key (id_especialidade_fk) references especialidade (id_especialidade),
+    foreign key (id_especialidade_fk) references especialidade (id_especialidade)
 );
 
 create table fatura (
@@ -53,7 +53,7 @@ create table fatura (
     data_criacao date not null,
     foreign key (id_transacao_fk) references transacao (id_transacao),
     foreign key (id_cliente_fk) references cliente (id_cliente),
-    foreign key (id_profissional_fk) references profissional (id_profissional),
+    foreign key (id_profissional_fk) references profissional (id_profissional)
 );
 
 create table agendamento (
@@ -71,7 +71,7 @@ create table agendamento (
     local_atendimento status varchar(50) not null,
     foreign key (id_cliente_fk) references cliente (id_cliente),
     foreign key (id_profissional_fk) references profissional (id_profissional),
-    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_servico_fk) references servico (id_servico)
 );
 
 create table servicos_profissional (
@@ -80,7 +80,7 @@ create table servicos_profissional (
     id_servico_fk int not null,
     valores decimal not null,
     foreign key (id_profissional_fk) references profissional (id_profissional),
-    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_servico_fk) references servico (id_servico)
 );
 
 create table especialidade_profissional (
@@ -88,7 +88,7 @@ create table especialidade_profissional (
     id_especialidade_fk int,
     id_profissional_fk int,
     foreign key (id_especialidade_fk) references especialidade (id_especialidade),
-    foreign key (id_profissional_fk) references profissional (id_profissional),
+    foreign key (id_profissional_fk) references profissional (id_profissional)
 );
 
 create table comentario (
@@ -96,7 +96,7 @@ create table comentario (
     id_usuario_fk int not null,
     data_coment date not null,
     comentario text not null,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
+    foreign key (id_usuario_fk) references usuario (id_usuario)
 );
 
 create table avaliacao (
@@ -104,7 +104,7 @@ create table avaliacao (
     id_usuario_fk int not null,
     data_aval date null,
     avaliacao text not null,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
+    foreign key (id_usuario_fk) references usuario (id_usuario)
 );
 
 create table midia (
@@ -115,7 +115,7 @@ create table midia (
     tamanho decimal not null,
     modificacao datetime not null,
     upload datetime not null,
-    foreign key (id_pagina_fk) references pagina (id_pagina),
+    foreign key (id_pagina_fk) references pagina (id_pagina)
 );
 
 create table conversa (
@@ -123,7 +123,7 @@ create table conversa (
     id_cliente_fk int not null,
     id_profissional_fk int not null,
     foreign key (id_cliente_fk) references cliente (id_cliente),
-    foreign key (id_profissional_fk) references profissional (id_profissional),
+    foreign key (id_profissional_fk) references profissional (id_profissional)
 );
 
 create table mensagem (
@@ -137,7 +137,7 @@ create table mensagem (
     status_mens varchar(100) not null,
     envio datetime not null,
     foreign key (id_usuario_fk) references cliente (id_usuario),
-    foreign key (id_conversa_fk) references conversa (id_conversa),
+    foreign key (id_conversa_fk) references conversa (id_conversa)
 );
 
 create table info (
@@ -150,7 +150,7 @@ create table info (
     id_preferencia_fk int not null,
     notificacao visibilidade
     foreign key (id_servico_fk) references servico (id_servico),
-    foreign key (id_caract_fk) references caract (id_caract),
+    foreign key (id_caract_fk) references caract (id_caract)
 
 );
 
@@ -159,5 +159,5 @@ create table configurações (
     id_perfil_fk int not null,
     id_conta_fk int not null,
     id_usuario_fk int not null,
-    id_preferencia_fk int not null,
+    id_preferencia_fk int not null
 );
