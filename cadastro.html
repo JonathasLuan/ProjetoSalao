@@ -63,15 +63,16 @@
         </div>
       </div>
       <div class="formulario-container">
-        <form id="formulario-1" style="display: none;">
-          <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
-          </div>
-
-          <div>
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" required><br>
+        <form id="formulario-1" action="processar_cadastro.php" method="POST" style="display: none;">
+          <div id="nomesobrenome">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required><br>
+            </div>
+            <div>
+              <label for="sobrenome">Sobrenome:</label>
+              <input type="text" id="sobrenome" name="sobrenome" required><br>
+            </div>
           </div>
 
           <div>
@@ -103,7 +104,7 @@
           </div>
         </form>
 
-        <form id="formulario-2" style="display: none;">
+        <form id="formulario-2" action="cadastro.php" method="POST" style="display: none;">
           <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required><br>

@@ -9,7 +9,29 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="perfilCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .agend-item {
+      border: 1px solid gray;
+      padding: 10px;
+      display: flex;
+      margin: 10px 0px;
+    }
 
+    .agend-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid gray;
+    }
+
+    .agend-item:hover {
+      background-color: #f2f2f2;
+    }
+
+    .name {
+      margin-left: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -42,10 +64,9 @@
             <a href="perfil.html" class="mainmenua">perfil</a>
             <div class="dropdown-child">
               <a href="#">sub menu 1</a>
-              <a href="#">sub menu 2</a>
-              <a href="#">sub menu 3</a>
-              <a href="#">LogIn</a>
-              <a href="#">LogOut</a>
+              <a href="#">Informações</a>
+              <a href="favoritos.html">Favoritos</a>
+              <a href="#">Logout</a>
             </div>
           </div>
         </li>
@@ -119,13 +140,55 @@
         <div class="container-content">
           <div id="conteudos">
             <div class="content active" id="conteudo1">
-              <div>
+              <div id="agenda">
                 <h2>Seus agendamentos:</h2>
                 <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
                   controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
                 <div id="agend-list">
-                  <div id="agend">
-
+                  <div id="todos">
+                    <h4>todos</h4>
+                    <div class="agend-element">
+                      <div class="agend-item" id="agend-item-1">
+                        <div class="cliente-avatar">
+                          <img src="img/profile.webp" alt="user-avatar">
+                        </div>
+                        <div class="agend-info">
+                          <div class="user-name">
+                            <h5 class="name">Fulano</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="pendentes">
+                    <h4>pendentes</h4>
+                    <div class="agend-element">
+                      <div class="agend-item" id="agend-item-1">
+                        <div class="cliente-avatar">
+                          <img src="img/profile.webp" alt="user-avatar">
+                        </div>
+                        <div class="agend-info">
+                          <div class="user-name">
+                            <h5 class="name">Fulano</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div is="concelados">
+                    <h4>cancelados</h4>
+                    <div class="agend-element">
+                      <div class="agend-item" id="agend-item-1">
+                        <div class="cliente-avatar">
+                          <img src="img/profile.webp" alt="user-avatar">
+                        </div>
+                        <div class="agend-info">
+                          <div class="user-name">
+                            <h5 class="name">Fulano</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

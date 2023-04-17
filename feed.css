@@ -19,6 +19,7 @@ header {
     height: 85vh;
     background-color: white;
     box-shadow: 0px 0px 5px #ccc;
+    margin-left: 40px;
 }
 
 #sidebar2 {
@@ -26,6 +27,7 @@ header {
     height: 85vh;
     background-color: white;
     box-shadow: 0px 0px 5px #ccc;
+    margin-right: 40px;
 }
 
 #content {
@@ -58,16 +60,17 @@ header {
 
 #menu-chat {
     border: 1px solid;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #ddd;
     padding: 0px 0px;
+    display: flex;
 }
 
 #menu-chat i {
     font-size: 20px;
 }
 
-#menu-content nav button i {
+#menu-content .main-btn-a i {
     font-size: 20px;
 }
 
@@ -202,33 +205,6 @@ header {
 }
 
 .pesquisa2 i {
-    position: absolute;
-    top: 45%;
-    left: 20px;
-    transform: translateY(-49%);
-}
-
-.pesquisa3 {
-    display: flex;
-    position: relative;
-    width: 80%;
-    max-width: 250px;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-top: 3px;
-}
-
-.pesquisa3 input {
-    width: 100%;
-    height: 16px;
-    border-radius: 25px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 7px 40px 7px 30px;
-    text-indent: 10px;
-}
-
-.pesquisa3 i {
     position: absolute;
     top: 45%;
     left: 20px;
