@@ -1,40 +1,6 @@
 <?php
-include('conexao.php');
-
-if(isset($_POST['email']) || isset($_POST['senha'])) {
-    if(strlen($_POST['email']) == 0) {
-        echo "Preencha seu e-mail";
-    } else if((strlen($_POST['senha']) == 0)) {
-        echo "Preensha sua senha";
-    } else {
-        $email = $mysqli->real_escape_string($_POST['email']);
-        $senha = $mysqli->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
-        $mysql_query = $mysqli->query($mysql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-        $quantidade = $mysql_query->num_rows;
-
-        if($quantidade == 1) {
-
-            $usuario = $mysql_query->fetch_assoc();
-            
-            if(!isset($_SESSION)) {
-                session_start();
-            }
-
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
-
-            header("Location: painel.php");
-
-        } else {
-            echo "Falha ao logar! E-mail ou Senha incorretos";
-        }
-    }
-}
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,19 +12,24 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 </head>
 
 <body>
-    <h1>Acessar conta:</h1>
-    <form action="" method="POST"></form>
-    <p>
-        <label for="">E-mail</label>
-        <input type="text" name="email">
-    </p>
-    <p>
-        <label for="">Senha</label>
-        <input type="password" name="email">
-    </p>
-    <p>
-        <button type="submit">Entrar</button>
-    </p>
+    <h1>Cadastro:</h1>
+    <?php
+    if(isset($_SESSION['msg']));
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+    ?>
+    <form method="POST" action="processa.php">
+        <label for="">Nome:</label>
+        <input type="text" name="nome">
+        <br><br>
+        <label for="">E-mail:</label>
+        <input type="email" name="email">
+        <br><br>
+        <label for="">Senha:</label>
+        <input type="password" name="senha">
+        <br><br>
+        <input type="submit" value="Cadastrar">
+    </form>
 </body>
 
 </html>

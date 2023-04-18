@@ -28,7 +28,7 @@
     <div class="menu">
       <ul>
         <li>
-          <a href="home.html">home</a>
+          <a href="home.php">home</a>
         </li>
         <li>
           <a href="serviços.html">serviços</a>
@@ -40,8 +40,11 @@
           <div class="dropdown">
             <a href="entrar.html" class="mainmenua">perfil</a>
             <div class="dropdown-child">
-              <a href="login.html">Login</a>
-              <a href="cadastro.html">Cadastro</a>
+              <a href="login.php">Login</a>
+              <a href="cadastro.php">Cadastro</a>
+              <form action="logout.php" method="POST">
+                <button type="submit" name="logout">Logout</button>
+              </form>
             </div>
           </div>
         </li>
