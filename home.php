@@ -1,5 +1,4 @@
 <?php
-include('conexao.php');
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
   if (strlen($_POST['email']) == 0) {
@@ -45,27 +44,6 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./homeCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    #scrollBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #333;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      border-radius: 50%;
-    }
-
-    #scrollBtn:hover {
-      background-color: #555;
-    }
-  </style>
 </head>
 
 <body>

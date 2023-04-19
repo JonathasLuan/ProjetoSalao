@@ -29,8 +29,6 @@ session_start();
       <i class="fa fa-search"></i>
     </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
 
     // Verifica se o usuário já fez login
     if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
