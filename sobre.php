@@ -98,31 +98,19 @@
       <input type="text" placeholder="buscar...">
       <i class="fa fa-search"></i>
     </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="home.html">home</a>
-        </li>
-        <li>
-          <a href="serviços.html">serviços</a>
-        </li>
-        <li>
-          <a href="sobre.html">sobre</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a href="entrar.html" class="mainmenua">perfil</a>
-            <div class="dropdown-child">
-              <a href="login.html">Login</a>
-              <a href="cadastro.html">Cadastro</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="contato.html">contato</a>
-        </li>
-      </ul>
-    </div>
+    <?php
+    // Inicia a sessão do PHP
+    session_start();
+
+    // Verifica se o usuário já fez login
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
+    } else {
+      // usuário não fez login, exibe o menu padrão
+      include('menu-padrao.php');
+    }
+    ?>
   </header>
   <div id="conteudo">
     <div id="sobreprojeto">
@@ -178,38 +166,7 @@
       <li>Maquiagem</li>
       </p>
     </div>
-    <div id="sidebar">
-      <nav class="sidebar">
-        <ul>
-          <li>
-            <a href="feed.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-home"></i> |
-              Página Principal</a>
-          </li>
-          <li>
-            <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-bell"></i> | Notificações</a>
-          </li>
-          <li>
-            <a href="conversas.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-comments"></i> |
-              Conversas</a>
-          </li>
-          <li>
-            <a href="agendamentos.html"><i class="icon icon-arrow-small-right"><i class="fa fa-calendar"></i> |
-                Agendamentos</a>
-          </li>
-          <li>
-            <a href="configurações.html"><i class="icon icon-arrow-small-right"></i><i class="fa fa-gear"></i> |
-              Configurações</a>
-          </li>
-          <li>
-            <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-question"></i> | FAQ - dúvidas
-              frequentes</a>
-          </li>
-          <li>
-            <a href="#"><i class="icon icon-arrow-small-right"></i><i class="fa fa-plus"></i> | Criar serviço</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+
   </div>
 
   <footer>

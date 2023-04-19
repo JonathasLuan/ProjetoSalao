@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+  header('Location: entrar.php');
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

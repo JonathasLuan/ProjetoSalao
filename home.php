@@ -26,7 +26,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
       $_SESSION['id'] = $usuario['id'];
       $_SESSION['nome'] = $usuario['nome'];
 
-      header("Location: perfil.html");
+      header("Location: perfil.php");
 
     } else {
       echo "Falha ao logar! E-mail ou Senha incorretos";
@@ -82,31 +82,19 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
       <input type="text" placeholder="buscar...">
       <i class="fa fa-search"></i>
     </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="home.php">home</a>
-        </li>
-        <li>
-          <a href="serviços.html">serviços</a>
-        </li>
-        <li>
-          <a href="sobre.html">sobre</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a href="entrar.html" class="mainmenua">perfil</a>
-            <div class="dropdown-child">
-              <a href="login.php">Login</a>
-              <a href="cadastro.php">Cadastro</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="contato.html">contato</a>
-        </li>
-      </ul>
-    </div>
+    <?php
+    // Inicia a sessão do PHP
+    session_start();
+
+    // Verifica se o usuário já fez login
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
+    } else {
+      // usuário não fez login, exibe o menu padrão
+      include('menu-padrao.php');
+    }
+    ?>
   </header>
   <div class="conteudo">
     <section id="section-one">

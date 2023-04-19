@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+  header('Location: entrar.php');
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil Profissional</title>
+  <title>Perfil Cliente</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="perfilCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,6 +71,8 @@
           <div class="dropdown">
             <a href="perfil.html" class="mainmenua">perfil</a>
             <div class="dropdown-child">
+              <a href="#">sub menu 1</a>
+              <a href="#">Informações</a>
               <a href="favoritos.html">Favoritos</a>
               <form action="logout.php" method="POST">
                 <button type="submit" name="logout">Logout</button>
@@ -108,9 +118,9 @@
               <button class="btn">mensagem</button>
             </div>
             <div id="tipo-user">
-              <h3>profissional</h3>
+              <h3>cliente</h3>
             </div>
-            <div id="name">
+            <div id="nome">
               <h2 id="nomeperfil">Fulano da Silva</h2>
             </div>
             <div id="links">
@@ -132,34 +142,14 @@
     <section>
       <div class="sidebar sidebar-right">
         <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Principal</button>
+          <button id="botao1" class="menu-button active" data-target="content1">Agendamentos</button>
           <button id="botao2" class="menu-button" data-target="content2">Conversas</button>
-          <button id="botao3" class="menu-button" data-target="content3">Agendamentos</button>
-          <button id="botao4" class="menu-button" data-target="content4">Networking</button>
-          <button id="botao5" class="menu-button" data-target="content5">Mídias</button>
-          <button id="botao6" class="menu-button" data-target="content6">Configurações</button>
+          <button id="botao3" class="menu-button" data-target="content3">Transações</button>
+          <button id="botao4" class="menu-button" data-target="content4">Configurações</button>
         </nav>
         <div class="container-content">
           <div id="conteudos">
             <div class="content active" id="conteudo1">
-              <div>
-                <h2>Portifolio:</h2>
-                <p>Aqui será uma área de visualizaçãoinicial do perfil do profissional, onde ele poderá exibir o que
-                  quiser para chama a atenção de seus clientes, como um Portifolioaberto de vídeos, fotos e conteúdo
-                  pessoal relacionado ao seu trabalho.</p>
-              </div>
-            </div>
-            <div class="content hidden" id="conteudo2">
-              <h2>Conversas:</h2>
-              <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
-                selecionar cada uma e responder às mensagens.</p>
-              <div id="chat-list">
-                <div id="chat">
-
-                </div>
-              </div>
-            </div>
-            <div class="content hidden" id="conteudo3">
               <div id="agenda">
                 <h2>Seus agendamentos:</h2>
                 <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
@@ -213,18 +203,24 @@
                 </div>
               </div>
             </div>
+            <div class="content hidden" id="conteudo2">
+              <h2>Conversas:</h2>
+              <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
+                selecionar cada uma e responder às mensagens.</p>
+              <div id="chat-list">
+                <div id="chat">
 
+                </div>
+              </div>
+            </div>
+            <div class="content hidden" id="conteudo3">
+              <h2>Transações:</h2>
+              <p>Aqui ficará a exibição de todas as transações financeiras feitas entre o cliente e outras pessoas, como
+                pagamentos, tranferências, reembolsos, bônus e descontos; onde ele poderá relacionar seus gastos e saber
+                informações detalhadas doq eu aconteceu com seu dinheiro ao usar a plataforma, bem como editar
+                preferências de métodos de pagamento e e recebimento (dependendo do tipo de usuário).</p>
+            </div>
             <div class="content hidden" id="conteudo4">
-              <h2>Networking:</h2>
-              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
-                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
-            </div>
-            <div class="content hidden" id="conteudo5">
-              <h2>Mídias:</h2>
-              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
-                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
-            </div>
-            <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
               <div id="options">
                 <ul class="accordion">
@@ -315,8 +311,8 @@
                       </div>
                       <br>
                       <div id="endereco" class="divs">
-                        <h3 style="text-align: center;">Endereço</h3>
                         <div id="info-endereco">
+                          <h3 style="text-align: center;">Endereço</h3>
                           <div class="data">
                             <span>Estado:</span>
                             <span id="estado">São Paulo</span>
@@ -335,7 +331,7 @@
                             <span>Bairro:</span>
                             <span id="bairro">Centro</span>
                             <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
-                            <button id="salvar-bairro" style="display:none"
+                            <button id="salvar-beirro" style="display:none"
                               onclick="salvarCampo('bairro')">Salvar</button>
                           </div>
                           <div>
@@ -353,6 +349,60 @@
                           </div>
                         </div>
                       </div>
+                      <div id="caract-list" class="divs" style="border-bottom: 0;">
+                        <h3 style="text-align: center;">Características</h3>
+                        <div class="caract">
+                          <h4>Cabelo</h4>
+                          <label for="tipo">Tipo:</label>
+                          <select id="tipo" name="tipo">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Liso</option>
+                            <option value="">Ondulado</option>
+                            <option value="">Cacheado</option>
+                            <option value="">Crespo</option>
+                          </select>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Careca</option>
+                            <option value="">Calvo</option>
+                            <option value="">Curto</option>
+                            <option value="">Médio</option>
+                            <option value="">Longo</option>
+                          </select>
+                        </div>
+                        <div class="caract">
+                          <h4>Rosto</h4>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Curto</option>
+                            <option value="">Médio</option>
+                            <option value="">Longo</option>
+                          </select>
+                          <label for="formato">Formato:</label>
+                          <select id="formato" name="formato">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Fino</option>
+                            <option value="">Redondo</option>
+                            <option value="">Quadrado</option>
+                            <option value="">Triangular</option>
+                          </select>
+                        </div>
+                        <div class="caract">
+                          <h4>Pele</h4>
+                        </div>
+                        <div class="caract" style="border-bottom: 0;">
+                          <h4>Unhas</h4>
+                          <label for="tamanho">Tamanho:</label>
+                          <select id="tamanho" name="tamanho">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="">Curtas</option>
+                            <option value="">Médias</option>
+                            <option value="">Longas</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li>
@@ -367,23 +417,16 @@
                       </button>
                     </h3>
                     <div id="content5" class="content">
-                      <div id="editnome" class="divs">
-                        <div>
-                          <h4>Informações Pessoais</h4>
-                          <div>
-                            <span>Nome:</span>
-                            <span id="nome">João da Silva</span>
-                            <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
-                            <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Email:</span>
-                            <span id="email">joao.silva@gmail.com</span>
-                            <button id="edit-email" onclick="editarCampo('email')">Editar</button>
-                            <button id="salvar-email" style="display:none"
-                              onclick="salvarCampo('email')">Salvar</button>
-                          </div>
-                        </div>
+                      <p>Aqui ficarão configurações e ajustes do perfil.</p>
+                      <div id="nome" class="divs">
+                        <h3>Nome</h3>
+                        <p id="nomeperfil">Fulano da Silva.</p>
+                        <button class="edit-btn">Editar</button>
+                      </div>
+                      <br>
+                      <div>
+                        <input type="text" id="editnome">
+                        <button class="btn-salvar-edit btn">Salvar</button>
                       </div>
                       <br>
                       <div id="editbio" class="divs" style="border-bottom: 0;">
@@ -417,22 +460,7 @@
       </div>
     </section>
   </main>
-  <script>
-    function editarCampo(campo) {
-      var elemento = document.getElementById(campo);
-      var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
-      document.getElementById('edit-' + campo).style.display = 'none';
-      document.getElementById('salvar-' + campo).style.display = 'inline';
-    }
 
-    function salvarCampo(campo) {
-      var valorNovo = document.getElementById('campo-editar').value;
-      document.getElementById(campo).innerHTML = valorNovo;
-      document.getElementById('edit-' + campo).style.display = 'inline';
-      document.getElementById('salvar-' + campo).style.display = 'none';
-    }
-  </script>
   <script src="perfilJS.js"></script>
 </body>
 
