@@ -7,81 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre nós</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./sobre.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      background-color: #f2f2f2;
-    }
-
-    #conteudo {
-      padding: 0px;
-      margin: 0 auto;
-      margin: 0px 0px;
-      display: flex;
-      justify-content: space-around;
-      width: 97%;
-      height: 100%;
-    }
-
-    #sobreprojeto {
-      background-color: #FFFFFF;
-      border: 2px;
-      box-shadow: 0px 0px 5px #ccc;
-      padding: 80px;
-      width: 60%;
-      font-size: 15px;
-      margin: 20px;
-      margin-left: 100px;
-      font-family: Arial, Helvetca, sans serif;
-      line-height: 30px;
-    }
-
-    #sobreprojeto p {
-      text-align: justify;
-      line-height: 2em;
-      hyphens: auto;
-    }
-
-    .sidebar {
-      background: #fff;
-      box-shadow: 0px 0px 5px #ccc;
-      border-radius: 3px;
-      width: 100%;
-      padding: 20px;
-      margin-top: 20px;
-      margin-right: 0px;
-    }
-
-    .sidebar ul {
-      list-style-type: none;
-    }
-
-    .sidebar ul li {
-      padding: 6px 0;
-    }
-
-    .sidebar ul li a i {
-      font-size: 1.1em;
-    }
-
-    .sidebar ul li a {
-      position: relative;
-      display: block;
-      padding: 4px 20px;
-      font-size: 1em;
-      font-family: 'open_sansregular';
-      color: #555555;
-      text-decoration: none;
-    }
-
-    .sidebar ul li a:hover {
-      background-color: #0dc9cc;
-    }
-
-    #sidebar {
-      display: block;
-    }
-  </style>
 </head>
 
 <body>

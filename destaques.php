@@ -96,46 +96,19 @@
       <input type="text" placeholder="buscar...">
       <i class="fa fa-search"></i>
     </div>
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="home.php">home</a>
-        </li>
-        <li>
-          <a href="serviços.html">serviços</a>
-        </li>
-        <li>
-          <a href="sobre.html">sobre</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a href="entrar.html" class="mainmenua">perfil</a>
-            <div class="dropdown-child">
-              <a href="#">sub menu 1</a>
-              <a href="favoritos.html">Favoritos</a>
-              <form action="logout.php" method="POST">
-                <button type="submit" name="logout">Logout</button>
-              </form>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="contato.html">contato</a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a class="mainmenua"><i class="fa fa-bars" aria-hidden="true" style="font-size: 20px;"></i></a>
-            <div class="dropdown-child">
-              <a href="http://wwww.yourdomain.com/page1.html">Sub Menu 1</a>
-              <a href="http://wwww.yourdomain.com/page2.html">Sub Menu 2</a>
-              <a href="http://wwww.yourdomain.com/page3.html">Sub Menu 3</a>
-              <a href="http://wwww.yourdomain.com/page4.html">Sub Menu 4</a>
-              <a href="http://wwww.yourdomain.com/page5.html">Sub Menu 5</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <?php
+    // Inicia a sessão do PHP
+    session_start();
+
+    // Verifica se o usuário já fez login
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
+    } else {
+      // usuário não fez login, exibe o menu padrão
+      include('menu-padrao.php');
+    }
+    ?>
   </header>
   <main>
     <div id="conteudo">

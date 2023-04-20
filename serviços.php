@@ -41,7 +41,7 @@
   </header>
   <nav>
     <a href="agendamentos.php">AGENDADOS</a>
-    <a href="destaques.html">DESTAQUES</a>
+    <a href="destaques.php">DESTAQUES</a>
     <a href="favoritos.php">FAVORITOS</a>
     <a href="provador.php">PROVADOR</a>
   </nav>
