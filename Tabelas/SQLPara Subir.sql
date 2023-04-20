@@ -1,49 +1,3 @@
-create table cliente (
-    id_cliente int not null auto_increment primary key,
-    id_usuario_fk int not null,
-    id_local_fk int not null,
-    nome_completo varchar(200) not null,
-    genero varchar(100),
-    data_nascimento date null,
-    telefone varchar(11) unique,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
-    foreign key (id_local_fk) references local (id_local)
-);
-
-create table profissional (
-    id_profissional int not null auto_increment primary key,
-    id_usuario_fk int not null,
-    id_local_fk int not null,
-    id_especialidade_fk int not null,
-    nome_completo varchar(200) not null,
-    genero varchar(100),
-    data_nascimento date null,
-    telefone varchar(11) unique,
-    foreign key (id_usuario_fk) references usuario (id_usuario),
-    foreign key (id_local_fk) references local (id_local),
-    foreign key (id_especialidade_fk) references especialidade (id_especialidade)
-);
-
-create table perfil (
-    id_perfil int not null auto_increment primary key,
-    id_usuario_fk int not null,
-    tipo enum('cliente', 'profissional') not null,
-    data_criacao date,
-    foreign key (id_usuario_fk) references usuario (id_usuario)
-);
-
-create table servico (
-    id_servico int not null auto_increment primary key,
-    id_especialidade_fk int not null,
-    nome varchar(200) not null,
-    descricao varchar(200) null,
-    preco decimal not null,
-    categoria varchar(100) not null,
-    subcategoria varchar(100) not null,
-    tempo time null,
-    foreign key (id_especialidade_fk) references especialidade (id_especialidade)
-);
-
 create table fatura (
     id_fatura int not null auto_increment primary key,
     id_transacao_fk int not null,
@@ -91,33 +45,6 @@ create table especialidade_profissional (
     foreign key (id_profissional_fk) references profissional (id_profissional)
 );
 
-create table comentario (
-    id_comentario int not null auto_increment primary key,
-    id_usuario_fk int not null,
-    data_coment date not null,
-    comentario text not null,
-    foreign key (id_usuario_fk) references usuario (id_usuario)
-);
-
-create table avaliacao (
-    id_avaliacao int not null auto_increment primary key,
-    id_usuario_fk int not null,
-    data_aval date null,
-    avaliacao text not null,
-    foreign key (id_usuario_fk) references usuario (id_usuario)
-);
-
-create table midia (
-    id_midia int not null auto_increment primary key,
-    id_pagina_fk int not null,
-    tipo varchar(100) not null,
-    src varchar(500) not null,
-    tamanho decimal not null,
-    modificacao datetime not null,
-    upload datetime not null,
-    foreign key (id_pagina_fk) references pagina (id_pagina)
-);
-
 create table conversa (
     id_conversa int not null auto_increment primary key,
     id_cliente_fk int not null,
@@ -152,12 +79,4 @@ create table info (
     foreign key (id_servico_fk) references servico (id_servico),
     foreign key (id_caract_fk) references caract (id_caract)
 
-);
-
-create table configurações (
-    id_config int not null auto_increment primary key,
-    id_perfil_fk int not null,
-    id_conta_fk int not null,
-    id_usuario_fk int not null,
-    id_preferencia_fk int not null
 );

@@ -73,7 +73,7 @@ create table especialidade (
 );
 
 create table transacao (
-    id_transacao varchar(200) not null auto_increment primary key,
+    id_transacao int not null auto_increment primary key,
     tipo varchar(100) not null,
     data_criacao date not null,
     valor decimal not null,

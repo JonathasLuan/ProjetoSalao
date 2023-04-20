@@ -1,10 +1,5 @@
-comentario
-avaliacao (verificar)
-perfil
-serviço
-cliente
-profissional
 fatura
+midia
 agendamento
 serviço X profissional
 especialidade x profissional
@@ -12,4 +7,3 @@ conversa
 mensagem
 info
 preferencia
-configurações

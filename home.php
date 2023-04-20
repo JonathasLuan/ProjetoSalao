@@ -1,4 +1,5 @@
 <?php
+include('conexao2.php');
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
   if (strlen($_POST['email']) == 0) {

@@ -22,8 +22,9 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "Usuário cadastrado com sucesso";
-    header("Location: cadastro.php");
+    header("Location: login.php");
 }else {
     header("Location: cadastro.php");
+    echo "Falha ao cadastrar.";
 }
 ?>
