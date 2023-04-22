@@ -10,13 +10,6 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
 $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 
-echo "Tipo: $tipo <br>";
-echo "Nome: $nome <br>";
-echo "Sobrenome: $sobrenome <br>";
-echo "E-mail: $email <br>";
-echo "Telefone: $telefone <br>";
-echo "Gênero: $genero <br>";
-
 $result_usuario = "INSERT INTO usuario2 (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 

@@ -47,7 +47,9 @@
   <div class="conteudo">
     <p>Nesta página serão exibidos os serviços de manicure</p>
   </div>
-
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>

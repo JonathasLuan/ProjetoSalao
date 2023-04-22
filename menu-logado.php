@@ -10,8 +10,11 @@
       <a href="sobre.php">sobre</a>
     </li>
     <li>
+      <a href="contato.php">contato</a>
+    </li>
+    <li>
       <div class="dropdown">
-        <a href="perfil.php" class="mainmenua">perfil</a>
+        <a href="perfil.php" class="mainmenua"><i class="fa fa-user"></i>perfil</a>
         <div class="dropdown-child">
           <a href="favoritos.php">Favoritos</a>
           <form action="logout.php" method="POST">
@@ -19,9 +22,6 @@
           </form>
         </div>
       </div>
-    </li>
-    <li>
-      <a href="contato.php">contato</a>
     </li>
   </ul>
 </div>

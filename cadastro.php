@@ -140,9 +140,9 @@ session_start();
       </div>
     </div>
   </div>
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
 
   <script>
     const botaoFormulario1 = document.getElementById("botao-formulario-1");

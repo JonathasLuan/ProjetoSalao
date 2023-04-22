@@ -63,7 +63,7 @@ create table mensagem (
     tipo_mens varchar(100) not null,
     status_mens varchar(100) not null,
     envio datetime not null,
-    foreign key (id_usuario_fk) references cliente (id_usuario),
+    foreign key (id_usuario_fk) references usuário (id_usuario),
     foreign key (id_conversa_fk) references conversa (id_conversa)
 );
 
@@ -72,11 +72,12 @@ create table info (
     id_link_fk int null,
     id_caract_fk int null,
     nomeperfil varchar(200) not null,
-    fotoperfil tipo - user varchar(100) not null,
+    foto blob not null,
+    tipo_user varchar(100) not null,
     sobre text null,
-    id_preferencia_fk int not null,
-    notificacao visibilidade
-    foreign key (id_servico_fk) references servico (id_servico),
+    notificacao char(100) null,
+    visibilidade char(100) null,
+    foreign key (id_link_fk) references link (id_link),
     foreign key (id_caract_fk) references caract (id_caract)
 
 );

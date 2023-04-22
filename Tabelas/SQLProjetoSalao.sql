@@ -204,66 +204,82 @@ create table mensagem (
 
 create table cabelo (
     id_cabelo int not null auto_increment primary key,
+    id_caract_fk int not null,
     cor char(100) null,
     tipo char(100) null,
     textura char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null
+    condicao varchar(200) null,
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table barba (
     id_barba int not null auto_increment primary key,
+    id_caract_fk int not null,
     cor char(100) null,
-    tipo char(100) null,
     textura char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null
+    condicao varchar(200) null,
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table pele (
     id_pele int not null auto_increment primary key,
+    id_caract_fk int not null,
     cor char(100) null,
-    etnia textura char(100) null,
+    etnia char(100) null,
+    textura char(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null
+    condicao varchar(200) null,
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table unhas (
     id_unhas int not null auto_increment primary key,
+    id_caract_fk int not null,
     cor char(100) null,
     tipo char(100) null,
     tamanho varchar(100) null,
     tratamento varchar(200) null,
-    condicao varchar(200) null
+    condicao varchar(200) null,
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table rosto (
     id_rosto int not null auto_increment primary key,
+    id_caract_fk int not null,
     formato varchar(100) null,
     textura char(100) null,
     tamanho varchar(100) null,
-    patologia varchar(200) null
+    condicao varchar(200) null,
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table info (
     id_info int not null auto_increment primary key,
-    id_link_fk int not null,
-    id_caract_fk int not null,
+    id_usuario_fk int not null,
+    id_link_fk int null,
+    id_caract_fk int null,
     nomeperfil varchar(200) not null,
-    fotoperfil tipo - user varchar(100) not null,
+    fotoperfil tipouser varchar(100) not null,
     sobre text null,
-    id_preferencia_fk int not null,
-    notificacao visibilidade
+    notificacao char(20) null,
+    visibilidade char(20) null,
+    foreign key (id_link_fk) references links (id_link),
+    foreign key (id_caract_fk) references caracteristica (id_caract),
+    foreign key (id_usuario_fk) references usuário (id_usuario)
 );
 
-create table configurações (
+create table configuracoes (
     id_config int not null auto_increment primary key,
     id_perfil_fk int not null,
     id_conta_fk int not null,
     id_usuario_fk int not null,
-    id_preferencia_fk int not null
+    foreign key (id_perfil_fk) references perfil (id_perfil),
+    foreign key (id_conta_fk) references conta (id_conta),
+    foreign key (id_usuario_fk) references usuário (id_usuario)
 );
 
 create table geral (

@@ -377,9 +377,9 @@
       </div>
     </div>
 
-    <footer id="footer">
-      <p>&copy; 2023 Na Régua</p>
-    </footer>
+    <?php
+    include('footer.php');
+    ?>
   </main>
 
   <script>

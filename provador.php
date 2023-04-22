@@ -56,7 +56,9 @@ if (!isset($_SESSION['usuario'])) {
     possa balizar suas escolhas, caso ainda esteja indeciso. Serão recomendações baseadas nas características fornecidas
     do que combina melhor com este cliente, levando em conta: cor de pele, formato de rosto, tipo de cabelo e tamanho,
     barba e muito mais.</p>
-
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>

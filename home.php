@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('conexao2.php');
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
   if (strlen($_POST['email']) == 0) {
@@ -51,7 +51,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
   <header>
     <div class="header1">
       <div class="logo">
-        <div><img src="./img/scissors-badge-svgrepo-com.png"></div>
+        <div><img src="./img/scissors-badge-svgrepo-com-removebg-preview.png"></div>
         <div>
           <span>NaRégua</span>
         </div>

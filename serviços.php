@@ -47,51 +47,51 @@
   </nav>
   <main>
     <article>
-      <a href="cabeleireiro.html"><img src="img/cabelo.jpg" alt="Image 1" /></a>
-      <a href="cabeleireiro.html">
+      <a href="cabeleireiro.php"><img src="img/cabelo.jpg" alt="Image 1" /></a>
+      <a href="cabeleireiro.php">
         <h2>Cabeleireiro(a)</h2>
       </a>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </article>
     <article>
-      <a href="barbeiro.html"><img src="img/barbearia.png" alt="Image 2" /></a>
-      <a href="barbeiro.html">
+      <a href="barbeiro.php"><img src="img/barbearia.png" alt="Image 2" /></a>
+      <a href="barbeiro.php">
         <h2>Barbeiro(a)</h2>
       </a>
       <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </article>
     <article>
-      <a href="maquiador.html"><img src="img/maquiagem.jpg" alt="Image 3" /></a>
-      <a href="maquiador.html">
+      <a href="maquiador.php"><img src="img/maquiagem.jpg" alt="Image 3" /></a>
+      <a href="maquiador.php">
         <h2>Maquiador(a)</h2>
       </a>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </article>
     <article>
-      <a href="manicure.html"><img src="img/manicure.jpg" alt="Image 4" /></a>
-      <a href="manicure.html">
+      <a href="manicure.php"><img src="img/manicure.jpg" alt="Image 4" /></a>
+      <a href="manicure.php">
         <h2>Manicure</h2>
       </a>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </article>
     <article>
-      <a href="pedicure.html"><img src="img/pedicure.jpg" alt="Image 5" /></a>
-      <a href="pedicure.html">
+      <a href="pedicure.php"><img src="img/pedicure.jpg" alt="Image 5" /></a>
+      <a href="pedicure.php">
         <h2>Pedicure</h2>
       </a>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </article>
     <article>
-      <a href="coloração.html"><img src="img/coloração.jpg" alt="Image 6" /></a>
-      <a href="coloração.html">
+      <a href="coloração.php"><img src="img/coloração.jpg" alt="Image 6" /></a>
+      <a href="coloração.php">
         <h2>Coloração</h2>
       </a>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </article>
   </main>
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>
