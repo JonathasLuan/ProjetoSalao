@@ -276,11 +276,9 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     }
 
   </script>
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-    <a target="_blank" href="https://icons8.com/icon/12776/calendar">Calendar</a> icon by <a target="_blank"
-      href="https://icons8.com">Icons8</a>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 <?php
 
 // Verifica se o formulário foi enviado
-if (isset($_POST['submit'])) {
+if (isset($_GET['submit'])) {
 
     // Obtém o valor do input de busca
-    $search = $_POST['search'];
+    $search = $_GET['search'];
 
     // Conecta ao banco de dados (substitua os valores entre <> pelos seus dados de conexão)
     $servername = "localhost";

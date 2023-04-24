@@ -550,3 +550,25 @@ body.dark-mode .btn {
 body.dark-mode .logo img {
     content: url('./img/tesoura.png');
 }
+
+#send-area {
+    display: flex;
+    bottom: 0;
+    position: absolute;
+    border: 1px solid;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#conteudo1 {
+    height: 700px;
+    border: 1px solid;
+    padding: 40px;
+}
+
+#chat-area {
+    height: 550px;
+    border: 1px solid;
+    position: relative;
+    overflow: auto;
+}

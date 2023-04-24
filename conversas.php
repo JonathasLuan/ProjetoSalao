@@ -309,7 +309,18 @@
               <h2>Mensagens:</h2>
               <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as
                 mensagens respectivas de cada bate-papo.</p>
-              <div id="chat-area"></div>
+              <div id="chat-area">
+                <div id="send-area">
+                  <div id="text">
+                    <form action="">
+                      <input type="text" name="send-text" id="send-text">
+                  </div>
+                  <div id="enviar">
+                    <button type="submit">Enviar</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
             </div>
             <div class="content hidden" id="conteudo2">
               <h2>Conteúdo 2:</h2>

@@ -1,0 +1,634 @@
+body {
+    background-color: #f2f2f2;
+}
+
+main {
+    padding: 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ddd;
+    padding: 0px 39px;
+    width: 100%;
+}
+
+nav button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 30px;
+    background: none;
+    border: none;
+}
+
+nav button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+.sidebar {
+    top: 0;
+    padding: 0px;
+}
+
+.sidebar-left {
+    left: 0;
+    background-color: #f2f2f2;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.sidebar-right {
+    right: 0;
+    background-color: #f2f2f2;
+    margin-left: 15px;
+}
+
+.container-perfil {
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 35px;
+    width: 85%;
+    height: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#foto {
+    position: relative;
+
+}
+
+#foto img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#editar-foto {
+    position: absolute;
+    bottom: 15px;
+    right: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#editar-foto i {
+    font-size: 20px;
+    position: relative;
+    color: #333;
+    bottom: 1px;
+    right: -0px;
+}
+
+#bio {
+    text-align: left;
+    width: 90%;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: #ddd;
+    padding: 5%;
+}
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inner {
+    background-color: #fefefe;
+    position: relative;
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 37%;
+    height: 37%;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+/* Estilos para input file */
+
+.arquivo {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 6px 37px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #24a0ed;
+}
+
+.arquivo input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.arquivo label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.arquivo:hover {
+    background-color: #51b4f1;
+}
+
+/* Botão para salvar a foto escolhida */
+#salvar-foto {
+    border: 1px solid #000000;
+    border-radius: 0px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #24a0ed;
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+}
+
+#salvar-foto:hover {
+    background-color: #51b4f1;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#botoes button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+#info #links {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#info #links a {
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+/* Estilos para o botão "Fechar" */
+.close {
+    position: absolute;
+    display: flex;
+    right: 50px;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 16px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-content {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    font-size: 16px;
+    margin: 0;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+    display: flex;
+    width: 100%;
+    float: left;
+}
+
+#menu-content {
+    margin-top: 20px;
+    border: 1px solid;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+section:nth-child(1) {
+    float: right;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+section:nth-child(2) {
+    float: left;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.conteudos {
+    width: 100%;
+}
+
+.accordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.accordion li {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.accordion h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+#accordion-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .content {
+    display: none;
+    padding: 10px;
+}
+
+.accordion li.active .content {
+    display: block;
+}
+
+svg {
+    float: right;
+}
+
+#content4 {
+    padding: 20px;
+}
+
+.btn-salvar-edit {
+    display: flex;
+    align-content: center;
+    margin: 2px;
+    padding: 7px 7px;
+    cursor: pointer;
+    width: 53px;
+    display: none;
+}
+
+#btn-salvar {
+    background-color: #24a0ed;
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#btn-salvar:hover {
+    background-color: #51b4f1;
+}
+
+#salvar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.agend-item {
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+}
+
+.agend-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.agend-item:hover {
+    background-color: #f2f2f2;
+}
+
+.name {
+    margin-left: 20px;
+}
+
+.chat-item {
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.chat-item:hover {
+    background-color: #f2f2f2;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #000000;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #000000;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+body {
+    background-color: #f2f2f2;
+    transition: background-color 0.5s ease;
+}
+
+.dark-mode {
+    background-color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+}
+
+body.dark-mode header {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .logo {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .container-perfil {
+    background-color: #000;
+    color: white;
+    box-shadow: none;
+}
+
+body.dark-mode #info {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .container-content {
+    background-color: #000;
+    color: white;
+    box-shadow: none;
+}
+
+body.dark-mode h3 {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode .content {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode button {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode nav button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+body.dark-mode #botoes button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+body.dark-mode nav {
+    background-color: #000;
+    color: white;
+}
+
+body.dark-mode a {
+    background-color: #000;
+    color: #51b4f1;
+}
+
+body.dark-mode #foto img {
+    border: 3px solid;
+    border-color: #51b4f1;
+}
+
+body.dark-mode input {
+    background-color: #000;
+    color: #ffffff;
+}
+
+body.dark-mode .modal-inner {
+    background-color: #000;
+    color: #ffffff;
+}
+
+body.dark-mode .btn {
+    background-color: rgb(53, 53, 53);
+    color: #ffffff;
+    border-color: #888;
+    margin: 2px;
+    padding: 7px;
+    border: 1px solid;
+}
+
+body.dark-mode .logo img {
+    content: url('./img/tesoura.png');
+}
+
+#sobreperfil,
+#editsobre {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+.edit-btn {
+    display: flex;
+    align-content: center;
+    margin: 2px;
+    padding: 7px;
+    cursor: pointer;
+    width: 52px;
+}
+
+#editsobre {
+    display: none;
+}
+
+#info-endereco {
+    display: flex;
+    justify-content: space-around;
+}
+
+#endereco {
+    border-bottom: 0;
+}
+
+#editestado {
+    display: none;
+}
+
+#editcidade {
+    display: none;
+}
+
+#editbairro {
+    display: none;
+}
+
+#editrua {
+    display: none;
+}
+
+.divs,
+.caract {
+    border: #a9a9a9 1px solid;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 30px;
+}

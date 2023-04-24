@@ -1,9 +1,11 @@
 <?php
+/*
 session_start();
 if (!isset($_SESSION['usuario'])) {
-  header('Location: entrar.php');
-  exit();
+header('Location: entrar.php');
+exit();
 }
+*/
 ?>
 
 <!DOCTYPE html>
@@ -15,31 +17,8 @@ if (!isset($_SESSION['usuario'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil Cliente</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="perfilCSS.css">
+  <link rel="stylesheet" href="perfil-cliente.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    .agend-item {
-      border: 1px solid gray;
-      padding: 10px;
-      display: flex;
-      margin: 10px 0px;
-    }
-
-    .agend-item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid gray;
-    }
-
-    .agend-item:hover {
-      background-color: #f2f2f2;
-    }
-
-    .name {
-      margin-left: 20px;
-    }
-  </style>
 </head>
 
 <body>
@@ -74,63 +53,19 @@ if (!isset($_SESSION['usuario'])) {
     <section>
       <div class="sidebar sidebar-left">
         <div class="container-perfil">
-          <div id="info">
-            <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
-              <button id="editar-foto"><i class="fa fa-pencil"></i></button>
-            </div>
-            <div id="modal-foto" class="modal">
-              <div class="modal-inner">
-                <span class="close">&times;</span>
-                <!-- aqui vai o conteúdo da janela modal -->
-                <div id="modal-content">
-                  <h2>Editar Foto</h2>
-                  <div class="arquivo">
-                    <label for="profile-image">Escolha uma Imagem</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                    <input type="file" id="profile-image" name="profile-image">
-                    <form>
-                    </form>
-                  </div>
-                  <img id="profile-preview" src="img/profile.webp" alt="profile">
-                  <button id="salvar-foto" type="submit">Salvar</button>
-                </div>
-              </div>
-            </div>
-            <div id="botoes">
-              <button class="btn">seguir</button>
-              <button class="btn">mensagem</button>
-            </div>
-            <div id="tipo-user">
-              <h3>cliente</h3>
-            </div>
-            <div id="nome">
-              <h2 id="nomeperfil">Fulano da Silva</h2>
-            </div>
-            <div id="links">
-              <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div id="bio">
-              <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
-                informações
-                adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
-                seu trabalho.</p>
-            </div>
-          </div>
+          <?php
+          include('info-cliente.php')
+            ?>
         </div>
+      </div>
       </div>
     </section>
 
     <section>
       <div class="sidebar sidebar-right">
-        <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Agendamentos</button>
-          <button id="botao2" class="menu-button" data-target="content2">Conversas</button>
-          <button id="botao3" class="menu-button" data-target="content3">Transações</button>
-          <button id="botao4" class="menu-button" data-target="content4">Configurações</button>
-        </nav>
+        <?php
+        include('menu-cliente.php')
+          ?>
         <div class="container-content">
           <div id="conteudos">
             <div class="content active" id="conteudo1">
@@ -191,11 +126,9 @@ if (!isset($_SESSION['usuario'])) {
               <h2>Conversas:</h2>
               <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
                 selecionar cada uma e responder às mensagens.</p>
-              <div id="chat-list">
-                <div id="chat">
-
-                </div>
-              </div>
+              <?php
+              include('chat-box.php')
+                ?>
             </div>
             <div class="content hidden" id="conteudo3">
               <h2>Transações:</h2>
@@ -204,7 +137,18 @@ if (!isset($_SESSION['usuario'])) {
                 informações detalhadas doq eu aconteceu com seu dinheiro ao usar a plataforma, bem como editar
                 preferências de métodos de pagamento e e recebimento (dependendo do tipo de usuário).</p>
             </div>
+
             <div class="content hidden" id="conteudo4">
+              <h2>Networking:</h2>
+              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
+                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+            </div>
+            <div class="content hidden" id="conteudo5">
+              <h2>Mídias:</h2>
+              <p>Aqui ficará a exibição dos agendametos ou outros conteúdos que estão em andamento. A nav superior
+                controlará o que aparece, então é só clicar nos botões do menu para exibir o conteúdo dele.</p>
+            </div>
+            <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
               <div id="options">
                 <ul class="accordion">
@@ -277,7 +221,7 @@ if (!isset($_SESSION['usuario'])) {
                     <div id="content4" class="content">
                       <div id="nome-sobrenome" class="divs">
                         <div>
-                          <h3>Nome completo</h3>
+                          <h3>Usuário e E-mail</h3>
                           <div>
                             <span>Nome:</span>
                             <span id="nome">João da Silva</span>
@@ -295,8 +239,8 @@ if (!isset($_SESSION['usuario'])) {
                       </div>
                       <br>
                       <div id="endereco" class="divs">
+                        <h3 style="text-align: center;">Endereço</h3>
                         <div id="info-endereco">
-                          <h3 style="text-align: center;">Endereço</h3>
                           <div class="data">
                             <span>Estado:</span>
                             <span id="estado">São Paulo</span>
@@ -315,7 +259,7 @@ if (!isset($_SESSION['usuario'])) {
                             <span>Bairro:</span>
                             <span id="bairro">Centro</span>
                             <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
-                            <button id="salvar-beirro" style="display:none"
+                            <button id="salvar-bairro" style="display:none"
                               onclick="salvarCampo('bairro')">Salvar</button>
                           </div>
                           <div>
@@ -401,16 +345,16 @@ if (!isset($_SESSION['usuario'])) {
                       </button>
                     </h3>
                     <div id="content5" class="content">
-                      <p>Aqui ficarão configurações e ajustes do perfil.</p>
-                      <div id="nome" class="divs">
-                        <h3>Nome</h3>
-                        <p id="nomeperfil">Fulano da Silva.</p>
-                        <button class="edit-btn">Editar</button>
-                      </div>
-                      <br>
-                      <div>
-                        <input type="text" id="editnome">
-                        <button class="btn-salvar-edit btn">Salvar</button>
+                      <div id="editnome" class="divs">
+                        <div>
+                          <h4>Informações de exibição</h4>
+                          <div>
+                            <span>Nickname:</span>
+                            <span id="nick">João da Silva</span>
+                            <button id="edit-nick" onclick="editarCampo('nick')">Editar</button>
+                            <button id="salvar-nick" style="display:none" onclick="salvarCampo('nick')">Salvar</button>
+                          </div>
+                        </div>
                       </div>
                       <br>
                       <div id="editbio" class="divs" style="border-bottom: 0;">
@@ -444,8 +388,23 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </section>
   </main>
+  <script>
+    function editarCampo(campo) {
+      var elemento = document.getElementById(campo);
+      var valorAntigo = elemento.innerText;
+      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
+      document.getElementById('edit-' + campo).style.display = 'none';
+      document.getElementById('salvar-' + campo).style.display = 'inline';
+    }
 
-  <script src="perfilJS.js"></script>
+    function salvarCampo(campo) {
+      var valorNovo = document.getElementById('campo-editar').value;
+      document.getElementById(campo).innerHTML = valorNovo;
+      document.getElementById('edit-' + campo).style.display = 'inline';
+      document.getElementById('salvar-' + campo).style.display = 'none';
+    }
+  </script>
+  <script src="perfil-profissionalJS.js"></script>
 </body>
 
 </html>

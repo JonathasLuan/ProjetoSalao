@@ -1,9 +1,9 @@
 <?php
-session_start();
+/*session_start();
 if (!isset($_SESSION['usuario'])) {
-  header('Location: entrar.php');
-  exit();
-}
+header('Location: entrar.php');
+exit();
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -35,18 +35,18 @@ if (!isset($_SESSION['usuario'])) {
         <i class="fa fa-search"></i>
       </div>
       <?php
-    // Inicia a sessão do PHP
-    session_start();
+      // Inicia a sessão do PHP
+      session_start();
 
-    // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
-    ?>
+      // Verifica se o usuário já fez login
+      if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+        // usuário já fez login, exibe o menu de sessão iniciada
+        include('menu-logado.php');
+      } else {
+        // usuário não fez login, exibe o menu padrão
+        include('menu-padrao.php');
+      }
+      ?>
     </header>
 
     <div id="sidebar1">
@@ -193,10 +193,10 @@ if (!isset($_SESSION['usuario'])) {
                   <div class="main">
                     <div class="formulario-container">
                       <h2>Criar pedido de serviço</h2>
-                      <form>
+                      <form action="processa_servico.php" method="POST">
                         <div>
                           <div class="divs">
-                            <label for="especialidade">Especialidade(s):</label>
+                            <label for="especialidade" name="especialidade">Especialidade(s):</label>
                             <div id="especialidade">
                               <div>
                                 <input type="checkbox" class="entrada" id="cabeleireiro" name="cabeleireiro">
@@ -398,9 +398,9 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </div>
 
-    <footer id="footer">
-      <p>&copy; 2023 Na Régua</p>
-    </footer>
+    <?php
+    include('footer.php');
+    ?>
   </main>
 
   <script>
