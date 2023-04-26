@@ -558,17 +558,35 @@ body.dark-mode .logo img {
     border: 1px solid;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    height: 60px;
 }
 
 #conteudo1 {
     height: 700px;
-    border: 1px solid;
     padding: 40px;
 }
 
 #chat-area {
-    height: 550px;
     border: 1px solid;
     position: relative;
-    overflow: auto;
+}
+
+#chat-displayer {
+    overflow: scroll;
+    height: 550px;
+}
+
+#send-area input{
+    margin-left: 20px;
+    border-radius: 25px;
+    height: 30px;
+    width: 600px;
+}
+
+#send-area button {
+    margin-right: 20px;
+    width: 80px;
+    height: 30px;
 }

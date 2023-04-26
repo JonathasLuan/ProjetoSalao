@@ -13,11 +13,6 @@ session_start();
 
 <body>
     <h1>Cadastro:</h1>
-    <?php
-    if(isset($_SESSION['msg']));
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    ?>
     <form method="POST" action="processa.php">
         <label for="">Nome:</label>
         <input type="text" name="nome">

@@ -76,44 +76,9 @@
             <h2>Conversas:</h2>
             <p>Aqui serão mostradas as conversas em forma de lista, para que o usuário role a barra de rolagem e tenha
               acesso de clique a uma de cada vez, sendo esta exibida na área à direita.</p>
-            <div id="chat-box">
-              <div class="chat-element">
-                <div class="chat-item" id="chat-item-1">
-                  <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
-                  </div>
-                  <div class="chat-info">
-                    <div class="user-name">
-                      <h5 class="name">Fulano</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="chat-element">
-                <div class="chat-item" id="chat-item-2">
-                  <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
-                  </div>
-                  <div class="chat-info">
-                    <div class="user-name">
-                      <h5 class="name">Ciclano</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="chat-element">
-                <div class="chat-item" id="chat-item-3">
-                  <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
-                  </div>
-                  <div class="chat-info">
-                    <div class="user-name">
-                      <h5 class="name">Beltrano</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php
+            include('chat-box.php');
+            ?>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
             <h2>Conversas Marcadas</h2>
@@ -306,13 +271,12 @@
         <div class="container-content" id="content-box">
           <div id="conteudo">
             <div class="content active" id="conteudo1">
-              <h2>Mensagens:</h2>
-              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as
-                mensagens respectivas de cada bate-papo.</p>
               <div id="chat-area">
+                <div id="chat-displayer">
+                </div>
                 <div id="send-area">
                   <div id="text">
-                    <form action="">
+                    <form action="" method="POST">
                       <input type="text" name="send-text" id="send-text">
                   </div>
                   <div id="enviar">
