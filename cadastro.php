@@ -91,7 +91,7 @@ session_start();
             </select>
           </div>
           <div>
-            <a href="contcad1cliente.html"><button type="submit">Continuar</button></a>
+            <a href="contcad1cliente.php"><button type="submit">Continuar</button></a>
           </div>
         </form>
 
@@ -134,7 +134,7 @@ session_start();
             </select>
           </div>
           <div>
-            <a href="contcad1prof.html"><button type="submit">Continuar</button></a>
+            <a href="contcad1prof.php"><button type="submit">Continuar</button></a>
           </div>
         </form>
       </div>

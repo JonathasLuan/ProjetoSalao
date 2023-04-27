@@ -106,7 +106,7 @@
             </div>
           </div>
           <div style="text-align: center;">
-            <a href="contcad2cliente.html"><button type="submit">Continuar</button></a>
+            <a href="contcad2cliente.php"><button type="submit">Continuar</button></a>
           </div>
         </form>
       </div>

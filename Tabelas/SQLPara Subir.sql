@@ -45,14 +45,6 @@ create table especialidade_profissional (
     foreign key (id_profissional_fk) references profissional (id_profissional)
 );
 
-create table conversa (
-    id_conversa int not null auto_increment primary key,
-    id_cliente_fk int not null,
-    id_profissional_fk int not null,
-    foreign key (id_cliente_fk) references cliente (id_cliente),
-    foreign key (id_profissional_fk) references profissional (id_profissional)
-);
-
 create table mensagem (
     id_mensagem int not null auto_increment primary key,
     id_conversa_fk int not null,
@@ -65,19 +57,4 @@ create table mensagem (
     envio datetime not null,
     foreign key (id_usuario_fk) references usuário (id_usuario),
     foreign key (id_conversa_fk) references conversa (id_conversa)
-);
-
-create table info (
-    id_info int not null auto_increment primary key,
-    id_link_fk int null,
-    id_caract_fk int null,
-    nomeperfil varchar(200) not null,
-    foto blob not null,
-    tipo_user varchar(100) not null,
-    sobre text null,
-    notificacao char(100) null,
-    visibilidade char(100) null,
-    foreign key (id_link_fk) references link (id_link),
-    foreign key (id_caract_fk) references caract (id_caract)
-
 );

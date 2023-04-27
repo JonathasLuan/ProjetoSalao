@@ -64,9 +64,6 @@
             <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
             <small>Isso será exibido em seu perfil</small>
           </div>
-          <div id="especificar" class="divs">
-            <h3>Já sabe o que procura? (especificar)</h3>
-          </div>
           <div id="caract-list" class="divs">
             <h3>Características</h3>
             <div class="caract">

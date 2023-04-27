@@ -1,9 +1,15 @@
 <?php
+
+echo $_SESSION['usuario'];
+$_SESSION['id'] = $usuario['id'];
+$_SESSION['nome'] = $usuario['nome'];
+
+/*
 session_start();
 if (!isset($_SESSION['usuario'])) {
   header('Location: entrar.php');
   exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>

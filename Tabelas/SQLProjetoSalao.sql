@@ -259,17 +259,16 @@ create table rosto (
 
 create table info (
     id_info int not null auto_increment primary key,
-    id_usuario_fk int not null,
     id_link_fk int null,
     id_caract_fk int null,
-    nomeperfil varchar(200) not null,
-    fotoperfil tipouser varchar(100) not null,
+    nomeperfil varchar(100) not null,
+    foto varchar(200) not null,
+    tipo_user varchar(50) not null,
     sobre text null,
-    notificacao char(20) null,
-    visibilidade char(20) null,
-    foreign key (id_link_fk) references links (id_link),
-    foreign key (id_caract_fk) references caracteristica (id_caract),
-    foreign key (id_usuario_fk) references usuário (id_usuario)
+    notificacao char(100) null,
+    visibilidade char(100) null,
+    foreign key (id_link_fk) references link (id_link),
+    foreign key (id_caract_fk) references caract (id_caract)
 );
 
 create table configuracoes (

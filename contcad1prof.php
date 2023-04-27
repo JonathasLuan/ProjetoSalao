@@ -173,7 +173,7 @@
             </div>
           </div class="divs">
           <div style="text-align: center;">
-            <a href="contcad2prof.html"><button type="submit">Continuar</button></a>
+            <a href="contcad2prof.php"><button type="submit">Continuar</button></a>
           </div>
         </form>
       </div>
