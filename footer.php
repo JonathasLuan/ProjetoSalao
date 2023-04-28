@@ -1,3 +1,3 @@
 <footer id="footer">
-    <p>&copy; 2023 Na Régua</p>
+    <p>&copy; 2023 SalonSet</p>
 </footer>

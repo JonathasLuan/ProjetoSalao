@@ -3,8 +3,8 @@
 include("conexao.php");
 
 /*if(isset($_FILES) && count($_FILES) > 0) {
-    var_dump($_FILES);
-    die();
+var_dump($_FILES);
+die();
 }*/
 
 if (isset($_FILES['arquivo'])) {
@@ -49,40 +49,44 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
 </head>
 
 <body>
-    <form method="POST" enctype="multipart/form-data" action="">
-        <p><label for="">Selecione o arquivo</label>
-            <input multiple name="arquivo" type="file">
-        </p>
-        <button type="submit">Enviar arquivo</button>
-    </form>
-
-    <h1>Lista de Arquivos</h1>
-    <table border="1" cellpadding="10">
-        <thead>
-            <th>Preview</th>
-            <th>Arquivo</th>
-            <th>Data de Envio</th>
-        </thead>
-        <tbody>
-            <?php
-            while ($arquivo = $sql_query->fetch_assoc()) {
-                ?>
-                <tr>
-                    <td><img height="50" src="<?php echo $arquivo['path']; ?>" alt=""></td>
-                    <td><a target="_blank" href="<?php echo $arquivo['path']; ?>">
-                            <?php echo $arquivo['nome']; ?></a>
-                    </td>
-                    <td>
-                        <?php echo date("d/m/Y H:i", strtotime($arquivo['data_upload'])); ?>
-                    </td>
-                </tr>
-                <?php
-            }
-            ?>
-        </tbody>
-    </table>
-
-
+    <div>
+        <fieldset>
+            <form method="POST" enctype="multipart/form-data" action="">
+                <p><label for="">Selecione o arquivo</label>
+                    <input multiple name="arquivo" type="file">
+                </p>
+                <button type="submit">Enviar arquivo</button>
+            </form>
+        </fieldset>
+        <br>
+        <fieldset>
+            <h1>Lista de Arquivos</h1>
+            <table border="1" cellpadding="10">
+                <thead>
+                    <th>Preview</th>
+                    <th>Arquivo</th>
+                    <th>Data de Envio</th>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($arquivo = $sql_query->fetch_assoc()) {
+                        ?>
+                        <tr>
+                            <td><img height="50" src="<?php echo $arquivo['path']; ?>" alt=""></td>
+                            <td><a target="_blank" href="<?php echo $arquivo['path']; ?>">
+                                    <?php echo $arquivo['nome']; ?></a>
+                            </td>
+                            <td>
+                                <?php echo date("d/m/Y H:i", strtotime($arquivo['data_upload'])); ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
 </body>
 
 </html>
