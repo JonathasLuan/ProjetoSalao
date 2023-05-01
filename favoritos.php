@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+echo $_SESSION['id'];
+echo $_SESSION['usuario'];
+
 if (!isset($_SESSION['usuario'])) {
   header('Location: entrar.php');
   exit();
@@ -20,30 +24,15 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
-    // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
+    <?php
+    // usuário já fez login, exibe o menu de sessão iniciada
+    include('menu-logado.php');
     ?>
   </header>
   <main>
@@ -51,6 +40,9 @@ if (!isset($_SESSION['usuario'])) {
       <p></p>
     </div>
   </main>
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>

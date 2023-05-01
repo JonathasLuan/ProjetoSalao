@@ -1,3 +1,21 @@
+<?php
+// Inicia a sessão do PHP
+session_start();
+
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "projetosalao";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Verifica se a conexão foi bem sucedida
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,30 +32,16 @@
 <body>
   <main>
     <header>
-      <div id="header1">
-        <div class="logo">
-          <div><img src="./img/tesourapentepretos.jpg"></div>
-          <div>
-            <span>NaRégua</span>
-          </div>
-        </div>
-      </div>
+      <?php
+      include('header1.php');
+      ?>
       <div class="pesquisa">
         <input type="text" placeholder="buscar...">
         <i class="fa fa-search"></i>
       </div>
       <?php
-      // Inicia a sessão do PHP
-      session_start();
-
-      // Verifica se o usuário já fez login
-      if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
-        // usuário já fez login, exibe o menu de sessão iniciada
-        include('menu-logado.php');
-      } else {
-        // usuário não fez login, exibe o menu padrão
-        include('menu-padrao.php');
-      }
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
       ?>
     </header>
 
@@ -92,6 +96,8 @@
                   <div class="chat-info">
                     <div class="user-name">
                       <h5 class="name">Fulano</h5>
+                    </div>
+                    <div id="preview">
                     </div>
                   </div>
                 </div>

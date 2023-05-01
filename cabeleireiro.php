@@ -13,14 +13,9 @@
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
+    <?php
+    include('header1.php');
+    ?>
     <div class="pesquisa">
       <input type="text" placeholder="buscar...">
       <i class="fa fa-search"></i>
@@ -30,7 +25,7 @@
     session_start();
 
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (isset($_SESSION['id']) && $_SESSION['usuario'] === true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {

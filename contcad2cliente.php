@@ -1,3 +1,43 @@
+<?php
+
+include("conexao.php");
+
+/*if(isset($_FILES) && count($_FILES) > 0) {
+var_dump($_FILES);
+die();
+}*/
+
+if (isset($_FILES['arquivo'])) {
+  echo "arquivo enviado";
+  $arquivo = $_FILES['arquivo'];
+
+  if ($arquivo['error'])
+    die("Falha ao enviar arquivo");
+
+  if ($arquivo['size'] > 2097152)
+    die("Arquivo muito grande. Máximo: 2MB");
+
+  $pasta = "PHP/Upload/arquivos/";
+  $nomeDoArquivo = $arquivo['name'];
+  $novoNomeDoArquivo = uniqid();
+  $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+  if ($extensao != "jpg" && $extensao != 'png')
+    die("Tipo de arquivo não aceito.");
+
+  $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
+  $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+  if ($deu_certo) {
+    $mysqli->query("INSERT INTO arquivos (nome, path) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
+    echo "<p>Arquivo enviado com sucesso!</p>";
+  } else
+    echo "<p>Falha ao enviar o arquivo.</p>";
+}
+
+$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +53,12 @@
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
+    <?php
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
     <?php
     // Inicia a sessão do PHP
     session_start();
@@ -43,16 +77,16 @@
     <div id="cadastroform">
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
-        <form>
+        <form method="POST" enctype="multipart/form-data" action="">
           <div class="divs">
             <h3>Escolha uma foto</h3>
             <div class="modal-inner">
               <!-- aqui vai o conteúdo da janela modal -->
               <div id="modal-content">
                 <div class="arquivo">
-                  <label for="profile-image">Escolha o arquivo</label>
+                  <label for="profile-image">Selecione o arquivo:</label>
                   <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                  <input type="file" id="profile-image" name="profile-image">
+                  <input type="file" name="arquivo" id="profile-image" name="profile-image">
                 </div>
                 <img id="profile-preview" src="img/profile.webp" alt="profile">
               </div>
@@ -68,46 +102,46 @@
             <h3>Características</h3>
             <div class="caract">
               <h4>Cabelo</h4>
-<div style="display: flex; justify-content: space-around;">
-              <label for="tipo">Tipo:</label>
-              <select id="tipo" name="tipo">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Liso</option>
-                <option value="">Ondulado</option>
-                <option value="">Cacheado</option>
-                <option value="">Crespo</option>
-              </select>
-              <label for="tamanho-cabelo">Tamanho:</label>
-              <select id="tamanho-cabelo" name="tamanho">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Careca</option>
-                <option value="">Calvo</option>
-                <option value="">Curto</option>
-                <option value="">Médio</option>
-                <option value="">Longo</option>
-              </select>
-</div>
+              <div style="display: flex; justify-content: space-around;">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo">
+                  <option value="" selected disabled>Selecione</option>
+                  <option value="">Liso</option>
+                  <option value="">Ondulado</option>
+                  <option value="">Cacheado</option>
+                  <option value="">Crespo</option>
+                </select>
+                <label for="tamanho-cabelo">Tamanho:</label>
+                <select id="tamanho-cabelo" name="tamanho">
+                  <option value="" selected disabled>Selecione</option>
+                  <option value="">Careca</option>
+                  <option value="">Calvo</option>
+                  <option value="">Curto</option>
+                  <option value="">Médio</option>
+                  <option value="">Longo</option>
+                </select>
+              </div>
             </div>
             <div class="caract">
               <h4>Rosto</h4>
-<div style="display: flex; justify-content: space-around;">
-              <label for="tamanho-rosto">Tamanho:</label>
-              <select id="tamanho-rosto" name="tamanho">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Curto</option>
-                <option value="">Médio</option>
-                <option value="">Longo</option>
-              </select>
-              <label for="formato">Formato:</label>
-              <select id="formato" name="formato">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Fino</option>
-                <option value="">Redondo</option>
-                <option value="">Quadrado</option>
-                <option value="">Triangular</option>
-              </select>
+              <div style="display: flex; justify-content: space-around;">
+                <label for="tamanho-rosto">Tamanho:</label>
+                <select id="tamanho-rosto" name="tamanho">
+                  <option value="" selected disabled>Selecione</option>
+                  <option value="">Curto</option>
+                  <option value="">Médio</option>
+                  <option value="">Longo</option>
+                </select>
+                <label for="formato">Formato:</label>
+                <select id="formato" name="formato">
+                  <option value="" selected disabled>Selecione</option>
+                  <option value="">Fino</option>
+                  <option value="">Redondo</option>
+                  <option value="">Quadrado</option>
+                  <option value="">Triangular</option>
+                </select>
+              </div>
             </div>
-</div>
             <div class="caract">
               <h4>Pele</h4>
               <label for="etnia">Etinia:</label>

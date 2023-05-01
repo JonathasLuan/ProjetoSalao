@@ -16,28 +16,15 @@ session_start();
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-
-    // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
+    <?php
+    // usuário não fez login, exibe o menu padrão
+    include('menu-padrao.php');
     ?>
   </header>
   <div class="conteudo">
@@ -53,7 +40,7 @@ session_start();
         </div>
       </div>
       <div class="formulario-container">
-        <form id="formulario-1" method="POST" action="processar_cadastro.php" style="display: none;">
+        <form id="formulario-1" method="POST" action="proc_cad_cliente.php" style="display: none;">
           <input type="hidden" name="tipo" value="cliente">
           <div id="nomesobrenome">
             <div>
@@ -95,7 +82,7 @@ session_start();
           </div>
         </form>
 
-        <form id="formulario-2" method="POST" action="processar_cadastro.php" style="display: none;">
+        <form id="formulario-2" method="POST" action="proc_cad_prof.php" style="display: none;">
           <select name="tipo" style="display: none;">
             <option value="profissional" selected>profissional</option>
           </select>

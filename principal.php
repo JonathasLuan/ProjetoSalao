@@ -13,7 +13,7 @@ exit();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feed</title>
+  <title>Página Principal</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="principal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,30 +22,15 @@ exit();
 <body>
   <main>
     <header>
-      <div id="header1">
-        <div class="logo">
-          <div><img src="./img/tesourapentepretos.jpg"></div>
-          <div>
-            <span>NaRégua</span>
-          </div>
-        </div>
-      </div>
-      <div class="pesquisa">
-        <input type="text" placeholder="buscar...">
-        <i class="fa fa-search"></i>
-      </div>
       <?php
-      // Inicia a sessão do PHP
-      session_start();
-
-      // Verifica se o usuário já fez login
-      if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
-        // usuário já fez login, exibe o menu de sessão iniciada
-        include('menu-logado.php');
-      } else {
-        // usuário não fez login, exibe o menu padrão
-        include('menu-padrao.php');
-      }
+      include('header1.php');
+      ?>
+      <?php
+      include('barra-pesquisa.php');
+      ?>
+      <?php
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
       ?>
     </header>
 
@@ -55,10 +40,6 @@ exit();
           <div id="info">
             <div id="foto">
               <img id="foto-perfil" src="img/profile.webp" alt="profile">
-            </div>
-            <div id="botoes">
-              <button>btn 1</button>
-              <button>btn 2</button>
             </div>
             <div id="tipo-user">
               <h3>tipo-user</h3>
@@ -73,84 +54,9 @@ exit();
       </div>
     </div>
 
-    <div id="content">
-      <div class="sidebar" id="center">
-        <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Btn1</button>
-          <button id="botao2" class="menu-button active" data-target="content2">Btn2</button>
-          <button id="botao3" class="menu-button" data-target="content3">Btn3</button>
-          <button id="botao4" class="menu-button" data-target="content4">Btn4</button>
-          <button id="botao5" class="menu-button" data-target="content5">Btn5</button>
-        </nav>
-        <br>
-        <nav id="menu-content">
-          <button id="botao6" class="menu-button" data-target="content6">Btn6</button>
-          <button id="botao7" class="menu-button" data-target="content7">Btn7</button>
-          <button id="botao8" class="menu-button" data-target="content8">Btn8</button>
-          <div class="pesquisa2">
-            <input type="text" placeholder="buscar...">
-            <i class="fa fa-search"></i>
-          </div>
-          <button id="botao9" class="menu-button" data-target="content9">Btn9</button>
-          <button id="botao10" class="menu-button" data-target="content10">Btn10</button>
-          <div class="btn-dropdown">
-            <button class="main-btn-a"><i class="fa fa-ellipsis-v"></i></button>
-            <div class="btn-dropdown-child">
-              <nav>
-                <button id="botao11" class="menu-button" data-target="content11">Btn11</button>
-                <button id="botao12" class="menu-button" data-target="content12">Btn12</button>
-                <button id="botao13" class="menu-button" data-target="content13">Btn13</button>
-              </nav>
-            </div>
-          </div>
-        </nav>
-        <div class="container-content" id="content-box">
-          <div id="conteudo">
-            <div class="content active" id="conteudo1">
-              <h2>Mapa:</h2>
-              <p>Aqui serão mostradas as mensagens de cada conversa. Clicando em cada uma, é possível visualizar as
-                mensagens respectivas de cada bate-papo.</p>
-            </div>
-            <div class="content hidden" id="conteudo2">
-              <h2>Conteúdo 2:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-            <div class="content hidden" id="conteudo3">
-              <h2>Conteúdo 3:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-            <div class="content hidden" id="conteudo4">
-              <h2>Conteúdo 4:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-
-            <div class="content hidden" id="conteudo5">
-              <h2>Conteúdo 5:</h2>
-              <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
-                proximidade delimitado.</p>
-            </div>
-            <div class="content hidden" id="conteudo6">
-              <h2>Conteúdo 6:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-            <div class="content hidden" id="conteudo7">
-              <h2>Conteúdo 7:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-            <div class="content hidden" id="conteudo8">
-              <h2>Conteúdo 8:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php
+    include('serviços-list.php');
+    ?>
 
     <div id="sidebar2">
       <div class="sidebar" id="right">
@@ -193,7 +99,7 @@ exit();
                   <div class="main">
                     <div class="formulario-container">
                       <h2>Criar pedido de serviço</h2>
-                      <form action="processa_servico.php" method="POST">
+                      <form action="processar_serviço.php" method="POST">
                         <div>
                           <div class="divs">
                             <label for="especialidade" name="especialidade">Especialidade(s):</label>
@@ -333,7 +239,7 @@ exit();
                           </div>
                         </div>
                         <div style="text-align: center;">
-                          <a href="#"><button type="submit">Criar</button></a>
+                          <button type="submit">Criar</button>
                         </div>
                       </form>
                     </div>
@@ -341,7 +247,7 @@ exit();
                 </div>
               </div>
               <script>
-                // Obtém a janela modal e o botão "LOGIN"
+                // Obtém a janela modal e o botão "SERVIÇO"
                 var modal = document.getElementById("modal-servico");
                 var btn = document.getElementById("servico-btn");
 
@@ -351,7 +257,7 @@ exit();
                   modal.style.display = "none";
                 }
 
-                // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "LOGIN"
+                // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "+"
                 btn.onclick = function () {
                   modal.style.display = "block";
                 }

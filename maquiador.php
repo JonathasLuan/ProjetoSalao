@@ -13,14 +13,9 @@
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
+    <?php
+    include('header1.php');
+    ?>
     <div class="pesquisa">
       <input type="text" placeholder="buscar...">
       <i class="fa fa-search"></i>

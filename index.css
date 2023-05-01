@@ -73,7 +73,7 @@ header {
   margin: 0 10px;
 }
 
-.menu li a {
+.menu li a, #logout-btn {
   font-size: 20px;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -86,7 +86,7 @@ header {
   color: white;
 }
 
-.mainmenua {
+.mainmenua, #logout-btn {
   background-color: white;
   color: black;
   border: none;
@@ -111,10 +111,9 @@ header {
   position: absolute;
   top: 100%;
   margin-top: 23px;
-  box-shadow: 0px 0px 5px #ccc;
 }
 
-.dropdown-child a {
+.dropdown-child a, #logout-btn {
   color: blue;
   padding: 20px;
   text-decoration: none;

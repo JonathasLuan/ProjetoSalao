@@ -13,18 +13,12 @@
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
+    <?php
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
     <?php
     // Inicia a sessão do PHP
     session_start();
@@ -43,10 +37,10 @@
     <div id="contactform">
       <h2 style="text-align: center;">Contate-nos</h2>
       <div id="formulario-container">
-        <form action="enviar-email.php" method="post">
+        <form action="email.php" method="POST">
           <div>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
+            <input type="text" id="nome" name="name" required><br>
           </div>
 
           <div>
@@ -56,8 +50,7 @@
 
           <div>
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"><br>
-            <small>Digite somente números (10 ou 11 dígitos).</small>
+            <input type="tel" id="telefone" name="telefone">
           </div>
           <br>
           <div>
@@ -70,15 +63,15 @@
             <textarea id="mensagem" name="mensagem" rows="10" cols="50" required></textarea>
           </div>
 
-          <div style="text-align: center;"><button type="submit">Enviar</button></div>
+          <div style="text-align: center;"><button type="submit" value="Enviar">Enviar</button></div>
         </form>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
   </div>
 </body>
 

@@ -15,8 +15,8 @@ create table agendamento (
     id_cliente_fk int not null,
     id_profissional_fk int not null,
     id_servico_fk int not null,
-    nome_cliente varchar(200) not null,
-    nome_profissional varchar(200) not null,
+    nome_cliente varchar(100) not null,
+    nome_profissional varchar(100) not null,
     data_atendimento date not null,
     data_agendamento date not null,
     horario time not null,
@@ -39,8 +39,8 @@ create table servicos_profissional (
 
 create table especialidade_profissional (
     id_especialidade_profissional int not null auto_increment primary key,
-    id_especialidade_fk int,
-    id_profissional_fk int,
+    id_especialidade_fk int not null,
+    id_profissional_fk int not null,
     foreign key (id_especialidade_fk) references especialidade (id_especialidade),
     foreign key (id_profissional_fk) references profissional (id_profissional)
 );

@@ -1,14 +1,17 @@
 <?php
+session_start();
 
-echo $_SESSION['usuario'];
-$_SESSION['id'] = $usuario['id'];
-$_SESSION['nome'] = $usuario['nome'];
+/*$_SESSION['id'] = $usuario['id'];
+$_SESSION['nome'] = $usuario['nome'];*/
+
+echo $_SESSION['id'];
+echo $_SESSION['nome'];
 
 /*
 session_start();
-if (!isset($_SESSION['usuario'])) {
-  header('Location: entrar.php');
-  exit();
+if (!isset($_SESSION['id']) && $_SESSION['usuario'])) {
+header('Location: entrar.php');
+exit();
 }*/
 ?>
 
@@ -28,24 +31,15 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesourapentepretos.jpg"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
+    <?php
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (isset($_SESSION['id']) && $_SESSION['nome'] === true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -55,7 +49,7 @@ if (!isset($_SESSION['usuario'])) {
     ?>
   </header>
   <main>
-    <section>
+    <section id="sec1">
       <div class="sidebar sidebar-left">
         <div class="container-perfil">
           <div id="info">
@@ -105,7 +99,7 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </section>
 
-    <section>
+    <section id="sec2">
       <div class="sidebar sidebar-right">
         <nav id="menu-content">
           <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
@@ -183,6 +177,83 @@ if (!isset($_SESSION['usuario'])) {
                     onclick="salvarCampo('complemento')">Salvar</button>
                 </div>
               </div>
+              <style>
+                .accordion {
+                  background-color: #eee;
+                  color: #444;
+                  cursor: pointer;
+                  padding: 18px;
+                  width: 100%;
+                  border: none;
+                  text-align: left;
+                  outline: none;
+                  font-size: 15px;
+                  transition: 0.4s;
+                }
+
+                .active,
+                .accordion:hover {
+                  background-color: #ccc;
+                }
+
+                .accordion:after {
+                  content: '\002B';
+                  color: #777;
+                  font-weight: bold;
+                  float: right;
+                  margin-left: 5px;
+                }
+
+                .active:after {
+                  content: "\2212";
+                }
+
+                .panel {
+                  padding: 0 18px;
+                  background-color: white;
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: max-height 0.2s ease-out;
+                }
+              </style>
+              <h2>Accordion with symbols</h2>
+              <button class="accordion">Section 1</button>
+              <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+
+              <button class="accordion">Section 2</button>
+              <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+
+              <button class="accordion">Section 3</button>
+              <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+
+              <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                      panel.style.maxHeight = null;
+                    } else {
+                      panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                  });
+                }
+              </script>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <?php
-include('conexao2.php');
+include('conexao.php');
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
   if (strlen($_POST['email']) == 0) {
@@ -41,7 +41,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Na Rágua</title>
+  <title>SalonSet</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./homeCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -49,24 +49,18 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/scissors-badge-svgrepo-com-removebg-preview.png"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
+    <?php
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
     <?php
     // Inicia a sessão do PHP
     session_start();
 
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (isset($_SESSION['id']) && $_SESSION['nome'] === true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -112,9 +106,11 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
             <div>
               <label for="senha">Senha:</label>
               <input type="password" id="senha" name="senha" required>
-              <div>
-                <button type="submit">Entrar</button>
-              </div>
+            </div>
+
+            <div>
+              <button type="submit">Entrar</button>
+            </div>
           </form>
         </div>
         <div id="cadastro" style="font-size: 16px;">
@@ -251,10 +247,10 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
           </div>
         </article>
       </div>
-      <br><br><button id="scrollBtn" onclick="topFunction()" title="Voltar ao topo"><i
-          class="fa fa-arrow-up"></i></button>
+      <br><br>
       <br><br>
     </section>
+    <img src="img/icons8-slide-up-64.png" id="scrollBtn" onclick="topFunction()" alt="Voltar ao topo">
   </div>
   <script src="homeJS.js"></script>
   <script>

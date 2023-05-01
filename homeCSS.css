@@ -305,14 +305,13 @@ article {
   z-index: 99;
   font-size: 18px;
   border: none;
-  outline: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
   border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
 }
 
 #scrollBtn:hover {
-  background-color: #555;
+  background-color: #a9a9a9;
 }

@@ -6,7 +6,7 @@
                 <input type="text" placeholder="buscar...">
                 <i class="fa fa-search"></i>
             </div>
-            <button id="botao2" class="menu-button" data-target="content2">Btn2</button>
+            <button id="botao2" class="menu-button" data-target="content2">Mapa</button>
             <div class="btn-dropdown">
                 <button class="main-btn-a">Filtrar busca</button>
                 <div class="btn-dropdown-child">
@@ -29,7 +29,7 @@
                     <p>Nesta página serão exibidos os serviços de Cabeleireiro</p>
                 </div>
                 <div class="content hidden" id="conteudo2">
-                    <h2>Conteúdo 2:</h2>
+                    <h2>Mapa:</h2>
                     <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
                         mas sim botões que abrem conteúdo no espaço abaixo</p>
                 </div>

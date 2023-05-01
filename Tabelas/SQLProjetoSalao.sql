@@ -29,6 +29,8 @@ create table perfil (
     id_usuario_fk int not null,
     tipo enum('cliente', 'profissional') not null,
     data_criacao date not null,
+    notificacao char(10) null,
+    visibilidade char(10) null,
     foreign key (id_usuario_fk) references usuário (id_usuario)
 );
 
@@ -70,7 +72,7 @@ create table servico (
 
 create table especialidade (
     id_especialidade int not null auto_increment primary key,
-    nome varchar(200) not null,
+    nome varchar(100) not null,
     descricao text not null,
     categoria varchar(100) not null,
     subcategoria varchar(100) null
@@ -81,7 +83,7 @@ create table transacao (
     tipo varchar(100) not null,
     data_criacao date not null,
     valor decimal not null,
-    status varchar(100) not null
+    status_trans varchar(100) not null
 );
 
 create table fatura (
@@ -152,7 +154,7 @@ create table avaliacao (
 create table pagina (
     id_pagina int not null auto_increment primary key,
     endereco text not null,
-    titulo varchar(200) not null,
+    titulo varchar(100) not null,
     visitas int not null
 );
 
@@ -195,7 +197,6 @@ create table mensagem (
     remetente varchar(100) not null,
     destinatario varchar(100) not null,
     mensagem text not null,
-    tipo_mens varchar(100) not null,
     status_mens varchar(100) not null,
     envio datetime not null,
     foreign key (id_usuario_fk) references usuário (id_usuario),
@@ -265,10 +266,8 @@ create table info (
     foto varchar(200) not null,
     tipo_user varchar(50) not null,
     sobre text null,
-    notificacao char(100) null,
-    visibilidade char(100) null,
     foreign key (id_link_fk) references link (id_link),
-    foreign key (id_caract_fk) references caract (id_caract)
+    foreign key (id_caract_fk) references caracteristica (id_caract)
 );
 
 create table configuracoes (
@@ -283,15 +282,15 @@ create table configuracoes (
 
 create table geral (
     id_geral int not null auto_increment primary key,
-    corpagina char(50),
+    corpagina char(10),
     idioma char(100)
 );
 
 create table conta (
     id_conta int not null auto_increment primary key,
     id_usuario_fk int not null,
-    email varchar(200) not null unique,
-    emailreserva varchar(200) not null unique,
-    senha varchar(200) not null,
+    email varchar(100) not null unique,
+    emailreserva varchar(100) not null unique,
+    senha varchar(100) not null,
     foreign key (id_usuario_fk) references usuário (id_usuario)
 );
