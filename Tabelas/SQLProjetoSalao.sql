@@ -294,3 +294,21 @@ create table conta (
     senha varchar(100) not null,
     foreign key (id_usuario_fk) references usuário (id_usuario)
 );
+
+create table pedido (
+    id_pedido int not null auto_increment primary key,
+    id_usuario_fk int not null,
+    id_especialidade_fk int not null,
+    outra varchar(100) null,
+    id_serviço_fk int not null,
+    outro varchar(100) null,
+    descricao text null,
+    data_pedido date not null,
+    hora time null,
+    cidade varchar(50) not null,
+    bairro varchar(50) null,
+    rua varchar(50) null,
+    foreign key (id_usuario_fk) references usuário (id_usuario),
+    foreign key (id_servico_fk) references servico (id_servico),
+    foreign key (id_especialidade_fk) references especialidade (id_especialidade)
+);

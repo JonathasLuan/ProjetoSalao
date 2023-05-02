@@ -1,21 +1,3 @@
-<?php
-// Inicia a sessão do PHP
-session_start();
-
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projetosalao";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Verifica se a conexão foi bem sucedida
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,10 +17,9 @@ if (!$conn) {
       <?php
       include('header1.php');
       ?>
-      <div class="pesquisa">
-        <input type="text" placeholder="buscar...">
-        <i class="fa fa-search"></i>
-      </div>
+      <?php
+      include('barra-pesquisa.php');
+      ?>
       <?php
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
@@ -96,8 +77,6 @@ if (!$conn) {
                   <div class="chat-info">
                     <div class="user-name">
                       <h5 class="name">Fulano</h5>
-                    </div>
-                    <div id="preview">
                     </div>
                   </div>
                 </div>
@@ -279,11 +258,93 @@ if (!$conn) {
             <div class="content active" id="conteudo1">
               <div id="chat-area">
                 <div id="chat-displayer">
+                  <style>
+                    .element {
+                      display: flex;
+                    }
+
+                    .send-item {
+                      border: 1px solid;
+                      border-radius: 10px;
+                      width: 500px;
+                      height: 100%;
+                    }
+
+                    #profile-img {
+                      border-radius: 50%;
+                      width: 50px;
+                      height: 50px;
+                      border: 1px solid;
+                    }
+
+                    .chat-content-box {
+                      padding: 10px;
+
+                    }
+
+                    #element1 {
+                      float: right;
+                    }
+
+                    #element2 {
+                      float: left;
+                    }
+
+                    #element1 img {
+                      margin-left: 10px;
+                      ;
+                    }
+
+                    #element2 img {
+                      margin-right: 10px;
+                      ;
+                    }
+                  </style>
+
+                  <div class="element" id="element2">
+                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                    <div class="send-item">
+                      <div class="chat-content-box">
+                        <span class="chat-content">
+                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
+                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
+                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
+                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
+                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="element" id="element1">
+                    <div class="send-item">
+                      <div class="chat-content-box">
+                        <span class="chat-content">
+                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
+                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
+                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
+                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
+                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                        </span>
+                      </div>
+                    </div>
+                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                  </div>
                 </div>
                 <div id="send-area">
                   <div id="text">
-                    <form action="" method="POST">
-                      <input type="text" name="send-text" id="send-text">
+                    <form action="testemens.php" method="POST">
+                      <input type="text" name="mensagem" id="send-text">
                   </div>
                   <div id="enviar">
                     <button type="submit">Enviar</button>
@@ -307,7 +368,6 @@ if (!$conn) {
               <p>Nesta área serão exibidos todos os arquivos de mídia enviados pelos usuários no bate-papo. Eles poderão
                 ser visualisados, compartilhados para outros lugares, baixados ou apagados.</p>
             </div>
-
             <div class="content hidden" id="conteudo5">
               <h2>Conteúdo 5:</h2>
               <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de

@@ -17,7 +17,7 @@ exit();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil Profissional</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="perfil-profissionalCSS.css">
+  <link rel="stylesheet" href="perfil-profissional.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .agend-item {

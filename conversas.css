@@ -574,11 +574,12 @@ body.dark-mode .logo img {
 }
 
 #chat-displayer {
+    padding: 20px;
     overflow: scroll;
     height: 650px;
 }
 
-#send-area input{
+#send-area input {
     margin-left: 20px;
     border-radius: 25px;
     height: 30px;

@@ -180,40 +180,6 @@ exit();
                         <div class="divs">
                           <div id="endereco-div">
                             <div>
-                              <label for="estado">Estado:</label>
-                              <select id="estado" name="estado" class="entrada-endereco">
-                                <option value="" selected disabled required>Selecione</option>
-                                <option value="acre">Acre (AC)</option>
-                                <option value="alagoas">Alagoas (AL)</option>
-                                <option value="amapa">Amapá (AP)</option>
-                                <option value="amazonas">Amazonas (AM)</option>
-                                <option value="bahia">Bahia (BA)</option>
-                                <option value="ceara">Ceará (CE)</option>
-                                <option value="distritofederal">Distrito Federal (DF)</option>
-                                <option value="espiritosanto">Espírito Santo (ES)</option>
-                                <option value="goias">Goiás (GO)</option>
-                                <option value="maranhao">Maranhão (MA)</option>
-                                <option value="matogrosso">Mato Grosso (MT)</option>
-                                <option value="matogrossodosul">Mato Grosso do Sul (MS)</option>
-                                <option value="minasgerais">Minas Gerais (MG)</option>
-                                <option value="para">Pará (PA)</option>
-                                <option value="paraiba">Paraíba (PB)</option>
-                                <option value="parana">Paraná (PR)</option>
-                                <option value="pernambuco">Pernambuco (PE)</option>
-                                <option value="piaui">Piauí (PI)</option>
-                                <option value="riodejaneiro">Rio de Janeiro (RJ)</option>
-                                <option value="riograndedonorte">Rio Grande do Norte (RN)</option>
-                                <option value="riograndedosul">Rio Grande do Sul (RS)</option>
-                                <option value="rondonia">Rondônia (RO)</option>
-                                <option value="roraima">Roraima (RR)</option>
-                                <option value="santacatarina">Santa Catarina (SC)</option>
-                                <option value="saopaulo">São Paulo (SP)</option>
-                                <option value="sergipe">Sergipe (SE)</option>
-                                <option value="tocantins">Tocantins (TO)</option>
-                              </select>
-                            </div>
-
-                            <div>
                               <label for="cidade">Cidade:</label>
                               <input type="text" id="cidade" class="entrada-endereco" name="cidade" required><br>
                             </div>
@@ -222,19 +188,10 @@ exit();
                               <label for="bairro">Bairro:</label>
                               <input type="text" id="bairro" class="entrada-endereco" name="bairro"><br>
                             </div>
-                          </div>
-                          <div style="display: flex; justify-content: space-around;">
+
                             <div>
                               <label for="rua">Rua:</label>
                               <input type="text" id="rua" class="entrada-endereco" name="rua"><br>
-                            </div>
-                            <div>
-                              <label for="numero">Número:</label>
-                              <input type="text" id="numero" class="entrada-endereco" name="numero"><br>
-                            </div>
-                            <div>
-                              <label for="complemento">Complemento:</label>
-                              <input type="text" id="complemento" class="entrada-endereco" name="complemento"><br>
                             </div>
                           </div>
                         </div>
