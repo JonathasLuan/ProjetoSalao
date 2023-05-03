@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();
+
+
+if (session_id() != true) {
+  header('Location: entrar.php');
+} else {
+  echo session_id();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -261,6 +276,7 @@
                   <style>
                     .element {
                       display: flex;
+                      margin: 20px;
                     }
 
                     .send-item {
@@ -340,10 +356,88 @@
                     </div>
                     <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
                   </div>
+                  <div class="element" id="element2">
+                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                    <div class="send-item">
+                      <div class="chat-content-box">
+                        <span class="chat-content">
+                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
+                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
+                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
+                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
+                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
+                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
+                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <?php
+
+                  // Conexão com o banco de dados
+                  $servername = "localhost";
+                  $username = "root";
+                  $password = "";
+                  $dbname = "projetosalao";
+
+                  $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                  // Verifica se a conexão foi bem sucedida
+                  if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                  }
+
+                  // Insere mensagem no banco de dados
+                  if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
+                    $mensagem = $_POST['mensagem'];
+                    $sql = "INSERT INTO mensagens (conteudo) VALUES ('$mensagem')";
+                    if (mysqli_query($conn, $sql)) {
+                      echo "Mensagem adicionada com sucesso!";
+                    } else {
+                      echo "Erro ao adicionar mensagem: " . mysqli_error($conn);
+                    }
+                  }
+
+                  // Exibe as mensagens na tela
+                  $sql = "SELECT conteudo FROM mensagens";
+                  $result = mysqli_query($conn, $sql);
+
+                  if (mysqli_num_rows($result) > 0) {
+                    // Exibe as mensagens em uma lista
+                    echo "<ul>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<li>" . $row["conteudo"] . "</li>";
+                    }
+                    echo "</ul>";
+                  } else {
+                    echo "Não há mensagens.";
+                  }
+
+                  // Exibe as mensagens na tela
+                  $sql = "SELECT conteudo FROM mensagens";
+                  $result = mysqli_query($conn, $sql);
+
+                  if (mysqli_num_rows($result) > 0) {
+                    // Exibe as mensagens em uma lista
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo include('send-item.php');
+                    }
+                  } else {
+                    echo "Não há mensagens.";
+                  }
+
+                  // Fecha a conexão com o banco de dados
+                  mysqli_close($conn);
+
+
+                  ?>
                 </div>
                 <div id="send-area">
                   <div id="text">
-                    <form action="testemens.php" method="POST">
+                    <form action="" method="POST">
                       <input type="text" name="mensagem" id="send-text">
                   </div>
                   <div id="enviar">

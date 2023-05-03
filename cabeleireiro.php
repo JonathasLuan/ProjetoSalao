@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+/*echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();*/
+
+
+if (session_id() != true) {
+  header('Location: entrar.php');
+  return;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +35,8 @@
       <i class="fa fa-search"></i>
     </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['id']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {

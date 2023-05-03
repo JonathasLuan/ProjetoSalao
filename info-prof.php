@@ -1,25 +1,6 @@
 <div id="info">
     <div id="foto">
-        <img id="foto-perfil" src="img/profile.webp" alt="profile">
-        <button id="editar-foto"><i class="fa fa-pencil"></i></button>
-    </div>
-    <div id="modal-foto" class="modal">
-        <div class="modal-inner">
-            <span class="close">&times;</span>
-            <!-- aqui vai o conteúdo da janela modal -->
-            <div id="modal-content">
-                <h2>Editar Foto</h2>
-                <div class="arquivo">
-                    <label for="profile-image">Escolha uma Imagem</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                    <input type="file" id="profile-image" name="profile-image">
-                    <form>
-                    </form>
-                </div>
-                <img id="profile-preview" src="img/profile.webp" alt="profile">
-                <button id="salvar-foto" type="submit">Salvar</button>
-            </div>
-        </div>
+        <img id="foto" src="img/profile.webp" alt="profile">
     </div>
     <div id="tipo-user">
         <h3>profissional</h3>

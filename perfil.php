@@ -1,18 +1,15 @@
 <?php
 session_start();
 
-/*$_SESSION['id'] = $usuario['id'];
-$_SESSION['nome'] = $usuario['nome'];*/
+/*echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();*/
 
-echo $_SESSION['id'];
-echo $_SESSION['nome'];
 
-/*
-session_start();
-if (!isset($_SESSION['id']) && $_SESSION['usuario'])) {
-header('Location: entrar.php');
-exit();
-}*/
+if (session_id() != true) {
+  header('Location: entrar.php');
+  return;
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +36,7 @@ exit();
     ?>
     <?php
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['id']) && $_SESSION['nome'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -55,23 +52,6 @@ exit();
           <div id="info">
             <div id="foto">
               <img id="foto-perfil" src="img/profile.webp" alt="profile">
-              <button id="editar-foto"><i class="fa fa-pencil"></i></button>
-            </div>
-            <div id="modal-foto" class="modal">
-              <div class="modal-inner">
-                <span class="close">&times;</span>
-                <!-- aqui vai o conteúdo da janela modal -->
-                <div id="modal-content">
-                  <h2>Editar Foto</h2>
-                  <div class="arquivo">
-                    <label for="profile-image">Escolha uma Imagem</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                    <input type="file" id="profile-image" name="profile-image">
-                  </div>
-                  <img id="profile-preview" src="img/profile.webp" alt="profile">
-                  <button id="salvar-foto" type="submit">Salvar</button>
-                </div>
-              </div>
             </div>
             <div id="botoes">
               <button>seguir</button>
@@ -222,6 +202,26 @@ exit();
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                   nisi ut aliquip ex ea commodo consequat.</p>
+                <div id="foto">
+                  <img id="foto-perfil" src="img/profile.webp" alt="profile">
+                  <button id="editar-foto"><i class="fa fa-pencil"></i></button>
+                </div>
+                <div id="modal-foto" class="modal">
+                  <div class="modal-inner">
+                    <span class="close">&times;</span>
+                    <!-- aqui vai o conteúdo da janela modal -->
+                    <div id="modal-content">
+                      <h2>Editar Foto</h2>
+                      <div class="arquivo">
+                        <label for="profile-image">Escolha uma Imagem</label>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+                        <input type="file" id="profile-image" name="profile-image">
+                      </div>
+                      <img id="profile-preview" src="img/profile.webp" alt="profile">
+                      <button id="salvar-foto" type="submit">Salvar</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <button class="accordion">Section 2</button>

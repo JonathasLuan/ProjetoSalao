@@ -56,17 +56,8 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     include('barra-pesquisa.php');
     ?>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
-    // Verifica se o usuário já fez login
-    if (isset($_SESSION['id']) && $_SESSION['nome'] === true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
+    // usuário não fez login, exibe o menu padrão
+    include('menu-padrao.php');
     ?>
   </header>
   <div class="conteudo">

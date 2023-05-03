@@ -133,6 +133,7 @@ header {
     top: 100%;
     box-shadow: 0px 0px 5px #ccc;
     text-align: center;
+    z-index: 1;
 }
 
 .btn-dropdown-child a {
@@ -255,28 +256,21 @@ header {
     cursor: pointer;
 }
 
-.picture-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 7px;
+#picture-btn {
     background-color: #fff;
     border-radius: 50%;
     border: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 30px;
+    height: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transform: translateY(-35px);
+    padding: 0px;
 }
 
-.picture-btn i {
+#picture-btn i {
     font-size: 20px;
-    position: relative;
     color: #333;
-    bottom: 1px;
-    right: -0px;
 }
 
 #botoes button {
@@ -565,18 +559,19 @@ body.dark-mode .logo img {
 
 #conteudo1 {
     height: 700px;
-    padding: 40px;
+    padding: 0px;
 }
 
 #chat-area {
     border: 1px solid;
     position: relative;
+    height: 650px;
 }
 
 #chat-displayer {
     padding: 20px;
     overflow: scroll;
-    height: 650px;
+    height: 600px;
 }
 
 #send-area input {

@@ -280,12 +280,6 @@ create table configuracoes (
     foreign key (id_usuario_fk) references usuário (id_usuario)
 );
 
-create table geral (
-    id_geral int not null auto_increment primary key,
-    corpagina char(10),
-    idioma char(100)
-);
-
 create table conta (
     id_conta int not null auto_increment primary key,
     id_usuario_fk int not null,

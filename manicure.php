@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+/*echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();*/
+
+
+if (session_id() != true) {
+  header('Location: entrar.php');
+  return;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +30,12 @@
     <?php
     include('header1.php');
     ?>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
+    include('barra-pesquisa.php');
+    ?>
+    <?php
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {

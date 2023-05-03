@@ -1,12 +1,15 @@
 <?php
-
-// Inicia a sessão do PHP
 session_start();
-if (!isset($_SESSION['id'])) {
-  header('Location: entrar.php');
-  exit();
-}
 
+/*echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();*/
+
+
+if (session_id() != true) {
+  header('Location: entrar.php');
+  return;
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +34,14 @@ if (!isset($_SESSION['id'])) {
     include('barra-pesquisa.php');
     ?>
     <?php
-    // usuário já fez login, exibe o menu de sessão iniciada
-    include('menu-logado.php');
+    // Verifica se o usuário já fez login
+    if (session_id() == true) {
+      // usuário já fez login, exibe o menu de sessão iniciada
+      include('menu-logado.php');
+    } else {
+      // usuário não fez login, exibe o menu padrão
+      include('menu-padrao.php');
+    }
     ?>
   </header>
   <main>

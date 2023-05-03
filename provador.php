@@ -1,8 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
+
+/*echo $_SESSION['id'];
+echo $_SESSION['senha'];
+echo session_id();*/
+
+
+if (session_id() != true) {
   header('Location: entrar.php');
-  exit();
+  return;
 }
 ?>
 
@@ -16,12 +22,6 @@ if (!isset($_SESSION['usuario'])) {
   <title>Provador</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    p {
-      margin: 50px;
-      font-size: 20px;
-    }
-  </style>
 </head>
 
 <body>
@@ -33,11 +33,8 @@ if (!isset($_SESSION['usuario'])) {
     include('barra-pesquisa.php');
     ?>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
