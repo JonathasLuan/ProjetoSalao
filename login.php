@@ -24,7 +24,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         session_start();
       }
 
-      $_SESSION['id'] = $usuario['id'];
+      $_SESSION['id'] = session_id();
       $_SESSION['senha'] = $usuario['senha'];
 
       header("Location: perfil.php");

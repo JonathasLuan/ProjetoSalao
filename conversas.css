@@ -303,6 +303,7 @@ footer {
     padding: 10px;
     display: flex;
     margin: 10px 0px;
+    align-items: center;
 }
 
 .chat-item img {
@@ -547,14 +548,26 @@ body.dark-mode .logo img {
 
 #send-area {
     display: flex;
-    bottom: 0;
-    position: absolute;
-    border: 1px solid;
+    border-top: 1px solid;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     background-color: #ddd;
     height: 60px;
+}
+
+#send-area input {
+    margin-left: 20px;
+    border-radius: 25px;
+    height: 30px;
+    width: 600px;
+    text-indent: 10px;
+}
+
+#send-area button {
+    margin-right: 20px;
+    width: 80px;
+    height: 30px;
 }
 
 #conteudo1 {
@@ -565,7 +578,6 @@ body.dark-mode .logo img {
 #chat-area {
     border: 1px solid;
     position: relative;
-    height: 650px;
 }
 
 #chat-displayer {
@@ -574,15 +586,60 @@ body.dark-mode .logo img {
     height: 600px;
 }
 
-#send-area input {
-    margin-left: 20px;
-    border-radius: 25px;
-    height: 30px;
-    width: 600px;
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-#send-area button {
-    margin-right: 20px;
-    width: 80px;
-    height: 30px;
+.modal-inner {
+    background-color: #fefefe;
+    position: relative;
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 37%;
+    height: 37%;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+/* Estilos para o botão "Fechar" */
+.close {
+    position: absolute;
+    display: flex;
+    right: 50px;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 16px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -16,7 +16,7 @@ unset($lista[0]);
 
 
 $links[]=array('link'=>'www.etecjk.com.br', 'descricao'=>'site da escola');
-for($i=0;$i<count($links); $i++){
+for($i=0;$i<count($links); $i++) {
     echo "<br><a href=\"".$links[$i]['link']."\">".$links[$i]['descricao']."</a><br>"
 }
 

@@ -23,47 +23,6 @@ if (session_id() != true) {
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="perfil-profissional.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    .agend-item {
-      border: 1px solid gray;
-      padding: 10px;
-      display: flex;
-      margin: 10px 0px;
-    }
-
-    .agend-item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid gray;
-    }
-
-    .agend-item:hover {
-      background-color: #f2f2f2;
-    }
-
-    .name {
-      margin-left: 20px;
-    }
-
-    .chat-item {
-      border: 1px solid gray;
-      padding: 10px;
-      display: flex;
-      margin: 10px 0px;
-    }
-
-    .chat-item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid gray;
-    }
-
-    .chat-item:hover {
-      background-color: #f2f2f2;
-    }
-  </style>
 </head>
 
 <body>
@@ -328,7 +287,7 @@ if (session_id() != true) {
                     </h3>
                     <div id="content5" class="content">
                       <h4>Informações de exibição</h4>
-                      <div id="foto">
+                      <div id="foto" style=" display: inline-block;">
                         <img id="foto-perfil" src="img/profile.webp" alt="profile">
                         <button id="editar-foto"><i class="fa fa-pencil"></i></button>
                       </div>

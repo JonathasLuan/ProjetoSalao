@@ -38,24 +38,15 @@ if (mysqli_insert_id($conn)) {
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
+    <?php
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -205,9 +196,9 @@ if (mysqli_insert_id($conn)) {
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
   </div>
 </body>
 

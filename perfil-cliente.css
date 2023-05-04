@@ -375,6 +375,7 @@ svg {
     padding: 10px;
     display: flex;
     margin: 10px 0px;
+    align-items: center;
 }
 
 .agend-item img {
@@ -397,6 +398,7 @@ svg {
     padding: 10px;
     display: flex;
     margin: 10px 0px;
+    align-items: center;
 }
 
 .chat-item img {
@@ -631,4 +633,19 @@ body.dark-mode .logo img {
     border-right: 0;
     border-top: 0;
     padding: 30px;
+}
+
+select {
+    display: inline;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+select:focus {
+    background-color: #e6e6e6;
 }

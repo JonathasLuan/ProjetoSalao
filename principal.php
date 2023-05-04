@@ -177,13 +177,15 @@ if (session_id() != true) {
                               <textarea id="descricao" name="descricao" rows="5" cols="50"></textarea>
                             </div>
                             <div>
-                              <label for="data">Data:</label>
-                              <input type="date" id="data" name="data"><br>
-                            </div>
-                            <br>
-                            <div>
-                              <label for="hora">Hora:</label>
-                              <input type="time" id="hora" name="hora"><br>
+                              <div>
+                                <label for="data">Data:</label>
+                                <input type="date" id="data" name="data"><br>
+                              </div>
+                              <br>
+                              <div>
+                                <label for="hora">Hora:</label>
+                                <input type="time" id="hora" name="hora"><br>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -232,6 +234,14 @@ if (session_id() != true) {
                 }
               </script>
             </div>
+            <br>
+            <hr>
+            <br>
+            <nav>
+              <ul>
+                <li><a href="conversas.php">Conversas</a></li>
+              </ul>
+            </nav>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
             <h2>Notificações:</h2>

@@ -1,16 +1,5 @@
 <?php
 session_start();
-
-echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();
-
-
-if (session_id() != true) {
-  header('Location: entrar.php');
-} else {
-  echo session_id();
-}
 ?>
 
 <!DOCTYPE html>
@@ -496,7 +485,24 @@ if (session_id() != true) {
             </div>
             <div class="botoes">
               <button id="picture-btn" title="ver foto"><i class="fa fa-eye"></i></button>
+              <!-- <button id="editar-foto"><i class="fa fa-pencil"></i></button> -->
             </div>
+            <!-- <div id="modal-foto" class="modal">
+              <div class="modal-inner">
+                <span class="close">&times;</span>
+                <div id="modal-content">
+                  <h2>Editar Foto</h2>
+                  <div class="arquivo">
+                    <label for="profile-image">Escolha uma Imagem</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+                    <input type="file" id="profile-image" name="profile-image">
+                  </div>
+                  <img id="profile-preview" src="img/profile.webp" alt="profile">
+                  <button id="salvar-foto" type="submit">Salvar</button>
+                </div>
+              </div>
+            </div> -->
+
             <div id="tipo-user">
               <h3>tipo-user</h3>
             </div>
@@ -514,9 +520,18 @@ if (session_id() != true) {
 
     <?php
     include('footer.php');
+
+    echo $_SESSION['id'];
+    echo $_SESSION['senha'];
+    echo session_id();
+
+
+    if (session_id() != true) {
+      header('Location: entrar.php');
+      return;
+    }
     ?>
   </main>
-
   <script>
 
     // Código do botão switch de cor de fundo

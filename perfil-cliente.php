@@ -345,7 +345,7 @@ if (session_id() != true) {
                     </h3>
                     <div id="content5" class="content">
                       <h3>Informações de exibição</h3>
-                      <div id="foto">
+                      <div id="foto" style=" display: inline-block;">
                         <img id="foto-perfil" src="img/profile.webp" alt="profile">
                         <button id="editar-foto"><i class="fa fa-pencil"></i></button>
                       </div>
@@ -358,7 +358,7 @@ if (session_id() != true) {
                             <div class="arquivo">
                               <label for="profile-image">Escolha uma Imagem</label>
                               <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                              <input type="file" id="profile-image" name="profile-image">
+                              <input type="file" id="profile-image" name="arquivo">
                             </div>
                             <img id="profile-preview" src="img/profile.webp" alt="profile">
                             <button id="salvar-foto" type="submit">Salvar</button>

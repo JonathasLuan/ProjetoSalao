@@ -356,9 +356,6 @@ if (session_id() != true) {
     document.querySelector('.chat-content.active').style.display = "block";
 
   </script>
-  <?php
-  include('footer.php');
-  ?>
 </body>
 
 </html>

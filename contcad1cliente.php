@@ -44,9 +44,8 @@ if (mysqli_insert_id($conn)) {
     include('barra-pesquisa.php');
     ?>
     <?php
-
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['id']) && $_SESSION['nome'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -129,9 +128,9 @@ if (mysqli_insert_id($conn)) {
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
   </div>
 </body>
 

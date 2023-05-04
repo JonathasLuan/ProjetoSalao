@@ -48,7 +48,7 @@ if (session_id() != true) {
     <div id="content">
       <div class="sidebar" id="center">
         <?php
-        include('agendamentos-list.php');
+        include('agenda-container.php');
         ?>
       </div>
     </div>

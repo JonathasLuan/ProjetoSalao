@@ -370,6 +370,48 @@ svg {
     text-align: center;
 }
 
+.agend-item {
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.agend-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.agend-item:hover {
+    background-color: #f2f2f2;
+}
+
+.name {
+    margin-left: 20px;
+}
+
+.chat-item {
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.chat-item:hover {
+    background-color: #f2f2f2;
+}
+
 body {
     background-color: white;
     color: black;
@@ -591,4 +633,19 @@ body.dark-mode .logo img {
     border-right: 0;
     border-top: 0;
     padding: 30px;
+}
+
+select {
+    display: inline;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+select:focus {
+    background-color: #e6e6e6;
 }

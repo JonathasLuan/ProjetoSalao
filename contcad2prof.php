@@ -1,3 +1,43 @@
+<?php
+
+include("conexao.php");
+
+/*if(isset($_FILES) && count($_FILES) > 0) {
+var_dump($_FILES);
+die();
+}*/
+
+if (isset($_FILES['arquivo'])) {
+  echo "arquivo enviado";
+  $arquivo = $_FILES['arquivo'];
+
+  if ($arquivo['error'])
+    die("Falha ao enviar arquivo");
+
+  if ($arquivo['size'] > 2097152)
+    die("Arquivo muito grande. Máximo: 2MB");
+
+  $pasta = "PHP/Upload/arquivos/";
+  $nomeDoArquivo = $arquivo['name'];
+  $novoNomeDoArquivo = uniqid();
+  $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+  if ($extensao != "jpg" && $extensao != 'png')
+    die("Tipo de arquivo não aceito.");
+
+  $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
+  $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+  if ($deu_certo) {
+    $mysqli->query("INSERT INTO arquivos (nome, path) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
+    echo "<p>Arquivo enviado com sucesso!</p>";
+  } else
+    echo "<p>Falha ao enviar o arquivo.</p>";
+}
+
+$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,43 +49,34 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="contcadCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-p,
-label {
-    font: 1rem 'Fira Sans', sans-serif;
-}
+  <style>
+    p,
+    label {
+      font: 1rem 'Fira Sans', sans-serif;
+    }
 
-input {
-    margin: 0.4rem;
-}
+    input {
+      margin: 0.4rem;
+    }
 
-#check {
-    display: flex;
-    justify-content: space-around;
-}
-</style>
+    #check {
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <div class="header1">
-      <div class="logo">
-        <div><img src="./img/tesoura.png"></div>
-        <div>
-          <span>NaRégua</span>
-        </div>
-      </div>
-    </div>
-    <div class="pesquisa">
-      <input type="text" placeholder="buscar...">
-      <i class="fa fa-search"></i>
-    </div>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
+    include('header1.php');
+    ?>
+    <?php
+    include('barra-pesquisa.php');
+    ?>
+    <?php
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -58,7 +89,7 @@ input {
     <div id="cadastroform">
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
-        <form>
+        <form method="POST" enctype="multipart/form-data" action="">
           <div class="divs">
             <h3>Escolha uma foto</h3>
             <div class="modal-inner">
@@ -122,9 +153,9 @@ input {
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
   </div>
   <script>
     const fileInput = document.getElementById('profile-image');

@@ -60,11 +60,8 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
     include('barra-pesquisa.php');
     ?>
     <?php
-    // Inicia a sessão do PHP
-    session_start();
-
     // Verifica se o usuário já fez login
-    if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === true) {
+    if (session_id() == true) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -170,9 +167,9 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Na Régua</p>
-  </footer>
+  <?php
+  include('footer.php');
+  ?>
   </div>
   <script>
     const fileInput = document.getElementById('profile-image');
