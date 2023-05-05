@@ -3,7 +3,7 @@
     <div class="send-item">
         <div class="chat-content-box">
             <span class="chat-content">
-                <?php ?> Aqui deve exibir o $row["conteudo"] do PHP.
+                <?php $row["conteudo"] ?> Aqui deve exibir o $row["conteudo"] do PHP.
             </span>
         </div>
     </div>

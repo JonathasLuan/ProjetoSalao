@@ -1,5 +1,6 @@
 <?php
-include('conexao.php');
+session_start();
+include_once("conexao.php");
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
   if (strlen($_POST['email']) == 0) {
@@ -10,7 +11,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     $email = $mysqli->real_escape_string($_POST['email']);
     $senha = $mysqli->real_escape_string($_POST['senha']);
 
-    $sql_code = "SELECT * FROM usuario2 WHERE email = '$email' AND senha = '$senha'";
+    $sql_code = "SELECT * FROM usuário WHERE email = '$email' AND senha = '$senha'";
     $mysqli_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
     $quantidade = $mysqli_query->num_rows;
@@ -23,8 +24,8 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         session_start();
       }
 
-      $_SESSION['id'] = $usuario['id'];
-      $_SESSION['nome'] = $usuario['nome'];
+      $_SESSION['id'] = session_id();
+      $_SESSION['senha'] = $usuario['senha'];
 
       header("Location: perfil.php");
 
@@ -263,6 +264,13 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     }
 
   </script>
+
+  <?php
+  if (session_id() == $_SESSION['id']) {
+    header('Location: principal.php');
+    return;
+  }
+  ?>
   <?php
   include('footer.php');
   ?>

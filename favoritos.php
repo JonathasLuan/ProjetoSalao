@@ -6,7 +6,7 @@ echo $_SESSION['senha'];
 echo session_id();*/
 
 
-if (session_id() != true) {
+if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }

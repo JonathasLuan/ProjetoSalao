@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (session_id() != $_SESSION['id']) {
+  header('Location: entrar.php');
+  return;
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +30,14 @@ session_start();
       include('barra-pesquisa.php');
       ?>
       <?php
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
+      // Verifica se o usuário já fez login
+      if (session_id() == $_SESSION['id']) {
+        // usuário já fez login, exibe o menu de sessão iniciada
+        include('menu-logado.php');
+      } else {
+        // usuário não fez login, exibe o menu padrão
+        include('menu-padrao.php');
+      }
       ?>
     </header>
 
@@ -350,60 +361,52 @@ session_start();
                     <div class="send-item">
                       <div class="chat-content-box">
                         <span class="chat-content">
-                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
-                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
-                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
-                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
-                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
-                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
+                          <?php
+
+                          // Conexão com o banco de dados
+                          $servername = "localhost";
+                          $username = "root";
+                          $password = "";
+                          $dbname = "projetosalao";
+
+                          $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                          // Verifica se a conexão foi bem sucedida
+                          if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                          }
+
+                          // Insere mensagem no banco de dados
+                          if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
+                            $mensagem = $_POST['mensagem'];
+                            $sql = "INSERT INTO mensagens (conteudo) VALUES ('$mensagem')";
+                            if (mysqli_query($conn, $sql)) {
+                              echo "Mensagem adicionada com sucesso!";
+                            } else {
+                              echo "Erro ao adicionar mensagem: " . mysqli_error($conn);
+                            }
+                          }
+
+                          // Exibe as mensagens na tela
+                          $sql = "SELECT conteudo FROM mensagens";
+                          $result = mysqli_query($conn, $sql);
+
+                          if (mysqli_num_rows($result) > 0) {
+                            // Exibe as mensagens em uma lista
+                            echo "<ul>";
+                            while ($row = mysqli_fetch_assoc($result)) {
+                              echo "<li>" . $row["conteudo"] . "</li>";
+                            }
+                            echo "</ul>";
+                          } else {
+                            echo "Não há mensagens.";
+                          }
+                          ?>
                         </span>
                       </div>
                     </div>
                   </div>
                   <?php
-
-                  // Conexão com o banco de dados
-                  $servername = "localhost";
-                  $username = "root";
-                  $password = "";
-                  $dbname = "projetosalao";
-
-                  $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-                  // Verifica se a conexão foi bem sucedida
-                  if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-                  }
-
-                  // Insere mensagem no banco de dados
-                  if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
-                    $mensagem = $_POST['mensagem'];
-                    $sql = "INSERT INTO mensagens (conteudo) VALUES ('$mensagem')";
-                    if (mysqli_query($conn, $sql)) {
-                      echo "Mensagem adicionada com sucesso!";
-                    } else {
-                      echo "Erro ao adicionar mensagem: " . mysqli_error($conn);
-                    }
-                  }
-
-                  // Exibe as mensagens na tela
-                  $sql = "SELECT conteudo FROM mensagens";
-                  $result = mysqli_query($conn, $sql);
-
-                  if (mysqli_num_rows($result) > 0) {
-                    // Exibe as mensagens em uma lista
-                    echo "<ul>";
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      echo "<li>" . $row["conteudo"] . "</li>";
-                    }
-                    echo "</ul>";
-                  } else {
-                    echo "Não há mensagens.";
-                  }
 
                   // Exibe as mensagens na tela
                   $sql = "SELECT conteudo FROM mensagens";

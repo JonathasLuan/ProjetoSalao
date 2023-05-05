@@ -6,7 +6,7 @@ echo $_SESSION['senha'];
 echo session_id();*/
 
 
-if (session_id() != true) {
+if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }
@@ -149,7 +149,7 @@ if (session_id() != true) {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <form action="">
+              <form action="" method="POST">
                 <div id="options">
                   <ul class="accordion">
                     <li>

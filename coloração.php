@@ -5,11 +5,6 @@ session_start();
 echo $_SESSION['senha'];
 echo session_id();*/
 
-
-if (session_id() != true) {
-  header('Location: entrar.php');
-  return;
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +30,7 @@ if (session_id() != true) {
     ?>
     <?php
     // Verifica se o usuário já fez login
-    if (session_id() == true) {
+    if (session_id() == $_SESSION['id']) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {

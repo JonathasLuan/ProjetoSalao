@@ -6,7 +6,7 @@ echo $_SESSION['senha'];
 echo session_id();*/
 
 
-if (session_id() != true) {
+if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }
@@ -145,202 +145,211 @@ if (session_id() != true) {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <div id="options">
-                <ul class="accordion">
-                  <li>
-                    <h3>
-                      <button id="accordion-btn" aria-expanded="false" aria-controls="content1">
-                        <span class="menu-label">Gerais</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="feather feather-chevron-down">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    </h3>
-                    <div id="content1" class="content">
-                      <h4>Modo de tela:</h4>
-                      <span>light</span>
-                      <label class="switch">
-                        <input type="checkbox" id="dark-mode-switch">
-                        <span class="slider round"></span>
-                      </label>
-                      <span>dark</span>
-                    </div>
-                  </li>
-                  <li>
-                    <h3>
-                      <button id="accordion-btn" aria-expanded="false" aria-controls="content2">
-                        <span class="menu-label">Preferências</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="feather feather-chevron-down">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    </h3>
-                    <div id="content2" class="content">
-                      <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações,
-                        visualização e edição
-                        do histórico de conversas e agendamentos feitos.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <h3>
-                      <button id="accordion-btn" aria-expanded="false" aria-controls="content3">
-                        <span class="menu-label">Conta</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="feather feather-chevron-down">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    </h3>
-                    <div id="content3" class="content">
-                      <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de
-                        recuperação,
-                        etc.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <h3>
-                      <button id="accordion-btn" aria-expanded="false" aria-controls="content4">
-                        <span class="menu-label">Informações Pessoais</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="feather feather-chevron-down">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    </h3>
-                    <div id="content4" class="content">
-                      <div id="nome-sobrenome" class="divs">
-                        <div>
-                          <h3>Usuário e E-mail</h3>
-                          <div>
-                            <span>Nome:</span>
-                            <span id="nome">João da Silva</span>
-                            <button id="edit-nome" onclick="editarCampo('nome')">Editar</button>
-                            <button id="salvar-nome" style="display:none" onclick="salvarCampo('nome')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Email:</span>
-                            <span id="email">joao.silva@gmail.com</span>
-                            <button id="edit-email" onclick="editarCampo('email')">Editar</button>
-                            <button id="salvar-email" style="display:none"
-                              onclick="salvarCampo('email')">Salvar</button>
-                          </div>
-                        </div>
+              <form action="" method="POST">
+                <div id="options">
+                  <ul class="accordion">
+                    <li>
+                      <h3>
+                        <button type="button" id="accordion-btn" aria-expanded="false" aria-controls="content1">
+                          <span class="menu-label">Gerais</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </button>
+                      </h3>
+                      <div id="content1" class="content">
+                        <h4>Modo de tela:</h4>
+                        <span>light</span>
+                        <label class="switch">
+                          <input type="checkbox" id="dark-mode-switch">
+                          <span class="slider round"></span>
+                        </label>
+                        <span>dark</span>
                       </div>
-                      <br>
-                      <div id="endereco" class="divs">
-                        <h3 style="text-align: center;">Endereço</h3>
-                        <div id="info-endereco">
-                          <div class="data">
-                            <span>Estado:</span>
-                            <span id="estado">São Paulo</span>
-                            <button id="edit-estado" onclick="editarCampo('estado')">Editar</button>
-                            <button id="salvar-estado" style="display:none"
-                              onclick="salvarCampo('estado')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Cidade:</span>
-                            <span id="cidade">São Pailo</span>
-                            <button id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
-                            <button id="salvar-cidade" style="display:none"
-                              onclick="salvarCampo('cidade')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Bairro:</span>
-                            <span id="bairro">Centro</span>
-                            <button id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
-                            <button id="salvar-bairro" style="display:none"
-                              onclick="salvarCampo('bairro')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Rua:</span>
-                            <span id="rua">Av. Paulista</span>
-                            <button id="edit-rua" onclick="editarCampo('rua')">Editar</button>
-                            <button id="salvar-rua" style="display:none" onclick="salvarCampo('rua')">Salvar</button>
-                          </div>
-                          <div>
-                            <span>Complemento:</span>
-                            <span id="complemento">''</span>
-                            <button id="edit-complemento" onclick="editarCampo('complemento')">Editar</button>
-                            <button id="salvar-complemento" style="display:none"
-                              onclick="salvarCampo('complemento')">Salvar</button>
-                          </div>
-                        </div>
+                    </li>
+                    <li>
+                      <h3>
+                        <button type="button" id="accordion-btn" aria-expanded="false" aria-controls="content2">
+                          <span class="menu-label">Preferências</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </button>
+                      </h3>
+                      <div id="content2" class="content">
+                        <p>Aqui serão escolhidas as preferências do usuário, como: visibilidade, notificações,
+                          visualização e edição
+                          do histórico de conversas e agendamentos feitos.</p>
                       </div>
-                    </div>
-                  </li>
-                  <li>
-                    <h3>
-                      <button id="accordion-btn" aria-expanded="false" aria-controls="content5">
-                        <span class="menu-label">Perfil</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="feather feather-chevron-down">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    </h3>
-                    <div id="content5" class="content">
-                      <h4>Informações de exibição</h4>
-                      <div id="foto" style=" display: inline-block;">
-                        <img id="foto-perfil" src="img/profile.webp" alt="profile">
-                        <button id="editar-foto"><i class="fa fa-pencil"></i></button>
+                    </li>
+                    <li>
+                      <h3>
+                        <button type="button" id="accordion-btn" aria-expanded="false" aria-controls="content3">
+                          <span class="menu-label">Conta</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </button>
+                      </h3>
+                      <div id="content3" class="content">
+                        <p>Aqui ficarão configurações e ajustes da conta, como: nome, eimail, senha, e-mail reserva/de
+                          recuperação,
+                          etc.</p>
                       </div>
-                      <div id="modal-foto" class="modal">
-                        <div class="modal-inner">
-                          <span class="close">&times;</span>
-                          <!-- aqui vai o conteúdo da janela modal -->
-                          <div id="modal-content">
-                            <h2>Editar Foto</h2>
-                            <div class="arquivo">
-                              <label for="profile-image">Escolha uma Imagem</label>
-                              <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                              <input type="file" id="profile-image" name="profile-image">
+                    </li>
+                    <li>
+                      <h3>
+                        <button type="button" id="accordion-btn" aria-expanded="false" aria-controls="content4">
+                          <span class="menu-label">Informações Pessoais</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </button>
+                      </h3>
+                      <div id="content4" class="content">
+                        <div id="nome-sobrenome" class="divs">
+                          <div>
+                            <h3>Usuário e E-mail</h3>
+                            <div>
+                              <span>Nome:</span>
+                              <span id="nome">João da Silva</span>
+                              <button type="button" id="edit-nome" onclick="editarCampo('nome')">Editar</button>
+                              <button type="button" id="salvar-nome" style="display:none"
+                                onclick="salvarCampo('nome')">Salvar</button>
                             </div>
-                            <img id="profile-preview" src="img/profile.webp" alt="profile">
-                            <button id="salvar-foto" type="submit">Salvar</button>
+                            <div>
+                              <span>Email:</span>
+                              <span id="email">joao.silva@gmail.com</span>
+                              <button type="button" id="edit-email" onclick="editarCampo('email')">Editar</button>
+                              <button type="button" id="salvar-email" style="display:none"
+                                onclick="salvarCampo('email')">Salvar</button>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div id="editnome" class="divs">
-                        <div>
-                          <span>Nickname:</span>
-                          <span id="nick">João da Silva</span>
-                          <button id="edit-nick" onclick="editarCampo('nick')">Editar</button>
-                          <button id="salvar-nick" style="display:none" onclick="salvarCampo('nick')">Salvar</button>
-                        </div>
-                      </div>
-                      <br>
-                      <div id="editbio" class="divs" style="border-bottom: 0;">
-                        <h3>Sobre</h3>
-                        <div>
-                          <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).
-                            Poderá
-                            fornecer
-                            informações
-                            adicionais além das especificadas abaixo, como sua vida profissional e características mais
-                            pessoais de
-                            seu trabalho.</p>
-                          <button class="edit-btn">Editar</button>
                         </div>
                         <br>
-                        <div>
-                          <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
-                          <button class="btn-salvar-edit btn">Salvar</button>
+                        <div id="endereco" class="divs">
+                          <h3 style="text-align: center;">Endereço</h3>
+                          <div id="info-endereco">
+                            <div class="data">
+                              <span>Estado:</span>
+                              <span id="estado">São Paulo</span>
+                              <button type="button" id="edit-estado" onclick="editarCampo('estado')">Editar</button>
+                              <button type="button" id="salvar-estado" style="display:none"
+                                onclick="salvarCampo('estado')">Salvar</button>
+                            </div>
+                            <div>
+                              <span>Cidade:</span>
+                              <span id="cidade">São Pailo</span>
+                              <button type="button" id="edit-cidade" onclick="editarCampo('cidade')">Editar</button>
+                              <button type="button" id="salvar-cidade" style="display:none"
+                                onclick="salvarCampo('cidade')">Salvar</button>
+                            </div>
+                            <div>
+                              <span>Bairro:</span>
+                              <span id="bairro">Centro</span>
+                              <button type="button" id="edit-bairro" onclick="editarCampo('bairro')">Editar</button>
+                              <button type="button" id="salvar-bairro" style="display:none"
+                                onclick="salvarCampo('bairro')">Salvar</button>
+                            </div>
+                            <div>
+                              <span>Rua:</span>
+                              <span id="rua">Av. Paulista</span>
+                              <button type="button" id="edit-rua" onclick="editarCampo('rua')">Editar</button>
+                              <button type="button" id="salvar-rua" style="display:none"
+                                onclick="salvarCampo('rua')">Salvar</button>
+                            </div>
+                            <div>
+                              <span>Complemento:</span>
+                              <span id="complemento">''</span>
+                              <button type="button" id="edit-complemento"
+                                onclick="editarCampo('complemento')">Editar</button>
+                              <button type="button" id="salvar-complemento" style="display:none"
+                                onclick="salvarCampo('complemento')">Salvar</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div id="salvar">
-                <button type="submit" id="btn-salvar">Salvar alterações</button>
-              </div>
+                    </li>
+                    <li>
+                      <h3>
+                        <button type="button" id="accordion-btn" aria-expanded="false" aria-controls="content5">
+                          <span class="menu-label">Perfil</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </button>
+                      </h3>
+                      <div id="content5" class="content">
+                        <h3>Informações de exibição</h3>
+                        <div id="foto-edit-div">
+                          <div id="foto">
+                            <img id="foto-perfil" src="img/profile.webp" alt="profile">
+                            <button type="button" id="editar-foto"><i class="fa fa-pencil"></i></button>
+                          </div>
+                        </div>
+                        <div id="modal-foto" class="modal">
+                          <div class="modal-inner">
+                            <span class="close">&times;</span>
+                            <!-- aqui vai o conteúdo da janela modal -->
+                            <div id="modal-content">
+                              <h2>Editar Foto</h2>
+                              <div class="arquivo">
+                                <label for="profile-image">Escolha uma Imagem</label>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
+                                <input type="file" id="profile-image" name="arquivo">
+                              </div>
+                              <img id="profile-preview" src="img/profile.webp" alt="profile">
+                              <button type="button" id="salvar-foto" type="submit">Salvar</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="editnome" class="divs">
+                          <div style=" display: flex; justify-content: center;">
+                            <span>Nickname:</span>
+                            <span id="nick" style=" margin-right: 10px;">João da Silva</span>
+                            <button type="button" id="edit-nick" onclick="editarCampo('nick')">Editar</button>
+                            <button type="button" id="salvar-nick" style="display:none"
+                              onclick="salvarCampo('nick')">Salvar</button>
+                          </div>
+                        </div>
+                        <br>
+                        <div id="editbio" class="divs" style="border-bottom: 0;">
+                          <h3>Sobre</h3>
+                          <div>
+                            <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).
+                              Poderá
+                              fornecer
+                              informações
+                              adicionais além das especificadas abaixo, como sua vida profissional e características
+                              mais
+                              pessoais de
+                              seu trabalho.</p>
+                            <button type="button" class="edit-btn">Editar</button>
+                          </div>
+                          <br>
+                          <div>
+                            <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
+                            <button type="button" class="btn-salvar-edit btn">Salvar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div id="salvar">
+                  <button type="submit" id="btn-salvar">Salvar alterações</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

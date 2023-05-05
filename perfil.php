@@ -5,11 +5,6 @@ session_start();
 echo $_SESSION['senha'];
 echo session_id();*/
 
-
-if (session_id() != true) {
-  header('Location: entrar.php');
-  return;
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +30,7 @@ if (session_id() != true) {
     ?>
     <?php
     // Verifica se o usuário já fez login
-    if (session_id() == true) {
+    if (session_id() == $_SESSION['id']) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -49,15 +44,19 @@ if (session_id() != true) {
       <div class="sidebar sidebar-left">
         <div class="container-perfil">
           <div id="info">
-            <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
-            </div>
-            <div id="botoes">
-              <button>seguir</button>
-              <button>mensagem</button>
-            </div>
-            <div id="tipo-user">
-              <h3>tipo-user</h3>
+            <div style="display: flex; align-items: center;">
+              <div id="foto" style="margin-right: 20px;">
+                <img id="foto-perfil" src="img/profile.webp" alt="profile">
+              </div>
+              <div style="justify-content: center;">
+                <div id="botoes">
+                  <button>seguir</button>
+                  <button>mensagem</button>
+                </div>
+                <div id="tipo-user">
+                  <h3>tipo-user</h3>
+                </div>
+              </div>
             </div>
             <div id="name">
               <h2 id="nomeperfil">Fulano da Silva</h2>
@@ -67,6 +66,9 @@ if (session_id() != true) {
               <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
               <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
             </div>
+          </div>
+          <hr>
+          <div id="info">
             <div id="bio">
               <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
                 informações

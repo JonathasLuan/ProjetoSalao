@@ -225,13 +225,6 @@ header {
     border-radius: 50%;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
 #criar-btn {
     display: flex;
     text-align: center;
@@ -389,11 +382,6 @@ select:focus {
     border-right: 0;
     border-top: 0;
     padding: 30px;
-}
-
-#logout-btn {
-    margin-top: 0px;
-    width: 100%;
 }
 
 button[type="submit"] {

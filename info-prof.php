@@ -13,6 +13,9 @@
         <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
         <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
     </div>
+</div>
+<hr>
+<div id="info">
     <div id="bio">
         <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
             informações
