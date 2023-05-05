@@ -74,7 +74,7 @@ nav button:hover {
 
 #foto {
     position: relative;
-
+    display: inline-block;
 }
 
 #foto img {
@@ -82,6 +82,11 @@ nav button:hover {
     height: 150px;
     border: 1px solid;
     border-radius: 50%;
+}
+
+#foto-edit-div {
+    display: flex;
+    justify-content: center;
 }
 
 #editar-foto {
