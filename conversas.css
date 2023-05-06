@@ -643,3 +643,45 @@ body.dark-mode .logo img {
     text-decoration: none;
     cursor: pointer;
 }
+
+.element {
+    display: flex;
+    margin: 20px;
+}
+
+.send-item {
+    border: 1px solid;
+    border-radius: 10px;
+    width: 500px;
+    height: 100%;
+}
+
+#profile-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+}
+
+.chat-content-box {
+    padding: 10px;
+
+}
+
+#element1 {
+    float: right;
+}
+
+#element2 {
+    float: left;
+}
+
+#element1 img {
+    margin-left: 10px;
+    ;
+}
+
+#element2 img {
+    margin-right: 10px;
+    ;
+}

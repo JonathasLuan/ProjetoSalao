@@ -73,7 +73,8 @@ header {
   margin: 0 10px;
 }
 
-.menu li a, #logout-btn {
+.menu li a,
+#logout-btn {
   font-size: 20px;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -102,6 +103,7 @@ header {
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 1;
 }
 
 .dropdown-child {
@@ -111,6 +113,7 @@ header {
   position: absolute;
   top: 100%;
   margin-top: 23px;
+  z-index: 1;
 }
 
 .dropdown-child a {

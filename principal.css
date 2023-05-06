@@ -416,3 +416,61 @@ label {
     display: flex;
     justify-content: space-around;
 }
+
+#navbar {
+    background-color: #ccc;
+    text-decoration: none;
+}
+
+.foto {
+    position: relative;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.foto:hover .image {
+    opacity: 0.3;
+}
+
+.foto:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #04AA6D;
+    color: white;
+    padding: 0px 0px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.text button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}

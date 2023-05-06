@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('conexao.php');
 /*echo $_SESSION['id'];
 echo $_SESSION['senha'];
 echo session_id();*/

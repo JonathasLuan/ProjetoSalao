@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('conexao.php');
 /*echo $_SESSION['id'];
 echo $_SESSION['senha'];
 echo session_id();*/
@@ -49,19 +49,14 @@ if (session_id() != $_SESSION['id']) {
     <div id="sidebar1">
       <div class="sidebar" id="left">
         <div class="container-content" id="contato">
-          <div id="info">
-            <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
-            </div>
-            <div id="tipo-user">
-              <h3>tipo-user</h3>
-            </div>
-            <div id="nome">
-              <h2 id="nomeperfil">Fulano da Silva</h2>
-            </div>
-            <div id="">
-            </div>
-          </div>
+          <?php include('info-main.php'); ?>
+          <hr>
+          <br>
+          <nav id="navbar">
+            <ul>
+              <li><a href="conversas.php">Conversas</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
@@ -236,12 +231,6 @@ if (session_id() != $_SESSION['id']) {
             </div>
             <br>
             <hr>
-            <br>
-            <nav>
-              <ul>
-                <li><a href="conversas.php">Conversas</a></li>
-              </ul>
-            </nav>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
             <h2>Notificações:</h2>

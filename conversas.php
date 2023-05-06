@@ -273,50 +273,6 @@ if (session_id() != $_SESSION['id']) {
             <div class="content active" id="conteudo1">
               <div id="chat-area">
                 <div id="chat-displayer">
-                  <style>
-                    .element {
-                      display: flex;
-                      margin: 20px;
-                    }
-
-                    .send-item {
-                      border: 1px solid;
-                      border-radius: 10px;
-                      width: 500px;
-                      height: 100%;
-                    }
-
-                    #profile-img {
-                      border-radius: 50%;
-                      width: 50px;
-                      height: 50px;
-                      border: 1px solid;
-                    }
-
-                    .chat-content-box {
-                      padding: 10px;
-
-                    }
-
-                    #element1 {
-                      float: right;
-                    }
-
-                    #element2 {
-                      float: left;
-                    }
-
-                    #element1 img {
-                      margin-left: 10px;
-                      ;
-                    }
-
-                    #element2 img {
-                      margin-right: 10px;
-                      ;
-                    }
-                  </style>
-
                   <div class="element" id="element2">
                     <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
                     <div class="send-item">
@@ -483,12 +439,64 @@ if (session_id() != $_SESSION['id']) {
       <div class="sidebar" id="right">
         <div class="container-content" id="contato">
           <div id="info">
-            <div id="foto">
-              <img id="foto-perfil" src="img/profile.webp" alt="profile">
-            </div>
-            <div class="botoes">
-              <button id="picture-btn" title="ver foto"><i class="fa fa-eye"></i></button>
-              <!-- <button id="editar-foto"><i class="fa fa-pencil"></i></button> -->
+            <style>
+              .cont {
+                position: relative;
+                border-radius: 50%;
+                width: 150px;
+              }
+
+              .image {
+                opacity: 1;
+                display: block;
+                width: 100%;
+                height: auto;
+                transition: .5s ease;
+                backface-visibility: hidden;
+                border-radius: 50%;
+              }
+
+              .middle {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+              }
+
+              .cont:hover .image {
+                opacity: 0.3;
+              }
+
+              .cont:hover .middle {
+                opacity: 1;
+              }
+
+              .text {
+                background-color: #04AA6D;
+                color: white;
+                padding: 0px 0px;
+                cursor: pointer;
+                border-radius: 50%;
+              }
+
+              .text button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 15px;
+                text-align: center;
+                color: white;
+              }
+            </style>
+            <div class="cont">
+              <img id="foto-perfil" src="img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text"><button><i class="fa fa-eye"></i></button></div>
+              </div>
             </div>
             <!-- <div id="modal-foto" class="modal">
               <div class="modal-inner">
@@ -507,10 +515,41 @@ if (session_id() != $_SESSION['id']) {
             </div> -->
 
             <div id="tipo-user">
-              <h3>tipo-user</h3>
+              <h3>
+                <?php
+                include('conexao.php');
+                // Exibe o tipo
+                $sql = "SELECT tipo FROM usuário WHERE id_usuario = 1";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                  // Exibe as mensagens em uma lista
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo $row["tipo"];
+                  }
+                } else {
+                  echo "Tipo-User";
+                }
+                ?>
+              </h3>
             </div>
             <div id="nome">
-              <h2 id="nomeperfil">Fulano da Silva</h2>
+              <h2 id="nomeperfil">
+                <?php
+                // Exibe o tipo
+                $sql = "SELECT nome FROM usuário WHERE id_usuario = 1";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                  // Exibe as mensagens em uma lista
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo $row["nome"];
+                  }
+                } else {
+                  echo "Nome-User.";
+                }
+                ?>
+              </h2>
             </div>
             <div id="botoes">
               <button><i class="fa fa-lock"></i> Bloquear</button>
@@ -523,11 +562,6 @@ if (session_id() != $_SESSION['id']) {
 
     <?php
     include('footer.php');
-
-    echo $_SESSION['id'];
-    echo $_SESSION['senha'];
-    echo session_id();
-
 
     if (session_id() != true) {
       header('Location: entrar.php');
