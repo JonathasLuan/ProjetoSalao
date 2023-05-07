@@ -2,6 +2,11 @@
 // Inicia a sessão do PHP
 session_start();
 
+if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
+  header('Location: principal.php');
+  return;
+}
+
 include_once("conexao.php");
 
 $estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);

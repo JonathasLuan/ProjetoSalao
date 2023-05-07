@@ -418,8 +418,28 @@ label {
 }
 
 #navbar {
-    background-color: #ccc;
     text-decoration: none;
+}
+
+#navbar ul {
+    list-style: none;
+}
+
+#navbar ul li {
+    padding: 10px;
+    background-color: #eee;
+    margin: 2px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    color: black;
+}
+
+#navbar li:hover {
+    background-color: #ccc;
 }
 
 .foto {

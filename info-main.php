@@ -9,31 +9,21 @@
         <h3>
             <?php
             // Exibe o tipo
-            $sql = "SELECT tipo FROM usuário WHERE id_usuario = 1";
-            $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-                // Exibe as mensagens em uma lista
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo $row["tipo"];
-                }
-            } else {
-                echo "Tipo-User";
-            }
+            echo $_SESSION['tipo'];
             ?>
         </h3>
     </div>
     <div id="nome">
-        <h2 id="nomeperfil">
+        <h2 id="nomeperfil" style="text-align: center;">
             <?php
-            // Exibe o tipo
-            $sql = "SELECT nome FROM usuário WHERE id_usuario = 1";
+            // Exibe o nome
+            $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '{$_SESSION['email']}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 // Exibe as mensagens em uma lista
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo $row["nome"];
+                    echo $row["nome"] . " " . $row["sobrenome"];
                 }
             } else {
                 echo "Nome-User";

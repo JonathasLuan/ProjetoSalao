@@ -31,7 +31,7 @@ echo session_id();*/
     </div>
     <?php
     // Verifica se o usuário já fez login
-    if (session_id() == $_SESSION['id']) {
+    if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {

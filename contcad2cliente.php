@@ -1,6 +1,13 @@
 <?php
+// Inicia a sessão do PHP
+session_start();
 
-include("conexao.php");
+if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
+  header('Location: principal.php');
+  return;
+}
+
+include_once("conexao.php");
 
 /*if(isset($_FILES) && count($_FILES) > 0) {
 var_dump($_FILES);
@@ -60,14 +67,8 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
     include('barra-pesquisa.php');
     ?>
     <?php
-    // Verifica se o usuário já fez login
-    if (session_id() == true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
+    // usuário não fez login, exibe o menu padrão
+    include('menu-padrao.php');
     ?>
   </header>
   <div class="conteudo">

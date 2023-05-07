@@ -1,6 +1,13 @@
 <?php
+// Inicia a sessão do PHP
+session_start();
 
-include("conexao.php");
+if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
+  header('Location: principal.php');
+  return;
+}
+
+include_once("conexao.php");
 
 /*if(isset($_FILES) && count($_FILES) > 0) {
 var_dump($_FILES);

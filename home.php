@@ -1,7 +1,13 @@
 <?php
 session_start();
 include_once("conexao.php");
+
+if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
+  header('Location: principal.php');
+  return;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,17 +93,24 @@ include_once("conexao.php");
 
                   $usuario = $mysqli_query->fetch_assoc();
 
+                  $tipo_sql_code = "SELECT tipo FROM usuário WHERE email = '$email' AND senha = '$senha'";
+                  $tipo_query = $mysqli->query($tipo_sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+                  $tipo = $tipo_query->fetch_assoc()['tipo'];
+                  $_SESSION['tipo'] = $tipo;
+
+
                   if (session_id() == '') {
                     session_start();
                   }
 
                   $_SESSION['id'] = session_id();
                   $_SESSION['senha'] = $usuario['senha'];
+                  $_SESSION['email'] = $usuario['email'];
 
-                  header("Location: perfil.php");
+                  header("Location: principal.php");
 
                 } else {
-                  echo "<p style='color:red;'>" . "Falha ao logar! E-mail ou Senha incorretos." . "</p>";
+                  echo "<p style='color:red; text-align: center; font-weight: bold;'>" . "Falha ao logar! E-mail ou Senha incorretos." . "</p>";
                 }
               }
             }

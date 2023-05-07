@@ -55,6 +55,10 @@ if (session_id() != $_SESSION['id']) {
           <nav id="navbar">
             <ul>
               <li><a href="conversas.php">Conversas</a></li>
+              <li><a href="conversas.php">Conversas</a></li>
+              <li><a href="conversas.php">Conversas</a></li>
+              <li><a href="conversas.php">Conversas</a></li>
+              <li><a href="conversas.php">Conversas</a></li>
             </ul>
           </nav>
         </div>
