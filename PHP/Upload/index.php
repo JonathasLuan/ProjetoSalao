@@ -28,7 +28,7 @@ if (isset($_FILES['arquivo'])) {
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
     if ($deu_certo) {
-        $mysqli->query("INSERT INTO arquivos (nome, path) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
+        $mysqli->query("INSERT INTO arquivos (nome, caminho) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
         echo "<p>Arquivo enviado com sucesso!</p>";
     } else
         echo "<p>Falha ao enviar o arquivo.</p>";

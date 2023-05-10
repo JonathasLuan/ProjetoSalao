@@ -1,5 +1,5 @@
 <?php
-if (session_id() == $_SESSION['id']) {
+if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }

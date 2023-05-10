@@ -43,5 +43,13 @@
         echo "Digite suas informações";
     }
 
+    $info = array("Jonathas", $idade, $cidade);
+    if (in_array($nome, $info)) {
+        echo "Você existe, " . $info[0] . ".";
+    }
+    else {
+        echo "Você não existe, " . $nome . ".";
+    }
+
     ?>
 </fieldset>

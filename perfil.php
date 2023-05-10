@@ -5,6 +5,8 @@ include('conexao.php');
 echo $_SESSION['senha'];
 echo session_id();*/
 
+$modo = 'light';
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,27 @@ echo session_id();*/
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="perfilCSS.css">
+
+  <link rel="stylesheet" href="<?php
+  //conecte-se ao banco de dados aqui
+  $email = $_SESSION['email'];
+  $sql = "SELECT cor FROM usuário WHERE email = '$email'";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+    // a consulta retornou um resultado
+    $row = mysqli_fetch_assoc($result);
+    $cor = $row['cor'];
+
+    if ($cor == 'light') {
+      echo "perfilCSS.css";
+    }
+    if ($cor == 'dark') {
+      echo "perfil-dark-mode.css";
+    }
+  }
+  //feche a conexão com o banco de dados aqui
+  ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -30,7 +52,7 @@ echo session_id();*/
     ?>
     <?php
     // Verifica se o usuário já fez login
-    if (session_id() == $_SESSION['id']) {
+    if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -44,59 +66,6 @@ echo session_id();*/
       <div class="sidebar sidebar-left">
         <div class="container-perfil">
           <div id="info">
-            <style>
-              .cont {
-                position: relative;
-                border-radius: 50%;
-                width: 150px;
-              }
-
-              .image {
-                opacity: 1;
-                display: block;
-                width: 100%;
-                height: auto;
-                transition: .5s ease;
-                backface-visibility: hidden;
-                border-radius: 50%;
-              }
-
-              .middle {
-                transition: .5s ease;
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                text-align: center;
-              }
-
-              .cont:hover .image {
-                opacity: 0.3;
-              }
-
-              .cont:hover .middle {
-                opacity: 1;
-              }
-
-              .text {
-                background-color: #04AA6D;
-                color: white;
-                padding: 0px 0px;
-                cursor: pointer;
-                border-radius: 50%;
-              }
-
-              .text button {
-                background: none;
-                border: none;
-                cursor: pointer;
-                font-size: 15px;
-                text-align: center;
-                color: white;
-              }
-            </style>
             <div style="display: flex; align-items: center;">
               <div class="cont" style="margin-right: 20px;">
                 <img id="foto-perfil" src="img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
@@ -288,9 +257,17 @@ echo session_id();*/
               <h2>Accordion with symbols</h2>
               <button class="accordion">Section 1</button>
               <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.</p>
+                <div id="ex">
+                </div>
+                <form action="" method="POST">
+                  <label>
+                    <input type="radio" name="modo" value="vermelho">> Modo Vermelho
+                  </label>
+                  <label>
+                    <input type="radio" name="modo" value="azul"> Modo Azul
+                  </label>
+                  <button type="submit">Aplicar</button>
+                </form>
                 <div id="foto">
                   <img id="foto-perfil" src="img/profile.webp" alt="profile">
                   <button id="editar-foto"><i class="fa fa-pencil"></i></button>
