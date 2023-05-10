@@ -55,7 +55,7 @@ if (session_id() != $_SESSION['id']) {
           <nav id="navbar">
             <ul>
               <li><a href="conversas.php">Conversas</a></li>
-              <li><a href="conversas.php">Conversas</a></li>
+              <li><a href="perfil.php">Perfil</a></li>
               <li><a href="conversas.php">Conversas</a></li>
               <li><a href="conversas.php">Conversas</a></li>
               <li><a href="conversas.php">Conversas</a></li>

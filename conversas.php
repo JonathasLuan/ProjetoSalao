@@ -364,7 +364,6 @@ if (session_id() != $_SESSION['id']) {
                     </div>
                   </div>
                   <?php
-
                   // Exibe as mensagens na tela
                   $sql = "SELECT conteudo FROM mensagens";
                   $result = mysqli_query($conn, $sql);
@@ -380,7 +379,6 @@ if (session_id() != $_SESSION['id']) {
 
                   // Fecha a conexão com o banco de dados
                   mysqli_close($conn);
-
 
                   ?>
                 </div>
@@ -441,7 +439,21 @@ if (session_id() != $_SESSION['id']) {
         <div class="container-content" id="contato">
           <div id="info">
             <div class="cont">
-              <img id="foto-perfil" src="img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+              <img id="foto-perfil" src="<?php
+              $sql = "SELECT genero FROM usuário WHERE id_usuario = 1";
+              $result = mysqli_query($conn, $sql);
+
+              if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $genero = $row['genero'];
+
+                if ($genero == 'masculino') {
+                  echo "img/img_avatar.png";
+                } else {
+                  echo "img/img_avatar2.png";
+                }
+              }
+              ?>" alt="Avatar" class="image" style="width:100%">
               <div class="middle">
                 <div class="text"><button><i class="fa fa-eye"></i></button></div>
               </div>

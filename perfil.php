@@ -18,7 +18,7 @@ $modo = 'light';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="./index.css">
-
+  <link rel="stylesheet" href="./perfilCSS.css">
   <link rel="stylesheet" href="<?php
   //conecte-se ao banco de dados aqui
   $email = $_SESSION['email'];
@@ -68,7 +68,22 @@ $modo = 'light';
           <div id="info">
             <div style="display: flex; align-items: center;">
               <div class="cont" style="margin-right: 20px;">
-                <img id="foto-perfil" src="img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                <img id="foto-perfil" src="<?php
+                $email = $_SESSION['email'];
+                $sql = "SELECT genero FROM usuário WHERE id_usuario = 1";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                  $row = mysqli_fetch_assoc($result);
+                  $genero = $row['genero'];
+
+                  if ($genero == 'masculino') {
+                    echo "img/img_avatar.png";
+                  } else {
+                    echo "img/img_avatar2.png";
+                  }
+                }
+                ?>" alt="Avatar" class="image" style="width:100%">
                 <div class="middle">
                   <div class="text"><button><i class="fa fa-eye"></i></button></div>
                 </div>
