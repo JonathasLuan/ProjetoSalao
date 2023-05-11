@@ -47,7 +47,7 @@ create table usuário (
 );
 
 create table local (
-    id_local int not null primary key,
+    id_local int not null primary key auto_increment,
     estado varchar(100) not null,
     cidade varchar(100) not null,
     bairro varchar(100) not null,
