@@ -2,6 +2,8 @@
 session_start();
 include_once("conexao.php");
 
+// Manda para CONTINUAÇÃO DE CADASTRO 1 (contcad1)
+
 $tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_STRING);
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_STRING);
@@ -20,4 +22,12 @@ if (mysqli_insert_id($conn)) {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";
 }
+
+$_SESSION['tipo'] = $tipo;
+$_SESSION['nome'] = $nome;
+$_SESSION['sobrenome'] = $sobrenome;
+$_SESSION['email'] = $email;
+$_SESSION['senha'] = $senha;
+$_SESSION['telefone'] = $telefone;
+$_SESSION['genero'] = $genero;
 ?>

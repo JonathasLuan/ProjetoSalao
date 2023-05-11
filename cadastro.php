@@ -83,7 +83,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             </select>
           </div>
           <div>
-            <a href="contcad1cliente.php"><button type="submit">Continuar</button></a>
+            <button type="submit">Continuar</button>
           </div>
         </form>
 
@@ -126,7 +126,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             </select>
           </div>
           <div>
-            <a href="contcad1prof.php"><button type="submit">Continuar</button></a>
+            <button type="submit">Continuar</button>
           </div>
         </form>
       </div>

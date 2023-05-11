@@ -439,20 +439,19 @@ if (session_id() != $_SESSION['id']) {
         <div class="container-content" id="contato">
           <div id="info">
             <div class="cont">
-              <img id="foto-perfil" src="<?php
-              $sql = "SELECT genero FROM usuário WHERE id_usuario = 1";
-              $result = mysqli_query($conn, $sql);
-
-              if (mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_assoc($result);
-                $genero = $row['genero'];
-
-                if ($genero == 'masculino') {
-                  echo "img/img_avatar.png";
-                } else {
-                  echo "img/img_avatar2.png";
-                }
-              }
+              <img id="foto-perfil" src="img/img_avatar.png <?php /*
+               $email = $_SESSION['email'];
+               $sql = "SELECT genero FROM usuário WHERE email = '$email'";
+               $result = mysqli_query($conn, $sql);
+               if (mysqli_num_rows($result) > 0) {
+               $row = mysqli_fetch_assoc($result);
+               $genero = $row['genero'];
+               if ($genero == 'masculino') {
+               echo "img/img_avatar.png";
+               } else {
+               echo "img/img_avatar2.png";
+               }
+               }*/
               ?>" alt="Avatar" class="image" style="width:100%">
               <div class="middle">
                 <div class="text"><button><i class="fa fa-eye"></i></button></div>

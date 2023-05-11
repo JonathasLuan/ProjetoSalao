@@ -6,26 +6,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
-
-include_once("conexao.php");
-
-$estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);
-$cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
-$bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_STRING);
-$rua = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_EMAIL);
-$numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_EMAIL);
-$complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_STRING);
-
-$result_usuario = "INSERT INTO endereco (estado, cidade, bairro, rua, numero, complemento) VALUES ('$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
-
-if (mysqli_insert_id($conn)) {
-  $_SESSION['msg'] = "Endereço cadastrado com sucesso";
-  header("Location: contcad2cliente.php");
-} else {
-  header("Location: cadastro.php");
-  echo "Falha ao cadastrar.";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +30,7 @@ if (mysqli_insert_id($conn)) {
     ?>
     <?php
     // Verifica se o usuário já fez login
-    if (session_id() == true) {
+    if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       // usuário já fez login, exibe o menu de sessão iniciada
       include('menu-logado.php');
     } else {
@@ -63,7 +43,7 @@ if (mysqli_insert_id($conn)) {
     <div id="cadastroform">
       <div class="formulario-container">
         <h2 style="margin-bottom: 50px;">Endereço Pessoal</h2>
-        <form action="" method="POST">
+        <form action="proc_cad_cliente2.php" method="POST">
           <div class="divs">
             <div id="endereco-div">
               <div>
@@ -126,7 +106,7 @@ if (mysqli_insert_id($conn)) {
             </div>
           </div>
           <div style="text-align: center;">
-            <a href="contcad2cliente.php"><button type="submit">Continuar</button></a>
+            <button type="submit">Continuar</button>
           </div>
         </form>
       </div>

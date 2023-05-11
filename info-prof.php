@@ -67,7 +67,7 @@
                     echo $row["bio"];
                 }
             } else {
-                echo "Nome-User";
+                echo "Sobre-User";
             }
             ?>
         </p>

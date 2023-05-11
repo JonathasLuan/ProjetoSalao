@@ -63,7 +63,33 @@ $modo = 'light';
                 }
                 ?>" alt="Avatar" class="image" style="width:100%">
                 <div class="middle">
-                  <div class="text"><button><i class="fa fa-eye"></i></button></div>
+                  <div class="text" id="criar-btn"><button id="servico-btn"><i class="fa fa-eye"></i></button></div>
+                  <div id="modal-servico" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <!-- aqui vai o conteúdo da janela modal -->
+                      <div class="main">
+                        <div class="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    // Obtém a janela modal e o botão "SERVIÇO"
+                    var modal = document.getElementById("modal-servico");
+                    var btn = document.getElementById("servico-btn");
+
+                    // Obtém o botão "Fechar" e adiciona um evento de clique
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function () {
+                      modal.style.display = "none";
+                    }
+
+                    // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "+"
+                    btn.onclick = function () {
+                      modal.style.display = "block";
+                    }
+                  </script>
                 </div>
               </div>
               <div>
@@ -89,6 +115,22 @@ $modo = 'light';
                     ?>
                   </h3>
                 </div>
+                <div id="telefone">
+                  <?php
+                  // Exibe o tipo
+                  $sql = "SELECT telefone FROM usuário WHERE id_usuario = 1";
+                  $result = mysqli_query($conn, $sql);
+
+                  if (mysqli_num_rows($result) > 0 && !empty($result)) {
+                    // Exibe as mensagens em uma lista
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo $row["telefone"];
+                    }
+                  } else {
+                    echo "(11) 90000-0000";
+                  }
+                  ?>
+                </div>
               </div>
             </div>
             <div id="name">
@@ -98,7 +140,7 @@ $modo = 'light';
                 $sql = "SELECT nome FROM usuário WHERE id_usuario = 1";
                 $result = mysqli_query($conn, $sql);
 
-                if (mysqli_num_rows($result) > 0) {
+                if (mysqli_num_rows($result) > 0 && !empty($result)) {
                   // Exibe as mensagens em uma lista
                   while ($row = mysqli_fetch_assoc($result)) {
                     echo $row["nome"];
@@ -118,11 +160,21 @@ $modo = 'light';
           <hr>
           <div id="info">
             <div id="bio">
-              <p>
-                <?php ?>Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
-                informações
-                adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
-                seu trabalho.
+              <p id="sobre">
+                <?php
+                // Exibe o nome
+                $sql = "SELECT bio FROM usuário WHERE id_usuario = 1";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0 && !empty($result)) {
+                  // Exibe as mensagens em uma lista
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo $row["bio"];
+                  }
+                } else {
+                  echo "Sobre-User";
+                }
+                ?>
               </p>
             </div>
           </div>
@@ -208,111 +260,8 @@ $modo = 'light';
                     onclick="salvarCampo('complemento')">Salvar</button>
                 </div>
               </div>
-              <style>
-                .accordion {
-                  background-color: #eee;
-                  color: #444;
-                  cursor: pointer;
-                  padding: 18px;
-                  width: 100%;
-                  border: none;
-                  text-align: left;
-                  outline: none;
-                  font-size: 15px;
-                  transition: 0.4s;
-                }
 
-                .active,
-                .accordion:hover {
-                  background-color: #ccc;
-                }
-
-                .accordion:after {
-                  content: '\002B';
-                  color: #777;
-                  font-weight: bold;
-                  float: right;
-                  margin-left: 5px;
-                }
-
-                .active:after {
-                  content: "\2212";
-                }
-
-                .panel {
-                  padding: 0 18px;
-                  background-color: white;
-                  max-height: 0;
-                  overflow: hidden;
-                  transition: max-height 0.2s ease-out;
-                }
-              </style>
-              <h2>Accordion with symbols</h2>
-              <button class="accordion">Section 1</button>
-              <div class="panel">
-                <div id="ex">
-                </div>
-                <form action="" method="POST">
-                  <label>
-                    <input type="radio" name="modo" value="vermelho">> Modo Vermelho
-                  </label>
-                  <label>
-                    <input type="radio" name="modo" value="azul"> Modo Azul
-                  </label>
-                  <button type="submit">Aplicar</button>
-                </form>
-                <div id="foto">
-                  <img id="foto-perfil" src="img/profile.webp" alt="profile">
-                  <button id="editar-foto"><i class="fa fa-pencil"></i></button>
-                </div>
-                <div id="modal-foto" class="modal">
-                  <div class="modal-inner">
-                    <span class="close">&times;</span>
-                    <!-- aqui vai o conteúdo da janela modal -->
-                    <div id="modal-content">
-                      <h2>Editar Foto</h2>
-                      <div class="arquivo">
-                        <label for="profile-image">Escolha uma Imagem</label>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                        <input type="file" id="profile-image" name="profile-image">
-                      </div>
-                      <img id="profile-preview" src="img/profile.webp" alt="profile">
-                      <button id="salvar-foto" type="submit">Salvar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button class="accordion">Section 2</button>
-              <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-
-              <button class="accordion">Section 3</button>
-              <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-
-              <script>
-                var acc = document.getElementsByClassName("accordion");
-                var i;
-
-                for (i = 0; i < acc.length; i++) {
-                  acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                      panel.style.maxHeight = null;
-                    } else {
-                      panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                  });
-                }
-              </script>
+              
             </div>
           </div>
         </div>

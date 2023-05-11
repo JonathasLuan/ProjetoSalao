@@ -1,0 +1,40 @@
+    <link rel="stylesheet" href="
+    <?php
+    if ($modo == "vermelho") {
+        $stylesheet = "teste-vermelho.css";
+        echo $stylesheet;
+    }
+    if ($modo == "azul") {
+        $stylesheet = "teste-azul.css";
+        echo $stylesheet;
+    } ?>">
+
+
+
+
+
+
+<?php
+  //conecte-se ao banco de dados aqui
+
+  $email = $_SESSION['email'];
+  $sql = "SELECT cor FROM usuário WHERE email = '$email'";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+    // a consulta retornou um resultado
+    $row = mysqli_fetch_assoc($result);
+    $cor = $row['cor'];
+
+    if ($cor == 'vermelho') {
+      echo "vermelho";
+    } else {
+      echo "outra cor";
+    }
+  } else {
+    // a consulta não retornou resultados
+    echo "sem resultados";
+  }
+
+  //feche a conexão com o banco de dados aqui
+?>
