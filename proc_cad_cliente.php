@@ -12,7 +12,7 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
 $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 
-$result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
+$result_usuario = "INSERT INTO usuário VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if (mysqli_insert_id($conn)) {
