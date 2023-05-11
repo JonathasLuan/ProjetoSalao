@@ -1,9 +1,6 @@
 <?php
 session_start();
 include('conexao.php');
-/*echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();*/
 
 $modo = 'light';
 
@@ -18,27 +15,8 @@ $modo = 'light';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="./perfilCSS.css">
-  <link rel="stylesheet" href="<?php
-  //conecte-se ao banco de dados aqui
-  $email = $_SESSION['email'];
-  $sql = "SELECT cor FROM usuário WHERE email = '$email'";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-    // a consulta retornou um resultado
-    $row = mysqli_fetch_assoc($result);
-    $cor = $row['cor'];
-
-    if ($cor == 'light') {
-      echo "perfilCSS.css";
-    }
-    if ($cor == 'dark') {
-      echo "perfil-dark-mode.css";
-    }
-  }
-  //feche a conexão com o banco de dados aqui
-  ?>">
+  <link rel="stylesheet" href="perfilCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 

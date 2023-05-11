@@ -458,22 +458,6 @@ if (session_id() != $_SESSION['id']) {
                 <div class="text"><button><i class="fa fa-eye"></i></button></div>
               </div>
             </div>
-            <!-- <div id="modal-foto" class="modal">
-              <div class="modal-inner">
-                <span class="close">&times;</span>
-                <div id="modal-content">
-                  <h2>Editar Foto</h2>
-                  <div class="arquivo">
-                    <label for="profile-image">Escolha uma Imagem</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                    <input type="file" id="profile-image" name="profile-image">
-                  </div>
-                  <img id="profile-preview" src="img/profile.webp" alt="profile">
-                  <button id="salvar-foto" type="submit">Salvar</button>
-                </div>
-              </div>
-            </div> -->
-
             <div id="tipo-user">
               <h3>
                 <?php
@@ -522,11 +506,6 @@ if (session_id() != $_SESSION['id']) {
 
     <?php
     include('footer.php');
-
-    if (session_id() != true) {
-      header('Location: entrar.php');
-      return;
-    }
     ?>
   </main>
   <script>

@@ -32,7 +32,8 @@
         <h2 id="nameperfil" style="text-align: center;">
             <?php
             // Exibe o nome
-            $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '{$_SESSION['email']}'";
+            $email = $_SESSION['email'];
+            $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -55,9 +56,21 @@
 <hr>
 <div id="info">
     <div id="bio">
-        <p id="sobre">Aqui será um pequeno texto sobre o usuário (cliente ou profissional). Poderá fornecer
-            informações
-            adicionais além das especificadas abaixo, como sua vida profissional e características mais pessoais de
-            seu trabalho.</p>
+        <p id="sobre">
+            <?php
+            // Exibe o nome
+            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // Exibe as mensagens em uma lista
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo $row["bio"];
+                }
+            } else {
+                echo "Nome-User";
+            }
+            ?>
+        </p>
     </div>
 </div>

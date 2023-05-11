@@ -117,7 +117,6 @@ if (session_id() != $_SESSION['id']) {
                   </div>
                 </div>
                 <?php
-                include('-list.php');
                 ?>
               </div>
             </div>
