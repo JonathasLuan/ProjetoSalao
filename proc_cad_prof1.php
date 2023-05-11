@@ -13,7 +13,7 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "Endereço cadastrado com sucesso";
-    header("Location: contcad2cliente.php");
+    header("Location: contcad2prof.php");
 } else {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";
