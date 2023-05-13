@@ -426,7 +426,7 @@ label {
 }
 
 #navbar ul li {
-    padding: 10px;
+    padding: 0px;
     background-color: #eee;
     margin: 2px;
 }
@@ -436,6 +436,7 @@ label {
     width: 100%;
     padding: 10px;
     color: black;
+    display: inline-block;
 }
 
 #navbar li:hover {

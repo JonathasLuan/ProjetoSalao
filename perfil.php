@@ -100,12 +100,12 @@ $modo = 'light';
                 <div id="tipo-user">
                   <h3>
                     <?php
-                    // Exibe o tipo
+                    // Seleciona o tipo
                     $sql = "SELECT tipo FROM usuário WHERE id_usuario = 1";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
-                      // Exibe as mensagens em uma lista
+                      // Exibe o tipo
                       while ($row = mysqli_fetch_assoc($result)) {
                         echo $row["tipo"];
                       }
@@ -117,12 +117,12 @@ $modo = 'light';
                 </div>
                 <div id="telefone">
                   <?php
-                  // Exibe o tipo
+                  // Seleciona o telefone
                   $sql = "SELECT telefone FROM usuário WHERE id_usuario = 1";
                   $result = mysqli_query($conn, $sql);
 
                   if (mysqli_num_rows($result) > 0 && !empty($result)) {
-                    // Exibe as mensagens em uma lista
+                    // Exibe o telefone
                     while ($row = mysqli_fetch_assoc($result)) {
                       echo $row["telefone"];
                     }
@@ -136,12 +136,12 @@ $modo = 'light';
             <div id="name">
               <h2 id="nomeperfil">
                 <?php
-                // Exibe o tipo
+                // Seleciona o nome
                 $sql = "SELECT nome FROM usuário WHERE id_usuario = 1";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0 && !empty($result)) {
-                  // Exibe as mensagens em uma lista
+                  // Exibe o nome
                   while ($row = mysqli_fetch_assoc($result)) {
                     echo $row["nome"];
                   }
@@ -162,12 +162,12 @@ $modo = 'light';
             <div id="bio">
               <p id="sobre">
                 <?php
-                // Exibe o nome
+                // seleciona a bio
                 $sql = "SELECT bio FROM usuário WHERE id_usuario = 1";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0 && !empty($result)) {
-                  // Exibe as mensagens em uma lista
+                  // Exibe a bio
                   while ($row = mysqli_fetch_assoc($result)) {
                     echo $row["bio"];
                   }

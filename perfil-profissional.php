@@ -220,14 +220,46 @@ if (session_id() != $_SESSION['id']) {
                             <h3>Usuário e E-mail</h3>
                             <div>
                               <span>Nome:</span>
-                              <span id="nome">João da Silva</span>
+                              <span id="nome">
+                                <?php
+                                // Seleciona o nome
+                                $email = $_SESSION['email'];
+                                $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                  // Exibe o nome
+                                  while ($row = mysqli_fetch_assoc($result)) {
+                                    echo $row["nome"] . " " . $row["sobrenome"];
+                                  }
+                                } else {
+                                  echo "Nome-User";
+                                }
+                                ?>
+                              </span>
                               <button type="button" id="edit-nome" onclick="editarCampo('nome')">Editar</button>
                               <button type="button" id="salvar-nome" style="display:none"
                                 onclick="salvarCampo('nome')">Salvar</button>
                             </div>
                             <div>
                               <span>Email:</span>
-                              <span id="email">joao.silva@gmail.com</span>
+                              <span id="email">
+                                <?php
+                                // Seleciona o nome
+                                $email = $_SESSION['email'];
+                                $sql = "SELECT email FROM usuário WHERE email = '$email'";
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                  // Exibe o nome
+                                  while ($row = mysqli_fetch_assoc($result)) {
+                                    echo $row["email"];
+                                  }
+                                } else {
+                                  echo "Email-User";
+                                }
+                                ?>
+                              </span>
                               <button type="button" id="edit-email" onclick="editarCampo('email')">Editar</button>
                               <button type="button" id="salvar-email" style="display:none"
                                 onclick="salvarCampo('email')">Salvar</button>
@@ -316,7 +348,23 @@ if (session_id() != $_SESSION['id']) {
                         <div id="editnome" class="divs">
                           <div style=" display: flex; justify-content: center;">
                             <span>Nickname:</span>
-                            <span id="nick" style=" margin-right: 10px;">João da Silva</span>
+                            <span id="nick" style=" margin-right: 10px;">
+                              <?php
+                              // Seleciona o nome
+                              $email = $_SESSION['email'];
+                              $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
+                              $result = mysqli_query($conn, $sql);
+
+                              if (mysqli_num_rows($result) > 0) {
+                                // Exibe o nome
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                  echo $row["nome"] . " " . $row["sobrenome"];
+                                }
+                              } else {
+                                echo "Nome-User";
+                              }
+                              ?>
+                            </span>
                             <button type="button" id="edit-nick" onclick="editarCampo('nick')">Editar</button>
                             <button type="button" id="salvar-nick" style="display:none"
                               onclick="salvarCampo('nick')">Salvar</button>
@@ -326,14 +374,22 @@ if (session_id() != $_SESSION['id']) {
                         <div id="editbio" class="divs" style="border-bottom: 0;">
                           <h3>Sobre</h3>
                           <div>
-                            <p id="sobreperfil">Aqui será um pequeno texto sobre o usuário (cliente ou profissional).
-                              Poderá
-                              fornecer
-                              informações
-                              adicionais além das especificadas abaixo, como sua vida profissional e características
-                              mais
-                              pessoais de
-                              seu trabalho.</p>
+                            <p id="sobreperfil">
+                              <?php
+                              // Seleciona a bio
+                              $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                              $result = mysqli_query($conn, $sql);
+
+                              if (mysqli_num_rows($result) > 0) {
+                                // Exibe a bio
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                  echo $row["bio"];
+                                }
+                              } else {
+                                echo "Bio-User";
+                              }
+                              ?>
+                            </p>
                             <button type="button" class="edit-btn">Editar</button>
                           </div>
                           <br>

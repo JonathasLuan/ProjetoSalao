@@ -31,12 +31,12 @@
     <div id="name">
         <h2 id="nameperfil" style="text-align: center;">
             <?php
-            // Exibe o nome
+            // Seleciona o nome
             $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '{$_SESSION['email']}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                // Exibe as mensagens em uma lista
+                // Exibe o nome
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo $row["nome"] . " " . $row["sobrenome"];
                 }
@@ -57,12 +57,12 @@
     <div id="bio">
         <p id="sobre">
             <?php
-            // Exibe o nome
+            // Seleciona a bio
             $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                // Exibe as mensagens em uma lista
+                // Exibe a bio
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo $row["bio"];
                 }
