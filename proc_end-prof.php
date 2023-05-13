@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("conexao.php");
 
 $estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);
@@ -8,12 +9,12 @@ $rua = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_EMAIL);
 $numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_EMAIL);
 $complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_STRING);
 
-$result_usuario = "INSERT INTO endereco (id_endereco, estado, cidade, bairro, rua, numero, complemento) VALUES ('', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
+$result_usuario = "INSERT INTO endereco (estado, cidade, bairro, rua, numero, complemento) VALUES ('$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "Endereço cadastrado com sucesso";
-    header("Location: contcad2prof.php");
+    header("Location: cad_sobre-prof.php");
 } else {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";

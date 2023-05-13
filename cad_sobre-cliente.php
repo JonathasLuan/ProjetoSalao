@@ -6,9 +6,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
-
-include("conexao.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +17,7 @@ include("conexao.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre você</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="contcadCSS.css">
+  <link rel="stylesheet" href="contcad.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -41,9 +38,9 @@ include("conexao.php");
     <div id="cadastroform">
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
-        <form method="POST" enctype="multipart/form-data" action="">
+        <form method="POST" enctype="multipart/form-data" action="proc_sobre-cliente.php">
           <div class="divs">
-            <h3>Escolha uma foto</h3>
+            <h3>Escolha uma foto:</h3>
             <div class="modal-inner">
               <!-- aqui vai o conteúdo da janela modal -->
               <div id="modal-content">
@@ -63,7 +60,7 @@ include("conexao.php");
             <small>Isso será exibido em seu perfil</small>
           </div>
           <div id="caract-list" class="divs">
-            <h3>Características</h3>
+            <h3>Características:</h3>
             <div class="caract">
               <h4>Cabelo</h4>
               <div style="display: flex; justify-content: space-around;">

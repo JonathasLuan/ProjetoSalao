@@ -495,8 +495,8 @@ if (session_id() != $_SESSION['id']) {
               </h2>
             </div>
             <div id="botoes">
-              <button><i class="fa fa-lock"></i> Bloquear</button>
-              <button><i class="fa fa-user"></i> Ver Perfil</button>
+              <button><i class="fa fa-lock"></i>&nbsp;&nbsp;Bloquear</button>
+              <button><i class="fa fa-user"></i>&nbsp;&nbsp;Ver Perfil</button>
             </div>
           </div>
         </div>

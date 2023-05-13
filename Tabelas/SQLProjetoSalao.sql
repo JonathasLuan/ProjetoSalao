@@ -292,6 +292,7 @@ create table conta (
 create table pedido (
     id_pedido int not null auto_increment primary key,
     id_usuario_fk int not null,
+    id_servico_fk int not null,
     id_especialidade_fk int not null,
     outra varchar(100) null,
     id_serviço_fk int not null,

@@ -6,43 +6,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
-
-include_once("conexao.php");
-
-/*if(isset($_FILES) && count($_FILES) > 0) {
-var_dump($_FILES);
-die();
-}*/
-
-if (isset($_FILES['arquivo'])) {
-  echo "arquivo enviado";
-  $arquivo = $_FILES['arquivo'];
-
-  if ($arquivo['error'])
-    die("Falha ao enviar arquivo");
-
-  if ($arquivo['size'] > 2097152)
-    die("Arquivo muito grande. Máximo: 2MB");
-
-  $pasta = "PHP/Upload/arquivos/";
-  $nomeDoArquivo = $arquivo['name'];
-  $novoNomeDoArquivo = uniqid();
-  $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
-
-  if ($extensao != "jpg" && $extensao != 'png')
-    die("Tipo de arquivo não aceito.");
-
-  $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
-  $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
-  if ($deu_certo) {
-    $mysqli->query("INSERT INTO arquivos (nome, path) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
-    echo "<p>Arquivo enviado com sucesso!</p>";
-  } else
-    echo "<p>Falha ao enviar o arquivo.</p>";
-}
-
-$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
-
 ?>
 
 <!DOCTYPE html>
@@ -54,23 +17,8 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre você</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="contcadCSS.css">
+  <link rel="stylesheet" href="contcad.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    p,
-    label {
-      font: 1rem 'Fira Sans', sans-serif;
-    }
-
-    input {
-      margin: 0.4rem;
-    }
-
-    #check {
-      display: flex;
-      justify-content: space-around;
-    }
-  </style>
 </head>
 
 <body>
@@ -82,21 +30,15 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
     include('barra-pesquisa.php');
     ?>
     <?php
-    // Verifica se o usuário já fez login
-    if (session_id() == true) {
-      // usuário já fez login, exibe o menu de sessão iniciada
-      include('menu-logado.php');
-    } else {
-      // usuário não fez login, exibe o menu padrão
-      include('menu-padrao.php');
-    }
+    // usuário não fez login, exibe o menu padrão
+    include('menu-padrao.php');
     ?>
   </header>
   <div class="conteudo">
     <div id="cadastroform">
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
-        <form method="POST" enctype="multipart/form-data" action="">
+        <form method="POST" enctype="multipart/form-data" action="proc_sobre-prof.php">
           <div class="divs">
             <h3>Escolha uma foto</h3>
             <div class="modal-inner">

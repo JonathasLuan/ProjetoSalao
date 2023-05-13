@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('conexao.php');
 /*echo $_SESSION['id'];
 echo $_SESSION['senha'];
 echo session_id();*/
@@ -65,7 +65,7 @@ echo session_id();*/
       suas disponibilidades de dia e horário para agendamentos. Um cliente pode criar um serviço a partir de página
       principal, onde descreve o que procura com todas as informações possíveis de: localidade atual (seu endereço ou
       localização), raio de acesso para escolhar o que fica mais perto, faixa de orçamento e mais. O pedido é gerado e
-      é disponibilizado para visualização do lado dos p´rofissionais, que podem buscar serviços para fazer. Ele pode
+      é disponibilizado para visualização do lado dos profissionais, que podem buscar serviços para fazer. Ele pode
       ler o que o cliente escreveu e enviar uma solicitação.<br> O cliete verá em sua tela um raio no mapa de seu local
       com todos os profissionais disponíveis e seus endereços, onde pode clicar e ver seus perfis, ernviando também
       uma solicitação. Quando uma solicitação aceita em qualquer dos lados, um match é feito e um chat é aperto para
@@ -93,7 +93,19 @@ echo session_id();*/
       <li>Maquiagem</li>
       </p>
     </div>
+    <?php
+    // Consulta por SQL com INNER JOIN:
+    $sql = "SELECT cabelo.*, caracteristica.tipo
+        FROM cabelo 
+        INNER JOIN caracteristica ON cabelo.id_caract_fk = caracteristica.id_caract";
+    $resultado = mysqli_query($conn, $sql);
 
+    // Exibe os resultados no HTML:
+    while ($row = mysqli_fetch_assoc($resultado)) {
+      echo "<p>Tipo: " . $row["tipo"] . "</p>";
+      echo "<p>Cor: " . $row["cor"] . "</p>";
+    }
+    ?>
   </div>
 
   <?php
