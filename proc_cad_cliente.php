@@ -15,6 +15,8 @@ $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 $result_usuario = "INSERT INTO usuário VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
+$_SESSION['id_usuario'] = "SELECT id_usuario WHERE email = $email";
+
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "Usuário cadastrado com sucesso";
     header("Location: contcad1cliente.php");
