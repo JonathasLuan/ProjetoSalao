@@ -11,7 +11,7 @@ $complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_STRING);
 
 $id_usuario = $_SESSION['id_usuario'];
 
-$result_end = "INSERT INTO endereco (id_usuario_fk, estado, cidade, bairro, rua, numero, complemento) VALUES ('$id_usuario', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
+$result_end = "INSERT INTO endereco (id_usuario, estado, cidade, bairro, rua, numero, complemento) VALUES ('$id_usuario', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
 $resultado_end = mysqli_query($conn, $result_end);
 
 if (mysqli_insert_id($conn)) {

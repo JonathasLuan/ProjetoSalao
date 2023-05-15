@@ -12,24 +12,20 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
 $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 
-$result_usuario = "INSERT INTO usuário VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
+$result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-$_SESSION['id_usuario'] = "SELECT id_usuario WHERE email = $email";
+$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+$resultado = mysqli_query($conn, $sql);
+$dados = mysqli_fetch_array($resultado);
+$_SESSION['id_usuario'] = $dados['id_usuario'];
+
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "Usuário cadastrado com sucesso";
-    header("Location: contcad1cliente.php");
-}else {
+    header("Location: cad_end-cliente.php");
+} else {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";
 }
-
-$_SESSION['tipo'] = $tipo;
-$_SESSION['nome'] = $nome;
-$_SESSION['sobrenome'] = $sobrenome;
-$_SESSION['email'] = $email;
-$_SESSION['senha'] = $senha;
-$_SESSION['telefone'] = $telefone;
-$_SESSION['genero'] = $genero;
 ?>

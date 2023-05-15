@@ -44,7 +44,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
     <div id="cadastroform">
       <div class="formulario-container">
         <h2 style="margin-bottom: 50px;">Endereço Pessoal</h2>
-        <form action="proc_end_prof.php" method="POST">
+        <form action="proc_end-prof.php" method="POST">
           <div class="divs">
             <div style="display: flex; justify-content: space-around;">
               <div>

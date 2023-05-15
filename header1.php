@@ -1,8 +1,8 @@
 <div class="header1">
     <div class="logo">
-        <div><img src="./img/scissors-badge-svgrepo-com-removebg-preview.png"></div>
+        <div><a href="home.php"><img src="./img/scissors-badge-svgrepo-com-removebg-preview.png"></a></div>
         <div>
-            <span>SalonSet</span>
+            <a style="text-decoration: none; color: black;" href="home.php"><span>SalonSet</span></a>
         </div>
     </div>
 </div>

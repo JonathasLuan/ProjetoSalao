@@ -45,17 +45,6 @@
       font-size: 20px;
     }
 
-    form {
-      background-color: #FFFFFF;
-      color: #000000;
-      padding: 20px;
-      border-radius: 5px;
-      margin: 0 auto;
-      width: 400px;
-      justify-content: flex-center;
-      margin-bottom: 30px;
-    }
-
     button {
       background-color: #484848;
       color: #FFFFFF;

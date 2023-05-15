@@ -20,7 +20,7 @@
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg></a>
                 <div class="dropdown-child">
-                    <a href="login.php">Login</a>
+                    <a style="border-top-left-radius: 0px;" href="login.php">Login</a>
                     <a href="cadastro.php">Cadastro</a>
                 </div>
             </div>

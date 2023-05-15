@@ -45,7 +45,7 @@ label {
   flex-direction: column;
 }
 
-form {
+.formulario-container form {
   background-color: #FFFFFF;
   color: #000000;
   padding: 40px;

@@ -234,7 +234,7 @@ header {
 #servico-btn {
     bottom: 15px;
     right: 7px;
-    background-color: #51b4f1;
+    background-color: blue;
     color: #fefefe;
     border-radius: 50%;
     border: 0;
@@ -249,7 +249,7 @@ header {
 }
 
 #servico-btn:hover {
-    background-color: #51d9f1;
+    background-color: #2196f3;
 }
 
 /* Estilos para a janela modal */
@@ -384,7 +384,7 @@ select:focus {
     padding: 30px;
 }
 
-button[type="submit"] {
+#btn-criar {
     background-color: #484848;
     color: #fff;
     border: none;
@@ -395,7 +395,7 @@ button[type="submit"] {
     margin-top: 30px;
 }
 
-button[type="submit"]:hover {
+#btn-criar:hover {
     background-color: #a9a9a9;
 }
 

@@ -110,7 +110,7 @@ if (session_id() != $_SESSION['id']) {
                   <div class="main">
                     <div class="formulario-container">
                       <h2>Criar pedido de serviço</h2>
-                      <form action="processar_serviço.php" method="POST">
+                      <form action="processar_servico.php" method="POST">
                         <div>
                           <div class="divs">
                             <label for="especialidade" name="especialidade">Especialidade(s):</label>
@@ -209,7 +209,7 @@ if (session_id() != $_SESSION['id']) {
                           </div>
                         </div>
                         <div style="text-align: center;">
-                          <button type="submit">Criar</button>
+                          <button id="btn-criar" type="submit">Criar</button>
                         </div>
                       </form>
                     </div>

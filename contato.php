@@ -41,7 +41,7 @@ echo session_id();*/
   </header>
   <div class="conteudo">
     <div id="contactform">
-      <h2 style="text-align: center;">Contate-nos</h2>
+      <h2>Contate-nos</h2>
       <div id="formulario-container">
         <form action="email.php" method="POST">
           <div>
@@ -69,7 +69,7 @@ echo session_id();*/
             <textarea id="mensagem" name="mensagem" rows="10" cols="50" required></textarea>
           </div>
 
-          <div style="text-align: center;"><button type="submit" value="Enviar">Enviar</button></div>
+          <div id="contact-btn"><button type="submit" value="Enviar">Enviar</button></div>
         </form>
       </div>
     </div>

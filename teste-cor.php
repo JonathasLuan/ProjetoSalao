@@ -52,23 +52,6 @@ if (isset($_POST['modo'])) {
         </label>
         <button type="submit">Aplicar</button>
     </form>
-
-    <img src="<?php
-    $email = $_SESSION['email'];
-    $sql = "SELECT genero FROM usuário WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $genero = $row['genero'];
-
-        if ($genero == 'masculino') {
-            echo "img/img_avatar.png";
-        } else {
-            echo "img/img_avatar2.png";
-        }
-    }
-    ?>" alt="user-avatar">
 </body>
 
 </html>

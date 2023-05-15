@@ -73,13 +73,13 @@ header {
   margin: 0 10px;
 }
 
-.menu li a,
-#logout-btn {
+.menu li a {
   font-size: 20px;
   text-decoration: none;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   border-radius: 5px;
+  background-color: white;
 }
 
 .menu li a:hover {
@@ -88,8 +88,8 @@ header {
 }
 
 .mainmenua {
-  background-color: white;
-  color: black;
+  background-color: rgb(255, 0, 0)!important;
+  color: rgb(255, 255, 255)!important;
   border: none;
   cursor: pointer;
   padding: 20px;
@@ -108,7 +108,6 @@ header {
 
 .dropdown-child {
   display: none;
-  background-color: #f2f2f2;
   min-width: 150px;
   position: absolute;
   top: 100%;
@@ -117,7 +116,6 @@ header {
 }
 
 .dropdown-child a {
-  color: blue;
   padding: 20px;
   text-decoration: none;
   display: block;
@@ -128,13 +126,13 @@ header {
 }
 
 .dropdown:hover .mainmenua {
-  background-color: rgb(70, 69, 69);
+  background-color: rgb(255, 0, 0);
   color: white;
   padding-bottom: 27px;
 }
 
 .dropdown-child a:hover {
-  background-color: rgb(70, 69, 69);
+  background-color: rgb(255, 0, 0);
   color: white;
 }
 
@@ -195,4 +193,13 @@ footer {
   font-size: 15px;
   text-align: center;
   color: white;
+}
+
+.header .logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-child form {
+  background-color: red;
 }

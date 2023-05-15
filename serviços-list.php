@@ -3,8 +3,10 @@
         <nav id="menu-content">
             <button id="botao1" class="menu-button active" data-target="content1">Lista de Serviços</button>
             <div class="pesquisa2">
-                <input type="text" placeholder="buscar...">
-                <i class="fa fa-search"></i>
+                <form action="">
+                    <input type="text" placeholder="buscar...">
+                    <i class="fa fa-search"></i>
+                </form>
             </div>
             <button id="botao2" class="menu-button" data-target="content2">Mapa</button>
             <div class="btn-dropdown">

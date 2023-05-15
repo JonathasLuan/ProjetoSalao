@@ -63,33 +63,7 @@ $modo = 'light';
                 }
                 ?>" alt="Avatar" class="image" style="width:100%">
                 <div class="middle">
-                  <div class="text" id="criar-btn"><button id="servico-btn"><i class="fa fa-eye"></i></button></div>
-                  <div id="modal-servico" class="modal">
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <!-- aqui vai o conteúdo da janela modal -->
-                      <div class="main">
-                        <div class="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <script>
-                    // Obtém a janela modal e o botão "SERVIÇO"
-                    var modal = document.getElementById("modal-servico");
-                    var btn = document.getElementById("servico-btn");
-
-                    // Obtém o botão "Fechar" e adiciona um evento de clique
-                    var span = document.getElementsByClassName("close")[0];
-                    span.onclick = function () {
-                      modal.style.display = "none";
-                    }
-
-                    // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "+"
-                    btn.onclick = function () {
-                      modal.style.display = "block";
-                    }
-                  </script>
+                  <div class="text"><button><i class="fa fa-eye"></i></button></div>
                 </div>
               </div>
               <div>
