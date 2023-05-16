@@ -234,7 +234,7 @@ header {
 #servico-btn {
     bottom: 15px;
     right: 7px;
-    background-color: blue;
+    background-color: #0078d4;
     color: #fefefe;
     border-radius: 50%;
     border: 0;
@@ -393,6 +393,7 @@ select:focus {
     font-size: 15px;
     cursor: pointer;
     margin-top: 30px;
+    font-weight: bold;
 }
 
 #btn-criar:hover {
@@ -423,6 +424,7 @@ label {
 
 #navbar ul {
     list-style: none;
+    display: inline;
 }
 
 #navbar ul li {

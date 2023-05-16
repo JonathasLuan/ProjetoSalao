@@ -159,22 +159,21 @@ $modo = 'light';
     <section id="sec2">
       <div class="sidebar sidebar-right">
         <nav id="menu-content">
-          <button id="botao1" class="menu-button active" data-target="content1">Botão 1</button>
-          <button id="botao2" class="menu-button" data-target="content2">Botão 2</button>
+          <button id="botao1" class="menu-button active" data-target="content1">Principal</button>
+          <button id="botao2" class="menu-button" data-target="content2">Horários</button>
           <button id="botao3" class="menu-button" data-target="content3">Botão 3</button>
-          <button id="botao4" class="menu-button" data-target="content4">Botão 4</button>
+          <button id="botao4" class="menu-button" data-target="content4">Informações</button>
         </nav>
         <div class="container-content">
           <div id="conteudo">
             <div class="content active" id="conteudo1">
-              <h2>Conteúdo 1:</h2>
+              <h2>Principal:</h2>
               <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
                 mas sim botões que abrem conteúdo no espaço abaixo</p>
             </div>
             <div class="content hidden" id="conteudo2">
-              <h2>Conteúdo 2:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
+              <h2>Tabela de Horários</h2>
+              <p>Aqui ficará a exibição da agenda do usuário, como seus horários e disponibilidades.</p>
             </div>
             <div class="content hidden" id="conteudo3">
               <h2>Conteúdo 3:</h2>
@@ -182,11 +181,8 @@ $modo = 'light';
                 mas sim botões que abrem conteúdo no espaço abaixo</p>
             </div>
             <div class="content hidden" id="conteudo4">
-              <h2>Conteúdo 4:</h2>
-              <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                mas sim botões que abrem conteúdo no espaço abaixo</p>
+              <h2>Informações Pessoais</h2>
               <div>
-                <h2>Informações Pessoais</h2>
                 <div>
                   <span>Nome:</span>
                   <span id="nome">João da Silva</span>

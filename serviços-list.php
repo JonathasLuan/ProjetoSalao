@@ -3,9 +3,10 @@
         <nav id="menu-content">
             <button id="botao1" class="menu-button active" data-target="content1">Lista de Serviços</button>
             <div class="pesquisa2">
-                <form action="">
-                    <input type="text" placeholder="buscar...">
+                <form action="busca/busca-servico.php">
+                    <input name="nome_pagina" type="text" placeholder="buscar...">
                     <i class="fa fa-search"></i>
+                    <button style="display: none;"></button>
                 </form>
             </div>
             <button id="botao2" class="menu-button" data-target="content2">Mapa</button>
@@ -36,35 +37,30 @@
                         mas sim botões que abrem conteúdo no espaço abaixo</p>
                 </div>
                 <div class="content hidden" id="conteudo3">
-                    <h2>Conteúdo 3:</h2>
-                    <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                        mas sim botões que abrem conteúdo no espaço abaixo</p>
+                    <h2>Por Status:</h2>
+                    <p>Disponível, Pendente ou Cancelado</p>
                 </div>
                 <div class="content hidden" id="conteudo4">
-                    <h2>Conteúdo 4:</h2>
-                    <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                        mas sim botões que abrem conteúdo no espaço abaixo</p>
+                    <h2>Por Local:</h2>
+                    <p>Pode-se selecionar o endereço e aparecerá apenas os que estão neste lugar.</p>
                 </div>
 
                 <div class="content hidden" id="conteudo5">
-                    <h2>Conteúdo 5:</h2>
-                    <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
-                        proximidade delimitado.</p>
+                    <h2>Por Preço:</h2>
+                    <p>Selecionar faixa de preço em que está disposto a pagar.</p>
                 </div>
                 <div class="content hidden" id="conteudo6">
-                    <h2>Conteúdo 6:</h2>
+                    <h2>Por Data:</h2>
                     <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                        mas sim botões que abrem conteúdo no espaço abaixo</p>
+                        mas sim botões que abrem conteúdo no espaço abaixo.</p>
                 </div>
                 <div class="content hidden" id="conteudo7">
-                    <h2>Conteúdo 7:</h2>
-                    <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                        mas sim botões que abrem conteúdo no espaço abaixo</p>
+                    <h2>Por Serviço:</h2>
+                    <p>Aparecerão apenas os que estiverem categorizados com o serviço selecionado.</p>
                 </div>
                 <div class="content hidden" id="conteudo8">
-                    <h2>Conteúdo 8:</h2>
-                    <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-                        mas sim botões que abrem conteúdo no espaço abaixo</p>
+                    <h2>Por Especialidade:</h2>
+                    <p>Aparecerão apenas os serviços que estiverem categorizados com a especialidade selecionada.</p>
                 </div>
             </div>
         </div>

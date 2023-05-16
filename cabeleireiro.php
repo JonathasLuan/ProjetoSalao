@@ -41,6 +41,9 @@ echo session_id();*/
     ?>
   </header>
   <main>
+    <div style="margin: 0 auto;">
+      <h1>Cabeleireiro</h1>
+    </div>
     <?php
     include('serviços-list.php');
     ?>
