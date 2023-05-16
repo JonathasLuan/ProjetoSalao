@@ -9,11 +9,12 @@ $rua = filter_input(INPUT_POST, 'rua', FILTER_SANITIZE_EMAIL);
 $numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_EMAIL);
 $complemento = filter_input(INPUT_POST, 'complemento', FILTER_SANITIZE_STRING);
 
-$result_usuario = "INSERT INTO endereco (estado, cidade, bairro, rua, numero, complemento) VALUES ('$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
-$resultado_usuario = mysqli_query($conn, $result_usuario);
+$id_usuario = $_SESSION['id_usuario'];
+
+$result_end = "INSERT INTO endereco (id_usuario, estado, cidade, bairro, rua, numero, complemento) VALUES ('$id_usuario', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
+$resultado_end = mysqli_query($conn, $result_end);
 
 if (mysqli_insert_id($conn)) {
-    $_SESSION['msg'] = "Endereço cadastrado com sucesso";
     header("Location: cad_sobre-prof.php");
 } else {
     header("Location: cadastro.php");

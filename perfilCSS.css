@@ -99,6 +99,7 @@ nav button:hover {
     padding: 7px;
     cursor: pointer;
     border-radius: 4px;
+    border: 1px solid grey;
 }
 
 #botoes button:hover {
@@ -199,10 +200,6 @@ section:nth-child(2) {
 
 .accordion li.active .content {
     display: block;
-}
-
-svg {
-    float: right;
 }
 
 #content4 {

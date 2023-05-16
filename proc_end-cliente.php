@@ -15,7 +15,6 @@ $result_end = "INSERT INTO endereco (id_usuario, estado, cidade, bairro, rua, nu
 $resultado_end = mysqli_query($conn, $result_end);
 
 if (mysqli_insert_id($conn)) {
-    $_SESSION['msg'] = "Endereço cadastrado com sucesso";
     header("Location: cad_sobre-cliente.php");
 } else {
     header("Location: cadastro.php");

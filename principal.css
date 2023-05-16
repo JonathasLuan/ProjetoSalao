@@ -385,7 +385,7 @@ select:focus {
 }
 
 #btn-criar {
-    background-color: #484848;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -396,7 +396,7 @@ select:focus {
 }
 
 #btn-criar:hover {
-    background-color: #a9a9a9;
+    background-color: #8BC34A;
 }
 
 .formulario-container {

@@ -15,12 +15,7 @@ $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 $result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-/*$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
-$resultado = mysqli_query($conn, $sql);
-$dados = mysqli_fetch_array($resultado);
-$_SESSION['id_usuario'] = $dados['id_usuario'];*/
-
-$_SESSION['id_usuario'] = "SELECT LAST_INSERT_ID()";
+$_SESSION['id_usuario'] = mysqli_insert_id($conn);
 
 if (mysqli_insert_id($conn)) {
     header("Location: cad_end-prof.php");
@@ -28,3 +23,4 @@ if (mysqli_insert_id($conn)) {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";
 }
+?>
