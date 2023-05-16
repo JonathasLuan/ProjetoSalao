@@ -1,3 +1,3 @@
-Cada serviço ou agendamento terá uma visualização completa através de um botão, que abrira uma janela modal para visualizar todos os dados daquele elemento.
+Cada serviço ou agendamento terá uma visualização completa através de um botão, que abrirá uma janela modal para visualizar todos os dados daquele elemento.
 Desta forma também será as solicitações de negócio, que serão mostradas no canto superior direito da tela em um dos botões do menu, um sininho que mostra notificações. Uma mensagem nova exibira uma bolinha vermelha piscando.
 O sinho será icon fa fa-bell com um bloco de menu suspenso que cai com o hover, exibindo um aul com várias li, cada uma contendo uma notificação clicável.
