@@ -49,35 +49,29 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
           <input type="hidden" name="tipo" value="cliente">
           <div id="nomesobrenome">
             <div>
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required><br>
+              <input type="text" id="nome" name="nome" placeholder="Nome" required><br>
             </div>
             <div>
-              <label for="sobrenome">Sobrenome:</label>
-              <input type="text" id="sobrenome" name="sobrenome" required><br>
+              <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required><br>
             </div>
           </div>
 
           <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
+            <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
           </div>
 
           <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
           </div>
-
+          <br>
           <div>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"><br>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" pattern="[0-9]{10,11}"><br>
             <small>Digite somente números (10 ou 11 dígitos).</small>
           </div>
-
+          <br>
           <div>
-            <label for="genero">Gênero:</label>
             <select id="genero" name="genero">
-              <option value="" selected disabled>Selecione</option>
+              <option value="" selected disabled>Gênero:</option>
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
             </select>
@@ -88,39 +82,32 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
         </form>
 
         <form id="formulario-2" method="POST" action="proc_cad_prof.php" style="display: none;">
-          <select name="tipo" style="display: none;">
-            <option value="profissional" selected>profissional</option>
-          </select>
-          <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
+          <input type="hidden" name="tipo" value="profissional">
+          <div id="nomesobrenome">
+            <div>
+              <input type="text" id="nome" name="nome" placeholder="Nome" required><br>
+            </div>
+            <div>
+              <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required><br>
+            </div>
           </div>
 
           <div>
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" required><br>
+            <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
           </div>
 
           <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
           </div>
-
+          <br>
           <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
-          </div>
-
-          <div>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"><br>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" pattern="[0-9]{10,11}"><br>
             <small>Digite somente números (10 ou 11 dígitos).</small>
           </div>
-
+          <br>
           <div>
-            <label for="genero">Gênero:</label>
             <select id="genero" name="genero">
-              <option value="" selected disabled>Selecione</option>
+              <option value="" selected disabled>Gênero:</option>
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
             </select>

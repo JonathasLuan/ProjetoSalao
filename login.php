@@ -35,14 +35,13 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       <h3>Entre com sua conta!</h3>
       <form action="" method="POST">
         <div>
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" placeholder="@" required><br>
+          <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
         </div>
-
+        <br>
         <div>
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" required>
+          <input type="password" id="senha" name="senha" placeholder="Senha" required>
         </div>
+        <a style="color: black;" href="">Esqueci minha senha</a>
         <?php
         session_start();
         include_once("conexao.php");

@@ -1,14 +1,13 @@
 body {
-  background-color: #fbfbfb;
+  background-color: #ffffff;
   width: 100%;
   height: 100%;
   margin: 0px 0px;
-  font-family: "Futura PT", "Trebuchet MS", sans-serif;
 }
 
 #section-one {
   background-color: #ccc;
-  background-image: url(img/hair.avif);
+  background-image: url(img/fundo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -99,11 +98,11 @@ body {
   color: #000000;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #aaa;
+  box-shadow: 0px 0px 5px #000;
   float: right;
   width: 22%;
   margin: 40px;
-  margin-top: 90px;
+  margin-top: 50px;
   margin-right: 100px;
   font-family: Arial, Helvetca, sans-serif;
 }

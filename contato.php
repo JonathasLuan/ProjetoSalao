@@ -41,36 +41,40 @@ echo session_id();*/
   </header>
   <div class="conteudo">
     <div id="contactform">
-      <h2>Contate-nos</h2>
-      <div id="formulario-container">
-        <form action="email.php" method="POST">
-          <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="name" required><br>
-          </div>
+      <div id="f">f</div>
+      <div style="padding: 40px;">
+        <h2>Contate-nos</h2>
+        <div id="formulario-container">
+          <form action="email.php" method="POST">
+            <div>
 
-          <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="@" required><br>
-          </div>
+              <input type="text" id="nome" name="name" placeholder="Nome" required><br>
+            </div>
 
-          <div>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone">
-          </div>
-          <br>
-          <div>
-            <label for="assunto">Assunto:</label>
-            <input id="assunto" name="assunto" required></input>
-          </div>
+            <div>
 
-          <div>
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="10" cols="50" required></textarea>
-          </div>
+              <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
+            </div>
 
-          <div id="contact-btn"><button type="submit" value="Enviar">Enviar</button></div>
-        </form>
+            <div>
+
+              <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
+            </div>
+            <br>
+            <div>
+
+              <input id="assunto" name="assunto" placeholder="Assunto" required></input>
+            </div>
+
+            <div>
+
+              <textarea id="mensagem" name="mensagem" rows="10" cols="50" placeholder="Digite sua mensagem aqui..."
+                required></textarea>
+            </div>
+
+            <div id="contact-btn"><button type="submit" value="Enviar">Enviar</button></div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
