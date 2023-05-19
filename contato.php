@@ -41,37 +41,33 @@ echo session_id();*/
   </header>
   <div class="conteudo">
     <div id="contactform">
-      <div id="f">f</div>
+      <div id="f">
+        <h2>Contate-nos</h2>
+      </div>
       <div style="padding: 40px;">
         <h2>Contate-nos</h2>
         <div id="formulario-container">
           <form action="email.php" method="POST">
             <div>
-
               <input type="text" id="nome" name="name" placeholder="Nome" required><br>
             </div>
 
             <div>
-
               <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
             </div>
 
             <div>
-
               <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
             </div>
             <br>
             <div>
-
               <input id="assunto" name="assunto" placeholder="Assunto" required></input>
             </div>
 
             <div>
-
               <textarea id="mensagem" name="mensagem" rows="10" cols="50" placeholder="Digite sua mensagem aqui..."
                 required></textarea>
             </div>
-
             <div id="contact-btn"><button type="submit" value="Enviar">Enviar</button></div>
           </form>
         </div>

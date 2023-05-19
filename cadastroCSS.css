@@ -57,6 +57,7 @@ h1 {
     width: 50%;
     margin-top: 77px;
     margin-bottom: 280px;
+    box-shadow: 0px 0px 5px #ccc;
     font-family: "Nunito Sans", sans-serif;
 }
 
@@ -71,7 +72,6 @@ img {
 #formulario-2 {
     background-color: #FFFFFF;
     border: 2px;
-    box-shadow: 0px 0px 5px #ccc;
     padding: 40px;
     width: 50%;
     font-size: 20px;

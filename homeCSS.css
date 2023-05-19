@@ -108,12 +108,12 @@ body {
   font-family: Arial, Helvetca, sans-serif;
 }
 
-.campologin h2,
+.campologin h1,
 label {
   font-weight: bold;
 }
 
-.campologin h2 {
+.campologin h1 {
   text-align: center;
   font-size: 24px;
   margin: 35px;
@@ -202,6 +202,9 @@ button[type="submit"]:hover {
 #nome:focus,
 input[type="email"]:focus {
   background-color: #e6e6e6;
+}
+#section-two {
+  margin-top: 130px;
 }
 
 #apresentacao {

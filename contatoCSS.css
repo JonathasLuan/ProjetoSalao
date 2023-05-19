@@ -18,6 +18,7 @@ body {
     font-size: 16px;
     font-family: Arial, Helvetca, sans serif;
     line-height: 30px;
+    position: relative;
 }
 
 #formulario-container {
@@ -93,6 +94,6 @@ input[type="email"] {
 #f {
     background-color: orange;
     width: 23%;
-    height: 73%;
+    height: 100%;
     position: absolute;
 }

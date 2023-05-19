@@ -59,10 +59,9 @@ header {
 }
 
 #menu-chat {
-    border: 1px solid;
     justify-content: space-between;
     background-color: #ddd;
-    padding: 0px 0px;
+    padding: 5px 0px;
     display: flex;
 }
 
@@ -76,10 +75,9 @@ header {
 
 #menu-content {
     display: flex;
-    border: 1px solid;
     justify-content: space-between;
     background-color: #ddd;
-    padding: 0px 39px;
+    padding: 5px 39px;
 }
 
 #menu-content button,
@@ -243,7 +241,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     font-size: 30px;
 }
