@@ -50,34 +50,34 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
               <div>
                 <label for="estado">Estado:</label>
                 <select id="estado" name="estado" class="entrada-endereco">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="acre">Acre (AC)</option>
-                  <option value="alagoas">Alagoas (AL)</option>
-                  <option value="amapa">Amapá (AP)</option>
-                  <option value="amazonas">Amazonas (AM)</option>
-                  <option value="bahia">Bahia (BA)</option>
-                  <option value="ceara">Ceará (CE)</option>
-                  <option value="distritofederal">Distrito Federal (DF)</option>
-                  <option value="espiritosanto">Espírito Santo (ES)</option>
-                  <option value="goias">Goiás (GO)</option>
-                  <option value="maranhao">Maranhão (MA)</option>
-                  <option value="matogrosso">Mato Grosso (MT)</option>
-                  <option value="matogrossodosul">Mato Grosso do Sul (MS)</option>
-                  <option value="minasgerais">Minas Gerais (MG)</option>
-                  <option value="para">Pará (PA)</option>
-                  <option value="paraiba">Paraíba (PB)</option>
-                  <option value="parana">Paraná (PR)</option>
-                  <option value="pernambuco">Pernambuco (PE)</option>
-                  <option value="piaui">Piauí (PI)</option>
-                  <option value="riodejaneiro">Rio de Janeiro (RJ)</option>
-                  <option value="riograndedonorte">Rio Grande do Norte (RN)</option>
-                  <option value="riograndedosul">Rio Grande do Sul (RS)</option>
-                  <option value="rondonia">Rondônia (RO)</option>
-                  <option value="roraima">Roraima (RR)</option>
-                  <option value="santacatarina">Santa Catarina (SC)</option>
-                  <option value="saopaulo">São Paulo (SP)</option>
-                  <option value="sergipe">Sergipe (SE)</option>
-                  <option value="tocantins">Tocantins (TO)</option>
+                  <option name="endereco" value="" selected disabled>Selecione</option>
+                  <option name="endereco" value="acre">Acre (AC)</option>
+                  <option name="endereco" value="alagoas">Alagoas (AL)</option>
+                  <option name="endereco" value="amapa">Amapá (AP)</option>
+                  <option name="endereco" value="amazonas">Amazonas (AM)</option>
+                  <option name="endereco" value="bahia">Bahia (BA)</option>
+                  <option name="endereco" value="ceara">Ceará (CE)</option>
+                  <option name="endereco" value="distritofederal">Distrito Federal (DF)</option>
+                  <option name="endereco" value="espiritosanto">Espírito Santo (ES)</option>
+                  <option name="endereco" value="goias">Goiás (GO)</option>
+                  <option name="endereco" value="maranhao">Maranhão (MA)</option>
+                  <option name="endereco" value="matogrosso">Mato Grosso (MT)</option>
+                  <option name="endereco" value="matogrossodosul">Mato Grosso do Sul (MS)</option>
+                  <option name="endereco" value="minasgerais">Minas Gerais (MG)</option>
+                  <option name="endereco" value="para">Pará (PA)</option>
+                  <option name="endereco" value="paraiba">Paraíba (PB)</option>
+                  <option name="endereco" value="parana">Paraná (PR)</option>
+                  <option name="endereco" value="pernambuco">Pernambuco (PE)</option>
+                  <option name="endereco" value="piaui">Piauí (PI)</option>
+                  <option name="endereco" value="riodejaneiro">Rio de Janeiro (RJ)</option>
+                  <option name="endereco" value="riograndedonorte">Rio Grande do Norte (RN)</option>
+                  <option name="endereco" value="riograndedosul">Rio Grande do Sul (RS)</option>
+                  <option name="endereco" value="rondonia">Rondônia (RO)</option>
+                  <option name="endereco" value="roraima">Roraima (RR)</option>
+                  <option name="endereco" value="santacatarina">Santa Catarina (SC)</option>
+                  <option name="endereco" value="saopaulo">São Paulo (SP)</option>
+                  <option name="endereco" value="sergipe">Sergipe (SE)</option>
+                  <option name="endereco" value="tocantins">Tocantins (TO)</option>
                 </select>
               </div>
 
