@@ -113,26 +113,26 @@ if (session_id() != $_SESSION['id']) {
                       <form action="processar_servico.php" method="POST">
                         <div>
                           <div class="divs">
-                            <label for="especialidade" name="especialidade">Especialidade(s):</label>
+                            <label for="especialidade">Especialidade(s):</label>
                             <div id="especialidade">
                               <div>
-                                <input type="checkbox" class="entrada" id="cabeleireiro" name="cabeleireiro">
+                                <input type="checkbox" name="especialidade" class="entrada" id="cabeleireiro" value="cabeleireiro">
                                 <label for="cabeleireiro">Cabeleireiro</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="barbeiro" name="barbeiro">
+                                <input type="checkbox" name="especialidade" class="entrada" id="barbeiro" value="barbeiro">
                                 <label for="barbeiro">Barbeiro</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="maquiador" name="maquiador">
+                                <input type="checkbox" name="especialidade" class="entrada" id="maquiador" value="maquiador">
                                 <label for="maquiador">Maquiador</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="manicure" name="manicure">
+                                <input type="checkbox" name="especialidade" class="entrada" id="manicure" value="manicure">
                                 <label for="manicure">Manicure</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="pedicure" name="pedicure">
+                                <input type="checkbox" name="especialidade" class="entrada" id="pedicure" value="pedicure">
                                 <label for="maquiador">Pedicure</label>
                               </div>
                             </div>
@@ -144,23 +144,23 @@ if (session_id() != $_SESSION['id']) {
                             <label for="servico">Serviço(s):</label>
                             <div id="servico">
                               <div>
-                                <input type="checkbox" class="entrada" id="corte" name="corte">
+                                <input type="checkbox" name="servico" class="entrada" id="corte" value="corte">
                                 <label for="corte">Corte</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="coloracao" name="coloracao">
+                                <input type="checkbox" name="servico" class="entrada" id="coloracao" value="coloracao">
                                 <label for="coloracao">Coloração</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="escova" name="escova">
+                                <input type="checkbox" name="servico" class="entrada" id="escova" value="escova">
                                 <label for="escova">Escova</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="hidratacao" name="hidratacao">
+                                <input type="checkbox" name="servico" class="entrada" id="hidratacao" value="hidratacao">
                                 <label for="hidratacao">Hidratação</label>
                               </div>
                               <div>
-                                <input type="checkbox" class="entrada" id="reconstrucao" name="reconstrucao">
+                                <input type="checkbox" name="servico" class="entrada" id="reconstrucao" value="reconstrucao">
                                 <label for="reconstrucao">Reconstrução</label>
                               </div>
                             </div>

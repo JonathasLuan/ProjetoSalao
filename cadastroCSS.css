@@ -21,6 +21,7 @@
     background-repeat: no-repeat;
     color: #484848;
     border: 2px solid;
+    border-color: #E4E4E4;
     border-radius: 10%;
     width: 150px;
     height: 160px;
@@ -97,6 +98,7 @@ label {
     border-radius: 4px;
     margin-bottom: 20px;
     background-color: #fbfbfb;
+    font-size: 15px;
 }
 
 input[type="email"] {
@@ -106,6 +108,7 @@ input[type="email"] {
     border-radius: 4px;
     margin-bottom: 20px;
     background-color: #fbfbfb;
+    font-size: 15px;
 }
 
 input[type="password"] {
@@ -115,7 +118,7 @@ input[type="password"] {
     border-radius: 4px;
     margin-bottom: 1px;
     background-color: #fbfbfb;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 input[type="tel"] {
@@ -125,7 +128,7 @@ input[type="tel"] {
     border-radius: 4px;
     margin-bottom: 1px;
     background-color: #fbfbfb;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 select {
@@ -135,7 +138,7 @@ select {
     border-radius: 4px;
     margin-bottom: 20px;
     background-color: #fbfbfb;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 button[type="submit"] {
@@ -152,11 +155,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #ffc107;
-}
-
-#nome:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-select:focus {
-    background-color: #f2f2f2;
 }

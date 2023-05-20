@@ -1,7 +1,3 @@
-body {
-  background-color: #f2f2f2;
-}
-
 .campologin {
   margin: 0 auto;
   background-color: #ffffff;
@@ -94,7 +90,7 @@ a {
 }
 
 a:hover {
-  color: lightblue;
+  color: #2196f3;
 }
 
 #btn-enter {

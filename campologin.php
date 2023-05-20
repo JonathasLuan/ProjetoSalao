@@ -6,7 +6,7 @@
             <div>
                 <input type="email" id="email" name="email" placeholder="@ E-mail" required><br>
             </div>
-            <br>
+
             <div>
                 <input type="password" id="senha" name="senha" placeholder="Senha" required>
             </div>

@@ -178,8 +178,12 @@ input[type="email"] {
   font-size: 16px;
 }
 
-a:hover {
-  color: aqua;
+.campologin h3 a {
+  color: blue;
+}
+
+.campologin h3 a:hover {
+  color: #2196f3;
 }
 
 button[type="submit"] {
@@ -199,10 +203,6 @@ button[type="submit"]:hover {
   background-color: #8BC34A;
 }
 
-#nome:focus,
-input[type="email"]:focus {
-  background-color: #e6e6e6;
-}
 #section-two {
   margin-top: 130px;
 }

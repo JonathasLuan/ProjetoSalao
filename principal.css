@@ -1,5 +1,4 @@
 main {
-    background-color: #f2f2f2;
     display: grid;
     gap: 15px;
     grid-template-areas:
@@ -33,7 +32,6 @@ header {
 #content {
     grid-area: content;
     height: 85vh;
-    background-color: #f2f2f2;
 }
 
 footer {

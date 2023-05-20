@@ -54,6 +54,9 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
           <div class="slide">
             <img src="img/pedicure.jpg" alt="">
           </div>
+          <div class="slide">
+            <img src="img/coloracao.jpg" alt="">
+          </div>
         </figure>
         <?php
         include('campologin.php');

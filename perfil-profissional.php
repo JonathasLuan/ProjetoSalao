@@ -22,6 +22,7 @@ if (session_id() != $_SESSION['id']) {
   <title>Perfil Profissional</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="perfil-profissional.css">
+  <link rel="stylesheet" href="dark-mode.css.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -272,7 +273,23 @@ if (session_id() != $_SESSION['id']) {
                           <div id="info-endereco">
                             <div class="data">
                               <span>Estado:</span>
-                              <span id="estado">São Paulo</span>
+                              <span id="estado">
+                                <?php
+                                // Seleciona o nome
+                                $email = $_SESSION['email'];
+                                $sql = "SELECT email FROM usuário WHERE email = '$email'";
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                  // Exibe o nome
+                                  while ($row = mysqli_fetch_assoc($result)) {
+                                    echo $row["email"];
+                                  }
+                                } else {
+                                  echo "Email-User";
+                                }
+                                ?>
+                              </span>
                               <button type="button" id="edit-estado" onclick="editarCampo('estado')">Editar</button>
                               <button type="button" id="salvar-estado" style="display:none"
                                 onclick="salvarCampo('estado')">Salvar</button>

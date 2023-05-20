@@ -62,7 +62,6 @@ header {
 
 #menu-chat {
     display: grid;
-    border: 1px solid;
     justify-content: space-between;
     background-color: #ddd;
     padding: 0px 0px;
@@ -73,7 +72,6 @@ header {
 
 #menu-content {
     display: flex;
-    border: 1px solid;
     justify-content: space-between;
     background-color: #ddd;
     padding: 0px 39px;
@@ -299,11 +297,12 @@ footer {
 }
 
 .chat-item {
-    border: 1px solid gray;
+    border: 1px solid #f2f2f2;
     padding: 10px;
     display: flex;
     margin: 10px 0px;
     align-items: center;
+    background-color: #f2f2f2;
 }
 
 .chat-item img {
@@ -314,7 +313,7 @@ footer {
 }
 
 .chat-item:hover {
-    background-color: #f2f2f2;
+    background-color: #eaeaea;
 }
 
 .name {
@@ -324,7 +323,7 @@ footer {
 #send-area {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 60px;
 }
@@ -334,13 +333,20 @@ footer {
     border-radius: 25px;
     height: 30px;
     width: 600px;
-    text-indent: 10px;
+    text-indent: 11px;
 }
 
 #send-area button {
-    margin-right: 20px;
+    margin-left: 20px;
     width: 80px;
     height: 30px;
+}
+
+.send-item {
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    width: 500px;
+    height: 100%;
 }
 
 #conteudo1 {
@@ -420,13 +426,6 @@ footer {
 .element {
     display: flex;
     margin: 20px;
-}
-
-.send-item {
-    border: 1px solid;
-    border-radius: 10px;
-    width: 500px;
-    height: 100%;
 }
 
 #profile-img {
