@@ -1,6 +1,6 @@
 <div id="info">
     <div class="foto">
-        <img id="foto-perfil" src="<?php
+        <img id="fotop" src="<?php
         $email = $_SESSION['email'];
         $sql = "SELECT genero FROM usuário WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);

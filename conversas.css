@@ -1,5 +1,4 @@
 main {
-    background-color: #f2f2f2;
     display: grid;
     gap: 15px;
     grid-template-areas:
@@ -31,7 +30,6 @@ header {
 #content {
     grid-area: content;
     height: 85vh;
-    background-color: #f2f2f2;
 }
 
 footer {
@@ -110,6 +108,15 @@ header {
     display: inline-block;
 }
 
+#chatconteudo {
+    background-color: #FFFFFF;
+    padding: 20px;
+    font-size: 15px;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetca, sans serif;
+}
+
 .chat-menu-button {
     padding: 10px;
 }
@@ -155,22 +162,12 @@ header {
     color: white;
 }
 
-#chatconteudo {
-    background-color: #FFFFFF;
-    padding: 20px;
-    font-size: 15px;
-    margin: 0;
-    height: 100%;
-    font-family: Arial, Helvetca, sans serif;
-}
-
 .container-content {
     background-color: #FFFFFF;
     padding: 20px;
     font-size: 15px;
     margin: 0;
     height: 100%;
-    font-family: Arial, Helvetca, sans serif;
 }
 
 #content-box {
@@ -189,6 +186,7 @@ header {
 .pesquisa2 input {
     width: 100%;
     height: 16px;
+    border: 1px solid;
     border-radius: 25px;
     background-color: #f2f2f2;
     color: black;
@@ -216,6 +214,7 @@ header {
 .pesquisa3 input {
     width: 100%;
     height: 16px;
+    border: 1px solid;
     border-radius: 25px;
     background-color: #f2f2f2;
     color: black;
@@ -289,11 +288,18 @@ header {
     background-color: #a9a9a9;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+#chat-area {
+    position: relative;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+#chat-displayer {
+    padding: 20px;
+    overflow-y: scroll;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #fafafa;
 }
 
 .chat-item {
@@ -316,6 +322,12 @@ footer {
     background-color: #eaeaea;
 }
 
+.chat-content-box {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 .name {
     margin-left: 20px;
 }
@@ -326,6 +338,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 60px;
+    padding-bottom: 10px;
 }
 
 #send-area input {
@@ -352,17 +365,6 @@ footer {
 #conteudo1 {
     height: 700px;
     padding: 0px;
-}
-
-#chat-area {
-    border: 1px solid;
-    position: relative;
-}
-
-#chat-displayer {
-    padding: 20px;
-    overflow-y: scroll;
-    height: 600px;
 }
 
 /* Estilos para a janela modal */
@@ -433,11 +435,6 @@ footer {
     width: 50px;
     height: 50px;
     border: 1px solid;
-}
-
-.chat-content-box {
-    padding: 10px;
-
 }
 
 #element1 {

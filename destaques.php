@@ -43,13 +43,13 @@ echo session_id();*/
     <div id="conteudo">
       <p>Nesta página serão exibidos os serviços em destaque.</p>
     </div>
-    <button onclick="goBack()">Voltar</button>
-
     <div id="conversas">
       <!-- A lista de conversas será adicionada aqui -->
     </div>
     <button id="adicionarConversa">Adicionar Conversa</button>
-
+    <?php
+    include('footer.php');
+    ?>
     <script>
       // Obtém a referência do botão e do elemento que irá conter a lista de conversas
       const btnAdicionarConversa = document.getElementById("adicionarConversa");
@@ -68,11 +68,6 @@ echo session_id();*/
 
       // Adiciona um listener de evento para o botão "Adicionar Conversa"
       btnAdicionarConversa.addEventListener("click", adicionarConversa);
-    </script>
-    <script>
-      function goBack() {
-        window.history.back();
-      }
     </script>
   </main>
 </body>

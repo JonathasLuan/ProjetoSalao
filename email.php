@@ -8,9 +8,8 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
     $assunto = addslashes($_POST['assunto']);
     $mensagem = addslashes($_POST['mensagem']);
 
-    ini_set("SMTP", "smtp.example.com");
-    ini_set("smtp_port", "587");
-
+    ini_set("SMTP", "localhost");
+    ini_set("smtp_port", "25");
 
     $to = "jonathas_luan.17@hotmail.com";
     $subject = "Contato ProjetoSalão";

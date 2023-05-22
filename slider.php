@@ -8,6 +8,110 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .slider {
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slider figure div {
+            float: left;
+            width: 20%;
+        }
+
+        .slider figure img {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            float: left;
+        }
+
+        .slider figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            animation: animate 20s infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                left: 0%;
+            }
+
+            10% {
+                left: 0%;
+            }
+
+            12% {
+                left: -100%;
+            }
+
+            22% {
+                left: -100%;
+            }
+
+            24% {
+                left: -200%;
+            }
+
+            34% {
+                left: -200%;
+            }
+
+            36% {
+                left: -300%;
+            }
+
+            46% {
+                left: -300%;
+            }
+
+            48% {
+                left: -400%;
+            }
+
+            58% {
+                left: -400%;
+            }
+
+            60% {
+                left: -300%;
+            }
+
+            70% {
+                left: -300%;
+            }
+
+            72% {
+                left: -200%;
+            }
+
+            82% {
+                left: -200%;
+            }
+
+            84% {
+                left: -100%;
+            }
+
+            94% {
+                left: -100%;
+            }
+
+            96% {
+                left: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>

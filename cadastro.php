@@ -41,7 +41,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
         </div>
         <div id="prof-btn">
           <button id="botao-formulario-2">PROFISSIONAL</button>
-          <img src="img/profile.webp">
         </div>
       </div>
       <div class="formulario-container">

@@ -138,7 +138,7 @@ if (session_id() != $_SESSION['id']) {
                             </div>
                             <div>
                               <label for="outro">Outra:</label>
-                              <input type="tecxt" id="outro" class="entrada" name="outro"></input>
+                              <input type="tecxt" id="outra" class="entrada" name="outra"></input>
                             </div>
                             <br><br>
                             <label for="servico">Serviço(s):</label>
@@ -178,7 +178,7 @@ if (session_id() != $_SESSION['id']) {
                             <div>
                               <div>
                                 <label for="data">Data:</label>
-                                <input type="date" id="data" name="data"><br>
+                                <input type="date" id="data" name="data_pedido"><br>
                               </div>
                               <br>
                               <div>

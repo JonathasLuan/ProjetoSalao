@@ -14,7 +14,7 @@ $cidade = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $bairro = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $rua = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 
-$result_usuario = "INSERT INTO pedido (id_servico_fk, id_especialidade_fk, outra, outro, descricao, data_pedido, hora, cidade, bairro, rua) VALUES ('$servico', '$especialidade', '$outra', '$outro', '$descricao', '$data_pedido', '$hora', '$cidade', '$bairro', '$rua')";
+$result_usuario = "INSERT INTO pedidos (especialidade, outra, servico, nome, outro, descricao, data_pedido, hora, cidade, bairro, rua) VALUES ('$especialidade', '$outra', '$servico', '$nome', '$outro', '$descricao', '$data_pedido', '$hora', '$cidade', '$bairro', '$rua')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 ?>

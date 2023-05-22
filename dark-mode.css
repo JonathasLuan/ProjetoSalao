@@ -58,11 +58,6 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-body {
-    background-color: #f2f2f2;
-    transition: background-color 0.5s ease;
-}
-
 .dark-mode {
     background-color: rgb(53, 53, 53);
     color: rgb(255, 255, 255);

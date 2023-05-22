@@ -155,17 +155,10 @@ nav button:hover {
     margin-bottom: 50px;
 }
 
-/* Estilos para input file */
-
 .arquivo {
     position: relative;
     display: inline-block;
-    border: 1px solid #000000;
-    border-radius: 0px;
-    padding: 6px 37px;
     cursor: pointer;
-    color: #fff;
-    background-color: #24a0ed;
 }
 
 .arquivo input[type="file"] {
@@ -182,29 +175,6 @@ nav button:hover {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
-}
-
-.arquivo:hover {
-    background-color: #51b4f1;
-}
-
-/* Botão para salvar a foto escolhida */
-#salvar-foto {
-    border: 1px solid #000000;
-    border-radius: 0px;
-    padding: 6px 12px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #24a0ed;
-    width: 90px;
-    height: 40px;
-    font-size: 16px;
-}
-
-#salvar-foto:hover {
-    background-color: #51b4f1;
-    font-size: 16px;
-    font-weight: 700;
 }
 
 #botoes button {
@@ -344,7 +314,9 @@ section:nth-child(2) {
     display: none;
 }
 
-#btn-salvar {
+#btn-salvar,
+#salvar-foto,
+.arquivo {
     background-color: #0078d4;
     margin-top: 40px;
     color: rgb(255, 255, 255);
@@ -355,7 +327,9 @@ section:nth-child(2) {
     border-radius: 4px;
 }
 
-#btn-salvar:hover {
+#btn-salvar:hover,
+#salvar-foto:hover,
+.arquivo:hover {
     background-color: #2196F3;
 }
 
