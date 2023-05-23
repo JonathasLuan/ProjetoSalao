@@ -98,13 +98,12 @@ body {
   color: #000000;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 5px #aaa;
   float: right;
   width: 22%;
   margin: 40px;
-  margin-top: 50px;
+  margin-top: 90px;
   margin-right: 100px;
-  font-family: Arial, Helvetca, sans-serif;
 }
 
 .campologin h2,

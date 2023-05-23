@@ -36,14 +36,12 @@ nav button:hover {
 
 .sidebar-left {
     left: 0;
-    background-color: #f2f2f2;
     margin-right: 10px;
     height: 100%;
 }
 
 .sidebar-right {
     right: 0;
-    background-color: #f2f2f2;
     margin-left: 15px;
 }
 
@@ -201,15 +199,6 @@ section:nth-child(2) {
 
 #content4 {
     padding: 20px;
-}
-
-#btn-salvar:hover {
-    background-color: #51b4f1;
-}
-
-body {
-    background-color: white;
-    color: black;
 }
 
 .divs,

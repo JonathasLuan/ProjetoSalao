@@ -22,6 +22,7 @@ if (session_id() != $_SESSION['id']) {
   <title>Página Principal</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="principal.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -116,23 +117,28 @@ if (session_id() != $_SESSION['id']) {
                             <label for="especialidade">Especialidade(s):</label>
                             <div id="especialidade">
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="cabeleireiro" value="cabeleireiro">
+                                <input type="checkbox" name="especialidade" class="entrada" id="cabeleireiro"
+                                  value="cabeleireiro">
                                 <label for="cabeleireiro">Cabeleireiro</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="barbeiro" value="barbeiro">
+                                <input type="checkbox" name="especialidade" class="entrada" id="barbeiro"
+                                  value="barbeiro">
                                 <label for="barbeiro">Barbeiro</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="maquiador" value="maquiador">
+                                <input type="checkbox" name="especialidade" class="entrada" id="maquiador"
+                                  value="maquiador">
                                 <label for="maquiador">Maquiador</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="manicure" value="manicure">
+                                <input type="checkbox" name="especialidade" class="entrada" id="manicure"
+                                  value="manicure">
                                 <label for="manicure">Manicure</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="pedicure" value="pedicure">
+                                <input type="checkbox" name="especialidade" class="entrada" id="pedicure"
+                                  value="pedicure">
                                 <label for="maquiador">Pedicure</label>
                               </div>
                             </div>
@@ -156,11 +162,13 @@ if (session_id() != $_SESSION['id']) {
                                 <label for="escova">Escova</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="servico" class="entrada" id="hidratacao" value="hidratacao">
+                                <input type="checkbox" name="servico" class="entrada" id="hidratacao"
+                                  value="hidratacao">
                                 <label for="hidratacao">Hidratação</label>
                               </div>
                               <div>
-                                <input type="checkbox" name="servico" class="entrada" id="reconstrucao" value="reconstrucao">
+                                <input type="checkbox" name="servico" class="entrada" id="reconstrucao"
+                                  value="reconstrucao">
                                 <label for="reconstrucao">Reconstrução</label>
                               </div>
                             </div>
@@ -268,9 +276,15 @@ if (session_id() != $_SESSION['id']) {
               mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo8">
-            <h2>Configurações:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
+            <h2>Configurações de conversas:</h2>
+            <p>Aqui o usuáriopoderá configuras as conversas e definir preferências.</p>
+            <h4>Modo de tela:</h4>
+            <span>light</span>
+            <label class="switch">
+              <input type="checkbox" id="dark-mode-switch">
+              <span class="slider round"></span>
+            </label>
+            <span>dark</span>
           </div>
         </div>
       </div>

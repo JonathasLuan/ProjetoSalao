@@ -63,11 +63,6 @@ input:checked+.slider:before {
     color: rgb(255, 255, 255);
 }
 
-body.dark-mode header {
-    background-color: #000;
-    color: white;
-}
-
 body.dark-mode main {
     background-color: rgb(53, 53, 53);
     color: white;
@@ -158,23 +153,25 @@ body.dark-mode #botoes button:hover {
     color: #fafafa;
 }
 
+body.dark-mode #menu-content button:hover,
+body.dark-mode #menu-chat button:hover,
+body.dark-mode #menu-chat button:hover {
+    background-color: grey;
+    color: white;
+}
+
 body.dark-mode #menu-chat {
     background-color: #000;
     color: white;
     border-color: gray;
 }
 
-body.dark-mode #menu-chat button {
-    background-color: #000;
-    color: white;
-}
-
-body.dark-mode #menu-content button {
-    background-color: #000;
-    color: white;
-}
-
-body.dark-mode .btn-dropdown-child {
+body.dark-mode #menu-chat button,
+body.dark-mode #menu-content button,
+body.dark-mode .btn-dropdown-child,
+body.dark-mode input,
+body.dark-mode .modal-inner,
+body.dark-mode header {
     background-color: #000;
     color: white;
 }
@@ -195,16 +192,6 @@ body.dark-mode #foto img {
     border-color: #51b4f1;
 }
 
-body.dark-mode input {
-    background-color: #000;
-    color: #ffffff;
-}
-
-body.dark-mode .modal-inner {
-    background-color: #000;
-    color: #ffffff;
-}
-
 body.dark-mode .btn {
     background-color: rgb(53, 53, 53);
     color: #ffffff;
@@ -216,4 +203,12 @@ body.dark-mode .btn {
 
 body.dark-mode .logo img {
     content: url('./img/tesoura.png');
+}
+
+body.dark-mode footer {
+    background-color: #000;
+}
+
+body.dark-mode span {
+    color: #ffffff;
 }
