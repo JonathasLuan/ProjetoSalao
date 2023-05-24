@@ -2,7 +2,7 @@
     <div class="chat-element">
         <div class="chat-item" id="chat-item-1">
             <div class="user-avatar">
-                <img src="img/profile.webp" alt="user-avatar">
+                <img src="img/avatar2.png" alt="user-avatar">
             </div>
             <div class="chat-info">
                 <div class="user-name">
@@ -17,7 +17,7 @@
     <div class="chat-element">
         <div class="chat-item" id="chat-item-2">
             <div class="user-avatar">
-                <img src="img/profile.webp" alt="user-avatar">
+                <img src="img/pngwing.com (3).png" alt="user-avatar">
             </div>
             <div class="chat-info">
                 <div class="user-name">
@@ -32,7 +32,7 @@
     <div class="chat-element">
         <div class="chat-item" id="chat-item-3">
             <div class="user-avatar">
-                <img src="img/profile.webp" alt="user-avatar">
+                <img src="img/avatar5.png" alt="user-avatar">
             </div>
             <div class="chat-info">
                 <div class="user-name">

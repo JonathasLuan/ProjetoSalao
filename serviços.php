@@ -82,7 +82,7 @@ echo session_id();*/
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </article>
     <article>
-      <a href="coloração.php"><img src="img/coloração.jpg" alt="Image 6" /></a>
+      <a href="coloração.php"><img src="img/coloracao.jpg" alt="Image 6" /></a>
       <a href="coloração.php">
         <h2>Coloração</h2>
       </a>

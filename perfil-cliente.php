@@ -71,11 +71,37 @@ if (session_id() != $_SESSION['id']) {
                     <div class="agend-element">
                       <div class="agend-item" id="agend-item-1">
                         <div class="cliente-avatar">
-                          <img src="img/profile.webp" alt="user-avatar">
+                          <img src="img/pngwing.com (2).png" alt="user-avatar">
                         </div>
                         <div class="agend-info">
                           <div class="user-name">
-                            <h5 class="name">Fulano</h5>
+                            <h5 class="name">Miltu</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="agend-element">
+                      <div class="agend-item" id="agend-item-1">
+                        <div class="cliente-avatar">
+                          <img src="img/pngwing.com (1).png" alt="user-avatar">
+                        </div>
+                        <div class="agend-info">
+                          <div class="user-name">
+                            <h5 class="name">Mia</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="agend-element">
+                      <div class="agend-item" id="agend-item-1">
+                        <div class="cliente-avatar">
+                          <img src="img/pngwing.com.png" alt="user-avatar">
+                        </div>
+                        <div class="agend-info">
+                          <div class="user-name">
+                            <h5 class="name">Celma</h5>
                           </div>
                         </div>
                       </div>
@@ -86,11 +112,11 @@ if (session_id() != $_SESSION['id']) {
                     <div class="agend-element">
                       <div class="agend-item" id="agend-item-1">
                         <div class="cliente-avatar">
-                          <img src="img/profile.webp" alt="user-avatar">
+                          <img src="img/pngwing.com (1).png" alt="user-avatar">
                         </div>
                         <div class="agend-info">
                           <div class="user-name">
-                            <h5 class="name">Fulano</h5>
+                            <h5 class="name">Mia</h5>
                           </div>
                         </div>
                       </div>
@@ -101,11 +127,11 @@ if (session_id() != $_SESSION['id']) {
                     <div class="agend-element">
                       <div class="agend-item" id="agend-item-1">
                         <div class="cliente-avatar">
-                          <img src="img/profile.webp" alt="user-avatar">
+                          <img src="img/pngwing.com.png" alt="user-avatar">
                         </div>
                         <div class="agend-info">
                           <div class="user-name">
-                            <h5 class="name">Fulano</h5>
+                            <h5 class="name">Celma</h5>
                           </div>
                         </div>
                       </div>

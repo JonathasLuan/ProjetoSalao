@@ -141,11 +141,13 @@ body.dark-mode nav button:hover {
 body.dark-mode .chat-item {
     background-color: #373b3d;
     color: #fafafa;
+    border: #888;
 }
 
 body.dark-mode .chat-item:hover {
     background-color: #4e5052;
     color: #fafafa;
+    border: #888;
 }
 
 body.dark-mode #botoes button:hover {
@@ -171,7 +173,9 @@ body.dark-mode #menu-content button,
 body.dark-mode .btn-dropdown-child,
 body.dark-mode input,
 body.dark-mode .modal-inner,
-body.dark-mode header {
+body.dark-mode header,
+.modal-content,
+body.dark-mode div {
     background-color: #000;
     color: white;
 }
@@ -211,4 +215,30 @@ body.dark-mode footer {
 
 body.dark-mode span {
     color: #ffffff;
+}
+
+body.dark-mode #send-area input {
+    background-color: #888;
+}
+
+body.dark-mode #chat-area,
+#chat-displayer {
+    background-color: rgb(53, 53, 53);
+}
+
+body.dark-mode .chat-content-box {
+    background-color: black;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #888;
+    background-color: #888;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #aaa;
 }

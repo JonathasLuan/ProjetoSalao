@@ -88,11 +88,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar5.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Fulano</h5>
+                      <h5 class="name">Kevelyn</h5>
                     </div>
                   </div>
                 </div>
@@ -100,11 +100,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-2">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar2.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Ciclano</h5>
+                      <h5 class="name">Josney</h5>
                     </div>
                   </div>
                 </div>
@@ -112,11 +112,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-3">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar6.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Beltrano</h5>
+                      <h5 class="name">Fábia</h5>
                     </div>
                   </div>
                 </div>
@@ -130,11 +130,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar5.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Fulano</h5>
+                      <h5 class="name">Kevelyn</h5>
                     </div>
                   </div>
                 </div>
@@ -142,11 +142,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-2">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar2.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Ciclano</h5>
+                      <h5 class="name">Josney</h5>
                     </div>
                   </div>
                 </div>
@@ -154,11 +154,11 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-3">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/avatar6.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Beltrano</h5>
+                      <h5 class="name">Fábia</h5>
                     </div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/img_avatar.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
@@ -184,7 +184,7 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-2">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/img_avatar2.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
@@ -196,7 +196,7 @@ if (session_id() != $_SESSION['id']) {
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-3">
                   <div class="user-avatar">
-                    <img src="img/profile.webp" alt="user-avatar">
+                    <img src="img/img_avatar.png" alt="user-avatar">
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
@@ -275,7 +275,7 @@ if (session_id() != $_SESSION['id']) {
               <div id="chat-area">
                 <div id="chat-displayer">
                   <div class="element" id="element2">
-                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                    <img src="<?php ?>img/img_avatar.png" id="profile-img" alt="profile-img">
                     <div class="send-item">
                       <div class="chat-content-box">
                         <span class="chat-content">
@@ -311,10 +311,10 @@ if (session_id() != $_SESSION['id']) {
                         </span>
                       </div>
                     </div>
-                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                    <img src="<?php ?>img/img_avatar2.png" id="profile-img" alt="profile-img">
                   </div>
                   <div class="element" id="element2">
-                    <img src="<?php ?>img/profile.webp" id="profile-img" alt="profile-img">
+                    <img src="<?php ?>img/img_avatar.png" id="profile-img" alt="profile-img">
                     <div class="send-item">
                       <div class="chat-content-box">
                         <span class="chat-content">
@@ -440,18 +440,18 @@ if (session_id() != $_SESSION['id']) {
           <div id="info">
             <div class="cont">
               <img id="foto-perfil" src="img/img_avatar.png <?php /*
-               $email = $_SESSION['email'];
-               $sql = "SELECT genero FROM usuário WHERE email = '$email'";
-               $result = mysqli_query($conn, $sql);
-               if (mysqli_num_rows($result) > 0) {
-               $row = mysqli_fetch_assoc($result);
-               $genero = $row['genero'];
-               if ($genero == 'masculino') {
-               echo "img/img_avatar.png";
-               } else {
-               echo "img/img_avatar2.png";
-               }
-               }*/
+$email = $_SESSION['email'];
+$sql = "SELECT genero FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+$row = mysqli_fetch_assoc($result);
+$genero = $row['genero'];
+if ($genero == 'masculino') {
+echo "img/img_avatar.png";
+} else {
+echo "img/img_avatar2.png";
+}
+}*/
               ?>" alt="Avatar" class="image" style="width:100%">
               <div class="middle">
                 <div class="text"><button><i class="fa fa-eye"></i></button></div>

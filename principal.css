@@ -59,12 +59,15 @@ header {
 #menu-chat {
     justify-content: space-between;
     background-color: #ddd;
-    padding: 5px 0px;
     display: flex;
 }
 
 #menu-chat i {
     font-size: 20px;
+}
+
+#menu-chat button {
+    width: 100%;
 }
 
 #menu-content .main-btn-a i {
@@ -75,7 +78,7 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: #ddd;
-    padding: 5px 39px;
+    padding: 1px 39px;
 }
 
 #menu-content button,
@@ -146,8 +149,8 @@ header {
     font-size: 20px;
 }
 
-#nav button i {
-    font-size: 20px;
+.btn-dropdown-child button {
+    width: 100%;
 }
 
 #chatconteudo {
@@ -298,17 +301,18 @@ header {
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 
-#outro, #outra {
+#outro,
+#outra {
     width: 50%;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 10px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 
@@ -323,7 +327,7 @@ header {
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 
@@ -333,7 +337,7 @@ header {
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 
@@ -344,7 +348,7 @@ header {
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 
@@ -364,7 +368,7 @@ select {
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #fbfbfb;
     font-size: 15px;
 }
 

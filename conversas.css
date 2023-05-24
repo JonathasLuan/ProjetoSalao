@@ -162,6 +162,10 @@ header {
     color: white;
 }
 
+.btn-dropdown-child button {
+    width: 100%;
+}
+
 .container-content {
     background-color: #FFFFFF;
     padding: 20px;
@@ -343,6 +347,7 @@ header {
 
 #send-area input {
     margin-left: 20px;
+    border: 1px solid;
     border-radius: 25px;
     height: 30px;
     width: 600px;

@@ -17,6 +17,7 @@ echo session_id();*/
   <title>Contate-nos</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./contatoCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -109,23 +110,6 @@ echo session_id();*/
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat.</p>
           </div>
-
-          <script>
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-
-            for (i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.maxHeight) {
-                  content.style.maxHeight = null;
-                } else {
-                  content.style.maxHeight = content.scrollHeight + "px";
-                }
-              });
-            }
-          </script>
         </div>
       </div>
       <div style="padding: 40px;">
@@ -156,9 +140,39 @@ echo session_id();*/
           </form>
         </div>
       </div>
+      <span>light</span>
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-switch">
+        <span class="slider round"></span>
+      </label>
+      <span>dark</span>
     </div>
   </div>
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+  <script>
+
+    // Código do botão switch de cor de fundo
+    const switchBtn = document.querySelector('#dark-mode-switch');
+    switchBtn.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+  </script>
   <?php
   include('footer.php');
   ?>
