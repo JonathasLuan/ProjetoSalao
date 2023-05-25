@@ -174,7 +174,7 @@ body.dark-mode .btn-dropdown-child,
 body.dark-mode input,
 body.dark-mode .modal-inner,
 body.dark-mode header,
-.modal-content,
+body.dark-mode .modal-content,
 body.dark-mode div {
     background-color: #000;
     color: white;
@@ -222,7 +222,7 @@ body.dark-mode #send-area input {
 }
 
 body.dark-mode #chat-area,
-#chat-displayer {
+body.dark-mode #chat-displayer {
     background-color: rgb(53, 53, 53);
 }
 
