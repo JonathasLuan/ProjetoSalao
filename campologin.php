@@ -10,7 +10,7 @@
             <div>
                 <input type="password" id="senha" name="senha" placeholder="Senha" required>
             </div>
-            <a style="color: black;" href="">Esqueci minha senha</a>
+            <button style="color: black;" href="" id="myBtn">Esqueci minha senha</button>
             <?php
             include_once("conexao.php");
 

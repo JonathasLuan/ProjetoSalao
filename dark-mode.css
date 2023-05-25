@@ -174,8 +174,7 @@ body.dark-mode .btn-dropdown-child,
 body.dark-mode input,
 body.dark-mode .modal-inner,
 body.dark-mode header,
-body.dark-mode .modal-content,
-body.dark-mode div {
+body.dark-mode .modal-content {
     background-color: #000;
     color: white;
 }

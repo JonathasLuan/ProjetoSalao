@@ -400,10 +400,10 @@ section:nth-child(2) {
     cursor: pointer;
     width: 52px;
 }
-
+/*
 #editsobre {
     display: none;
-}
+}*/
 
 #info-endereco {
     display: flex;
