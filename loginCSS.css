@@ -184,3 +184,7 @@ a:hover {
 footer {
   display: none;
 }
+
+#myBtn:hover {
+  background-color: lightgrey;
+}
