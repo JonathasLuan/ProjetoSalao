@@ -54,8 +54,9 @@
                 }
             }
             ?>
+              <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
             <div>
-                <button id="btn-enter" type="submit">Entrar</button>
+                <button id="btn-enter" type="submit" onclick="lsRememberMe()">Entrar</button>
             </div>
         </form>
     </div>
@@ -63,3 +64,26 @@
         <h3>Ainda não tem uma conta? <a href='cadastro.php'>Cadastre-se</a></h3>
     </div>
 </div>
+
+<script>
+    const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("email");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rmCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+} else {
+  rmCheck.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+function lsRememberMe() {
+  if (rmCheck.checked && emailInput.value !== "") {
+    localStorage.username = emailInput.value;
+    localStorage.checkbox = rmCheck.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }
+}
+</script>
