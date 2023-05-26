@@ -17,6 +17,7 @@ echo session_id();*/
   <title>Sobre nós</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./sobre.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -40,7 +41,7 @@ echo session_id();*/
     ?>
   </header>
   <div id="conteudo">
-    <div id="sobreprojeto">
+    <div class="main" id="sobreprojeto">
       <p><b>
           <ul>
             <li>JONATHAS LUAN (github_JonathasLuan)</li>
@@ -98,6 +99,7 @@ echo session_id();*/
 
   <?php
   include('footer.php');
+  include('set_theme_session.php');
   ?>
 </body>
 

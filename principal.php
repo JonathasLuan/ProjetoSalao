@@ -1,10 +1,6 @@
 <?php
 session_start();
 include('conexao.php');
-/*echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();*/
-
 
 if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
@@ -281,10 +277,20 @@ if (session_id() != $_SESSION['id']) {
             <h4>Modo de tela:</h4>
             <span>light</span>
             <label class="switch">
-              <input type="checkbox" id="dark-mode-switch">
+              <input type="checkbox" id="theme-toggle-btn">
               <span class="slider round"></span>
             </label>
             <span>dark</span>
+            <?php
+            // Verifica se a variável de sessão está definida
+            if (isset($_SESSION['darkMode'])) {
+              // Exibe o valor da variável de sessão
+              echo $_SESSION['darkMode'];
+            } else {
+              // Valor padrão caso a variável de sessão não esteja definida
+              echo "darkMode não definido";
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -292,6 +298,7 @@ if (session_id() != $_SESSION['id']) {
 
     <?php
     include('footer.php');
+    include('set_theme_session.php');
     ?>
   </main>
 

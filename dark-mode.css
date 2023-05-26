@@ -174,7 +174,12 @@ body.dark-mode .btn-dropdown-child,
 body.dark-mode input,
 body.dark-mode .modal-inner,
 body.dark-mode header,
-body.dark-mode .modal-content {
+body.dark-mode .modal-content,
+body.dark-mode #contactform,
+body.dark-mode #sobreprojeto,
+body.dark-mode #sobreperfil,
+body.dark-mode #editsobre,
+body.dark-mode #navbar ul li a {
     background-color: #000;
     color: white;
 }

@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-/*echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();*/
-
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +12,7 @@ echo session_id();*/
   <title>Serviços</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./serviçosCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -91,6 +87,7 @@ echo session_id();*/
   </main>
   <?php
   include('footer.php');
+  include('set_theme_session.php');
   ?>
 </body>
 

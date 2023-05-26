@@ -18,6 +18,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   <title>SalonSet</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./homeCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -54,7 +55,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             <img src="img/pedicure.jpg" alt="">
           </div>
           <div class="slide">
-            <img src="img/coloração.jpg" alt="">
+            <img src="img/coloracao.jpg" alt="">
           </div>
         </figure>
         <?php
@@ -268,6 +269,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
 
   <?php
   include('footer.php');
+  include('set_theme_session.php');
   ?>
 </body>
 

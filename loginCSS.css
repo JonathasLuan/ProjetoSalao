@@ -180,3 +180,7 @@ a:hover {
   border: none;
   font-weight: bold;
 }
+
+footer {
+  display: none;
+}

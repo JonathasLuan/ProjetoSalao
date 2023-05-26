@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-/*echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();*/
-
 ?>
 
 <!DOCTYPE html>
@@ -140,14 +135,15 @@ echo session_id();*/
           </form>
         </div>
       </div>
-      <span>light</span>
-      <label class="switch">
-        <input type="checkbox" id="dark-mode-switch">
-        <span class="slider round"></span>
-      </label>
-      <span>dark</span>
     </div>
   </div>
+
+  <?php
+  include('footer.php');
+  include('set_theme_session.php');
+  ?>
+  </div>
+
   <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -164,19 +160,6 @@ echo session_id();*/
       });
     }
   </script>
-  <script>
-
-    // Código do botão switch de cor de fundo
-    const switchBtn = document.querySelector('#dark-mode-switch');
-    switchBtn.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-  </script>
-  <?php
-  include('footer.php');
-  ?>
-  </div>
 </body>
 
 </html>

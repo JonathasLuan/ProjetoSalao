@@ -229,7 +229,7 @@ if (session_id() != $_SESSION['id']) {
             <h4>Modo de tela:</h4>
             <span>light</span>
             <label class="switch">
-              <input type="checkbox" id="dark-mode-switch">
+              <input type="checkbox" id="theme-toggle-btn">
               <span class="slider round"></span>
             </label>
             <span>dark</span>
@@ -505,17 +505,9 @@ echo "img/img_avatar2.png";
 
     <?php
     include('footer.php');
+    include('set_theme_session.php');
     ?>
   </main>
-  <script>
-
-    // Código do botão switch de cor de fundo
-    const switchBtn = document.querySelector('#dark-mode-switch');
-    switchBtn.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-  </script>
   <script>
     // Obtém os botões do menu e o conteúdo correspondente
     const botao1 = document.getElementById("botao1");

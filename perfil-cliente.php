@@ -188,7 +188,7 @@ if (session_id() != $_SESSION['id']) {
                         <h4>Modo de tela:</h4>
                         <span>light</span>
                         <label class="switch">
-                          <input type="checkbox" id="dark-mode-switch">
+                          <input type="checkbox" id="theme-toggle-btn">
                           <span class="slider round"></span>
                         </label>
                         <span>dark</span>
@@ -491,6 +491,10 @@ if (session_id() != $_SESSION['id']) {
       </div>
     </section>
   </main>
+  <?php
+  include 'footer.php';
+  include('set_theme_session.php');
+  ?>
   <script>
     function editarCampo(campo) {
       var elemento = document.getElementById(campo);
@@ -508,6 +512,29 @@ if (session_id() != $_SESSION['id']) {
     }
   </script>
   <script src="perfil-profissionalJS.js"></script>
+
+  <script>
+    // Get the modal
+    var sobre = document.getElementById("editsobre");
+    var p = document.getElementById("sobreperfil");
+
+    var btn = document.querySelector(".edit-btn");
+    var salvar = document.querySelector(".btn-salvar-edit");
+
+    btn.onclick = function () {
+      sobre.style.display = "block";
+      salvar.style.display = "block";
+      btn.style.display = "none";
+      p.style.display = "none";
+    }
+
+    salvar.onclick = function () {
+      sobre.style.display = "none";
+      salvar.style.display = "none";
+      btn.style.display = "block";
+      p.style.display = "block";
+    }
+  </script>
 </body>
 
 </html>

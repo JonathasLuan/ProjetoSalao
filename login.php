@@ -15,6 +15,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   <title>Login</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./loginCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -82,6 +83,10 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       }
     }
   </script>
+  <?php
+  include('footer.php');
+  include('set_theme_session.php');
+  ?>
 </body>
 
 </html>
