@@ -1,0 +1,39 @@
+Criar uma página de conversas, com duas sidebars à direita e à esqueda e uma área de conteúdo central, onde seriam exibidas as mensagens de cada conversa. Na sidebar da esqueda estariam listadas as conversas em blocos de mesmo tamanho, como numa página de conversas padrão; e na da direita seria exibida as informações do contato selecionado. No conteúdo central haveria uma barra de digitação para a mensagem e um botão de enviar ao lado. Botõs de configuração estariam numa barra superior à conversa.
+
+Tecnologias:
+Interface do usuário: Definir a interface de usuário para a área de bate-papo. Isso inclui a aparência da janela de bate-papo, os botões de envio de mensagem e os campos de entrada de texto.
+
+Backend: Implementar a lógica do servidor que gerencia as mensagens de bate-papo. Isso pode ser feito usando várias tecnologias, como Node.js, PHP, Python ou Ruby.
+
+Banco de dados: Armazenar as mensagens de bate-papo em um banco de dados. Isso pode ser feito usando vários tipos de bancos de dados, como MySQL, PostgreSQL, MongoDB ou Firebase Realtime Database.
+
+Protocolo de comunicação: Implementar um protocolo de comunicação em tempo real para permitir a troca de mensagens em tempo real entre os usuários conectados. Isso pode ser feito usando tecnologias como WebSockets, HTTP Long Polling ou Server-Sent Events.
+
+Frontend: Implementar o frontend usando tecnologias como HTML, CSS e JavaScript. Isso inclui a exibição das mensagens na área de bate-papo, a atualização automática da janela de bate-papo quando novas mensagens chegam e o tratamento de eventos do usuário, como envio de mensagens.
+
+Segurança: Implementar medidas de segurança para proteger a área de bate-papo contra ataques maliciosos, como SQL injection, XSS ou ataques de negação de serviço.
+
+Desenho:
+
+Body
+Main da página
+Main de conteúdo
+
+	Esquerda:
+Sidebar container
+Container de conteúdo
+
+	Centro:
+Conteiner central
+Àrea da conversa
+Conteiner da conversa
+Bloco de info superior
+Bloco de mensagens
+footer inferior de digitação
+Controles de footer
+Àrea de digitação de texto
+Botões de controle ao lado (+, enviar, img...)
+
+	Direita:
+Sidebar container
+Container de conteúdo

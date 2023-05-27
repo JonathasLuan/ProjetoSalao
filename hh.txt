@@ -1,0 +1,4 @@
+update professor set departamento="informática"
+
+select professor.nome, disciplicna.nome from professor, disciplina where professor.id_professor = disciplina.id_professor_fk
+

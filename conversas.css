@@ -1,0 +1,458 @@
+main {
+    display: grid;
+    gap: 15px;
+    grid-template-areas:
+        'header header header header'
+        'sidebar1 content content sidebar2'
+        'footer footer footer footer';
+    grid-template-columns: 20% 40% 20%;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+}
+
+#sidebar1 {
+    grid-area: sidebar1;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#sidebar2 {
+    grid-area: sidebar2;
+    height: 85vh;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#content {
+    grid-area: content;
+    height: 85vh;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#sidebar2 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.sidebar nav button i {
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#menu-chat {
+    display: grid;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 0px 0px;
+    grid-template-areas:
+        '#btn5 .pesquisa3 #btn8';
+    grid-template-columns: 20% 50% 20%;
+}
+
+#menu-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 0px 39px;
+}
+
+#menu-content button,
+#menu-chat button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+}
+
+#menu-content button:hover,
+#menu-chat button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+.main-btn-a {
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.main-btn-a:hover {
+    background-color: gray;
+}
+
+.btn-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#chatconteudo {
+    background-color: #FFFFFF;
+    padding: 20px;
+    font-size: 15px;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetca, sans serif;
+}
+
+.chat-menu-button {
+    padding: 10px;
+}
+
+.btn-dropdown i {
+    font-size: 20px;
+}
+
+.btn-dropdown span {
+    font-size: 20px;
+}
+
+.btn-dropdown-child {
+    display: none;
+    background-color: #f2f2f2;
+    min-width: 50px;
+    max-width: 96px;
+    position: absolute;
+    top: 100%;
+    box-shadow: 0px 0px 5px #ccc;
+    text-align: center;
+    z-index: 1;
+}
+
+.btn-dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-dropdown:hover .btn-dropdown-child {
+    display: block;
+}
+
+.btn-dropdown:hover .main-btn-a {
+    background-color: rgb(70, 69, 69);
+    color: white;
+}
+
+.btn-dropdown-child a:hover {
+    background-color: rgb(70, 69, 69);
+    color: white;
+}
+
+.btn-dropdown-child button {
+    width: 100%;
+}
+
+.container-content {
+    background-color: #FFFFFF;
+    padding: 20px;
+    font-size: 15px;
+    margin: 0;
+    height: 100%;
+}
+
+#content-box {
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#foto img {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#botoes button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+#picture-btn {
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: translateY(-35px);
+    padding: 0px;
+}
+
+#picture-btn i {
+    font-size: 20px;
+    color: #333;
+}
+
+#botoes button {
+    background-color: #484848;
+    color: #FFFFFF;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    cursor: pointer;
+    border: none;
+}
+
+#botoes button:hover {
+    background-color: #a9a9a9;
+}
+
+#chat-area {
+    position: relative;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+#chat-displayer {
+    padding: 20px;
+    overflow-y: scroll;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.chat-item {
+    border: 1px solid #f2f2f2;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.chat-item:hover {
+    background-color: #eaeaea;
+}
+
+.chat-content-box {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.name {
+    margin-left: 20px;
+}
+
+#send-area {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding-bottom: 10px;
+}
+
+#send-area input {
+    margin-left: 20px;
+    border: 1px solid;
+    border-radius: 25px;
+    height: 30px;
+    width: 600px;
+    text-indent: 11px;
+}
+
+#send-area button {
+    margin-left: 20px;
+    width: 80px;
+    height: 30px;
+}
+
+.send-item {
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    width: 500px;
+    height: 100%;
+}
+
+#conteudo1 {
+    height: 700px;
+    padding: 0px;
+}
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inner {
+    background-color: #fefefe;
+    position: relative;
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 37%;
+    height: 37%;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+/* Estilos para o botão "Fechar" */
+.close {
+    position: absolute;
+    display: flex;
+    right: 50px;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 16px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.element {
+    display: flex;
+    margin: 20px;
+}
+
+#profile-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+}
+
+#element1 {
+    float: right;
+}
+
+#element2 {
+    float: left;
+}
+
+#element1 img {
+    margin-left: 10px;
+    ;
+}
+
+#element2 img {
+    margin-right: 10px;
+    ;
+}
+
+.cont {
+    position: relative;
+    border-radius: 50%;
+    width: 150px;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cont:hover .image {
+    opacity: 0.3;
+}
+
+.cont:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #04AA6D;
+    color: white;
+    padding: 0px 0px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.text button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}

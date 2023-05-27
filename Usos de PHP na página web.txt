@@ -1,0 +1,31 @@
+		Usos de PHP:
+
+Formulários -
+1. Cadastro (1,2,3)
+2. Login
+3. Configurações
+4. Serviços
+5. Agendamentos(?)
+6. Contato (e-mail)
+
+Menus
+1. Páginas
+2. Opções
+3. Navegação
+
+Conteúdos -
+1. Exibido (pesquisas, feed, perfil, catálogo...)
+2. Criado (páginas, informações, conteúdo, mensagens...)
+3. Criado e exibido
+
+Validações -
+1. Autenticação de usuário
+2. Gerar faturas de transações
+3. Aceitar solicitações
+
+Tempo real -
+1. Comentários
+2. Conversas e mensagens
+3. Alaviações
+4. Notificações
+5. Interações

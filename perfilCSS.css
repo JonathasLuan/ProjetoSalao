@@ -1,0 +1,333 @@
+main {
+    padding: 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ddd;
+    width: 100%;
+}
+
+nav button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 30px;
+    background: none;
+    border: none;
+}
+
+nav button:hover {
+    background-color: rgb(153, 150, 150);
+    color: #fafafa;
+}
+
+.sidebar {
+    top: 0;
+    padding: 0px;
+}
+
+.sidebar-left {
+    left: 0;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.sidebar-right {
+    right: 0;
+    margin-left: 15px;
+}
+
+.container-perfil {
+    background-color: #FFFFFF;
+    border: 2px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 35px;
+    width: 85%;
+    height: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#foto {
+    position: relative;
+}
+
+#foto img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#bio {
+    text-align: left;
+    width: 90%;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 16px;
+    padding: 5%;
+}
+
+#botoes button {
+    display: inline;
+    align-content: center;
+    margin: 2px;
+    padding: 9px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #9E9E9E;
+}
+
+#botoes button:hover {
+    background-color: #24a0ed;
+    color: white;
+    font-weight: bold;
+}
+
+#info #links {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#info #links a {
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container-content {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 40px;
+    font-size: 16px;
+    margin: 0;
+    font-family: Arial, Helvetca, sans serif;
+    line-height: 30px;
+    display: flex;
+    width: 100%;
+    float: left;
+}
+
+#menu-content {
+    margin-top: 20px;
+    padding: 0px 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+section:nth-child(1) {
+    float: right;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+section:nth-child(2) {
+    float: left;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.conteudos {
+    width: 100%;
+}
+
+.accordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.accordion li {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.accordion h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+#accordion-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion .content {
+    display: none;
+    padding: 10px;
+}
+
+.accordion li.active .content {
+    display: block;
+}
+
+#content4 {
+    padding: 20px;
+}
+
+.divs,
+.caract {
+    border: #a9a9a9 1px solid;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 30px;
+}
+
+.cont {
+    position: relative;
+    border-radius: 50%;
+    width: 150px;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cont:hover .image {
+    opacity: 0.3;
+}
+
+.cont:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #04AA6D;
+    color: white;
+    padding: 0px 0px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.text button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}
+
+#criar-btn {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#servico-btn {
+    bottom: 15px;
+    right: 7px;
+    background-color: #51b4f1;
+    color: #fefefe;
+    border-radius: 50%;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#servico-btn:hover {
+    background-color: #51d9f1;
+}
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    margin-top: 2%;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 50%;
+    width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+.modal-content .main h2 {
+    text-align: center;
+}
+
+/* Estilos para o botão "Fechar" */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

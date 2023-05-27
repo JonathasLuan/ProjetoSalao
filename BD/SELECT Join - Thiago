@@ -1,0 +1,35 @@
+<?php
+// INNER JOIN:
+SELECT agendamento.id_agendamento, cliente.id_cliente
+FROM agendamento
+INNER JOIN cliente ON agendamento.id_agendamento_fk = cliente.id_cliente_fk;
+
+// LEFT JOIN:
+SELECT agendamento.id_agendamento, cliente.id_cliente
+FROM agendamento
+LEFT JOIN cliente ON agendamento.id_agendamento_fk = cliente.id_cliente_fk;
+
+// RIGHT JOIN:
+SELECT agendamento.id_agendamento, cliente.id_cliente
+FROM agendamento
+RIGHT JOIN cliente ON agendamento.id_agendamento_fk = cliente.id_cliente_fk;
+
+// FULL JOIN
+SELECT agendamento.id_agendamento, cliente.id_cliente
+FROM agendamento
+FULL JOIN cliente ON agendamento.id_agendamento_fk = cliente.id_cliente_fk;
+
+// SELF JOIN
+SELECT emp1.agendamento, emp2.cliente
+FROM tabela_empregados emp1
+JOIN tabela_empregados emp2 ON emp1.id_agendamento_fk = emp2.id_cliente_fk;
+
+// CROSS JOIN
+SELECT agendamento.id_agendamento, cliente.id_cliente
+FROM agendamento
+CROSS JOIN cliente;
+
+// FULL JOIN
+SELECT *
+FROM agendamento
+NATURAL JOIN cliente;

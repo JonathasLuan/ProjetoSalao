@@ -1,0 +1,117 @@
+TABELAS:
+
+X conversa:
+  id_conversa
+  id_profissional_fk
+  id_cliente_fk
+
+X mensagem:
+  id_mensagem
+  id_conversa_fk
+  id_usuario_fk
+  remetente
+  destinatario
+  mensagem (text)
+  tipo_mens (varchar(100))
+  status_mens (varchar(100))
+  envio (datetime)
+
+X página
+  id_pagina
+  url
+  titulo
+  visitas
+
+X mídia
+  id_midia
+  id_pagina_fk
+  tipoarquivo
+  src
+  tamanho
+  datamodificacao
+  dataupload
+
+X links
+  id-link
+  pagina
+  url
+
+X característica:
+  id-caract.
+  tipo
+  categoria
+  subcategoria
+
+X cabelo:
+  id_cabelo
+  cor
+  tipo
+  textura
+  tamanho
+  tratamento
+  condicao
+
+X barba:
+  id_barba
+  cor
+  tipo
+  textura
+  tamanho
+  tratamento
+  condicao
+
+X pele:
+  id_pele
+  cor
+  etnia
+  textura
+  tratamento
+  condicao
+
+X unhas:
+  id_unhas
+  cor
+  tipo
+  tamanho
+  tratamento
+  condicao
+
+X rosto:
+  id_rosto
+  formato
+  textura
+  tamanho
+  patologia
+
+X info:
+  id_info
+  id_link_fk
+  id_caract_fk
+  nomeperfil
+  fotoperfil
+  tipo-user
+  sobre
+
+X preferencia
+  id_preferencia
+  notificacao
+  visibilidade
+  
+X configurações:
+  id_config
+  id_perfil_fk
+  id_conta_fk
+  id_usuario_fk
+  id_preferencia_fk
+  
+X geral:
+  id_geral
+  corpagina
+  idioma
+  
+X conta:
+  id_conta
+  id_usuario_fk
+  email
+  emailreserva
+  senha
