@@ -6,7 +6,33 @@ if (session_id() != $_SESSION['id']) {
   return;
 }
 ?>
+<?php
 
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "projetosalao";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Verifica se a conexão foi bem sucedida
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Insere mensagem no banco de dados
+if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
+  $mensagem = $_POST['mensagem'];
+  $id_rem = $_SESSION['email'];
+  $sql = "INSERT INTO mensagens (conteudo, remetente) VALUES ('$mensagem', '$id_rem')";
+  if (mysqli_query($conn, $sql)) {
+    /*echo "Mensagem adicionada com sucesso!";*/
+  } else {
+    echo "Erro ao adicionar mensagem: " . mysqli_error($conn);
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,15 +101,12 @@ if (session_id() != $_SESSION['id']) {
         <div id="chatconteudo">
           <div class="chatcontent active" id="chatconteudo1">
             <h2>Conversas:</h2>
-            <p>Aqui serão mostradas as conversas em forma de lista, para que o usuário role a barra de rolagem e tenha
-              acesso de clique a uma de cada vez, sendo esta exibida na área à direita.</p>
             <?php
             include('chat-box.php');
             ?>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
             <h2>Conversas Marcadas</h2>
-            <p>Nesta área serão exibidas as conversas marcadas com o alfinete.</p>
             <div id="chat-box">
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
@@ -125,7 +148,6 @@ if (session_id() != $_SESSION['id']) {
           </div>
           <div class="chatcontent hidden" id="chatconteudo3">
             <h2>Conversas Arquivadas</h2>
-            <p>Nesta área serão exibidas as conversas arquivadas.</p>
             <div id="chat-box">
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
@@ -167,7 +189,6 @@ if (session_id() != $_SESSION['id']) {
           </div>
           <div class="chatcontent hidden" id="chatconteudo4">
             <h2>Contatos Bloqueados</h2>
-            <p>Nesta área serão exibidos os contatos bloqueados.</p>
             <div id="chat-box">
               <div class="chat-element">
                 <div class="chat-item" id="chat-item-1">
@@ -210,22 +231,15 @@ if (session_id() != $_SESSION['id']) {
 
           <div class="chatcontent hidden" id="chatconteudo5">
             <h2>Conteúdo 5:</h2>
-            <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
-              proximidade delimitado.</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo6">
             <h2>Conteúdo 6:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo7">
             <h2>Conteúdo 7:</h2>
-            <p>Aqui ficará a exibição do conteúdo selecionado no menu superior do perfil. Não serão links,
-              mas sim botões que abrem conteúdo no espaço abaixo</p>
           </div>
           <div class="chatcontent hidden" id="chatconteudo8">
             <h2>Configurações de conversas:</h2>
-            <p>Aqui o usuáriopoderá configuras as conversas e definir preferências.</p>
             <h4>Modo de tela:</h4>
             <span>light</span>
             <label class="switch">
@@ -274,103 +288,39 @@ if (session_id() != $_SESSION['id']) {
             <div class="content active" id="conteudo1">
               <div id="chat-area">
                 <div id="chat-displayer">
-                  <div class="element" id="element2">
-                    <img src="<?php ?>img/img_avatar.png" id="profile-img" alt="profile-img">
-                    <div class="send-item">
-                      <div class="chat-content-box">
-                        <span class="chat-content">
-                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
-                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
-                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
-                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
-                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
-                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="element" id="element1">
-                    <div class="send-item">
-                      <div class="chat-content-box">
-                        <span class="chat-content">
-                          <?php ?>Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o
-                          encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding
-                          do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
-                          Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe
-                          das letras no quadro. Esse é um exemplo de mensagem para testar a exibição e o padding do
-                          texto, bem como o encaixe das letras no quadro. Esse é um exemplo de mensagem para testar a
-                          exibição e o padding do texto, bem como o encaixe das letras no quadro. Esse é um exemplo de
-                          mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.
-                        </span>
-                      </div>
-                    </div>
-                    <img src="<?php ?>img/img_avatar2.png" id="profile-img" alt="profile-img">
-                  </div>
-                  <div class="element" id="element2">
-                    <img src="<?php ?>img/img_avatar.png" id="profile-img" alt="profile-img">
-                    <div class="send-item">
-                      <div class="chat-content-box">
-                        <span class="chat-content">
-                          <?php
+                  <?php
+                  // Exibe as mensagens na tela
+                  $sql = "SELECT conteudo, date_time FROM mensagens";
+                  $result = mysqli_query($conn, $sql);
 
-                          // Conexão com o banco de dados
-                          $servername = "localhost";
-                          $username = "root";
-                          $password = "";
-                          $dbname = "projetosalao";
+                  if (mysqli_num_rows($result) > 0) {
+                    $mensagens = array();
+                    $date_time = array();
+                    // Exibe as mensagens em uma lista
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      $mensagens[] = $row['conteudo'];
+                      $date_time = $row['date_time'];
+                    }
+                    foreach ($mensagens as $mensagem) {
+                      echo include('send-item2.php');
+                    }
+                  } else {
+                    echo "Não há mensagens.";
+                  }
+                  ?>
 
-                          $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-                          // Verifica se a conexão foi bem sucedida
-                          if (!$conn) {
-                            die("Connection failed: " . mysqli_connect_error());
-                          }
-
-                          // Insere mensagem no banco de dados
-                          if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
-                            $mensagem = $_POST['mensagem'];
-                            $sql = "INSERT INTO mensagens (conteudo) VALUES ('$mensagem')";
-                            if (mysqli_query($conn, $sql)) {
-                              echo "Mensagem adicionada com sucesso!";
-                            } else {
-                              echo "Erro ao adicionar mensagem: " . mysqli_error($conn);
-                            }
-                          }
-
-                          // Exibe as mensagens na tela
-                          $sql = "SELECT conteudo FROM mensagens";
-                          $result = mysqli_query($conn, $sql);
-
-                          if (mysqli_num_rows($result) > 0) {
-                            // Exibe as mensagens em uma lista
-                            echo "<ul>";
-                            while ($row = mysqli_fetch_assoc($result)) {
-                              echo "<li>" . $row["conteudo"] . "</li>";
-                            }
-                            echo "</ul>";
-                          } else {
-                            echo "Não há mensagens.";
-                          }
-                          ?>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
                   <?php
                   // Exibe as mensagens na tela
                   $sql = "SELECT conteudo FROM mensagens";
                   $result = mysqli_query($conn, $sql);
 
                   if (mysqli_num_rows($result) > 0) {
+                    $mensagens = array();
                     // Exibe as mensagens em uma lista
                     while ($row = mysqli_fetch_assoc($result)) {
+                      $mensagens[] = $row['conteudo'];
+                    }
+                    foreach ($mensagens as $mensagem) {
                       echo include('send-item.php');
                     }
                   } else {

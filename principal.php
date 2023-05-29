@@ -257,9 +257,72 @@ if (session_id() != $_SESSION['id']) {
           </div>
 
           <div class="chatcontent hidden" id="chatconteudo5">
-            <h2>FAQ - Perguntas Frequentes:</h2>
-            <p>Aqui ficará a exibição do mapa da regiaão escolhida e os profissionais ou clientes em um raio de
-              proximidade delimitado.</p>
+            <div style="color: white;">
+              <h2>FAQ - Perguntas Frequentes:</h2>
+              <p>Aqui ficará a exibição do accordion de perguntas e suas respostas, como um "manual" do site.</p>
+              <style>
+                .collapsible {
+                  background-color: #9E9E9E;
+                  color: white;
+                  cursor: pointer;
+                  padding: 18px;
+                  width: 100%;
+                  border: none;
+                  text-align: left;
+                  outline: none;
+                  font-size: 15px;
+                }
+
+                .collapsible:after {
+                  content: '\002B';
+                  color: white;
+                  font-weight: bold;
+                  float: right;
+                  margin-left: 5px;
+                }
+
+                .conten {
+                  padding: 0 18px;
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: max-height 0.2s ease-out;
+                  background-color: #9E9E9E;
+                }
+              </style>
+              <button class="collapsible">Open Collapsible</button>
+              <div class="conten">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip
+                  ex ea commodo consequat.</p>
+              </div>
+              <p>Collapsible Set:</p>
+              <button class="collapsible">Open Section 1</button>
+              <div class="conten">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip
+                  ex ea commodo consequat.</p>
+              </div>
+              <button class="collapsible">Open Section 2</button>
+              <div class="conten">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip
+                  ex ea commodo consequat.</p>
+              </div>
+              <button class="collapsible">Open Section 3</button>
+              <div class="conten">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip
+                  ex ea commodo consequat.</p>
+              </div>
+            </div>
           </div>
           <div class="chatcontent hidden" id="chatconteudo6">
             <h2>Conteúdo 6:</h2>
@@ -301,7 +364,22 @@ if (session_id() != $_SESSION['id']) {
     include('set_theme_session.php');
     ?>
   </main>
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
   <script>
 
     // Código do botão switch de cor de fundo

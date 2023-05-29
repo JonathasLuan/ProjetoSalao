@@ -97,7 +97,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             </div>
           </div>
 
-          <div style="text-align: center"><button type="submit">Continuar</button></div>
+          <div style="text-align: center"><button id="btn-finalizar" type="submit">FINALIZAR</button></div>
         </form>
       </div>
     </div>
