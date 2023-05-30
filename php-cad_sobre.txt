@@ -31,7 +31,8 @@ Tabelas:
 if (isset($_POST['sobre']) || ($_POST['experiencia'])) {
 	$sobre = $_POST['sobre'];
 
-	"INSERT INTO cliente (sobre, id_caract_fk, id_usuario_fk, id_endereco_fk) values ('$id_usuario', '$id_endereco')";
+	$result = "INSERT INTO cliente (sobre, id_caract_fk, id_usuario_fk, id_endereco_fk) values ('sobre, '$id_caract', ''$id_usuario', '$id_endereco')";
+	$resultado = mysqli_query($conn, $result);
 	}
 ?>
 
