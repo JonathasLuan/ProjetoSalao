@@ -1,0 +1,60 @@
+Criar um código que pegue os dados do post da última página de cadastro e armazene em variáveis correspondentes.
+Verificarv a estrutura das tabelas no banco de dados para ver se 
+Criar inserts para cada dado e direcioná-los para as devidas tabelas.
+
+Salvar os ids de cada tabela em uma variável para inserir nas que pedirem foreign key.
+Ex.: $id_usuario, $endereco, $caract.
+Talvez alguns precisem de select com inner join ao puxar o id para inserir em outra tabela.
+Ex.:
+<?php
+
+	$id_usuario = session['id_usuario'];
+
+	$sql = "SELECT endereco.*, usuário.id_usuario FROM endereco INNER JOIN usuário ON endereco.id_usuario_fk = usuário.id_usuario WHERE id_usuario = '$id_usuario'";
+
+	$resultado = mysqli_query($conn, $sql);
+
+	while ($row = mysqli_fetch_assoc($resultado)) {
+	    $id_endereco = row['id_endereco'];
+	}
+?>
+
+Tabelas:
+	Cliente
+	id
+	sobre = $_post['sobre']
+	id_caract_fk
+	id_usuario_fk = $id_usuario
+	id_endereco_fk = $id_endereco
+
+<?php
+if (isset($_POST['sobre']) || ($_POST['experiencia'])) {
+	$sobre = $_POST['sobre'];
+
+	"INSERT INTO cliente (sobre, id_caract_fk, id_usuario_fk, id_endereco_fk) values ('$id_usuario', '$id_endereco')";
+	}
+?>
+
+
+	Profissional
+	id
+	sobre = $_post['sobre']
+	experiencia = $_post['sobre
+	id_usuario_fk = $id_usuario
+	id_endereco_fk = $id_endereco
+
+	Caracteristica
+	id_caract
+	id_cabelo_fk
+	id_pele_fk
+	id_barba_fk
+	id_unhas_fk
+
+<?php
+if (isset($_POST['sobre']) || ($_POST['experiencia'])) {
+	$sobre = $_POST['sobre'];
+	$sobre = $_POST['experiencia'];
+
+	"INSERT INTO profissional (sobre, experiencia, id_usuario_fk, id_endereco_fk) values ('$sobre', '$experiencia', '$id_usuario', '$id_endereco')";
+	}
+?>
