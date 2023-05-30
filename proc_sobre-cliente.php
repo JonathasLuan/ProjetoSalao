@@ -10,12 +10,16 @@ $pele = filter_input(INPUT_POST, 'pele', FILTER_SANITIZE_STRING);
 $unhas = filter_input(INPUT_POST, 'unhas', FILTER_SANITIZE_STRING);
 $rosto = filter_input(INPUT_POST, 'rosto', FILTER_SANITIZE_STRING);
 
-$sqlBio = "INSERT INTO usuário (bio) VALUES ('$bio')";
+$sqlBio = "UPDATE usuário SET bio = '$bio'";
 $insert = mysqli_query($conn, $sqlBio);
 
 $id_usuario = $_SESSION['id_usuario'];
+$id_cabelo = ;
+$id_pele = ;
+$id_unhas = ;
+$id_rosto = ;
 
-$sqlCaract = "INSERT INTO caracteristicas (id_usuario, id_caract, cabelo, pele, unhas, rosto) VALUES ('$id_usuario', '$cabelo', '$pele', '$unhas', '$rosto')";
+$sqlCaract = "INSERT INTO caracteristicas (id_usuario_fk, id_cabelo_fk, id_pele_fk, id_unhas_fk, id_rosto_fk) VALUES ('$id_usuario', '$id_cabelo', '$id_pele', '$id_unhas', '$id_rosto')";
 $insert = mysqli_query($conn, $sqlCaract);
 
 if (mysqli_insert_id($conn)) {
