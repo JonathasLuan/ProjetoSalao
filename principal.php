@@ -257,7 +257,7 @@ if (session_id() != $_SESSION['id']) {
           </div>
 
           <div class="chatcontent hidden" id="chatconteudo5">
-            <div style="color: white;">
+            <div>
               <h2>FAQ - Perguntas Frequentes:</h2>
               <p>Aqui ficará a exibição do accordion de perguntas e suas respostas, como um "manual" do site.</p>
               <style>
@@ -283,6 +283,7 @@ if (session_id() != $_SESSION['id']) {
 
                 .conten {
                   padding: 0 18px;
+                  color: white;
                   max-height: 0;
                   overflow: hidden;
                   transition: max-height 0.2s ease-out;

@@ -49,7 +49,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
                   <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
                   <input type="file" name="arquivo" id="profile-image" name="profile-image">
                 </div>
-                <img id="profile-preview" src="img/profile.webp" alt="profile">
+                <img id="profile-preview" src="img/img_avatar.png" alt="profile">
               </div>
             </div>
           </div>
@@ -58,71 +58,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             <h3>Fale sobre você:</h3>
             <textarea id="editsobre" name="bio" rows="10" cols="50"></textarea>
             <small>Isso será exibido em seu perfil</small>
-          </div>
-          <div id="caract-list" class="divs">
-            <h3>Características:</h3>
-            <div class="caract">
-              <h4>Cabelo</h4>
-              <div style="display: flex; justify-content: space-around;">
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" name="tipo">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="">Liso</option>
-                  <option value="">Ondulado</option>
-                  <option value="">Cacheado</option>
-                  <option value="">Crespo</option>
-                </select>
-                <label for="tamanho-cabelo">Tamanho:</label>
-                <select id="tamanho-cabelo" name="tamanho">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="">Careca</option>
-                  <option value="">Calvo</option>
-                  <option value="">Curto</option>
-                  <option value="">Médio</option>
-                  <option value="">Longo</option>
-                </select>
-              </div>
-            </div>
-            <div class="caract">
-              <h4>Rosto</h4>
-              <div style="display: flex; justify-content: space-around;">
-                <label for="tamanho-rosto">Tamanho:</label>
-                <select id="tamanho-rosto" name="tamanho">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="">Curto</option>
-                  <option value="">Médio</option>
-                  <option value="">Longo</option>
-                </select>
-                <label for="formato">Formato:</label>
-                <select id="formato" name="formato">
-                  <option value="" selected disabled>Selecione</option>
-                  <option value="">Fino</option>
-                  <option value="">Redondo</option>
-                  <option value="">Quadrado</option>
-                  <option value="">Triangular</option>
-                </select>
-              </div>
-            </div>
-            <div class="caract">
-              <h4>Pele</h4>
-              <label for="etnia">Etinia:</label>
-              <select id="etnia" name="carac">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Curtas</option>
-                <option value="">Médias</option>
-                <option value="">Longas</option>
-              </select>
-            </div>
-            <div class="caract" style="border-bottom: 0;">
-              <h4>Unhas</h4>
-              <label for="tamanho-unhas">Tamanho:</label>
-              <select id="tamanho-unhas" name="tamanho">
-                <option value="" selected disabled>Selecione</option>
-                <option value="">Curtas</option>
-                <option value="">Médias</option>
-                <option value="">Longas</option>
-              </select>
-            </div>
           </div>
 
           <div style="text-align: center"><button id="btn-finalizar" type="submit">FINALIZAR</button></div>
