@@ -48,6 +48,27 @@ if (session_id() != $_SESSION['id']) {
   include('footer.php');
   include('set_theme_session.php');
   ?>
+
+  <?php
+  include_once("conexao.php");
+
+  $email = $_SESSION['email'];
+  $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['id_usuario'];
+    echo "<h1> Id de usuário: " . $id . "</h1>";
+  }
+
+  $sql = "SELECT id_endereco FROM endereco WHERE id_usuario = '$id'";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $id_end = $row['id_endereco'];
+    echo "<h1> Id de endereço: " . $id_end . "</h1>";
+  }
+  ?>
 </body>
 
 </html>

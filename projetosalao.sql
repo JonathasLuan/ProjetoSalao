@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Maio-2023 às 22:13
+-- Tempo de geração: 31-Maio-2023 às 21:53
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -170,10 +170,8 @@ CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `id_usuario_fk` int(11) NOT NULL,
   `id_local_fk` int(11) NOT NULL,
-  `nome_completo` varchar(200) NOT NULL,
-  `genero` varchar(100) DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
-  `telefone` varchar(11) DEFAULT NULL
+  `bio` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -253,7 +251,8 @@ INSERT INTO `endereco` (`id_endereco`, `id_usuario`, `estado`, `cidade`, `bairro
 (1, 1, 0, 'Diadema', 'Campanário', 'Gema', '205', 'Jardim São Judas'),
 (2, 2, 0, 'Diadema', 'Campanário', 'Gema', '205', ''),
 (3, 9, 0, 'Diadema', 'Campanário', 'Gema', '205', ''),
-(20, 34, 0, 'Diadema', 'Campanário', 'Gema', '205', 'Casa do Metaforando');
+(20, 34, 0, 'Diadema', 'Campanário', 'Gema', '205', 'Casa do Metaforando'),
+(21, 36, 0, 'Umacidade', 'Umbairro', 'Umarua', '666', 'Longe');
 
 -- --------------------------------------------------------
 
@@ -379,21 +378,24 @@ CREATE TABLE `mensagem` (
 
 CREATE TABLE `mensagens` (
   `id` int(11) NOT NULL,
-  `conteudo` text NOT NULL
+  `conteudo` text NOT NULL,
+  `remetente` varchar(100) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `mensagens`
 --
 
-INSERT INTO `mensagens` (`id`, `conteudo`) VALUES
-(1, 'Teste de ekjnvifg'),
-(2, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"'),
-(3, 'Olá, mundo.'),
-(4, 'Sumimasen deshita'),
-(5, 'Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.'),
-(6, 'Teste de texto dentro do chat-displayer.'),
-(7, 'Simulação de registro.');
+INSERT INTO `mensagens` (`id`, `conteudo`, `remetente`, `date_time`) VALUES
+(1, 'Simulação de registro.', '', '2023-05-28 23:25:03'),
+(2, '\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"', '', '2023-05-28 23:25:03'),
+(3, 'Olá, mundo.', '', '2023-05-28 23:25:03'),
+(4, 'Sumimasen deshita', '', '2023-05-28 23:25:03'),
+(5, 'Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.', '', '2023-05-28 23:25:03'),
+(6, 'Teste de texto dentro do chat-displayer.', '', '2023-05-28 23:25:03'),
+(11, 'Testando a inserção de id de usuário na mensagem.', 'cleusu.pires@gmail.com', '2023-05-28 23:25:03'),
+(13, '28/05/2023', 'cleusu.pires@gmail.com', '2023-05-28 23:25:03');
 
 -- --------------------------------------------------------
 
@@ -438,7 +440,8 @@ INSERT INTO `pagina` (`id_pagina`, `url`, `titulo`) VALUES
 (9, 'pedicure.php', 'Pedicure'),
 (10, 'manicure.php', 'Manicure'),
 (11, 'barbeiro.php', 'Barbeiro'),
-(12, 'principal.php', 'Principal');
+(12, 'principal.php', 'Principal'),
+(13, 'conversas.php', 'Conversas');
 
 -- --------------------------------------------------------
 
@@ -460,6 +463,35 @@ CREATE TABLE `pedido` (
   `bairro` varchar(50) DEFAULT NULL,
   `rua` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id` int(11) NOT NULL,
+  `especialidade` varchar(50) NOT NULL,
+  `outra` varchar(50) NOT NULL,
+  `servico` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `outro` int(50) NOT NULL,
+  `descricao` text NOT NULL,
+  `data_pedido` date NOT NULL,
+  `hora` time(4) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
+  `rua` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `especialidade`, `outra`, `servico`, `nome`, `outro`, `descricao`, `data_pedido`, `hora`, `cidade`, `bairro`, `rua`) VALUES
+(2, 'barbeiro', '', '', '', 0, 'Raspar a barba.', '2023-05-21', '00:00:00.0000', '', '', ''),
+(3, 'maquiador', '', '', '', 0, 'Maquiagem.', '2023-05-23', '00:00:00.0000', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -501,10 +533,9 @@ CREATE TABLE `profissional` (
   `id_usuario_fk` int(11) NOT NULL,
   `id_local_fk` int(11) NOT NULL,
   `id_especialidade_fk` int(11) NOT NULL,
-  `nome_completo` varchar(200) NOT NULL,
-  `genero` varchar(100) DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
-  `telefone` varchar(11) DEFAULT NULL
+  `bio` text NOT NULL,
+  `experiencia` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -615,15 +646,17 @@ CREATE TABLE `usuário` (
 --
 
 INSERT INTO `usuário` (`id_usuario`, `tipo`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `genero`, `cor`, `bio`) VALUES
-(1, 'cliente', 'Patrícia', 'Souza', 'jonathas.araujo3@etec.sp.gov.br', 'senha123', '11900000000', 'feminino', 'light', 'Oi! Eu sou a Patrícia.'),
-(2, 'cliente', 'Teste', '', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
+(1, 'cliente', 'Patrícia', 'Souza', 'jonathas.araujo3@etec.sp.gov.br', 'senha123', '11900000000', 'feminino', 'light', ''),
+(2, 'cliente', 'Victor', 'Hugo', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
 (9, 'profissional', 'Jonathas Luan', 'Cavalcanti Araujo', 'jonathas_luan.171@hotmail.com', 'senhateste', '11954435948', 'masculino', 'light', ''),
 (10, 'profissional', 'Maria', 'Lúcia', 'jonathas.araujo31@etec.sp.gov.br', 'senhateste', '11954435948', 'feminino', '', ''),
 (11, 'profissional', 'Jão', 'Pedro', 'jonathas_luan.172@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
 (30, 'profissional', 'Lucas', 'Lima', 'jonathas_luan.173@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
 (32, 'cliente', 'Cléusu', 'Pires', 'cleusu.pires@gmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
 (33, 'cliente', 'Neide', 'Nunes', 'neide.nunes@gmail.com', 'senhateste', '11954435948', 'feminino', '', ''),
-(34, 'cliente', 'Victor', 'Santos', 'victor_santos@hotmail.com', 'senhateste', '11954435948', 'masculino', '', '');
+(34, 'cliente', 'Victor', 'Santos', 'victor_santos@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
+(35, '', '', NULL, '', '', '', NULL, '', ''),
+(36, 'profissional', 'Jair Messias', 'Lula da Silva', 'jair_lula@hotmail.com', 'senhateste', '11954435948', 'masculino', '', '');
 
 --
 -- Índices para tabelas despejadas
@@ -683,7 +716,6 @@ ALTER TABLE `caracteristicas`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `telefone` (`telefone`),
   ADD KEY `id_usuario_fk` (`id_usuario_fk`),
   ADD KEY `id_local_fk` (`id_local_fk`);
 
@@ -808,6 +840,12 @@ ALTER TABLE `pedido`
   ADD KEY `id_especialidade_fk` (`id_especialidade_fk`);
 
 --
+-- Índices para tabela `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `pele`
 --
 ALTER TABLE `pele`
@@ -826,7 +864,6 @@ ALTER TABLE `perfil`
 --
 ALTER TABLE `profissional`
   ADD PRIMARY KEY (`id_profissional`),
-  ADD UNIQUE KEY `telefone` (`telefone`),
   ADD KEY `id_usuario_fk` (`id_usuario_fk`),
   ADD KEY `id_local_fk` (`id_local_fk`),
   ADD KEY `id_especialidade_fk` (`id_especialidade_fk`);
@@ -923,7 +960,7 @@ ALTER TABLE `caracteristicas`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `comentario`
@@ -953,7 +990,7 @@ ALTER TABLE `conversa`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `especialidade`
@@ -995,7 +1032,7 @@ ALTER TABLE `mensagem`
 -- AUTO_INCREMENT de tabela `mensagens`
 --
 ALTER TABLE `mensagens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `midia`
@@ -1007,13 +1044,19 @@ ALTER TABLE `midia`
 -- AUTO_INCREMENT de tabela `pagina`
 --
 ALTER TABLE `pagina`
-  MODIFY `id_pagina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pagina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `pele`
@@ -1031,7 +1074,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `profissional`
 --
 ALTER TABLE `profissional`
-  MODIFY `id_profissional` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_profissional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `rosto`
@@ -1067,7 +1110,7 @@ ALTER TABLE `unhas`
 -- AUTO_INCREMENT de tabela `usuário`
 --
 ALTER TABLE `usuário`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Restrições para despejos de tabelas
