@@ -7,7 +7,6 @@ if (session_id() != $_SESSION['id']) {
 }
 ?>
 <?php
-
 // Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";

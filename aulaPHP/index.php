@@ -1,10 +1,10 @@
 <?php
-
 include_once 'pessoa.php';
 include_once 'endereco.php';
 include_once 'cliente.php';
+include_once 'clientevip.php';
 
-$obj_end = new Endereco();
+/*$obj_end = new Endereco();
 $obj_end->cep = '12454584';
 $obj_end->rua = 'Rua Guarani';
 $obj_end->numero = '735';
@@ -22,6 +22,13 @@ $obj_pessoa->idade = 100;
 $obj_pessoa->cadastrarCpf(54564541);
 $obj_pessoa->mostrarCpf();
 echo $obj_pessoa->endereco;
-$cliente1 = new Cliente();
-$cliente1->nome = 'Duasflor';
+*/
+
+$cliente1 = new Cliente(1, 'Tio Patinhas');
+$clientevip1 = new Clientevip(0, 'Papaleguas');
+
+echo $cliente1->nome;
+echo "<br>";
+echo $clientevip1->nome;
+echo $clientevip1->mostraVip();
 ?>

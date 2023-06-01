@@ -71,6 +71,7 @@ if (session_id() != $_SESSION['id']) {
               <h2>Conversas:</h2>
               <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
                 selecionar cada uma e responder às mensagens.</p>
+              <a href="conversas.php">Conversas</a>
               <?php
               include('chat-box.php')
                 ?>
