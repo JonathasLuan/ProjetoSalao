@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-/*echo $_SESSION['id'];
-echo $_SESSION['senha'];
-echo session_id();*/
-
 ?>
 
 <!DOCTYPE html>
