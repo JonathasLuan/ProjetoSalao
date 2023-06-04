@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Maio-2023 às 21:53
+-- Tempo de geração: 04-Jun-2023 às 01:15
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -395,7 +395,11 @@ INSERT INTO `mensagens` (`id`, `conteudo`, `remetente`, `date_time`) VALUES
 (5, 'Esse é um exemplo de mensagem para testar a exibição e o padding do texto, bem como o encaixe das letras no quadro.', '', '2023-05-28 23:25:03'),
 (6, 'Teste de texto dentro do chat-displayer.', '', '2023-05-28 23:25:03'),
 (11, 'Testando a inserção de id de usuário na mensagem.', 'cleusu.pires@gmail.com', '2023-05-28 23:25:03'),
-(13, '28/05/2023', 'cleusu.pires@gmail.com', '2023-05-28 23:25:03');
+(13, '28/05/2023', 'cleusu.pires@gmail.com', '2023-05-28 23:25:03'),
+(14, 'Teste de inserção de id.', '9', '2023-06-03 21:41:37'),
+(15, 'Teste de id para Clésu Pires', '32', '2023-06-03 22:18:44'),
+(16, 'Mensagem da Neide.', '33', '2023-06-03 22:41:35'),
+(17, 'Oi, eu sou a Patrícia.', '1', '2023-06-03 23:11:23');
 
 -- --------------------------------------------------------
 
@@ -646,12 +650,12 @@ CREATE TABLE `usuário` (
 --
 
 INSERT INTO `usuário` (`id_usuario`, `tipo`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `genero`, `cor`, `bio`) VALUES
-(1, 'cliente', 'Patrícia', 'Souza', 'jonathas.araujo3@etec.sp.gov.br', 'senha123', '11900000000', 'feminino', 'light', ''),
-(2, 'cliente', 'Victor', 'Hugo', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
-(9, 'profissional', 'Jonathas Luan', 'Cavalcanti Araujo', 'jonathas_luan.171@hotmail.com', 'senhateste', '11954435948', 'masculino', 'light', ''),
-(10, 'profissional', 'Maria', 'Lúcia', 'jonathas.araujo31@etec.sp.gov.br', 'senhateste', '11954435948', 'feminino', '', ''),
-(11, 'profissional', 'Jão', 'Pedro', 'jonathas_luan.172@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
-(30, 'profissional', 'Lucas', 'Lima', 'jonathas_luan.173@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
+(1, 'cliente', 'Patrícia', 'Souza', 'patricia_souza@hotmail.com', 'senha123', '11900000000', 'feminino', 'light', ''),
+(2, 'cliente', 'Victor', 'Hugo', 'victor_hugo@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
+(9, 'profissional', 'Jonathas Luan', 'Cavalcanti Araujo', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'light', ''),
+(10, 'profissional', 'Maria', 'Lúcia', 'maria_lucia@hotmail.com', 'senhateste', '11954435948', 'feminino', '', ''),
+(11, 'profissional', 'Jão', 'Pedro', 'joão_pedro@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
+(30, 'profissional', 'Lucas', 'Lima', 'lucas_lima@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
 (32, 'cliente', 'Cléusu', 'Pires', 'cleusu.pires@gmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
 (33, 'cliente', 'Neide', 'Nunes', 'neide.nunes@gmail.com', 'senhateste', '11954435948', 'feminino', '', ''),
 (34, 'cliente', 'Victor', 'Santos', 'victor_santos@hotmail.com', 'senhateste', '11954435948', 'masculino', '', ''),
@@ -1032,7 +1036,7 @@ ALTER TABLE `mensagem`
 -- AUTO_INCREMENT de tabela `mensagens`
 --
 ALTER TABLE `mensagens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `midia`
@@ -1074,7 +1078,7 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de tabela `profissional`
 --
 ALTER TABLE `profissional`
-  MODIFY `id_profissional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_profissional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `rosto`

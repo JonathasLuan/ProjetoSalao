@@ -6,6 +6,8 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
+
+$step = 3;
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +38,9 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   </header>
   <div class="conteudo">
     <div id="cadastroform">
+      <?php
+      include 'progressbar.php';
+      ?>
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
         <form method="POST" enctype="multipart/form-data" action="proc_sobre-prof.php">

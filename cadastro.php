@@ -5,6 +5,8 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
+
+$step = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +48,10 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       </div>
       <div class="formulario-container">
         <form id="formulario-1" method="POST" action="proc_cad_cliente.php" style="display: none;">
+          <?php
+          include 'progressbar.php';
+          ?>
+          <h4>CLIENTE</h4>
           <input type="hidden" name="tipo" value="cliente">
           <div id="nomesobrenome">
             <div>
@@ -82,6 +88,10 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
         </form>
 
         <form id="formulario-2" method="POST" action="proc_cad_prof.php" style="display: none;">
+          <?php
+          include 'progressbar.php';
+          ?>
+          <h4>PROFISSIONAL</h4>
           <input type="hidden" name="tipo" value="profissional">
           <div id="nomesobrenome">
             <div>

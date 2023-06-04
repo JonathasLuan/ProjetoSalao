@@ -6,6 +6,20 @@ if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }
+
+$email = $_SESSION['email'];
+$tipo = "SELECT tipo FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $tipo);
+
+if (mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $tipo = $row["tipo"];
+  }
+}
+
+if ($tipo != 'cliente') {
+  header('Location: perfil-profissional.php');
+}
 ?>
 
 <!DOCTYPE html>

@@ -6,6 +6,20 @@ if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }
+
+$email = $_SESSION['email'];
+$tipo = "SELECT tipo FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $tipo);
+
+if (mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $tipo = $row["tipo"];
+  }
+}
+
+if ($tipo != 'profissional') {
+  header('Location: perfil-cliente.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -405,6 +419,14 @@ if (session_id() != $_SESSION['id']) {
                               } else {
                                 echo "Nome-User";
                               }
+
+                              if (isset($_POST['editnome'])) {
+                                $editnome = $_POST['editnome'];
+
+                                $insert = "UPDATE usuário SET nome = $editnome WHERE email = '$email'";
+                                $insert = mysqli_query($conn, $insert);
+                                echo $editnome;
+                              }
                               ?>
                             </span>
                             <button type="button" id="edit-nick" onclick="editarCampo('nick')">Editar</button>
@@ -413,6 +435,17 @@ if (session_id() != $_SESSION['id']) {
                           </div>
                         </div>
                         <br>
+                        <?php
+                        if (isset($_POST['editnome'])) {
+                          $editnome = $_POST['editnome'];
+
+                          $insert = "UPDATE usuário SET nome = $editnome WHERE email = '$email'";
+                          $insert = mysqli_query($conn, $insert);
+                          echo $editnome;
+                        } else {
+                          echo "sem nome";
+                        }
+                        ?>
                         <div id="editbio" class="divs" style="border-bottom: 0;">
                           <h3>Sobre</h3>
                           <div>

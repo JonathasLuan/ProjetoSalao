@@ -20,11 +20,19 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
+$email = $_SESSION['email'];
+$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+  $row = mysqli_fetch_assoc($result);
+  $id = $row['id_usuario'];
+}
+
 // Insere mensagem no banco de dados
 if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
   $mensagem = $_POST['mensagem'];
-  $id_rem = $_SESSION['email'];
-  $sql = "INSERT INTO mensagens (conteudo, remetente) VALUES ('$mensagem', '$id_rem')";
+  //  $id_rem = $_SESSION['email'];
+  $sql = "INSERT INTO mensagens (conteudo, remetente) VALUES ('$mensagem', '$id')";
   if (mysqli_query($conn, $sql)) {
     /*echo "Mensagem adicionada com sucesso!";*/
   } else {
@@ -89,7 +97,7 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
                       class="fa fa-lock"></i></button>
                   <button id="chatbotao5" class="chat-menu-button" data-target="chatcontent5">Btn 5</button>
                   <button id="chatbotao6" class="chat-menu-button" data-target="chatcontent2">Btn 6</button>
-                  <button id="chatbotao7" class="chat-menu-button" data-target="chatcontent3">Btn 7</button>
+                  <!-- btn7 -->
                   <button id="chatbotao8" class="chat-menu-button" data-target="chatcontent4" title="configurações"><i
                       class="fa fa-gear" aria-hidden="true"></i></button>
                 </nav>
@@ -155,7 +163,9 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
                   </div>
                   <div class="chat-info">
                     <div class="user-name">
-                      <h5 class="name">Kevelyn</h5>
+                      <label for="">
+                        <h5 for="chatbotao7" class="name">Kevelyn</h5>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -234,9 +244,7 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
           <div class="chatcontent hidden" id="chatconteudo6">
             <h2>Conteúdo 6:</h2>
           </div>
-          <div class="chatcontent hidden" id="chatconteudo7">
-            <h2>Conteúdo 7:</h2>
-          </div>
+          <!-- chatconteudo7 -->
           <div class="chatcontent hidden" id="chatconteudo8">
             <h2>Configurações de conversas:</h2>
             <h4>Modo de tela:</h4>
@@ -287,49 +295,53 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
             <div class="content active" id="conteudo1">
               <div id="chat-area">
                 <div id="chat-displayer">
-                  <?php
-                  // Exibe as mensagens na tela
-                  $sql = "SELECT conteudo, date_time FROM mensagens";
-                  $result = mysqli_query($conn, $sql);
+                  <!--<button >Btn 7</button>-->
+                  <div class="chatcontent hidden" id="chatconteudo7">
+                    <?php
+                    // Exibe as mensagens na tela
+                    $sql = "SELECT * FROM mensagens WHERE remetente != $id";
+                    $result = mysqli_query($conn, $sql);
 
-                  if (mysqli_num_rows($result) > 0) {
-                    $mensagens = array();
-                    $date_time = array();
-                    // Exibe as mensagens em uma lista
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      $mensagens[] = $row['conteudo'];
-                      $date_time = $row['date_time'];
+                    if (mysqli_num_rows($result) > 0) {
+                      $mensagens = array();
+                      $date_time = array();
+                      // Exibe as mensagens em uma lista
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        $mensagens[] = $row['conteudo'];
+                        $date_time = $row['date_time'];
+                        $remetente = $row['remetente'];
+                      }
+                      foreach ($mensagens as $mensagem) {
+                        include('send-item2.php');
+                      }
+                    } else {
+                      echo "Não há mensagens.";
                     }
-                    foreach ($mensagens as $mensagem) {
-                      include('send-item2.php');
+                    ?>
+
+                    <?php
+                    // Exibe as mensagens na tela
+                    $sql = "SELECT * FROM mensagens WHERE remetente = $id";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                      $mensagens = array();
+                      // Exibe as mensagens em uma lista
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        $mensagens[] = $row['conteudo'];
+                      }
+                      foreach ($mensagens as $mensagem) {
+                        include('send-item.php');
+                      }
+                    } else {
+                      echo "Não há mensagens.";
                     }
-                  } else {
-                    echo "Não há mensagens.";
-                  }
-                  ?>
 
-                  <?php
-                  // Exibe as mensagens na tela
-                  $sql = "SELECT conteudo FROM mensagens";
-                  $result = mysqli_query($conn, $sql);
+                    // Fecha a conexão com o banco de dados
+                    /*mysqli_close($conn);*/
 
-                  if (mysqli_num_rows($result) > 0) {
-                    $mensagens = array();
-                    // Exibe as mensagens em uma lista
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      $mensagens[] = $row['conteudo'];
-                    }
-                    foreach ($mensagens as $mensagem) {
-                      include('send-item.php');
-                    }
-                  } else {
-                    echo "Não há mensagens.";
-                  }
-
-                  // Fecha a conexão com o banco de dados
-                  /*mysqli_close($conn);*/
-
-                  ?>
+                    ?>
+                  </div>
                 </div>
                 <div id="send-area">
                   <div id="text">

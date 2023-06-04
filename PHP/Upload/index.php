@@ -11,7 +11,7 @@ if (isset($_FILES['arquivo'])) {
     if ($arquivo['size'] > 2097152)
         die("Arquivo muito grande. Máximo: 2MB");
 
-    $pasta = "./php/upload/arquivos/";
+    $pasta = "arquivos/";
     $nomeDoArquivo = $arquivo['name'];
     $novoNomeDoArquivo = uniqid();
     $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));

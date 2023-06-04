@@ -185,5 +185,6 @@ footer {
 }
 
 #myBtn:hover {
-  background-color: lightgrey;
+  text-decoration: underline;
+  cursor: pointer;
 }

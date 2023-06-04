@@ -293,7 +293,8 @@ button[type="submit"]:hover {
 }
 
 #myBtn:hover {
-  background-color: lightgrey;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #section-two {

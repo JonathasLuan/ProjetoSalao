@@ -24,7 +24,20 @@
                 echo "perfil-profissional.php";
             }
         }
-        ?>"><img src="<?php ?>img/img_avatar2.png" id="profile-img" alt="profile-img"></a>
+        ?>"><img src="<?php
+        $email = $_SESSION['email'];
+        $sql = "SELECT genero FROM usuário WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $genero = $row['genero'];
+            if ($genero == 'masculino') {
+                echo "img/img_avatar.png";
+            } else {
+                echo "img/img_avatar2.png";
+            }
+        }
+        ?>" id="profile-img" alt="profile-img"></a>
         <span class="date-time">
             <?php echo $date_time ?>
         </span>
