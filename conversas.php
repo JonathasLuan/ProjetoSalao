@@ -299,7 +299,8 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
                   <div class="chatcontent hidden" id="chatconteudo7">
                     <?php
                     // Exibe as mensagens na tela
-                    $sql = "SELECT * FROM mensagens WHERE remetente != $id";
+                    $sql = "SELECT * FROM mensagens WHERE remetente = '9'";
+                    //Aqui deverá ser puxado do id referente ao destinatário
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
@@ -401,7 +402,6 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
           <div id="info">
             <div class="cont">
               <img id="foto-perfil" src="<?php
-              $email = $_SESSION['email'];
               $sql = "SELECT genero FROM usuário WHERE id_usuario = 1";
               $result = mysqli_query($conn, $sql);
               if (mysqli_num_rows($result) > 0) {

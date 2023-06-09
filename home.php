@@ -37,6 +37,11 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   <div class="conteudo">
     <section id="section-one">
       <div class="slider">
+        <div id="text-slider">
+          <h1>SERVIÇOS DE BELEZA</h1>
+          <p>Busque e encontre os melhores serviços e profissionais da área da beleza de acordo com seu gosto!
+          </p>
+        </div>
         <figure>
           <div class="slide">
             <img src="img/cabelo.jpg" alt="">

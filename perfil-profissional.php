@@ -534,6 +534,23 @@ if ($tipo != 'profissional') {
     }
   </script>
 
+  <script>
+    function editarCampo(campo) {
+      var elemento = document.getElementById(campo);
+      var valorAntigo = elemento.innerText;
+      elemento.innerHTML = '<textarea id="campo-editar" value="">' + valorAntigo + '</textarea>';
+      document.getElementById('edit-' + campo).style.display = 'none';
+      document.getElementById('salvar-' + campo).style.display = 'inline';
+    }
+
+    function salvarCampo(campo) {
+      var valorNovo = document.getElementById('campo-editar').value;
+      document.getElementById(campo).innerHTML = valorNovo;
+      document.getElementById('edit-' + campo).style.display = 'inline';
+      document.getElementById('salvar-' + campo).style.display = 'none';
+    }
+  </script>
+
   <script src="perfil-profissionalJS.js"></script>
 </body>
 
