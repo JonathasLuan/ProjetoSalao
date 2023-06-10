@@ -455,3 +455,13 @@ header {
     text-align: center;
     color: white;
 }
+
+.mensagem-direita {
+    color: pink;
+    right: 0px;
+}
+
+.mensagem-esquerda {
+    color: blue;
+    left: 0px;
+}

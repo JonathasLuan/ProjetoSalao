@@ -195,6 +195,7 @@ body.dark-mode #contactform,
 body.dark-mode #sobreprojeto,
 body.dark-mode #sobreperfil,
 body.dark-mode #editsobre,
+body.dark-mode article,
 body.dark-mode #navbar ul li a {
     background-color: #000;
     color: white;

@@ -95,150 +95,154 @@ if (session_id() != $_SESSION['id']) {
         </div>
         <div id="chatconteudo">
           <div class="chatcontent active" id="chatconteudo1">
-            <h2>Criar pedido:</h2>
-            <p>Nesta área você pode criar um pedido de serviço, especificando as informações relevantes para encontrar
-              profissionais adequados às suas necessidades.</p>
-            <div id="chat-box">
-              <div id="criar-btn"><button id="servico-btn">+</button></div>
-              <div id="modal-servico" class="modal">
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <!-- aqui vai o conteúdo da janela modal -->
-                  <div class="main">
-                    <div class="formulario-container">
-                      <h2>Criar pedido de serviço</h2>
-                      <form action="processar_servico.php" method="POST">
-                        <div>
-                          <div class="divs">
-                            <label for="especialidade">Especialidade(s):</label>
-                            <div id="especialidade">
-                              <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="cabeleireiro"
-                                  value="cabeleireiro">
-                                <label for="cabeleireiro">Cabeleireiro</label>
+            <div id="criar-pedido">
+              <h2>Criar pedido:</h2>
+              <p>Nesta área você pode criar um pedido de serviço, especificando as informações relevantes para encontrar
+                profissionais adequados às suas necessidades.</p>
+              <div id="chat-box">
+                <div id="criar-btn"><button id="servico-btn">+</button></div>
+                <div id="modal-servico" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!-- aqui vai o conteúdo da janela modal -->
+                    <div class="main">
+                      <div class="formulario-container">
+                        <h2>Criar pedido de serviço</h2>
+                        <form action="processar_servico.php" method="POST">
+                          <div>
+                            <div class="divs">
+                              <label for="especialidade">Especialidade(s):</label>
+                              <div id="especialidade">
+                                <div>
+                                  <input type="checkbox" name="especialidade" class="entrada" id="cabeleireiro"
+                                    value="cabeleireiro">
+                                  <label for="cabeleireiro">Cabeleireiro</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="especialidade" class="entrada" id="barbeiro"
+                                    value="barbeiro">
+                                  <label for="barbeiro">Barbeiro</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="especialidade" class="entrada" id="maquiador"
+                                    value="maquiador">
+                                  <label for="maquiador">Maquiador</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="especialidade" class="entrada" id="manicure"
+                                    value="manicure">
+                                  <label for="manicure">Manicure</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="especialidade" class="entrada" id="pedicure"
+                                    value="pedicure">
+                                  <label for="maquiador">Pedicure</label>
+                                </div>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="barbeiro"
-                                  value="barbeiro">
-                                <label for="barbeiro">Barbeiro</label>
+                                <label for="outro">Outra:</label>
+                                <input type="tecxt" id="outra" class="entrada" name="outra"></input>
+                              </div>
+                              <br><br>
+                              <label for="servico">Serviço(s):</label>
+                              <div id="servico">
+                                <div>
+                                  <input type="checkbox" name="servico" class="entrada" id="corte" value="corte">
+                                  <label for="corte">Corte</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="servico" class="entrada" id="coloracao"
+                                    value="coloracao">
+                                  <label for="coloracao">Coloração</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="servico" class="entrada" id="escova" value="escova">
+                                  <label for="escova">Escova</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="servico" class="entrada" id="hidratacao"
+                                    value="hidratacao">
+                                  <label for="hidratacao">Hidratação</label>
+                                </div>
+                                <div>
+                                  <input type="checkbox" name="servico" class="entrada" id="reconstrucao"
+                                    value="reconstrucao">
+                                  <label for="reconstrucao">Reconstrução</label>
+                                </div>
                               </div>
                               <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="maquiador"
-                                  value="maquiador">
-                                <label for="maquiador">Maquiador</label>
-                              </div>
-                              <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="manicure"
-                                  value="manicure">
-                                <label for="manicure">Manicure</label>
-                              </div>
-                              <div>
-                                <input type="checkbox" name="especialidade" class="entrada" id="pedicure"
-                                  value="pedicure">
-                                <label for="maquiador">Pedicure</label>
+                                <label for="outro">Outro:</label>
+                                <input type="tecxt" id="outro" class="entrada" name="outro"></input>
                               </div>
                             </div>
-                            <div>
-                              <label for="outro">Outra:</label>
-                              <input type="tecxt" id="outra" class="entrada" name="outra"></input>
-                            </div>
-                            <br><br>
-                            <label for="servico">Serviço(s):</label>
-                            <div id="servico">
+                            <br>
+                            <div class="divs">
                               <div>
-                                <input type="checkbox" name="servico" class="entrada" id="corte" value="corte">
-                                <label for="corte">Corte</label>
+                                <label for="descricao">Descrição do serviço:</label>
+                                <textarea id="descricao" name="descricao" rows="5" cols="50"></textarea>
                               </div>
                               <div>
-                                <input type="checkbox" name="servico" class="entrada" id="coloracao" value="coloracao">
-                                <label for="coloracao">Coloração</label>
+                                <div>
+                                  <label for="data">Data:</label>
+                                  <input type="date" id="data" name="data_pedido"><br>
+                                </div>
+                                <br>
+                                <div>
+                                  <label for="hora">Hora:</label>
+                                  <input type="time" id="hora" name="hora"><br>
+                                </div>
                               </div>
-                              <div>
-                                <input type="checkbox" name="servico" class="entrada" id="escova" value="escova">
-                                <label for="escova">Escova</label>
-                              </div>
-                              <div>
-                                <input type="checkbox" name="servico" class="entrada" id="hidratacao"
-                                  value="hidratacao">
-                                <label for="hidratacao">Hidratação</label>
-                              </div>
-                              <div>
-                                <input type="checkbox" name="servico" class="entrada" id="reconstrucao"
-                                  value="reconstrucao">
-                                <label for="reconstrucao">Reconstrução</label>
-                              </div>
-                            </div>
-                            <div>
-                              <label for="outro">Outro:</label>
-                              <input type="tecxt" id="outro" class="entrada" name="outro"></input>
                             </div>
                           </div>
                           <br>
+                          <h2 style="margin-bottom: 50px;">Local</h2>
                           <div class="divs">
-                            <div>
-                              <label for="descricao">Descrição do serviço:</label>
-                              <textarea id="descricao" name="descricao" rows="5" cols="50"></textarea>
-                            </div>
-                            <div>
+                            <div id="endereco-div">
                               <div>
-                                <label for="data">Data:</label>
-                                <input type="date" id="data" name="data_pedido"><br>
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" id="cidade" class="entrada-endereco" name="cidade" required><br>
                               </div>
-                              <br>
+
                               <div>
-                                <label for="hora">Hora:</label>
-                                <input type="time" id="hora" name="hora"><br>
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" id="bairro" class="entrada-endereco" name="bairro"><br>
+                              </div>
+
+                              <div>
+                                <label for="rua">Rua:</label>
+                                <input type="text" id="rua" class="entrada-endereco" name="rua"><br>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <br>
-                        <h2 style="margin-bottom: 50px;">Local</h2>
-                        <div class="divs">
-                          <div id="endereco-div">
-                            <div>
-                              <label for="cidade">Cidade:</label>
-                              <input type="text" id="cidade" class="entrada-endereco" name="cidade" required><br>
-                            </div>
-
-                            <div>
-                              <label for="bairro">Bairro:</label>
-                              <input type="text" id="bairro" class="entrada-endereco" name="bairro"><br>
-                            </div>
-
-                            <div>
-                              <label for="rua">Rua:</label>
-                              <input type="text" id="rua" class="entrada-endereco" name="rua"><br>
-                            </div>
+                          <div style="text-align: center;">
+                            <button id="btn-criar" type="submit">Criar</button>
                           </div>
-                        </div>
-                        <div style="text-align: center;">
-                          <button id="btn-criar" type="submit">Criar</button>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <script>
+                  // Obtém a janela modal e o botão "SERVIÇO"
+                  var modal = document.getElementById("modal-servico");
+                  var btn = document.getElementById("servico-btn");
+
+                  // Obtém o botão "Fechar" e adiciona um evento de clique
+                  var span = document.getElementsByClassName("close")[0];
+                  span.onclick = function () {
+                    modal.style.display = "none";
+                  }
+
+                  // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "+"
+                  btn.onclick = function () {
+                    modal.style.display = "block";
+                  }
+                </script>
+
               </div>
-              <script>
-                // Obtém a janela modal e o botão "SERVIÇO"
-                var modal = document.getElementById("modal-servico");
-                var btn = document.getElementById("servico-btn");
-
-                // Obtém o botão "Fechar" e adiciona um evento de clique
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function () {
-                  modal.style.display = "none";
-                }
-
-                // Adiciona um evento de clique para mostrar a janela modal quando o usuário clicar no botão "+"
-                btn.onclick = function () {
-                  modal.style.display = "block";
-                }
-              </script>
+              <br>
+              <hr>
             </div>
-            <br>
-            <hr>
           </div>
           <div class="chatcontent hidden" id="chatconteudo2">
             <h2>Notificações:</h2>
@@ -260,36 +264,6 @@ if (session_id() != $_SESSION['id']) {
             <div>
               <h2>FAQ - Perguntas Frequentes:</h2>
               <p>Aqui ficará a exibição do accordion de perguntas e suas respostas, como um "manual" do site.</p>
-              <style>
-                .collapsible {
-                  background-color: #9E9E9E;
-                  color: white;
-                  cursor: pointer;
-                  padding: 18px;
-                  width: 100%;
-                  border: none;
-                  text-align: left;
-                  outline: none;
-                  font-size: 15px;
-                }
-
-                .collapsible:after {
-                  content: '\002B';
-                  color: white;
-                  font-weight: bold;
-                  float: right;
-                  margin-left: 5px;
-                }
-
-                .conten {
-                  padding: 0 18px;
-                  color: white;
-                  max-height: 0;
-                  overflow: hidden;
-                  transition: max-height 0.2s ease-out;
-                  background-color: #9E9E9E;
-                }
-              </style>
               <button class="collapsible">Open Collapsible</button>
               <div class="conten">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
@@ -684,6 +658,17 @@ if (session_id() != $_SESSION['id']) {
     document.querySelector('.chat-content.active').style.display = "block";
 
   </script>
+  <script>
+    //Código para sumir com a modal de criação de pedido em conta de profissional:
+    const tipo = "<?php echo $_SESSION['tipo']; ?>";
+    var criarped = document.getElementById("criar-pedido");
+    if (tipo == 'profissional') {
+      criarped.style.display = "none";
+    } else {
+      criarped.style.display = "block";
+    }
+  </script>
+
 </body>
 
 </html>

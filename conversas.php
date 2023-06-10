@@ -299,48 +299,32 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
                   <div class="chatcontent hidden" id="chatconteudo7">
                     <?php
                     // Exibe as mensagens na tela
-                    $sql = "SELECT * FROM mensagens WHERE remetente = '9'";
-                    //Aqui deverá ser puxado do id referente ao destinatário
+                    $sql = "SELECT * FROM mensagens";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
-                      $mensagens = array();
                       $date_time = array();
+
                       // Exibe as mensagens em uma lista
                       while ($row = mysqli_fetch_assoc($result)) {
-                        $mensagens[] = $row['conteudo'];
+                        $mensagem = $row['conteudo'];
                         $date_time = $row['date_time'];
                         $remetente = $row['remetente'];
-                      }
-                      foreach ($mensagens as $mensagem) {
-                        include('send-item2.php');
-                      }
-                    } else {
-                      echo "Não há mensagens.";
-                    }
-                    ?>
 
-                    <?php
-                    // Exibe as mensagens na tela
-                    $sql = "SELECT * FROM mensagens WHERE remetente = $id";
-                    $result = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                      $mensagens = array();
-                      // Exibe as mensagens em uma lista
-                      while ($row = mysqli_fetch_assoc($result)) {
-                        $mensagens[] = $row['conteudo'];
-                      }
-                      foreach ($mensagens as $mensagem) {
+                        // Verifica se a mensagem é do remetente atual
+                        if ($remetente == $id) {
+                          $classeCSS = 'mensagem-direita';
+                          $element = 'element1';
+                        } else {
+                          $classeCSS = 'mensagem-esquerda';
+                          $element = 'element2';
+                        }
+                        // Inclui o código do include dentro do loop para exibir cada mensagem
                         include('send-item.php');
                       }
                     } else {
                       echo "Não há mensagens.";
                     }
-
-                    // Fecha a conexão com o banco de dados
-                    /*mysqli_close($conn);*/
-
                     ?>
                   </div>
                 </div>

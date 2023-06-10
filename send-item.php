@@ -1,45 +1,33 @@
-<div class="element" id="element1">
+<div class="element" id="<?php echo $element; ?>">
+    <div style="<?php if ($element == 'element1') {
+        echo 'display: none';
+    } else {
+        echo 'display: block';
+    } ?>;
+    width: 11%;
+    font-size: 10px;">
+        <a href=""><img src="img/img_avatar.png" id="profile-img" alt="profile-img"></a>
+        <span class="date-time">
+            <?php echo $date_time; ?>
+        </span>
+    </div>
     <div class="send-item">
         <div class="chat-content-box">
             <span class="chat-content">
-                <?php echo "<div class='bloco-texto'>" . $mensagem . "</div>"; ?>
+                <?php echo "<div class=" . $classeCSS . ">" . $mensagem . "</div>"; ?>
             </span>
         </div>
     </div>
-    <div style="display: block;
+    <div style="<?php if ($element == 'element1') {
+        echo 'display: block';
+    } else {
+        echo 'display: none';
+    } ?>;
     width: 11%;
     font-size: 10px;">
-        <a href="<?php
-        $email = $_SESSION['email'];
-        $sql = "SELECT tipo FROM usuário WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            $tipo = $row['tipo'];
-
-            if ($tipo == 'cliente') {
-                echo "perfil-cliente.php";
-            } else {
-                echo "perfil-profissional.php";
-            }
-        }
-        ?>"><img src="<?php
-        $email = $_SESSION['email'];
-        $sql = "SELECT genero FROM usuário WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            $genero = $row['genero'];
-            if ($genero == 'masculino') {
-                echo "img/img_avatar.png";
-            } else {
-                echo "img/img_avatar2.png";
-            }
-        }
-        ?>" id="profile-img" alt="profile-img"></a>
+        <a href=""><img src="img/img_avatar.png" id="profile-img" alt="profile-img"></a>
         <span class="date-time">
-            <?php echo $date_time ?>
+            <?php echo $date_time; ?>
         </span>
     </div>
 </div>
