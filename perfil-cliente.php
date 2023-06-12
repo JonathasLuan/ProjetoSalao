@@ -185,7 +185,7 @@ if ($tipo != 'cliente') {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <form action="" method="POST">
+              <form action="atualizar_nome.php" method="POST">
                 <div id="options">
                   <ul class="accordion">
                     <li>
@@ -452,7 +452,7 @@ if ($tipo != 'cliente') {
                               if (mysqli_num_rows($result) > 0) {
                                 // Exibe o nome
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                  echo $row["nome"] . " " . $row["sobrenome"];
+                                  echo $row["nome"];
                                 }
                               } else {
                                 echo "Nome-User";
@@ -510,11 +510,12 @@ if ($tipo != 'cliente') {
   include 'footer.php';
   include('set_theme_session.php');
   ?>
+
   <script>
     function editarCampo(campo) {
       var elemento = document.getElementById(campo);
       var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
+      elemento.innerHTML = '<input type="text" name="nome" id="campo-editar" value="' + valorAntigo + '">';
       document.getElementById('edit-' + campo).style.display = 'none';
       document.getElementById('salvar-' + campo).style.display = 'inline';
     }
@@ -524,12 +525,24 @@ if ($tipo != 'cliente') {
       document.getElementById(campo).innerHTML = valorNovo;
       document.getElementById('edit-' + campo).style.display = 'inline';
       document.getElementById('salvar-' + campo).style.display = 'none';
+
+      // Chamada AJAX para atualizar o nome no banco de dados
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "atualizar.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Processar a resposta, se necessário
+        }
+      };
+      xhr.send("nome=" + valorNovo);
     }
   </script>
+
   <script src="perfil-profissionalJS.js"></script>
 
   <script>
-    // Get the modal
+    // Pegar modal
     var sobre = document.getElementById("editsobre");
     var p = document.getElementById("sobreperfil");
 

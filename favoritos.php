@@ -19,19 +19,6 @@ if (session_id() != $_SESSION['id']) {
   <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="conversas.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    #conteudo {
-      display: flex;
-    }
-
-    .mensagem-direita {
-      float: right;
-    }
-
-    .mensagem-esquerda {
-      float: left;
-    }
-  </style>
 </head>
 
 <body>
@@ -77,55 +64,11 @@ if (session_id() != $_SESSION['id']) {
       ?>
     </div>
   </main>
-  <?php
-  // Exibe as mensagens na tela
-  $sql = "SELECT * FROM mensagens";
-  // Aqui deverá ser puxado do id referente ao destinatário
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-    $mensagens = array();
-    $date_time = array();
-
-    // Exibe as mensagens
-    while ($row = mysqli_fetch_assoc($result)) {
-      $mensagem = $row['conteudo'];
-      $reme = $row['remetente'];
-
-      // Adiciona uma classe CSS baseada no remetente da mensagem
-      $classeCSS = ($reme == $id) ? 'mensagem-direita' : 'mensagem-esquerda';
-
-      // Exibe a mensagem com a classe CSS apropriada
-      echo '<div class="' . $classeCSS . '">' . $mensagem . '</div><br>';
-    }
-  } else {
-    echo "Não há mensagens.";
-  }
-  ?>
 
   <?php
   include('footer.php');
   include('set_theme_session.php');
   ?>
-
-  <div class="element" id="element2">
-    <div style="display: block;
-    width: 11%;
-    font-size: 10px;">
-      <img src="<?php ?>img/img_avatar.png" id="profile-img" alt="profile-img">
-      <span class="date-time">
-        <?php echo $date_time ?>
-      </span>
-    </div>
-    <div class="send-item">
-      <div class="chat-content-box">
-        <span class="chat-content">
-          <?php echo "<div class='bloco-texto'>" . $mensagem . "</div>"; ?>
-        </span>
-      </div>
-    </div>
-  </div>
-
 </body>
 
 </html>

@@ -21,6 +21,7 @@ if (session_id() != $_SESSION['id']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Provador</title>
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -47,8 +48,10 @@ if (session_id() != $_SESSION['id']) {
     possa balizar suas escolhas, caso ainda esteja indeciso. Serão recomendações baseadas nas características fornecidas
     do que combina melhor com este cliente, levando em conta: cor de pele, formato de rosto, tipo de cabelo e tamanho,
     barba e muito mais.</p>
+
   <?php
   include('footer.php');
+  include('set_theme_session.php');
   ?>
 </body>
 

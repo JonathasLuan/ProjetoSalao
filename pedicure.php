@@ -17,6 +17,7 @@ echo session_id();*/
   <title>Pedicure</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="serviços-list.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -45,6 +46,7 @@ echo session_id();*/
     ?>
     <?php
     include('footer.php');
+    include('set_theme_session.php');
     ?>
   </main>
 

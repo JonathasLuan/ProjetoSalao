@@ -17,6 +17,7 @@ echo session_id();*/
   <title>Destaques</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./destaquesCSS.css">
+  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -47,8 +48,10 @@ echo session_id();*/
       <!-- A lista de conversas será adicionada aqui -->
     </div>
     <button id="adicionarConversa">Adicionar Conversa</button>
+
     <?php
     include('footer.php');
+    include('set_theme_session.php');
     ?>
     <script>
       // Obtém a referência do botão e do elemento que irá conter a lista de conversas

@@ -17,9 +17,22 @@ header {
   color: white;
 }
 
+.logo img {
+  content: url('./img/userlmn_aaa232cc16431b575cc74be0c0e98855.png');
+}
+
+.menu-li a {
+  color: white !important;
+  background: none !important;
+}
+
+.menu-li a:hover {
+  background-color: rgb(70, 69, 69) !important;
+  color: white !important;
+}
+
 #section-one {
   background-color: #ccc;
-  background-image: url(img/hair.avif);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
