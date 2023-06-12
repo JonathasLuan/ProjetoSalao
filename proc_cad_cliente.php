@@ -12,6 +12,21 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
 $genero = filter_input(INPUT_POST, 'genero', FILTER_SANITIZE_STRING);
 
+/*
+//Código para testar verificação de usuário (e-mail) já cadastrado:
+$verify = "SELECT * FROM usuário WHERE email = '$email'");
+$mysqli_query = $mysqli->query($verify) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+$quantidade = $mysqli_query->num_rows;
+
+if ($quantidade > 0) {
+    echo "Esse e-mail já está registrado.";
+    } else {
+        $result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
+$resultado_usuario = mysqli_query($conn, $result_usuario);
+    }
+*/
+
 $result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
