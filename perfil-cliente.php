@@ -185,7 +185,7 @@ if ($tipo != 'cliente') {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <form action="atualizar_nome.php" method="POST">
+              <form action="atualizar.php" method="POST">
                 <div id="options">
                   <ul class="accordion">
                     <li>
@@ -488,7 +488,20 @@ if ($tipo != 'cliente') {
                           </div>
                           <br>
                           <div>
-                            <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
+                            <textarea id="editsobre" name="editsobre" rows="10" cols="50"><?php
+                            // Seleciona a bio
+                            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                              // Exibe a bio
+                              while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row["bio"];
+                              }
+                            } else {
+                              echo "Bio-User";
+                            }
+                            ?></textarea>
                             <button type="button" class="btn-salvar-edit btn">Salvar</button>
                           </div>
                         </div>

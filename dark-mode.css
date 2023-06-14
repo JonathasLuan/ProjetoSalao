@@ -97,6 +97,10 @@ body.dark-mode #info {
     color: white;
 }
 
+body.dark-mode #links i {
+    color: #51b4f1;
+}
+
 body.dark-mode .container-content {
     background-color: #000;
     color: white;
@@ -129,6 +133,11 @@ body.dark-mode .content {
 
 body.dark-mode button {
     background-color: #51b4f1;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background-color: #8ed4ff;
     color: white;
 }
 
@@ -255,7 +264,6 @@ body.dark-mode #foto img {
 }
 
 body.dark-mode .btn {
-    background-color: rgb(53, 53, 53);
     color: #ffffff;
     border-color: #888;
     margin: 2px;

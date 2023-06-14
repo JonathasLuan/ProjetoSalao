@@ -2,20 +2,34 @@
 session_start();
 include_once('conexao.php');
 
-// Verifica se o valor do nome foi enviado via POST
+// Verifica se o valor do nome e da bio foram enviados via POST
 if (isset($_POST['nome'])) {
     $novoNome = $_POST['nome'];
 
-    // Realiza a atualização no banco de dados
+    // Realiza as atualizações no banco de dados
     $email = $_SESSION['email'];
     $sql = "UPDATE usuário SET nome = '$novoNome' WHERE email = '$email'";
     $resultado = mysqli_query($conn, $sql);
 
     if ($resultado) {
         header('Location: principal.php');
-        echo "Nome atualizado com sucesso.";
     } else {
-        echo "Erro ao atualizar o nome.";
+        header('Location: principal.php');
+    }
+}
+
+if (isset($_POST['editsobre'])) {
+    $novaBio = $_POST['editsobre'];
+
+    // Realiza as atualizações no banco de dados
+    $email = $_SESSION['email'];
+    $sql = "UPDATE usuário SET bio = '$novaBio' WHERE email = '$email'";
+    $resultado = mysqli_query($conn, $sql);
+
+    if ($resultado) {
+        header('Location: principal.php');
+    } else {
+        header('Location: principal.php');
     }
 }
 ?>

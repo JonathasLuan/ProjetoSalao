@@ -42,27 +42,6 @@ if (session_id() != $_SESSION['id']) {
   </header>
   <main>
     <div id="conteudo">
-      <?php
-      include_once("conexao.php");
-
-      $email = $_SESSION['email'];
-      $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
-      $result = mysqli_query($conn, $sql);
-      if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $id = $row['id_usuario'];
-        echo "<h1> Id de usuário: " . $id . "</h1>";
-      }
-
-      $sql = "SELECT id_endereco FROM endereco WHERE id_usuario = '$id'";
-      $result = mysqli_query($conn, $sql);
-      if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $id_end = $row['id_endereco'];
-        echo "<h1> Id de endereço: " . $id_end . "</h1>";
-      }
-      ?>
-    </div>
   </main>
 
   <?php

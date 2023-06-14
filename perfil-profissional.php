@@ -419,14 +419,6 @@ if ($tipo != 'profissional') {
                               } else {
                                 echo "Nome-User";
                               }
-
-                              if (isset($_POST['editnome'])) {
-                                $editnome = $_POST['editnome'];
-
-                                $insert = "UPDATE usuário SET nome = $editnome WHERE email = '$email'";
-                                $insert = mysqli_query($conn, $insert);
-                                echo $editnome;
-                              }
                               ?>
                             </span>
                             <button type="button" id="edit-nick" onclick="editarCampo('nick')">Editar</button>
@@ -435,17 +427,6 @@ if ($tipo != 'profissional') {
                           </div>
                         </div>
                         <br>
-                        <?php
-                        if (isset($_POST['editnome'])) {
-                          $editnome = $_POST['editnome'];
-
-                          $insert = "UPDATE usuário SET nome = $editnome WHERE email = '$email'";
-                          $insert = mysqli_query($conn, $insert);
-                          echo $editnome;
-                        } else {
-                          echo "sem nome";
-                        }
-                        ?>
                         <div id="editbio" class="divs" style="border-bottom: 0;">
                           <h3>Sobre</h3>
                           <div>
@@ -469,8 +450,20 @@ if ($tipo != 'profissional') {
                           </div>
                           <br>
                           <div>
-                            <textarea style="display: none;" id="editsobre" name="editsobre" rows="10"
-                              cols="50"></textarea>
+                            <textarea style="display: none;" id="editsobre" name="editsobre" rows="10" cols="50"><?php
+                            // Seleciona a bio
+                            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                              // Exibe a bio
+                              while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row["bio"];
+                              }
+                            } else {
+                              echo "Bio-User";
+                            }
+                            ?></textarea>
                             <button type="button" class="btn-salvar-edit btn">Salvar</button>
                           </div>
                         </div>
@@ -523,7 +516,7 @@ if ($tipo != 'profissional') {
   </script>
 
   <script>
-    // Get the modal
+    // Pegar modal
     var sobre = document.getElementById("editsobre");
     var p = document.getElementById("sobreperfil");
 
@@ -542,23 +535,6 @@ if ($tipo != 'profissional') {
       salvar.style.display = "none";
       btn.style.display = "block";
       p.style.display = "block";
-    }
-  </script>
-
-  <script>
-    function editarCampo(campo) {
-      var elemento = document.getElementById(campo);
-      var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<textarea id="campo-editar" value="">' + valorAntigo + '</textarea>';
-      document.getElementById('edit-' + campo).style.display = 'none';
-      document.getElementById('salvar-' + campo).style.display = 'inline';
-    }
-
-    function salvarCampo(campo) {
-      var valorNovo = document.getElementById('campo-editar').value;
-      document.getElementById(campo).innerHTML = valorNovo;
-      document.getElementById('edit-' + campo).style.display = 'inline';
-      document.getElementById('salvar-' + campo).style.display = 'none';
     }
   </script>
 
