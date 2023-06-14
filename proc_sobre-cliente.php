@@ -2,21 +2,26 @@
 session_start();
 include_once("conexao.php");
 
-// Sobre:
+$foto = filter_input(INPUT_POST, 'foto', FILTER_SANITIZE_STRING);
 $bio = filter_input(INPUT_POST, 'bio', FILTER_SANITIZE_STRING);
-// Caracteristicas:
-$cabelo = filter_input(INPUT_POST, 'cabelo', FILTER_SANITIZE_STRING);
-$pele = filter_input(INPUT_POST, 'pele', FILTER_SANITIZE_STRING);
-$unhas = filter_input(INPUT_POST, 'unhas', FILTER_SANITIZE_STRING);
-$rosto = filter_input(INPUT_POST, 'rosto', FILTER_SANITIZE_STRING);
 
-$sqlBio = "INSERT INTO usuário (bio) VALUES ('$bio')";
+$email = $_SESSION['email'];
+$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['id_usuario'];
+}
+
+$sql = "SELECT id_endereco FROM endereco WHERE id_usuario = '$id'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $id_end = $row['id_endereco'];
+}
+
+$sqlBio = "INSERT INTO cliente (id_usuario_fk, id_local_fk, bio) VALUES ('$id', '$id_end', '$bio')";
 $insert = mysqli_query($conn, $sqlBio);
-
-$id_usuario = $_SESSION['id_usuario'];
-
-$sqlCaract = "INSERT INTO caracteristicas (id_usuario, id_caract, cabelo, pele, unhas, rosto) VALUES ('$id_usuario', '$cabelo', '$pele', '$unhas', '$rosto')";
-$insert = mysqli_query($conn, $sqlCaract);
 
 if (mysqli_insert_id($conn)) {
     header("Location: perfil-cliente.php");
@@ -24,5 +29,4 @@ if (mysqli_insert_id($conn)) {
     header("Location: cadastro.php");
     echo "Falha ao cadastrar.";
 }
-
 ?>

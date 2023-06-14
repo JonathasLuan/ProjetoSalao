@@ -18,7 +18,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   <title>SalonSet</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./homeCSS.css">
-  <link rel="stylesheet" href="dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -30,14 +29,45 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
     <?php
     include('barra-pesquisa.php');
     ?>
-    <?php
-    // usuário não fez login, exibe o menu padrão
-    include('menu-padrao.php');
-    ?>
+    <div class="menu" id="unlogged">
+      <ul>
+        <li class="menu-li">
+          <a href="home.php">home</a>
+        </li>
+        <li class="menu-li">
+          <a href="serviços.php">serviços</a>
+        </li>
+        <li class="menu-li">
+          <a href="sobre.php">sobre</a>
+        </li>
+        <li class="menu-li">
+          <a href="contato.php">contato</a>
+        </li>
+        <li>
+          <div class="dropdown">
+            <a href="entrar.php" class="mainmenua">entrar <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></a>
+            <div class="dropdown-child">
+              <a style="border-top-left-radius: 0px;" href="login.php">Login</a>
+              <a href="cadastro.php">Cadastro</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </header>
   <div class="conteudo">
     <section id="section-one">
       <div class="slider">
+        <div id="text-slider">
+          <h1>SERVIÇOS DE BELEZA</h1>
+          <p style="width: 40%;">Busque e encontre os melhores serviços e profissionais da área da beleza de acordo com
+            seu gosto!
+          </p>
+        </div>
         <figure>
           <div class="slide">
             <img src="img/cabelo.jpg" alt="">
@@ -80,34 +110,6 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             </form>
           </div>
         </div>
-
-        <script>
-          // Get the modal
-          var modal = document.getElementById("myModal");
-
-          // Get the button that opens the modal
-          var btn = document.getElementById("myBtn");
-
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
-
-          // When the user clicks the button, open the modal 
-          btn.onclick = function () {
-            modal.style.display = "block";
-          }
-
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function () {
-            modal.style.display = "none";
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function (event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-        </script>
       </div>
 
     </section>
@@ -266,10 +268,36 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
       });
     }
   </script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
   <?php
   include('footer.php');
-  include('set_theme_session.php');
   ?>
 </body>
 

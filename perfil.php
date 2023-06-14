@@ -236,6 +236,10 @@ $modo = 'light';
       </div>
     </section>
   </main>
+  <?php
+  include 'footer.php';
+  include('set_theme_session.php');
+  ?>
   <script>
     function editarCampo(campo) {
       var elemento = document.getElementById(campo);

@@ -6,6 +6,20 @@ if (session_id() != $_SESSION['id']) {
   header('Location: entrar.php');
   return;
 }
+
+$email = $_SESSION['email'];
+$tipo = "SELECT tipo FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $tipo);
+
+if (mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $tipo = $row["tipo"];
+  }
+}
+
+if ($tipo != 'cliente') {
+  header('Location: perfil-profissional.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -146,6 +160,7 @@ if (session_id() != $_SESSION['id']) {
               <h2>Conversas:</h2>
               <p>Todas as conversas iniciadas entre o cliente e o profissional estarão nesta seção, onde ele poderá
                 selecionar cada uma e responder às mensagens.</p>
+              <a href="conversas.php">Conversas</a>
               <?php
               include('chat-box.php')
                 ?>
@@ -170,7 +185,7 @@ if (session_id() != $_SESSION['id']) {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <form action="" method="POST">
+              <form action="atualizar.php" method="POST">
                 <div id="options">
                   <ul class="accordion">
                     <li>
@@ -437,7 +452,7 @@ if (session_id() != $_SESSION['id']) {
                               if (mysqli_num_rows($result) > 0) {
                                 // Exibe o nome
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                  echo $row["nome"] . " " . $row["sobrenome"];
+                                  echo $row["nome"];
                                 }
                               } else {
                                 echo "Nome-User";
@@ -473,7 +488,20 @@ if (session_id() != $_SESSION['id']) {
                           </div>
                           <br>
                           <div>
-                            <textarea id="editsobre" name="editsobre" rows="10" cols="50"></textarea>
+                            <textarea id="editsobre" name="editsobre" rows="10" cols="50"><?php
+                            // Seleciona a bio
+                            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                              // Exibe a bio
+                              while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row["bio"];
+                              }
+                            } else {
+                              echo "Bio-User";
+                            }
+                            ?></textarea>
                             <button type="button" class="btn-salvar-edit btn">Salvar</button>
                           </div>
                         </div>
@@ -495,11 +523,12 @@ if (session_id() != $_SESSION['id']) {
   include 'footer.php';
   include('set_theme_session.php');
   ?>
+
   <script>
     function editarCampo(campo) {
       var elemento = document.getElementById(campo);
       var valorAntigo = elemento.innerText;
-      elemento.innerHTML = '<input type="text" id="campo-editar" value="' + valorAntigo + '">';
+      elemento.innerHTML = '<input type="text" name="nome" id="campo-editar" value="' + valorAntigo + '">';
       document.getElementById('edit-' + campo).style.display = 'none';
       document.getElementById('salvar-' + campo).style.display = 'inline';
     }
@@ -509,12 +538,24 @@ if (session_id() != $_SESSION['id']) {
       document.getElementById(campo).innerHTML = valorNovo;
       document.getElementById('edit-' + campo).style.display = 'inline';
       document.getElementById('salvar-' + campo).style.display = 'none';
+
+      // Chamada AJAX para atualizar o nome no banco de dados
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "atualizar.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Processar a resposta, se necessário
+        }
+      };
+      xhr.send("nome=" + valorNovo);
     }
   </script>
+
   <script src="perfil-profissionalJS.js"></script>
 
   <script>
-    // Get the modal
+    // Pegar modal
     var sobre = document.getElementById("editsobre");
     var p = document.getElementById("sobreperfil");
 

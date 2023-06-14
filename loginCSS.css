@@ -58,7 +58,6 @@ label {
 }
 
 label {
-  display: block;
   margin-bottom: 10px;
   font-size: 15px;
 }
@@ -186,5 +185,6 @@ footer {
 }
 
 #myBtn:hover {
-  background-color: lightgrey;
+  text-decoration: underline;
+  cursor: pointer;
 }

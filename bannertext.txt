@@ -1,0 +1,12 @@
+<div id="bannertext">
+<h1>SERVIÇOS DE BELEZA</h1>
+<p>
+Contrate diversos serviços estéticos personalizado em poucos cliques.
+</p>
+</div>
+<style>
+#bannertext {
+position: absolute;
+margin: 0 auto;
+}
+</style>

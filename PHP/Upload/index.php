@@ -1,11 +1,5 @@
 <?php
-
 include("conexao.php");
-
-/*if(isset($_FILES) && count($_FILES) > 0) {
-var_dump($_FILES);
-die();
-}*/
 
 if (isset($_FILES['arquivo'])) {
     echo "arquivo enviado";
@@ -28,16 +22,14 @@ if (isset($_FILES['arquivo'])) {
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
     if ($deu_certo) {
-        $mysqli->query("INSERT INTO arquivos (nome, caminho) VALUES('$nomeDoArquivo', '')") or die($mysqli->error);
+        $mysqli->query("INSERT INTO arquivos (nome, caminho) VALUES('$nomeDoArquivo', '$path')") /* or die($mysqli->error)*/;
         echo "<p>Arquivo enviado com sucesso!</p>";
-    } else
+    } else {
         echo "<p>Falha ao enviar o arquivo.</p>";
+    }
 }
-
-$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
-
+$sql_query = $mysqli->query("SELECT * FROM arquivos") /* or die($mysqli->error)*/;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,8 +64,10 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
                     while ($arquivo = $sql_query->fetch_assoc()) {
                         ?>
                         <tr>
-                            <td><img height="50" src="<?php echo $arquivo['path']; ?>" alt=""></td>
-                            <td><a target="_blank" href="<?php echo $arquivo['path']; ?>">
+                            <td><img height="50" src="<?php echo !empty($arquivo['caminho']) ? $arquivo['caminho'] : ''; ?>"
+                                    alt=""></td>
+
+                            <td><a target="_blank" href="<?php echo $arquivo['caminho']; ?>">
                                     <?php echo $arquivo['nome']; ?></a>
                             </td>
                             <td>

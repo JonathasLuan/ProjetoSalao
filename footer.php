@@ -2,11 +2,26 @@
     <p>&copy; 2023 SalonSet</p>
     <?php
     if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
-        echo "Senha: " . $_SESSION['senha'] . "<br>";
-        echo "E-mail: " . $_SESSION['email'] . "<br>" . "<br>";
-        echo "\$_SESSION['id']: " . $_SESSION['id'] . "<br>";
         echo "session_id: " . session_id() . "<br>";
-        echo $_SESSION['tipo'];
+
+        include_once("conexao.php");
+
+        $email = $_SESSION['email'];
+        $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $id = $row['id_usuario'];
+            echo "Id de usuário: " . $id . "<br>";
+        }
+
+        $sql = "SELECT id_endereco FROM endereco WHERE id_usuario = '$id'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $id_end = $row['id_endereco'];
+            echo "Id de endereço: " . $id_end . "<br>";
+        }
     }
     ?>
     <br>

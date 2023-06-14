@@ -6,6 +6,8 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   header('Location: principal.php');
   return;
 }
+
+$step = 3;
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +38,9 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
   </header>
   <div class="conteudo">
     <div id="cadastroform">
+      <?php
+      include 'progressbar.php';
+      ?>
       <div class="formulario-container">
         <h2>Fale sobre você</h2>
         <form method="POST" enctype="multipart/form-data" action="proc_sobre-prof.php">
@@ -49,7 +54,8 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
                   <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
                   <input type="file" id="profile-image" name="profile-image">
                 </div>
-                <img id="profile-preview" src="img/profile.webp" alt="profile">
+                <!-- criar um código PHP para verificar o gênero iserido anteriormente e mostrar a foto de acordo -->
+                <img id="profile-preview" src="img/img_avatar.png" alt="profile">
               </div>
             </div>
           </div>
@@ -96,7 +102,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
             </div>
           </div>
 
-          <div style="text-align: center"><button type="submit">Continuar</button></div>
+          <div style="text-align: center"><button id="btn-finalizar" type="submit">FINALIZAR</button></div>
         </form>
       </div>
     </div>

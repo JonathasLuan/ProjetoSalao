@@ -39,20 +39,14 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
     if (count($resultados)) {
         foreach ($resultados as $resultado) {
             echo $resultado['titulo'];
-            header("Location: http://localhost/ProjetoSalao/" . $resultado['url']);
         }
     } else {
         echo "<h1>" . "Nenhum resultado correspondente." . "</h1>";
     }
     ?>
-    <img src="img/404robot.jpg" alt="">
 
     <button onclick="goBack()">Voltar</button>
 
-    <script>
-        // Adiciona um listener de evento para o botão "Adicionar Conversa"
-        btnAdicionarConversa.addEventListener("click", adicionarConversa);
-    </script>
     <script>
         function goBack() {
             window.history.back();

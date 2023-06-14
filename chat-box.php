@@ -1,12 +1,14 @@
 <div id="chat-box">
     <div class="chat-element">
-        <div class="chat-item" id="chat-item-1">
+        <div id="chatbotao7" class="chat-menu-button chat-item" data-target="chatcontent3" id="chat-item-1">
             <div class="user-avatar">
                 <img src="img/avatar2.png" alt="user-avatar">
             </div>
             <div class="chat-info">
                 <div class="user-name">
-                    <h5 class="name">Cléusu</h5>
+                    <label for="chatbotao7">
+                        <h5 class="name">Cléusu</h5>
+                    </label>
                 </div>
                 <div class="preview">
                 </div>

@@ -63,6 +63,10 @@ input:checked+.slider:before {
     color: rgb(255, 255, 255);
 }
 
+body.dark-mode * {
+    box-shadow: none;
+}
+
 body.dark-mode main {
     background-color: rgb(53, 53, 53);
     color: white;
@@ -93,15 +97,14 @@ body.dark-mode #info {
     color: white;
 }
 
+body.dark-mode #links i {
+    color: #51b4f1;
+}
+
 body.dark-mode .container-content {
     background-color: #000;
     color: white;
     box-shadow: none;
-}
-
-body.dark-mode h3 {
-    background-color: #000;
-    color: white;
 }
 
 body.dark-mode #sidebar1 {
@@ -133,6 +136,11 @@ body.dark-mode button {
     color: white;
 }
 
+body.dark-mode button:hover {
+    background-color: #8ed4ff;
+    color: white;
+}
+
 body.dark-mode nav button:hover {
     background-color: rgb(153, 150, 150);
     color: #fafafa;
@@ -145,6 +153,18 @@ body.dark-mode .chat-item {
 }
 
 body.dark-mode .chat-item:hover {
+    background-color: #4e5052;
+    color: #fafafa;
+    border: #888;
+}
+
+body.dark-mode .agend-item {
+    background-color: #373b3d;
+    color: #fafafa;
+    border: #888;
+}
+
+body.dark-mode .agend-item:hover {
     background-color: #4e5052;
     color: #fafafa;
     border: #888;
@@ -165,22 +185,44 @@ body.dark-mode #menu-chat button:hover {
 body.dark-mode #menu-chat {
     background-color: #000;
     color: white;
-    border-color: gray;
+    border-color: rgb(53, 53, 53);
 }
 
 body.dark-mode #menu-chat button,
 body.dark-mode #menu-content button,
 body.dark-mode .btn-dropdown-child,
-body.dark-mode input,
 body.dark-mode .modal-inner,
 body.dark-mode header,
 body.dark-mode .modal-content,
 body.dark-mode #contactform,
 body.dark-mode #sobreprojeto,
 body.dark-mode #sobreperfil,
-body.dark-mode #editsobre,
-body.dark-mode #navbar ul li a {
-    background-color: #000;
+body.dark-mode article,
+body.dark-mode .container-central,
+body.dark-mode #formulario-1,
+body.dark-mode #formulario-2,
+body.dark-mode nav,
+body.dark-mode .campologin,
+body.dark-mode .formulario-container form,
+body.dark-mode .accordion h3 {
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+
+body.dark-mode article a {
+    color: #51b4f1;
+}
+
+body.dark-mode input [type="text"],
+body.dark-mode textarea,
+body.dark-mode input,
+body.dark-mode select {
+    background-color: grey !important;
+    color: white !important;
+}
+
+body.dark-mode ::placeholder {
     color: white;
 }
 
@@ -188,9 +230,30 @@ body.dark-mode #menu-content {
     background-color: #000;
     color: white;
     border-color: gray;
+    border-bottom: 1px solid grey;
 }
 
-body.dark-mode a {
+body.dark-mode * {
+    box-shadow: none;
+}
+
+body.dark-mode #nav-servicos a:hover {
+    background-color: #9E9E9E !important;
+    color: white;
+}
+
+body.dark-mode #nav-servicos,
+body.dark-mode #nav-servicos a {
+    background-color: grey !important;
+    color: white;
+}
+
+body.dark-mode li a {
+    background-color: #000;
+    color: #51b4f1;
+}
+
+body.dark-mode #navbar li a {
     background-color: #000;
     color: #51b4f1;
 }
@@ -201,7 +264,6 @@ body.dark-mode #foto img {
 }
 
 body.dark-mode .btn {
-    background-color: rgb(53, 53, 53);
     color: #ffffff;
     border-color: #888;
     margin: 2px;
@@ -209,8 +271,12 @@ body.dark-mode .btn {
     border: 1px solid;
 }
 
+body.dark-mode article:hover {
+    background-color: grey;
+}
+
 body.dark-mode .logo img {
-    content: url('./img/tesoura.png');
+    content: url('./img/userlmn_aaa232cc16431b575cc74be0c0e98855.png');
 }
 
 body.dark-mode footer {
@@ -245,4 +311,8 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
 
 body.dark-mode ::-webkit-scrollbar-thumb {
     background: #aaa;
+}
+
+body.dark-mode #navbar li a:hover {
+    background-color: rgb(53, 53, 53);
 }

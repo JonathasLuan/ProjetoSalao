@@ -35,7 +35,7 @@ session_start();
     }
     ?>
   </header>
-  <nav>
+  <nav id="nav-servicos">
     <a href="agendamentos.php">AGENDADOS</a>
     <a href="destaques.php">DESTAQUES</a>
     <a href="favoritos.php">FAVORITOS</a>

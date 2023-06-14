@@ -79,5 +79,4 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
     </script>
 </body>
 
-
 </html>
