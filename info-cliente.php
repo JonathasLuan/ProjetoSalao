@@ -2,7 +2,7 @@
     <div class="foto">
         <img id="fotop" src="<?php
         $email = $_SESSION['email'];
-        $sql = "SELECT genero FROM usuário WHERE email = '$email'";
+        $sql = "SELECT * FROM usuário WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {

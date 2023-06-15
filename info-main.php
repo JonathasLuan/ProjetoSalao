@@ -32,7 +32,7 @@
         <h2 id="nomeperfil" style="text-align: center;">
             <?php
             // Seleciona o nome
-            $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '{$_SESSION['email']}'";
+            $sql = "SELECT * FROM usuário WHERE email = '{$_SESSION['email']}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
