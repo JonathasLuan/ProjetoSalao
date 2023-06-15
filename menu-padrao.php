@@ -1,7 +1,7 @@
 <div class="menu" id="unlogged">
     <ul>
         <li>
-            <a href="home.php">home</a>
+            <a href="index.php">home</a>
         </li>
         <li>
             <a href="serviços.php">serviços</a>
