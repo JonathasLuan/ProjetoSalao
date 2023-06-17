@@ -1,5 +1,43 @@
+<style>
+  .menu {
+    margin-left: 100px;
+    display: flex;
+  }
+
+  .mainmenua {
+    background-color: rgb(255, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border: none;
+    cursor: pointer;
+    display: contents;
+    padding: 20px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: flex;
+    z-index: 1;
+  }
+
+  #img-user-profile {
+    width: 40px;
+    height: 40px;
+    border-color: #000000;
+    border-radius: 50%;
+  }
+
+  .dropdown-child {
+    display: none;
+    min-width: 150px;
+    position: absolute;
+    margin-top: 0px !important;
+    top: 100%;
+    z-index: 1;
+    box-shadow: 0px 0px 5px #ccc;
+  }
+</style>
 <div class="menu" id="logged">
-  <ul>
+  <ul style="display: flex; align-items: center;">
     <li>
       <a href="principal.php">principal</a>
     </li>
@@ -20,11 +58,7 @@
         } else {
           echo "perfil-profissional.php";
         }
-        ?>" class="mainmenua">perfil <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-chevron-down">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg></a>
+        ?>" class="mainmenua"><img id="img-user-profile" src="./img/avatar2.png"></a>
         <div class="dropdown-child">
           <a href="favoritos.php">Favoritos</a>
           <form action="logout.php" method="POST">

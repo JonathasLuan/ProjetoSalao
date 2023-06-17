@@ -32,7 +32,7 @@ if (isset($_SESSION['id']) && session_id() == $_SESSION['id']) {
     <div class="menu" id="unlogged">
       <ul>
         <li class="menu-li">
-          <a href="home.php">home</a>
+          <a href="index.php">home</a>
         </li>
         <li class="menu-li">
           <a href="serviços.php">serviços</a>
