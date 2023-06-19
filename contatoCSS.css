@@ -16,14 +16,37 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 16px;
-    font-family: Arial, Helvetca, sans serif;
+    font-family: Arial, Helvetca, sans-serif;
     line-height: 30px;
-    position: relative;
+    display: flex;
+    /* Adicionado */
+    justify-content: space-between;
+    /* Adicionado */
 }
 
-#formulario-container {
-    margin: 0 500px;
-    width: 50%;
+#orange {
+    background-color: #607D8B;
+    width: 40%;
+    /* height: 100%; */
+    overflow: auto;
+}
+
+@media (max-width: 768px) {
+    #contactform {
+        width: 90%;
+        flex-direction: column;
+        /* Adicionado */
+        align-items: center;
+        /* Adicionado */
+    }
+
+    #formulario-container {
+        width: 100%;
+    }
+
+    #orange {
+        width: 100%;
+    }
 }
 
 form {
@@ -41,34 +64,16 @@ label {
     font-weight: bold;
 }
 
-input[type="tel"] {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #9E9E9E;
-    border-radius: 4px;
-    background-color: #fbfbfb;
-    font-size: 15px;
-}
-
+input[type="tel"],
 #nome,
 #mensagem,
-input[type="email"] {
-    max-width: 90%;
-    min-width: 90%;
+input[type="email"],
+#assunto {
+    width: 90%;
     padding: 10px;
     border: 1px solid #9E9E9E;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #fbfbfb;
-    font-size: 15px;
-}
-
-#assunto {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #9E9E9E;
-    border-radius: 4px;
-    margin-bottom: 10px;
     background-color: #fbfbfb;
     font-size: 15px;
 }
@@ -83,7 +88,7 @@ input[type="email"] {
     cursor: pointer;
     margin-top: 30px;
     text-align: center;
-    width: 100%;
+    width: 95%;
     font-weight: bold;
 }
 
@@ -91,10 +96,39 @@ input[type="email"] {
     background-color: #2196f3;
 }
 
-#orange {
-    background-color: #607D8B;
-    width: 40%;
-    height: 100%;
-    position: absolute;
-    overflow: auto;
+.collapsible {
+    background-color: #9E9E9E;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #9E9E9E;
 }

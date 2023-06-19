@@ -55,3 +55,12 @@ article a {
 article:hover {
   background-color: #ddd;
 }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+}
