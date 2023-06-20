@@ -185,7 +185,7 @@ if ($tipo != 'cliente') {
             </div>
             <div class="content hidden" id="conteudo6">
               <h2>Configurações:</h2>
-              <form action="atualizar.php" method="POST">
+              <form action="atualizar.php" method="POST" enctype="multipart/form-data">
                 <div id="options">
                   <ul class="accordion">
                     <li>
@@ -419,7 +419,28 @@ if ($tipo != 'cliente') {
                         <h3>Informações de exibição</h3>
                         <div id="foto-edit-div">
                           <div id="foto">
-                            <img id="foto-perfil" src="img/profile.webp" alt="profile">
+                            <img id="foto-perfil" src="<?php
+                            $email = $_SESSION['email'];
+                            $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+                            $result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                              $row = mysqli_fetch_assoc($result);
+                              $id = $row['id_usuario'];
+                            }
+
+                            include_once('conexao.php');
+                            $sql = "SELECT * FROM arquivos WHERE id_usuario_fk = '$id'";
+                            // Execute a consulta SQL para recuperar o arquivo do banco de dados
+                            $query = $mysqli->query($sql);
+
+                            // Verificar se a consulta retornou algum resultado
+                            if ($resultado = $query->fetch_assoc()) {
+                              $caminhoArquivo = $resultado['caminho'];
+                              echo $caminhoArquivo;
+                            } else {
+                              echo "ERRO!!!";
+                            }
+                            ?>" alt="profile">
                             <button type="button" id="editar-foto"><i class="fa fa-pencil"></i></button>
                           </div>
                         </div>
@@ -432,9 +453,30 @@ if ($tipo != 'cliente') {
                               <div class="arquivo">
                                 <label for="profile-image">Escolha uma Imagem</label>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
-                                <input type="file" id="profile-image" name="arquivo">
+                                <input type="file" id="profile-image" name="file">
                               </div>
-                              <img id="profile-preview" src="img/profile.webp" alt="profile">
+                              <img id="profile-preview" src="<?php
+                              $email = $_SESSION['email'];
+                              $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+                              $result = mysqli_query($conn, $sql);
+                              if (mysqli_num_rows($result) > 0) {
+                                $row = mysqli_fetch_assoc($result);
+                                $id = $row['id_usuario'];
+                              }
+
+                              include_once('conexao.php');
+                              $sql = "SELECT * FROM arquivos WHERE id_usuario_fk = '$id'";
+                              // Execute a consulta SQL para recuperar o arquivo do banco de dados
+                              $query = $mysqli->query($sql);
+
+                              // Verificar se a consulta retornou algum resultado
+                              if ($resultado = $query->fetch_assoc()) {
+                                $caminhoArquivo = $resultado['caminho'];
+                                echo $caminhoArquivo;
+                              } else {
+                                echo "ERRO!!!";
+                              }
+                              ?>" alt="profile">
                               <button type="button" id="salvar-foto" type="submit">Salvar</button>
                             </div>
                           </div>
@@ -510,7 +552,7 @@ if ($tipo != 'cliente') {
                   </ul>
                 </div>
                 <div id="salvar">
-                  <button type="submit" id="btn-salvar">Salvar alterações</button>
+                  <button type="submit" name="acao" id="btn-salvar">Salvar alterações</button>
                 </div>
               </form>
             </div>

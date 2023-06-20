@@ -2,18 +2,24 @@
     <div class="foto">
         <img id="fotop" src="<?php
         $email = $_SESSION['email'];
-        $sql = "SELECT genero FROM usuário WHERE email = '$email'";
+        $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
-
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
-            $genero = $row['genero'];
+            $id = $row['id_usuario'];
+        }
 
-            if ($genero == 'masculino') {
-                echo "img/img_avatar.png";
-            } else {
-                echo "img/img_avatar2.png";
-            }
+        include_once('conexao.php');
+        $sql = "SELECT * FROM arquivos WHERE id_usuario_fk = '$id'";
+        // Execute a consulta SQL para recuperar o arquivo do banco de dados
+        $query = $mysqli->query($sql);
+
+        // Verificar se a consulta retornou algum resultado
+        if ($resultado = $query->fetch_assoc()) {
+            $caminhoArquivo = $resultado['caminho'];
+            echo $caminhoArquivo;
+        } else {
+            echo "ERRO!!!";
         }
         ?>" alt="Avatar" class="image" style="width:100%">
         <div class="middle">

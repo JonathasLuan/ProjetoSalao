@@ -44,6 +44,28 @@ echo session_id();*/
     <div id="conteudo">
       <p>Nesta página serão exibidos os serviços em destaque.</p>
     </div>
+    <img src="<?php
+    $email = $_SESSION['email'];
+    $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      $row = mysqli_fetch_assoc($result);
+      $id = $row['id_usuario'];
+    }
+
+    include_once('conexao.php');
+    $sql = "SELECT * FROM arquivos WHERE id_usuario_fk = '$id'";
+    // Execute a consulta SQL para recuperar o arquivo do banco de dados
+    $query = $mysqli->query($sql);
+
+    // Verificar se a consulta retornou algum resultado
+    if ($resultado = $query->fetch_assoc()) {
+      $caminhoArquivo = $resultado['caminho'];
+      echo $caminhoArquivo;
+    } else {
+      echo "ERRO!!!";
+    }
+    ?>" alt="">
     <div id="conversas">
       <!-- A lista de conversas será adicionada aqui -->
     </div>
