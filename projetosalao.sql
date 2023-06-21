@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Jun-2023 às 08:23
+-- Tempo de geração: 21-Jun-2023 às 20:31
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -53,22 +53,33 @@ CREATE TABLE `arquivos` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `caminho` varchar(100) NOT NULL,
-  `data_upload` datetime NOT NULL DEFAULT current_timestamp()
+  `data_upload` datetime NOT NULL DEFAULT current_timestamp(),
+  `id_usuario_fk` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `arquivos`
 --
 
-INSERT INTO `arquivos` (`id`, `nome`, `caminho`, `data_upload`) VALUES
-(1, 'scissors-badge-svgrepo-com.png', '', '2023-04-26 02:52:51'),
-(2, 'barbearia.png', '', '2023-04-26 02:53:10'),
-(3, 'maquiagem.jpg', '', '2023-04-26 05:07:23'),
-(6, 'coloração.jpg', '', '2023-04-26 05:47:49'),
-(15, 'wallpaper-mania.com_High_resolution_wallpaper_background_ID_77700257950.jpg', '', '2023-05-01 03:15:31'),
-(16, 'gg.png', '', '2023-05-01 03:17:15'),
-(17, 'githublogo.png', '', '2023-05-14 23:57:01'),
-(18, 'githublogo.png', '', '2023-05-14 23:59:11');
+INSERT INTO `arquivos` (`id`, `nome`, `caminho`, `data_upload`, `id_usuario_fk`) VALUES
+(1, 'scissors-badge-svgrepo-com.png', '', '2023-04-26 02:52:51', NULL),
+(2, 'barbearia.png', '', '2023-04-26 02:53:10', NULL),
+(3, 'maquiagem.jpg', '', '2023-04-26 05:07:23', NULL),
+(6, 'coloração.jpg', '', '2023-04-26 05:47:49', NULL),
+(15, 'wallpaper-mania.com_High_resolution_wallpaper_background_ID_77700257950.jpg', '', '2023-05-01 03:15:31', NULL),
+(16, 'gg.png', '', '2023-05-01 03:17:15', NULL),
+(17, 'githublogo.png', '', '2023-05-14 23:57:01', NULL),
+(18, 'githublogo.png', '', '2023-05-14 23:59:11', NULL),
+(19, '3.jpg', 'uploads/3.jpg', '2023-06-20 05:41:22', NULL),
+(20, '24.png', 'uploads/24.png', '2023-06-20 06:48:20', NULL),
+(21, '21.png', 'uploads/21.png', '2023-06-20 07:15:14', 0),
+(22, '19.png', 'uploads/19.png', '2023-06-20 07:21:44', 0),
+(23, '15.png', 'uploads/15.png', '2023-06-20 07:49:09', NULL),
+(24, '11424_gg.jpg', 'uploads/11424_gg.jpg', '2023-06-20 07:53:48', 34),
+(25, '17.png', 'uploads/17.png', '2023-06-21 13:29:35', NULL),
+(26, 'avatar2.png', 'uploads/avatar2.png', '2023-06-21 13:39:08', 32),
+(28, 'pngwing.com (2).png', 'uploads/pngwing.com (2).png', '2023-06-21 14:52:29', 30),
+(29, 'img_avatar2.png', 'uploads/img_avatar2.png', '2023-06-21 15:09:22', 1);
 
 -- --------------------------------------------------------
 
@@ -473,35 +484,6 @@ CREATE TABLE `pedido` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedidos`
---
-
-CREATE TABLE `pedidos` (
-  `id` int(11) NOT NULL,
-  `especialidade` varchar(50) NOT NULL,
-  `outra` varchar(50) NOT NULL,
-  `servico` varchar(50) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `outro` int(50) NOT NULL,
-  `descricao` text NOT NULL,
-  `data_pedido` date NOT NULL,
-  `hora` time(4) NOT NULL,
-  `cidade` varchar(50) NOT NULL,
-  `bairro` varchar(50) NOT NULL,
-  `rua` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `pedidos`
---
-
-INSERT INTO `pedidos` (`id`, `especialidade`, `outra`, `servico`, `nome`, `outro`, `descricao`, `data_pedido`, `hora`, `cidade`, `bairro`, `rua`) VALUES
-(2, 'barbeiro', '', '', '', 0, 'Raspar a barba.', '2023-05-21', '00:00:00.0000', '', '', ''),
-(3, 'maquiador', '', '', '', 0, 'Maquiagem.', '2023-05-23', '00:00:00.0000', '', '', '');
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `pele`
 --
 
@@ -652,7 +634,7 @@ CREATE TABLE `usuário` (
 --
 
 INSERT INTO `usuário` (`id_usuario`, `tipo`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `genero`, `cor`, `bio`) VALUES
-(1, 'cliente', 'Patrícia Lima de', 'Souza', 'patricia_souza@hotmail.com', 'senha123', '11900000000', 'feminino', 'light', ''),
+(1, 'cliente', 'Patrícia Lima', 'Souza', 'patricia_souza@hotmail.com', 'senha123', '11900000000', 'feminino', 'light', ''),
 (2, 'cliente', 'Victor', 'Hugo', 'victor_hugo@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
 (9, 'profissional', 'Jonathas Luan', 'Cavalcanti Araujo', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'light', ''),
 (10, 'profissional', 'Maria', 'Lúcia', 'maria_lucia@hotmail.com', 'senhateste', '11954435948', 'feminino', '', ''),
@@ -682,7 +664,8 @@ ALTER TABLE `agendamento`
 -- Índices para tabela `arquivos`
 --
 ALTER TABLE `arquivos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_id_usuario_fk` (`id_usuario_fk`);
 
 --
 -- Índices para tabela `avaliacao`
@@ -846,12 +829,6 @@ ALTER TABLE `pedido`
   ADD KEY `id_especialidade_fk` (`id_especialidade_fk`);
 
 --
--- Índices para tabela `pedidos`
---
-ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `pele`
 --
 ALTER TABLE `pele`
@@ -930,7 +907,7 @@ ALTER TABLE `agendamento`
 -- AUTO_INCREMENT de tabela `arquivos`
 --
 ALTER TABLE `arquivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `avaliacao`
@@ -1057,12 +1034,6 @@ ALTER TABLE `pagina`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `pedidos`
---
-ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `pele`
