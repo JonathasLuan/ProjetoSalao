@@ -1,6 +1,6 @@
 <div id="info">
     <div class="foto">
-        <img id="fotop" src="<?php
+        <img id="myImg" src="<?php
         $email = $_SESSION['email'];
         $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
@@ -22,10 +22,12 @@
             echo "ERRO!!!";
         }
         ?>" alt="Avatar" class="image" style="width:100%">
-        <div class="middle">
-            <div class="text"><button><i class="fa fa-eye"></i></button></div>
-        </div>
     </div>
+
+    <?php
+    include('profile-modal.php');
+    ?>
+
     <div id="tipo-user">
         <h3>
             <?php

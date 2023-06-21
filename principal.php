@@ -339,6 +339,7 @@ if (session_id() != $_SESSION['id']) {
     include('set_theme_session.php');
     ?>
   </main>
+
   <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -355,6 +356,7 @@ if (session_id() != $_SESSION['id']) {
       });
     }
   </script>
+  
   <script>
 
     // Código do botão switch de cor de fundo

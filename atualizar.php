@@ -33,32 +33,60 @@ if (isset($_POST['editsobre'])) {
     }
 }
 ?>
+
 <?php
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "projetosalao";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Verifica se a conexão foi bem sucedida
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$email = $_SESSION['email'];
+$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['id_usuario'];
+}
 
 if (isset($_POST['acao'])) {
-    function realizarUpload()
+    function realizarUpload($id, $conn)
     {
-        global $mysqli;
-
         $arquivo = $_FILES['file'];
         $arquivoNovo = explode('.', $arquivo['name']);
 
         if ($arquivoNovo[sizeof($arquivoNovo) - 1] != 'jpg' && $arquivoNovo[sizeof($arquivoNovo) - 1] != 'png') {
             die('Você não pode fazer upload deste tipo de arquivo.');
         } else {
-            echo 'Upload feito com sucesso.';
-            echo "<img src='uploads/" . $arquivo['name'] . "'>";
             move_uploaded_file($arquivo['tmp_name'], 'uploads/' . $arquivo['name']);
-
-            // Salvar o arquivo no banco de dados
-            $nomeArquivo = $mysqli->real_escape_string($arquivo['name']);
-            $caminhoArquivo = 'uploads/' . $arquivo['name'];
-            $sql = "INSERT INTO arquivos (nome, caminho) VALUES ('$nomeArquivo', '$caminhoArquivo')";
-            // Execute a consulta SQL para salvar o arquivo no banco de dados
-            $mysqli->query($sql);
+            $sqlSelect = "SELECT id_usuario_fk FROM arquivos WHERE id_usuario_fk = '$id'";
+            $result = mysqli_query($conn, $sqlSelect);
+            if (mysqli_num_rows($result) > 0) {
+                // Salvar o arquivo no banco de dados
+                $nomeArquivo = $conn->real_escape_string($arquivo['name']);
+                $caminhoArquivo = 'uploads/' . $arquivo['name'];
+                $sql = "UPDATE arquivos SET nome = '$nomeArquivo', caminho = '$caminhoArquivo' WHERE id_usuario_fk = '$id'";
+                // Execute a consulta SQL para atualizar o arquivo no banco de dados
+                $conn->query($sql);
+            } else {
+                // Salvar o arquivo no banco de dados
+                $nomeArquivo = $conn->real_escape_string($arquivo['name']);
+                $caminhoArquivo = 'uploads/' . $arquivo['name'];
+                $sql = "INSERT INTO arquivos (nome, caminho, id_usuario_fk) VALUES ('$nomeArquivo', '$caminhoArquivo', '$id')";
+                // Execute a consulta SQL para inserir o arquivo no banco de dados
+                $conn->query($sql);
+            }
         }
     }
 
-    realizarUpload();
+    realizarUpload($id, $conn);
 }
+
 ?>
