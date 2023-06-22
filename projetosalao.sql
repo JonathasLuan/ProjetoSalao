@@ -616,7 +616,7 @@ CREATE TABLE `unhas` (
 -- Estrutura da tabela `usuário`
 --
 
-CREATE TABLE `usuário` (
+CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `tipo` varchar(100) NOT NULL,
   `nome` varchar(200) NOT NULL,
