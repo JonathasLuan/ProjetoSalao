@@ -8,7 +8,7 @@ if (session_id() != $_SESSION['id']) {
 }
 
 $email = $_SESSION['email'];
-$tipo = "SELECT tipo FROM usuário WHERE email = '$email'";
+$tipo = "SELECT tipo FROM usuario WHERE email = '$email'";
 $result = mysqli_query($conn, $tipo);
 
 if (mysqli_num_rows($result) > 0) {
@@ -264,7 +264,7 @@ if ($tipo != 'profissional') {
                                 <?php
                                 // Seleciona o nome
                                 $email = $_SESSION['email'];
-                                $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
+                                $sql = "SELECT nome, sobrenome FROM usuario WHERE email = '$email'";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -287,7 +287,7 @@ if ($tipo != 'profissional') {
                                 <?php
                                 // Seleciona o nome
                                 $email = $_SESSION['email'];
-                                $sql = "SELECT email FROM usuário WHERE email = '$email'";
+                                $sql = "SELECT email FROM usuario WHERE email = '$email'";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -316,7 +316,7 @@ if ($tipo != 'profissional') {
                                 <?php
                                 // Seleciona o nome
                                 $email = $_SESSION['email'];
-                                $sql = "SELECT email FROM usuário WHERE email = '$email'";
+                                $sql = "SELECT email FROM usuario WHERE email = '$email'";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -383,7 +383,7 @@ if ($tipo != 'profissional') {
                           <div id="foto">
                             <img id="foto-perfil" src="<?php
                             $email = $_SESSION['email'];
-                            $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+                            $sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
                             $result = mysqli_query($conn, $sql);
                             if (mysqli_num_rows($result) > 0) {
                               $row = mysqli_fetch_assoc($result);
@@ -419,7 +419,7 @@ if ($tipo != 'profissional') {
                               </div>
                               <img id="profile-preview" src="<?php
                               $email = $_SESSION['email'];
-                              $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+                              $sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
                               $result = mysqli_query($conn, $sql);
                               if (mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
@@ -450,7 +450,7 @@ if ($tipo != 'profissional') {
                               <?php
                               // Seleciona o nome
                               $email = $_SESSION['email'];
-                              $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
+                              $sql = "SELECT nome, sobrenome FROM usuario WHERE email = '$email'";
                               $result = mysqli_query($conn, $sql);
 
                               if (mysqli_num_rows($result) > 0) {
@@ -475,7 +475,7 @@ if ($tipo != 'profissional') {
                             <p id="sobreperfil">
                               <?php
                               // Seleciona a bio
-                              $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                              $sql = "SELECT bio FROM usuario WHERE email = '{$_SESSION['email']}'";
                               $result = mysqli_query($conn, $sql);
 
                               if (mysqli_num_rows($result) > 0) {
@@ -494,7 +494,7 @@ if ($tipo != 'profissional') {
                           <div>
                             <textarea style="display: none;" id="editsobre" name="editsobre" rows="10" cols="50"><?php
                             // Seleciona a bio
-                            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                            $sql = "SELECT bio FROM usuario WHERE email = '{$_SESSION['email']}'";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
