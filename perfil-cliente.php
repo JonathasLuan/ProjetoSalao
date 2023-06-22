@@ -513,7 +513,7 @@ if ($tipo != 'cliente') {
                             <p id="sobreperfil">
                               <?php
                               // Seleciona a bio
-                              $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+                              $sql = "SELECT bio FROM usuario WHERE email = '{$_SESSION['email']}'";
                               $result = mysqli_query($conn, $sql);
 
                               if (mysqli_num_rows($result) > 0) {
