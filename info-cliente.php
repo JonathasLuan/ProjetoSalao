@@ -2,7 +2,7 @@
     <div class="foto">
         <img id="myImg" src="<?php
         $email = $_SESSION['email'];
-        $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+        $sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
@@ -41,7 +41,7 @@
             <?php
             // Seleciona o nome
             $email = $_SESSION['email'];
-            $sql = "SELECT nome, sobrenome FROM usuário WHERE email = '$email'";
+            $sql = "SELECT nome, sobrenome FROM usuario WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -67,7 +67,7 @@
         <p id="sobre">
             <?php
             // Seleciona a bio
-            $sql = "SELECT bio FROM usuário WHERE email = '{$_SESSION['email']}'";
+            $sql = "SELECT bio FROM usuario WHERE email = '{$_SESSION['email']}'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
