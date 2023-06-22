@@ -633,7 +633,7 @@ CREATE TABLE `usuário` (
 -- Extraindo dados da tabela `usuário`
 --
 
-INSERT INTO `usuário` (`id_usuario`, `tipo`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `genero`, `cor`, `bio`) VALUES
+INSERT INTO `usuario` (`id_usuario`, `tipo`, `nome`, `sobrenome`, `email`, `senha`, `telefone`, `genero`, `cor`, `bio`) VALUES
 (1, 'cliente', 'Patrícia Lima', 'Souza', 'patricia_souza@hotmail.com', 'senha123', '11900000000', 'feminino', 'light', ''),
 (2, 'cliente', 'Victor', 'Hugo', 'victor_hugo@hotmail.com', 'senhateste', '11954435948', 'masculino', 'dark', ''),
 (9, 'profissional', 'Jonathas Luan', 'Cavalcanti Araujo', 'jonathas_luan.17@hotmail.com', 'senhateste', '11954435948', 'masculino', 'light', ''),
