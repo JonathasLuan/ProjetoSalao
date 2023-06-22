@@ -457,7 +457,7 @@ if ($tipo != 'cliente') {
                               </div>
                               <img id="profile-preview" src="<?php
                               $email = $_SESSION['email'];
-                              $sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+                              $sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
                               $result = mysqli_query($conn, $sql);
                               if (mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
