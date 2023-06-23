@@ -8,7 +8,7 @@ if (isset($_POST['nome'])) {
 
     // Realiza as atualizações no banco de dados
     $email = $_SESSION['email'];
-    $sql = "UPDATE usuário SET nome = '$novoNome' WHERE email = '$email'";
+    $sql = "UPDATE usuario SET nome = '$novoNome' WHERE email = '$email'";
     $resultado = mysqli_query($conn, $sql);
 
     if ($resultado) {
@@ -23,7 +23,7 @@ if (isset($_POST['editsobre'])) {
 
     // Realiza as atualizações no banco de dados
     $email = $_SESSION['email'];
-    $sql = "UPDATE usuário SET bio = '$novaBio' WHERE email = '$email'";
+    $sql = "UPDATE usuario SET bio = '$novaBio' WHERE email = '$email'";
     $resultado = mysqli_query($conn, $sql);
 
     if ($resultado) {
@@ -49,7 +49,7 @@ if (!$conn) {
 }
 
 $email = $_SESSION['email'];
-$sql = "SELECT id_usuario FROM usuário WHERE email = '$email'";
+$sql = "SELECT id_usuario FROM usuario WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
