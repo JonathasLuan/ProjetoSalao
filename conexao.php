@@ -1,6 +1,6 @@
 <?php
 $servidor = "192.168.8.211";
-$usuario = "root";
+$usuario = "jonathas@professor";
 $senha = "";
 $dbname = "projetosalao";
 
