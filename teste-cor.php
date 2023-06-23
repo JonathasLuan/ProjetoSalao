@@ -19,7 +19,7 @@ if (isset($_POST['modo'])) {
     //conecte-se ao banco de dados aqui
     
     $email = $_SESSION['email'];
-    $sql = "SELECT cor FROM usuário WHERE email = '$email'";
+    $sql = "SELECT cor FROM usuario WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
