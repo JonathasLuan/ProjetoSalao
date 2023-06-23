@@ -27,7 +27,7 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
     }
 */
 
-$result_usuario = "INSERT INTO usuário (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
+$result_usuario = "INSERT INTO usuario (tipo, nome, sobrenome, email, senha, telefone, genero) VALUES ('$tipo', '$nome', '$sobrenome', '$email', '$senha', '$telefone', '$genero')";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 $_SESSION['id_usuario'] = mysqli_insert_id($conn);
