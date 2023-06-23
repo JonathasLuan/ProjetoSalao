@@ -10,10 +10,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 <?php
 
-$usuario = 'root';
+$usuario = 'jonathas@professor';
 $senha = '';
 $database = 'projetosalao';
-$host = 'localhost';
+$host = '192.168.8.211';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 
